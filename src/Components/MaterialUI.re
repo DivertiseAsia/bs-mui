@@ -5,6 +5,14 @@ external createStyles: Js.Dict.t('a) => Js.Dict.t('a) = "createStyles";
 external makeStyles: (Js.Dict.t(string), 'a) => Js.Dict.t(string) =
   "makeStyles";
 
+module Alert = {
+  // TODO: Implement
+};
+
+module AlertTitle = {
+  // TODO: Implement
+};
+
 module AppBar = {
   [@react.component] [@bs.module "@material-ui/core/AppBar"]
   external make:
@@ -19,6 +27,10 @@ module AppBar = {
     "default";
 };
 
+module Autocomplete = {
+  // TODO: Implement
+};
+
 module Avatar = {
   [@react.component] [@bs.module "@material-ui/core/Avatar"]
   external make:
@@ -27,12 +39,28 @@ module Avatar = {
     "default";
 };
 
+module AvatarGroup = {
+  // TODO: Implement
+};
+
+module Backdrop = {
+  // TODO: Implement
+};
+
 module Badge = {
   [@react.component] [@bs.module "@material-ui/core/Badge"]
   external make:
     (~badgeContent: int=?, ~color: string=?, ~children: React.element) =>
     React.element =
     "default";
+};
+
+module BottomNavigation = {
+  // TODO: Implement
+};
+
+module BottomNavigationAction = {
+  // TODO: Implement
 };
 
 module Box = {
@@ -48,6 +76,10 @@ module Box = {
     ) =>
     React.element =
     "default";
+};
+
+module Breadcrumbs = {
+  // TODO: Implement
 };
 
 module Button = {
@@ -69,11 +101,23 @@ module Button = {
     "default";
 };
 
+module ButtonBase = {
+  // TODO: Implement
+};
+
+module ButtonGroup = {
+  // TODO: Implement
+};
+
 module Card = {
   [@react.component] [@bs.module "@material-ui/core/Card"]
   external make:
     (~className: string=?, ~children: React.element=?) => React.element =
     "default";
+};
+
+module CardActionArea = {
+  // TODO: Implement
 };
 
 module CardActions = {
@@ -109,6 +153,10 @@ module CardHeader = {
     "default";
 };
 
+module CardMedia = {
+  // TODO: Implement
+};
+
 module Checkbox = {
   [@react.component] [@bs.module "@material-ui/core/Checkbox"]
   external make:
@@ -122,6 +170,22 @@ module Checkbox = {
     ) =>
     React.element =
     "default";
+};
+
+module Chip = {
+  // TODO: Implement
+};
+
+module CircularProgress = {
+  // TODO: Implement
+};
+
+module ClickAwayListener = {
+  // TODO: Implement
+};
+
+module Collapse = {
+  // TODO: Implement
 };
 
 module Container = {
@@ -141,6 +205,26 @@ module Container = {
 module CssBaseline = {
   [@react.component] [@bs.module "@material-ui/core/CssBaseline"]
   external make: unit => React.element = "default";
+};
+
+module Dialog = {
+  // TODO: Implement
+};
+
+module DialogActions = {
+  // TODO: Implement
+};
+
+module DialogContent = {
+  // TODO: Implement
+};
+
+module DialogContentText = {
+  // TODO: Implement
+};
+
+module DialogTitle = {
+  // TODO: Implement
 };
 
 module Divider = {
@@ -163,6 +247,34 @@ module Drawer = {
     ) =>
     React.element =
     "default";
+};
+
+module ExpansionPanel = {
+  // TODO: Implement
+};
+
+module ExpansionPanelActions = {
+  // TODO: Implement
+};
+
+module ExpansionPanelDetails = {
+  // TODO: Implement
+};
+
+module ExpansionPanelSummary = {
+  // TODO: Implement
+};
+
+module Fab = {
+  // TODO: Implement
+};
+
+module Fade = {
+  // TODO: Implement
+};
+
+module FilledInput = {
+  // TODO: Implement
 };
 
 module FormControl = {
@@ -201,6 +313,18 @@ module FormControlLabel = {
     "default";
 };
 
+module FormGroup = {
+  // TODO: Implement
+};
+
+module FormHelperText = {
+  // TODO: Implement
+};
+
+module FormLabel = {
+  // TODO: Implement
+};
+
 module Grid = {
   [@react.component] [@bs.module "@material-ui/core/Grid"]
   external make:
@@ -218,6 +342,26 @@ module Grid = {
     ) =>
     React.element =
     "default";
+};
+
+module GridList = {
+  // TODO: Implement
+};
+
+module GridListTitle = {
+  // TODO: Implement
+};
+
+module GridListTitleBar = {
+  // TODO: Implement
+};
+
+module Grow = {
+  // TODO: Implement
+};
+
+module Hidden = {
+  // TODO: Implement
 };
 
 module Icon = {
@@ -321,6 +465,14 @@ module Input = {
     "default";
 };
 
+module InputAdornment = {
+  // TODO: Implement
+};
+
+module InputBase = {
+  // TODO: Implement
+};
+
 module InputLabel = {
   [@react.component] [@bs.module "@material-ui/core/InputLabel"]
   external make:
@@ -349,6 +501,10 @@ module InputLabel = {
         children,
       );
   };
+};
+
+module LinearProgress = {
+  // TODO: Implement
 };
 
 module Link = {
@@ -383,9 +539,17 @@ module ListItem = {
     "default";
 };
 
+module ListItemAvatar = {
+  // TODO: Implement
+};
+
 module ListItemIcon = {
   [@react.component] [@bs.module "@material-ui/core/ListItemIcon"]
   external make: (~children: React.element=?) => React.element = "default";
+};
+
+module ListItemSecondaryAction = {
+  // TODO: Implement
 };
 
 module ListItemText = {
@@ -401,6 +565,46 @@ module ListSubheader = {
     "default";
 };
 
+module Menu = {
+  // TODO: Implement
+};
+
+module MenuItem = {
+  // TODO: Implement
+};
+
+module MenuList = {
+  // TODO: Implement
+};
+
+module MobileStepper = {
+  // TODO: Implement
+};
+
+module Modal = {
+  // TODO: Implement
+};
+
+module NativeSelect = {
+  // TODO: Implement
+};
+
+module NoSsr = {
+  // TODO: Implement
+};
+
+module OutlinedInput = {
+  // TODO: Implement
+};
+
+module Pagination = {
+  // TODO: Implement
+};
+
+module PaginationItem = {
+  // TODO: Implement
+};
+
 module Paper = {
   [@react.component] [@bs.module "@material-ui/core/Paper"]
   external make:
@@ -411,6 +615,38 @@ module Paper = {
     ) =>
     React.element =
     "default";
+};
+
+module Popover = {
+  // TODO: Implement
+};
+
+module Popper = {
+  // TODO: Implement
+};
+
+module Portal = {
+  // TODO: Implement
+};
+
+module Radio = {
+  // TODO: Implement
+};
+
+module RadioGroup = {
+  // TODO: Implement
+};
+
+module Rating = {
+  // TODO: Implement
+};
+
+module RootRef = {
+  // TODO: Implement
+};
+
+module ScopedCssBaseline = {
+  // TODO: Implement
 };
 
 module Select = {
@@ -429,6 +665,82 @@ module Select = {
     ) =>
     React.element =
     "default";
+};
+
+module Skeleton = {
+  // TODO: Implement
+};
+
+module Slide = {
+  // TODO: Implement
+};
+
+module Slider = {
+  // TODO: Implement
+};
+
+module Snackbar = {
+  // TODO: Implement
+};
+
+module SnackbarContent = {
+  // TODO: Implement
+};
+
+module SpeedDial = {
+  // TODO: Implement
+};
+
+module SpeedDialAction = {
+  // TODO: Implement
+};
+
+module SpeedDialIcon = {
+  // TODO: Implement
+};
+
+module Step = {
+  // TODO: Implement
+};
+
+module StepButton = {
+  // TODO: Implement
+};
+
+module StepConnector = {
+  // TODO: Implement
+};
+
+module StepContent = {
+  // TODO: Implement
+};
+
+module StepIcon = {
+  // TODO: Implement
+};
+
+module StepLabel = {
+  // TODO: Implement
+};
+
+module Stepper = {
+  // TODO: Implement
+};
+
+module SvgIcon = {
+  // TODO: Implement
+};
+
+module SwipeableDrawer = {
+  // TODO: Implement
+};
+
+module Switch = {
+  // TODO: Implement
+};
+
+module Tab = {
+  // TODO: Implement
 };
 
 module Table = {
@@ -466,6 +778,10 @@ module TableCell = {
     ) =>
     React.element =
     "default";
+};
+
+module TableFooter = {
+  // TODO: Implement
 };
 
 module TableHead = {
@@ -514,6 +830,18 @@ module TableRow = {
     "default";
 };
 
+module TableSortLabel = {
+  // TODO: Implement
+};
+
+module Tabs = {
+  // TODO: Implement
+};
+
+module TabTextareaAutosizes = {
+  // TODO: Implement
+};
+
 module TextField = {
   [@react.component] [@bs.module "@material-ui/core/TextField"]
   external make:
@@ -537,11 +865,31 @@ module TextField = {
     "default";
 };
 
+module ToggleButton = {
+  // TODO: Implement
+};
+
+module ToggleButtonGroup = {
+  // TODO: Implement
+};
+
 module Toolbar = {
   [@react.component] [@bs.module "@material-ui/core/Toolbar"]
   external make:
     (~className: string=?, ~children: React.element) => React.element =
     "default";
+};
+
+module Tooltip = {
+  // TODO: Implement
+};
+
+module TreeItem = {
+  // TODO: Implement
+};
+
+module TreeView = {
+  // TODO: Implement
 };
 
 module Typography = {
@@ -560,7 +908,6 @@ module Typography = {
     "default";
 };
 
-module UIList = {
-  [@react.component] [@bs.module "@material-ui/core/List"]
-  external make: (~children: React.element=?) => React.element = "default";
+module Zoom = {
+  // TODO: Implement
 };
