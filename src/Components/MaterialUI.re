@@ -630,7 +630,27 @@ module Portal = {
 };
 
 module Radio = {
-  // TODO: Implement
+  [@react.component] [@bs.module "@material-ui/core/Radio"]
+  external make:
+    (
+      ~checked: bool=?,
+      ~checkedIcon: React.element=?,
+      ~className: string=?,
+      ~style: ReactDOMRe.Style.t=?,
+      ~color: string=?,
+      ~disabled: bool=?,
+      ~disableRipple: bool=?,
+      ~icon: React.element=?,
+      ~inputProps: Js.t('a)=?,
+      ~inputRef: 'a=?,
+      ~onChange: ReactEvent.Synthetic.t => unit=?,
+      ~required: bool=?,
+      ~size: string=?,
+      ~type_: string=?,
+      ~value: 'b=?
+    ) =>
+    React.element =
+    "default";
 };
 
 module RadioGroup = {
