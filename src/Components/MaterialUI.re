@@ -5,75 +5,120 @@ external createStyles: Js.Dict.t('a) => Js.Dict.t('a) = "createStyles";
 external makeStyles: (Js.Dict.t(string), 'a) => Js.Dict.t(string) =
   "makeStyles";
 
-//module Size = {
-//  type t = [ | `small | `medium];
-//
-//  let small = `small;
-//  let medium = `medium;
-//
-//  let toString = {
-//    fun
-//    | `small => "small"
-//    | `medium => "medium";
-//  };
-//};
-
 module Alert = {
-  // TODO: Implement
+  // TODO: @material-ui/lab/Alert
 };
 
 module AlertTitle = {
-  // TODO: Implement
+  // TODO: @material-ui/lab/AlertTitle
 };
 
 module AppBar = {
   [@react.component] [@bs.module "@material-ui/core/AppBar"]
   external make:
     (
-      ~style: ReactDOMRe.Style.t=?,
+      ~children: React.element=?,
+      ~className: string=?,
       ~color: string=?,
       ~position: string=?,
-      ~className: string=?,
-      ~children: React.element=?
+      ~style: ReactDOMRe.Style.t=?
     ) =>
     React.element =
     "default";
 };
 
 module Autocomplete = {
-  // TODO: Implement
+  // TODO: @material-ui/lab/Autocomplete
 };
 
 module Avatar = {
   [@react.component] [@bs.module "@material-ui/core/Avatar"]
   external make:
-    (~src: string=?, ~className: string=?, ~children: React.element) =>
+    (
+      ~alt: string=?,
+      ~children: React.element=?,
+      ~className: string=?,
+      ~component: string=?,
+      ~imgProps: Js.t('a)=?,
+      ~sizes: string=?,
+      ~src: string=?,
+      ~srcSet: string=?,
+      ~variant: string=?
+    ) =>
     React.element =
     "default";
 };
 
 module AvatarGroup = {
-  // TODO: Implement
+  // TODO: @material-ui/lab/AvatarGroup
 };
 
 module Backdrop = {
-  // TODO: Implement
+  [@react.component] [@bs.module "@material-ui/core/Backdrop"]
+  external make:
+    (
+      ~children: React.element=?,
+      ~className: string=?,
+      ~invisible: bool=?,
+      ~_open: bool=?,
+      ~transitionDuration: int=?
+    ) => /* transitionDuration can be shape */
+    React.element =
+    "default";
 };
 
 module Badge = {
+  type anchorOriginType = {
+    vertical: string,
+    horizontal: string,
+  };
   [@react.component] [@bs.module "@material-ui/core/Badge"]
   external make:
-    (~badgeContent: int=?, ~color: string=?, ~children: React.element) =>
+    (
+      ~anchorOrigin: anchorOriginType=?,
+      ~badgeContent: int=?,
+      ~children: React.element,
+      ~className: string=?,
+      ~color: string=?,
+      ~component: string=?,
+      ~invisible: bool=?,
+      ~max: int=?,
+      ~overlap: string=?,
+      ~showZero: bool=?,
+      ~variant: string=?
+    ) =>
     React.element =
     "default";
 };
 
 module BottomNavigation = {
-  // TODO: Implement
+  [@react.component] [@bs.module "@material-ui/core/BottomNavigation"]
+  external make:
+    (
+      ~children: React.element=?,
+      ~className: string=?,
+      ~component: string=?,
+      ~onChange: ReactEvent.Synthetic.t => unit=?,
+      ~showLabels: bool=?,
+      ~value: 'a=?
+    ) =>
+    React.element =
+    "default";
 };
 
 module BottomNavigationAction = {
-  // TODO: Implement
+  [@react.component] [@bs.module "@material-ui/core/BottomNavigationAction"]
+  external make:
+    (
+      ~children: React.element=?,
+      ~className: string=?,
+      ~icon: React.element=?,
+      ~label: React.element=?,
+      ~showLabel: bool=?,
+      ~value: 'a=?
+    ) => /* children type is unsupportedProp */
+    React.element =
+    "default";
 };
 
 module Box = {
@@ -92,7 +137,20 @@ module Box = {
 };
 
 module Breadcrumbs = {
-  // TODO: Implement
+  [@react.component] [@bs.module "@material-ui/core/BottomNavigation"]
+  external make:
+    (
+      ~children: React.element=?,
+      ~className: string=?,
+      ~component: string=?,
+      ~expandText: string=?,
+      ~itemsAfterCollapse: int=?,
+      ~itemsBeforeCollapse: int=?,
+      ~maxItems: int=?,
+      ~separator: React.element=?
+    ) => /* separator type is node (default = "/") */
+    React.element =
+    "default";
 };
 
 module Button = {
@@ -660,7 +718,7 @@ module Radio = {
       ~name: string=?,
       ~onChange: ReactEvent.Synthetic.t => unit=?,
       ~required: bool=?,
-      ~size: string=?,
+      ~size: [@bs.string] [ | `small | `medium]=?,
       ~type_: string=?,
       ~value: 'b=?
     ) =>
@@ -669,11 +727,43 @@ module Radio = {
 };
 
 module RadioGroup = {
-  // TODO: Implement
+  [@react.component] [@bs.module "@material-ui/core/RadioGroup"]
+  external make:
+    (
+      ~children: React.element=?,
+      ~defaultValue: 'a=?,
+      ~name: string=?,
+      ~onChange: ReactEvent.Synthetic.t => unit=?,
+      ~value: 'b=?
+    ) =>
+    React.element =
+    "default";
 };
 
 module Rating = {
-  // TODO: Implement
+  [@react.component] [@bs.module "@material-ui/core/Radio"]
+  external make:
+    (
+      ~checked: bool=?,
+      ~checkedIcon: React.element=?,
+      ~className: string=?,
+      ~style: ReactDOMRe.Style.t=?,
+      ~color: string=?,
+      ~disabled: bool=?,
+      ~disableRipple: bool=?,
+      ~icon: React.element=?,
+      ~id: string=?,
+      ~inputProps: Js.t('a)=?,
+      ~inputRef: 'a=?,
+      ~name: string=?,
+      ~onChange: ReactEvent.Synthetic.t => unit=?,
+      ~required: bool=?,
+      ~size: string=?,
+      ~type_: string=?,
+      ~value: 'b=?
+    ) =>
+    React.element =
+    "default";
 };
 
 module RootRef = {
