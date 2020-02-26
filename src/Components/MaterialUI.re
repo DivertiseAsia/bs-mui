@@ -19,8 +19,22 @@ module AppBar = {
     (
       ~children: React.element=?,
       ~className: string=?,
-      ~color: string=?,
-      ~position: string=?,
+      ~color: [@bs.string] [
+                | `default
+                | `inherit_
+                | `primary
+                | `secondary
+                | `transparent
+              ]
+                =?,
+      ~position: [@bs.string] [
+                   | `absolute
+                   | `fixed
+                   | `relative
+                   | `static
+                   | `sticky
+                 ]
+                   =?,
       ~style: ReactDOMRe.Style.t=?
     ) =>
     React.element =
@@ -43,7 +57,7 @@ module Avatar = {
       ~sizes: string=?,
       ~src: string=?,
       ~srcSet: string=?,
-      ~variant: string=?
+      ~variant: [@bs.string] [ | `circle | `rounded | `square]=?
     ) =>
     React.element =
     "default";
@@ -69,8 +83,8 @@ module Backdrop = {
 
 module Badge = {
   type anchorOriginType = {
-    vertical: string,
-    horizontal: string,
+    vertical: string, // [ | `left | `right]
+    horizontal: string // [ | `bottom | `top]
   };
   [@react.component] [@bs.module "@material-ui/core/Badge"]
   external make:
@@ -79,13 +93,13 @@ module Badge = {
       ~badgeContent: int=?,
       ~children: React.element,
       ~className: string=?,
-      ~color: string=?,
+      ~color: [@bs.string] [ | `default | `error | `primary | `secondary]=?,
       ~component: string=?,
       ~invisible: bool=?,
       ~max: int=?,
-      ~overlap: string=?,
+      ~overlap: [@bs.string] [ | `circle | `rectangle]=?,
       ~showZero: bool=?,
-      ~variant: string=?
+      ~variant: [@bs.string] [ | `dot | `standard]=?
     ) =>
     React.element =
     "default";
@@ -157,16 +171,24 @@ module Button = {
   [@react.component] [@bs.module "@material-ui/core/Button"]
   external make:
     (
-      ~type_: string=?,
-      ~href: string=?,
+      ~children: React.element=?,
+      ~className: string=?,
+      ~color: [@bs.string] [ | `default | `inherit_ | `primary | `secondary]=?,
+      ~component: string=?,
       ~disabled: bool=?,
+      ~disableElevation: bool=?,
+      ~disableFocusRipple: bool=?,
+      ~disableRipple: bool=?,
+      ~endIcon: React.element=?,
       ~fullWidth: bool=?,
       ~variant: string=?,
-      ~color: string=?,
-      ~className: string=?,
+      ~href: string=?,
+      ~size: [@bs.string] [ | `small | `medium | `large]=?,
+      ~startIcon: React.element=?,
+      ~variant: string=?, // [ | `text | `outlined | `contained]
       ~onClick: unit => unit=?,
-      ~ref: 'a=?,
-      ~children: React.element=?
+      ~type_: string=?,
+      ~ref: 'a=?
     ) =>
     React.element =
     "default";
