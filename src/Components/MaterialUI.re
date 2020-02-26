@@ -5,6 +5,19 @@ external createStyles: Js.Dict.t('a) => Js.Dict.t('a) = "createStyles";
 external makeStyles: (Js.Dict.t(string), 'a) => Js.Dict.t(string) =
   "makeStyles";
 
+//module Size = {
+//  type t = [ | `small | `medium];
+//
+//  let small = `small;
+//  let medium = `medium;
+//
+//  let toString = {
+//    fun
+//    | `small => "small"
+//    | `medium => "medium";
+//  };
+//};
+
 module Alert = {
   // TODO: Implement
 };
@@ -641,8 +654,10 @@ module Radio = {
       ~disabled: bool=?,
       ~disableRipple: bool=?,
       ~icon: React.element=?,
+      ~id: string=?,
       ~inputProps: Js.t('a)=?,
       ~inputRef: 'a=?,
+      ~name: string=?,
       ~onChange: ReactEvent.Synthetic.t => unit=?,
       ~required: bool=?,
       ~size: string=?,
