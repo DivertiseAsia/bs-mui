@@ -566,7 +566,21 @@ module FormHelperText = {
 };
 
 module FormLabel = {
-  // TODO: Implement
+  [@react.component] [@bs.module "@material-ui/core/FormLabel"]
+  external make:
+    (
+      ~children: React.element=?,
+      ~className: string=?,
+      ~color: [@bs.string] [ | `primary | `secondary]=?,
+      ~component: string=?,
+      ~disabled: bool=?,
+      ~error: bool=?,
+      ~filled: bool=?,
+      ~focused: bool=?,
+      ~required: bool=?
+    ) =>
+    React.element =
+    "default";
 };
 
 module Grid = {
