@@ -40,6 +40,14 @@ module BadgeColor = {
   let secondary = "secondary";
 };
 
+module FormColor = {
+  type t = string;
+  [@bs.inline]
+  let primary = "primary";
+  [@bs.inline]
+  let secondary = "secondary";
+};
+
 module NoTransparentColor = {
   type t = string;
   [@bs.inline]
@@ -571,7 +579,7 @@ module FormLabel = {
     (
       ~children: React.element=?,
       ~className: string=?,
-      ~color: [@bs.string] [ | `primary | `secondary]=?,
+      ~color: FormColor.t=?,
       ~component: string=?,
       ~disabled: bool=?,
       ~error: bool=?,
