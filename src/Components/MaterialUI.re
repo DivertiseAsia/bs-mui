@@ -1,21 +1,148 @@
-module Variant {
+module HorizontalAnchor = {
   type t = string;
-
-  [@bs.inline] let default = "default";
-  [@bs.inline] let inherit_ = "inherit";
-  [@bs.inline] let primary = "primary";
-  [@bs.inline] let secondary = "secondary";
-  [@bs.inline] let transparent = "transparent";
+  [@bs.inline]
+  let buttom = "buttom";
+  [@bs.inline]
+  let top = "top";
 };
 
-module Position {
+module VerticalAnchor = {
   type t = string;
-  [@bs.inline] let absolute = "absolute";
-  [@bs.inline] let fixed = "fixed";
-  [@bs.inline] let relative = "relative";
-  [@bs.inline] let static = "static";
-  [@bs.inline] let sticky = "sticky";
-}
+  [@bs.inline]
+  let left = "left";
+  [@bs.inline]
+  let right = "right";
+};
+
+module Color = {
+  type t = string;
+  [@bs.inline]
+  let default = "default";
+  [@bs.inline]
+  let inherit_ = "inherit";
+  [@bs.inline]
+  let primary = "primary";
+  [@bs.inline]
+  let secondary = "secondary";
+  [@bs.inline]
+  let transparent = "transparent";
+};
+
+module BadgeColor = {
+  type t = string;
+  [@bs.inline]
+  let default = "default";
+  [@bs.inline]
+  let error = "error";
+  [@bs.inline]
+  let primary = "primary";
+  [@bs.inline]
+  let secondary = "secondary";
+};
+
+module NoTransparentColor = {
+  type t = string;
+  [@bs.inline]
+  let default = "default";
+  [@bs.inline]
+  let inherit_ = "inherit";
+  [@bs.inline]
+  let primary = "primary";
+  [@bs.inline]
+  let secondary = "secondary";
+};
+
+module Overlap = {
+  type t = string;
+  [@bs.inline]
+  let circle = "circle";
+  [@bs.inline]
+  let rectangle = "rectangle";
+};
+
+module Position = {
+  type t = string;
+  [@bs.inline]
+  let absolute = "absolute";
+  [@bs.inline]
+  let fixed = "fixed";
+  [@bs.inline]
+  let relative = "relative";
+  [@bs.inline]
+  let static = "static";
+  [@bs.inline]
+  let sticky = "sticky";
+};
+
+module Size = {
+  type t = string;
+  [@bs.inline]
+  let small = "small";
+  [@bs.inline]
+  let medium = "medium";
+  [@bs.inline]
+  let large = "large";
+};
+
+module NoLargeSize = {
+  type t = string;
+  [@bs.inline]
+  let small = "small";
+  [@bs.inline]
+  let medium = "medium";
+};
+
+module ButtonBaseType = {
+  type t = string;
+  [@bs.inline]
+  let submit = "submit";
+  [@bs.inline]
+  let reset = "reset";
+  [@bs.inline]
+  let button = "button";
+};
+
+module Variant = {
+  type t = string;
+  [@bs.inline]
+  let default = "default";
+  [@bs.inline]
+  let inherit_ = "inherit";
+  [@bs.inline]
+  let primary = "primary";
+  [@bs.inline]
+  let secondary = "secondary";
+  [@bs.inline]
+  let transparent = "transparent";
+};
+
+module AvatarVariant = {
+  type t = string;
+  [@bs.inline]
+  let circle = "circle";
+  [@bs.inline]
+  let rounded = "rounded";
+  [@bs.inline]
+  let square = "square";
+};
+
+module BadgeVariant = {
+  type t = string;
+  [@bs.inline]
+  let dot = "dot";
+  [@bs.inline]
+  let standard = "standard";
+};
+
+module ButtonVariant = {
+  type t = string;
+  [@bs.inline]
+  let text = "text";
+  [@bs.inline]
+  let outlined = "outlined";
+  [@bs.inline]
+  let contained = "contained";
+};
 
 [@bs.module "@material-ui/core/styles"]
 external createStyles: Js.Dict.t('a) => Js.Dict.t('a) = "createStyles";
@@ -38,7 +165,7 @@ module AppBar = {
     (
       ~children: React.element=?,
       ~className: string=?,
-      ~color: Variant.t=?,
+      ~color: Color.t=?,
       ~position: Position.t=?,
       ~style: ReactDOMRe.Style.t=?
     ) =>
@@ -62,7 +189,7 @@ module Avatar = {
       ~sizes: string=?,
       ~src: string=?,
       ~srcSet: string=?,
-      ~variant: [@bs.string] [ | `circle | `rounded | `square]=?
+      ~variant: AvatarVariant.t=?
     ) =>
     React.element =
     "default";
@@ -88,8 +215,8 @@ module Backdrop = {
 
 module Badge = {
   type anchorOriginType = {
-    vertical: string, // [ | `left | `right]
-    horizontal: string // [ | `bottom | `top]
+    vertical: HorizontalAnchor.t,
+    horizontal: VerticalAnchor.t,
   };
   [@react.component] [@bs.module "@material-ui/core/Badge"]
   external make:
@@ -98,13 +225,13 @@ module Badge = {
       ~badgeContent: int=?,
       ~children: React.element,
       ~className: string=?,
-      ~color: [@bs.string] [ | `default | `error | `primary | `secondary]=?,
+      ~color: BadgeColor.t=?,
       ~component: string=?,
       ~invisible: bool=?,
       ~max: int=?,
-      ~overlap: [@bs.string] [ | `circle | `rectangle]=?,
+      ~overlap: Overlap.t=?,
       ~showZero: bool=?,
-      ~variant: [@bs.string] [ | `dot | `standard]=?
+      ~variant: BadgeVariant.t=?
     ) =>
     React.element =
     "default";
@@ -178,7 +305,7 @@ module Button = {
     (
       ~children: React.element=?,
       ~className: string=?,
-      ~color: [@bs.string] [ | `default | `inherit_ | `primary | `secondary]=?,
+      ~color: NoTransparentColor.t=?,
       ~component: string=?,
       ~disabled: bool=?,
       ~disableElevation: bool=?,
@@ -188,9 +315,9 @@ module Button = {
       ~fullWidth: bool=?,
       ~variant: string=?,
       ~href: string=?,
-      ~size: [@bs.string] [ | `small | `medium | `large]=?,
+      ~size: Size.t=?,
       ~startIcon: React.element=?,
-      ~variant: string=?, // [ | `text | `outlined | `contained]
+      ~variant: ButtonVariant.t=?,
       ~onClick: unit => unit=?,
       ~type_: string=?,
       ~ref: 'a=?
@@ -200,7 +327,26 @@ module Button = {
 };
 
 module ButtonBase = {
-  // TODO: Implement
+  [@react.component] [@bs.module "@material-ui/core/ButtonBase"]
+  external make:
+    (
+      ~action: unit => unit=?,
+      ~centerRipple: bool=?,
+      ~children: React.element=?,
+      ~className: string=?,
+      ~component: string=?,
+      ~color: NoTransparentColor.t=?,
+      ~disabled: bool=?,
+      ~disableRipple: bool=?,
+      ~disableTouchRipple: bool=?,
+      ~focusRipple: bool=?,
+      ~focusVisibleClassName: string=?,
+      ~onFocusVisible: ReactEvent.Keyboard.t => unit=?,
+      ~touchRippleProps: React.element=?, // TouchRippleProps (T uppercase)
+      ~type_: ButtonBaseType.t=?
+    ) =>
+    React.element =
+    "default";
 };
 
 module ButtonGroup = {
@@ -745,7 +891,7 @@ module Radio = {
       ~name: string=?,
       ~onChange: ReactEvent.Synthetic.t => unit=?,
       ~required: bool=?,
-      ~size: [@bs.string] [ | `small | `medium]=?,
+      ~size: NoLargeSize.t=?,
       ~type_: string=?,
       ~value: 'b=?
     ) =>
