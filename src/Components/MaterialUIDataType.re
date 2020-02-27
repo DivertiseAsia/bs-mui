@@ -1,7 +1,7 @@
 module HorizontalAnchor = {
     type t = string;
     [@bs.inline]
-    let buttom = "buttom";
+    let bottom = "bottom";
     [@bs.inline]
     let top = "top";
   };
