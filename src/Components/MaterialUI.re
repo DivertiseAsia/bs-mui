@@ -1,3 +1,22 @@
+module Variant {
+  type t = string;
+
+  [@bs.inline] let default = "default";
+  [@bs.inline] let inherit_ = "inherit";
+  [@bs.inline] let primary = "primary";
+  [@bs.inline] let secondary = "secondary";
+  [@bs.inline] let transparent = "transparent";
+};
+
+module Position {
+  type t = string;
+  [@bs.inline] let absolute = "absolute";
+  [@bs.inline] let fixed = "fixed";
+  [@bs.inline] let relative = "relative";
+  [@bs.inline] let static = "static";
+  [@bs.inline] let sticky = "sticky";
+}
+
 [@bs.module "@material-ui/core/styles"]
 external createStyles: Js.Dict.t('a) => Js.Dict.t('a) = "createStyles";
 
@@ -19,22 +38,8 @@ module AppBar = {
     (
       ~children: React.element=?,
       ~className: string=?,
-      ~color: [@bs.string] [
-                | `default
-                | `inherit_
-                | `primary
-                | `secondary
-                | `transparent
-              ]
-                =?,
-      ~position: [@bs.string] [
-                   | `absolute
-                   | `fixed
-                   | `relative
-                   | `static
-                   | `sticky
-                 ]
-                   =?,
+      ~color: Variant.t=?,
+      ~position: Position.t=?,
       ~style: ReactDOMRe.Style.t=?
     ) =>
     React.element =
