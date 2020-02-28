@@ -17,6 +17,7 @@ jobs:
     - name: npm install and npm test
       run: |
         npm run setup-test
+        npm run build
         npm run test
     - name: npm publish
       run: |
