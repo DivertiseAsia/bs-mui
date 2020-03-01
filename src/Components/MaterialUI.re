@@ -701,23 +701,6 @@ module InputLabel = {
     ) =>
     React.element =
     "default";
-
-  module Jsx2 = {
-    let component = ReasonReact.statelessComponent("InputLabel");
-
-    let make = (~id=?, ~htmlFor=?, ~className=?, children) =>
-      ReasonReactCompat.wrapReactForReasonReact(
-        make,
-        makeProps(
-          ~id?,
-          ~htmlFor?,
-          ~className?,
-          ~children=children |> React.array,
-          (),
-        ),
-        children,
-      );
-  };
 };
 
 module LinearProgress = {

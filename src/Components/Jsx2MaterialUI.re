@@ -30,6 +30,24 @@ module Button {
         );       
 };
 
+module InputLabel = {
+    open MaterialUI.InputLabel;
+    let component = ReasonReact.statelessComponent("InputLabel");
+
+    let make = (~id=?, ~htmlFor=?, ~className=?, children) =>
+      ReasonReactCompat.wrapReactForReasonReact(
+        make,
+        makeProps(
+          ~id?,
+          ~htmlFor?,
+          ~className?,
+          ~children=children |> React.array,
+          (),
+        ),
+        children,
+      );
+  };
+
 module FormControl {
     open MaterialUI.FormControl;
     let component = ReasonReact.statelessComponent("FormControl");
