@@ -33,3 +33,23 @@ test("Test container with child elements", () =>
   |> toMatchSnapshot
 );
 
+test("Test select component", () => 
+  <FormControl>
+    <InputLabel id="demo-simple-select-label">{string("Age")}</InputLabel>
+    <Select
+      labelId="demo-simple-select-label"
+      id="demo-simple-select"
+      value=10
+      onChange={_=> Js.log("onChange") }
+    >
+      <MenuItem value={10}>{string("Ten")}</MenuItem>
+      <MenuItem value={20}>{string("Twenty")}</MenuItem>
+      <MenuItem value={30}>{string("Thirty")}</MenuItem>
+    </Select>
+  </FormControl>
+  |> render
+  |> container
+  |> expect
+  |> toMatchSnapshot
+)
+

@@ -787,7 +787,17 @@ module Menu = {
 };
 
 module MenuItem = {
-  // TODO: Implement
+  [@react.component] [@bs.module "@material-ui/core/MenuItem"]
+  external make:
+    (
+      ~value: 'a=?,
+      ~dense: bool=?,
+      ~disableGutters: bool=?,
+      ~className: string=?,
+      ~style: ReactDOMRe.Style.t=?,
+      ~children: React.element=?
+    ) =>
+    React.element = "default";
 };
 
 module MenuList = {
@@ -934,6 +944,7 @@ module Select = {
   [@react.component] [@bs.module "@material-ui/core/Select"]
   external make:
     (
+      ~id: string=?,
       ~labelId: string=?,
       ~disabled: bool=?,
       ~native: bool=?,

@@ -45,3 +45,62 @@ module FormControl {
         children,
         );       
 }
+
+module MenuItem {
+    open MaterialUI.MenuItem;
+    let component = ReasonReact.statelessComponent("MenuItem");
+
+    let make = (
+        ~value=?,
+        ~dense=?,
+        ~disableGutters=?,
+        ~className=?, 
+        ~style=?, 
+        children) => 
+        ReasonReactCompat.wrapReactForReasonReact(
+        make,
+        makeProps(
+            ~value?,
+            ~dense?, 
+            ~disableGutters?, 
+            ~className?, 
+            ~style?,
+            ~children=children |> React.array, ()),
+        children,
+        );       
+}
+
+module Select {
+    open MaterialUI.Select;
+
+    let component = ReasonReact.statelessComponent("Select");
+
+    let make = (
+        ~id=?,
+        ~labelId=?,
+        ~disabled=?,
+        ~native=?,
+        ~value=?,
+        ~onChange=?,
+        ~inputProps=?,
+        ~className=?,
+        ~style=?,
+        ~variant=?,
+        children) => 
+        ReasonReactCompat.wrapReactForReasonReact(
+            make,
+            makeProps(
+                ~id?,
+                ~labelId?,
+                ~disabled?,
+                ~native?,
+                ~value?,
+                ~onChange?,
+                ~inputProps?,
+                ~className?,
+                ~style?,
+                ~variant?,
+                ~children=children |> React.array, ()),
+            children,
+        );       
+};
