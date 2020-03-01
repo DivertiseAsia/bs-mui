@@ -1,11 +1,12 @@
 {
-  "name": "bs-mui",
-  "version": "0.1.0",
+  "name": "@divertise_asia/bs-mui",
+  "version": "0.1.4",
   "scripts": {
     "build": "bsb -make-world",
     "start": "bsb -make-world -w -ws _ ",
     "clean": "bsb -clean-world",
     "server": "moduleserve ./ --port 8000",
+    "setup-test": "npm install bs-react-testing-library @glennsl/bs-jest bs-webapi bs-jest-dom",
     "test": "jest --testMatch='**/__tests__/*test.bs.js'"
   },
   "keywords": [
@@ -15,6 +16,13 @@
   ],
   "author": "Divertise Asia",
   "license": "MIT",
+  "repository": {
+    "type": "https",
+    "url": "https://github.com/DivertiseAsia/bs-mui.git"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
   "dependencies": {
     "@material-ui/core": "^4.9.4",
     "@material-ui/icons": "^4.9.1",
@@ -25,7 +33,7 @@
   "devDependencies": {
     "@glennsl/bs-jest": "^0.4.9",
     "bs-jest-dom": "^2.0.1",
-    "bs-platform": "^7.1.0",
+    "bs-platform": "^7.2.0",
     "bs-react-testing-library": "^0.6.0",
     "bs-webapi": "^0.15.8",
     "moduleserve": "^0.9.0"
