@@ -737,7 +737,7 @@ module Link = {
     "default";
 };
 
-module List = {
+module UIList = {
   [@react.component] [@bs.module "@material-ui/core/List"]
   external make: (~children: React.element=?) => React.element = "default";
 };
