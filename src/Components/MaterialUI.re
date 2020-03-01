@@ -818,6 +818,16 @@ module ScopedCssBaseline = {
 };
 
 module Select = {
+  module Variant = {
+    type t = string;
+    [@bs.inline]
+    let standard = "standard";
+    [@bs.inline]
+    let outlined = "outlined";
+    [@bs.inline]
+    let filled = "filled";
+  }
+
   [@react.component] [@bs.module "@material-ui/core/Select"]
   external make:
     (
@@ -829,6 +839,7 @@ module Select = {
       ~inputProps: Js.t('b)=?,
       ~className: string=?,
       ~style: ReactDOMRe.Style.t=?,
+      ~variant: Variant.t=?,
       ~children: React.element=?
     ) =>
     React.element =
