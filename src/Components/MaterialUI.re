@@ -9,13 +9,13 @@ external makeStyles: Js.Dict.t('a) => ((. 'props) => Js.Dict.t(string)) =
 
 module StylesProvider = {
 
-  [@react.component] [@bs.module "@material-ui/core/styles/StylesProvider"]
+  [@react.component] [@bs.module "@material-ui/core/styles"]
   external make:
     (
       ~injectFirst: bool=?,
       ~children: React.element
     ) =>
-    React.element = "default";
+    React.element = "StylesProvider";
 }
 
 
