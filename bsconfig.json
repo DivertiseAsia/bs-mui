@@ -6,7 +6,7 @@
   "sources": [
     {
     "dir" : "src",
-    "subdirs" : true
+    "subdirs" : ["Components"]
     },
     {
       "dir": "__tests__",
@@ -19,7 +19,7 @@
     "in-source": false
   }],
   "suffix": ".bs.js",
-  "namespace": true,
+  "namespace": false,
   "bs-dependencies": [
     "reason-react"
   ],
