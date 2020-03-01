@@ -53,3 +53,15 @@ test("Test select component", () =>
   |> toMatchSnapshot
 )
 
+test("Test with styleprovider", () => 
+  <StylesProvider injectFirst=true>
+  <FormControl>
+    <InputLabel id="demo-simple-select-label">{string("Age")}</InputLabel>
+  </FormControl>
+  </StylesProvider>
+  |> render
+  |> container
+  |> expect
+  |> toMatchSnapshot
+)
+

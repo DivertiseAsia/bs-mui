@@ -1,3 +1,21 @@
+
+module StylesProvider = {
+    open MaterialUI.StylesProvider;
+
+    let component = ReasonReact.statelessComponent("StylesProvider");
+    let make = (
+        ~injectFirst=?,
+        children
+      ) =>
+        ReasonReactCompat.wrapReactForReasonReact(
+            make,
+            makeProps(
+                ~injectFirst?,
+                ~children=children |> React.array, ()),
+            children,
+        );  
+  }
+
 module Button {
     open MaterialUI.Button;
 
