@@ -81,7 +81,7 @@ module Badge = {
       ~badgeContent: int=?,
       ~children: React.element,
       ~className: string=?,
-      ~color: BadgeColor.t=?,
+      ~color: MainWithDefaultErrorColor.t=?,
       ~component: string=?,
       ~invisible: bool=?,
       ~max: int=?,
@@ -191,7 +191,6 @@ module ButtonBase = {
       ~children: React.element=?,
       ~className: string=?,
       ~component: string=?,
-      ~color: NoTransparentColor.t=?,
       ~disabled: bool=?,
       ~disableRipple: bool=?,
       ~disableTouchRipple: bool=?,
@@ -206,24 +205,49 @@ module ButtonBase = {
 };
 
 module ButtonGroup = {
-  // TODO: Implement
+  [@react.component] [@bs.module "@material-ui/core/ButtonGroup"]
+  external make:
+    (
+      ~children: React.element=?,
+      ~className: string=?,
+      ~color: NoTransparentColor.t=?,
+      ~component: string=?,
+      ~disabled: bool=?,
+      ~disableFocusRipple: bool=?,
+      ~disableRipple: bool=?,
+      ~fullWidth: bool=?,
+      ~orientation: Orientation.t=?,
+      ~size: Size.t=?,
+      ~variant: ButtonVariant.t=?
+    ) =>
+    React.element =
+    "default";
 };
 
 module Card = {
   [@react.component] [@bs.module "@material-ui/core/Card"]
   external make:
-    (~className: string=?, ~children: React.element=?) => React.element =
+    (~children: React.element=?, ~className: string=?, ~raised: bool=?) =>
+    React.element =
     "default";
 };
 
 module CardActionArea = {
-  // TODO: Implement
+  [@react.component] [@bs.module "@material-ui/core/CardActionArea"]
+  external make:
+    (~children: React.element=?, ~className: string=?) => React.element =
+    "default";
 };
 
 module CardActions = {
   [@react.component] [@bs.module "@material-ui/core/CardActions"]
   external make:
-    (~className: string=?, ~children: React.element=?) => React.element =
+    (
+      ~children: React.element=?,
+      ~className: string=?,
+      ~disableSpacing: bool=?
+    ) =>
+    React.element =
     "default";
 };
 
@@ -231,10 +255,11 @@ module CardContent = {
   [@react.component] [@bs.module "@material-ui/core/CardContent"]
   external make:
     (
-      ~padding: int=?,
-      ~style: ReactDOMRe.Style.t=?,
+      ~children: React.element=?,
       ~className: string=?,
-      ~children: React.element=?
+      ~component: string=?,
+      ~padding: int=?,
+      ~style: ReactDOMRe.Style.t=?
     ) =>
     React.element =
     "default";
@@ -244,48 +269,126 @@ module CardHeader = {
   [@react.component] [@bs.module "@material-ui/core/CardHeader"]
   external make:
     (
-      ~title: string=?,
-      ~subheader: string=?,
+      ~action: React.element=?,
+      ~avatar: React.element=?,
+      ~children: React.element=?,
       ~className: string=?,
-      ~children: React.element=?
+      ~component: string=?,
+      ~disableTypography: bool=?,
+      ~subheader: string=?,
+      ~subheaderTypographyProps: React.element=?,
+      ~title: string=?,
+      ~titleTypographyProps: React.element=?
     ) =>
     React.element =
     "default";
 };
 
 module CardMedia = {
-  // TODO: Implement
+  [@react.component] [@bs.module "@material-ui/core/CardMedia"]
+  external make:
+    (
+      ~children: React.element=?,
+      ~className: string=?,
+      ~component: string=?,
+      ~image: string=?,
+      ~src: string=?
+    ) =>
+    React.element =
+    "default";
 };
 
 module Checkbox = {
   [@react.component] [@bs.module "@material-ui/core/Checkbox"]
   external make:
     (
-      ~disabled: bool=?,
       ~checked: bool=?,
+      ~checkedIcon: React.element=?,
+      ~className: string=?,
+      ~color: MainWithDefaultColor.t=?,
+      ~disabled: bool=?,
+      ~disableRipple: bool=?,
+      ~icon: React.element=?,
+      ~id: string=?,
       ~indeterminate: bool=?,
-      ~value: string=?,
-      ~color: string=?,
-      ~onChange: ReactEvent.Synthetic.t => unit=?
+      ~indeterminateIcon: React.element=?,
+      ~inputProps: Js.t('a)=?,
+      ~inputRef: 'a=?,
+      ~onChange: ReactEvent.Synthetic.t => unit=?,
+      ~required: bool=?,
+      ~size: NoLargeSize.t=?,
+      ~type_: string=?,
+      ~value: 'b=?
     ) =>
     React.element =
     "default";
 };
 
 module Chip = {
-  // TODO: Implement
+  [@react.component] [@bs.module "@material-ui/core/Chip"]
+  external make:
+    (
+      ~avatar: React.element=?,
+      ~children: React.element=?,
+      ~className: string=?,
+      ~clickable: bool=?,
+      ~color: MainWithDefaultColor.t=?,
+      ~component: string=?,
+      ~deleteIcon: React.element=?,
+      ~disabled: bool=?,
+      ~icon: React.element=?,
+      ~label: string=?,
+      ~onDelete: unit => unit=?,
+      ~size: NoLargeSize.t=?,
+      ~variant: ChipVariant.t=?
+    ) =>
+    React.element =
+    "default";
 };
 
 module CircularProgress = {
-  // TODO: Implement
+  [@react.component] [@bs.module "@material-ui/core/CircularProgress"]
+  external make:
+    (
+      ~className: string=?,
+      ~clickable: bool=?,
+      ~color: MainWithInheritColor.t=?,
+      ~disableShrink: bool=?,
+      ~size: int=?, // Can be string
+      ~thickness: float=?,
+      ~value: int=?,
+      ~variant: CircularProgressVariant.t=?
+    ) =>
+    React.element =
+    "default";
 };
 
 module ClickAwayListener = {
-  // TODO: Implement
+  [@react.component] [@bs.module "@material-ui/core/ClickAwayListener"]
+  external make:
+    (
+      ~children: React.element=?,
+      ~mouseEvent: MouseEvent.t=?,
+      ~onClickAway: unit => unit=?,
+      ~touchEvent: TouchEvent.t=?
+    ) =>
+    React.element =
+    "default";
 };
 
 module Collapse = {
-  // TODO: Implement
+  [@react.component] [@bs.module "@material-ui/core/Collapse"]
+  external make:
+    (
+      ~children: React.element=?,
+      ~className: string=?,
+      ~collapsedHeight: int=?, // Can be string
+      ~component: string=?,
+      ~in_: bool=?,
+      ~timeout: int=?
+    ) => /* timeout can be { enter?: number, exit?: number } or "auto" */
+    React.element =
+    "default";
 };
 
 module Container = {
@@ -427,7 +530,7 @@ module FormLabel = {
     (
       ~children: React.element=?,
       ~className: string=?,
-      ~color: FormColor.t=?,
+      ~color: MainColor.t=?,
       ~component: string=?,
       ~disabled: bool=?,
       ~error: bool=?,
