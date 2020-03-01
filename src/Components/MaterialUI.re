@@ -1,10 +1,10 @@
 open MaterialUIDataType;
 
 [@bs.module "@material-ui/core/styles"]
-external createStyles: Js.Dict.t('a) => Js.Dict.t('a) = "createStyles";
+external createStyles: Js.Dict.t('a) => Js.Dict.t(string) = "createStyles";
 
 [@bs.module "@material-ui/core/styles"]
-external makeStyles: (Js.Dict.t(string), 'a) => Js.Dict.t(string) =
+external makeStyles: Js.Dict.t('a) => ((. 'props) => Js.Dict.t(string)) =
   "makeStyles";
 
 module Alert = {
