@@ -37,6 +37,7 @@ let make = () => {
   let madeStyle = makeStyles(styleObj);
   let classes = madeStyle(. 0);
 
+  <StylesProvider injectFirst=true>
   <Container id="container-id" className={classes->Js.Dict.unsafeGet("root")}>
     <Container id="container-button">
       <FormLabel> {string("Button")} </FormLabel>
@@ -61,5 +62,7 @@ let make = () => {
         <FormControlLabel control={<Radio size=Size.small />} label="Small" />
       </RadioGroup>
     </Container>
-  </Container>;
+  </Container>
+  </StylesProvider>
+  ;
 };

@@ -7,6 +7,18 @@ external createStyles: Js.Dict.t('a) => Js.Dict.t(string) = "createStyles";
 external makeStyles: Js.Dict.t('a) => ((. 'props) => Js.Dict.t(string)) =
   "makeStyles";
 
+module StylesProvider = {
+
+  [@react.component] [@bs.module "@material-ui/core/styles/StylesProvider"]
+  external make:
+    (
+      ~injectFirst: bool=?,
+      ~children: React.element
+    ) =>
+    React.element = "default";
+}
+
+
 module Alert = {
   // TODO: @material-ui/lab/Alert
 };
