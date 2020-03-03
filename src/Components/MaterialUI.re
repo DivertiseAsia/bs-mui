@@ -826,7 +826,18 @@ module Grid = {
 };
 
 module GridList = {
-  // TODO: Implement
+  [@react.component] [@bs.module "@material-ui/core/GridList"]
+  external make:
+    (
+      ~cellHeight: string=?,
+      ~children: React.element,
+      ~classes: string=?,
+      ~cols: int=?,
+      ~component: string=?,
+      ~spacing: int=?
+    ) =>
+    React.element =
+    "default";
 };
 
 module GridListTitle = {
