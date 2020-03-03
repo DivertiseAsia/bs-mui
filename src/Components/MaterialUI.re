@@ -770,7 +770,22 @@ module FormGroup = {
 };
 
 module FormHelperText = {
-  // TODO: Implement
+  [@react.component] [@bs.module "@material-ui/core/FormHelperText"]
+  external make: 
+  (
+    ~children: React.element=?, 
+    ~classes: string=?,
+    ~component: string=?,
+    ~disabled: bool=?,
+    ~error: bool=?,
+    ~filled: bool=?,
+    ~focused: bool=?,
+    ~margin: string=?,
+    ~required: bool=?,
+    ~variant: string=?
+  ) => 
+  React.element =
+    "default";
 };
 
 module FormLabel = {
