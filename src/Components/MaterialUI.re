@@ -656,7 +656,22 @@ module ExpansionPanelSummary = {
 };
 
 module Fab = {
-  // TODO: Implement
+  [@react.component] [@bs.module "@material-ui/core/Fab"]
+  external make:
+    (
+      ~children: React.element=?,
+      ~className: string=?,
+      ~color: string =?,
+      ~component: string=?,
+      ~disabled: bool=?,
+      ~disableFocusRipple: bool=?,
+      ~disableRipple: bool=?,
+      ~href: string=?,
+      ~size: string=?,
+      ~variant: string=?
+    ) =>
+    React.element =
+    "default";
 };
 
 module Fade = {
