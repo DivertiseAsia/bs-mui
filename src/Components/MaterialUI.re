@@ -13,7 +13,7 @@ module Alert = {
     (
       ~action: React.element=?,
       ~children: React.element=?,
-      ~className: string=?,
+      ~classes: string=?,
       ~color: Color.t=?,
       ~closeText: string=?,
       ~icon: React.element=?,
@@ -32,7 +32,7 @@ module AlertTitle = {
   external make:
     (
       ~children: React.element=?,
-      ~className: string=?
+      ~classes: string=?
     ) =>
     React.element =
     "default";
@@ -43,7 +43,7 @@ module AppBar = {
   external make:
     (
       ~children: React.element=?,
-      ~className: string=?,
+      ~classes: string=?,
       ~color: Color.t=?,
       ~position: Position.t=?,
       ~style: ReactDOMRe.Style.t=?
@@ -61,7 +61,7 @@ module Autocomplete = {
       ~autoSelect: bool=?,
       ~blurOnSelect: string=?,
       ~chipProps: Js.t('a)=?,
-      ~className: string=?,
+      ~classes: string=?,
       ~clearOnEscape: bool=?,
       ~clearText: string=?,
       ~closeIcon: React.element=?,
@@ -119,7 +119,7 @@ module Avatar = {
     (
       ~alt: string=?,
       ~children: React.element=?,
-      ~className: string=?,
+      ~classes: string=?,
       ~component: string=?,
       ~imgProps: Js.t('a)=?,
       ~sizes: string=?,
@@ -503,7 +503,7 @@ module Dialog = {
   external make:
     (
       ~children: React.element=?,
-      ~className: string=?,
+      ~classes: string=?,
       ~disableBackdropClick: bool=?,
       ~disableEscapeKeyDown: bool=?,
       ~fullScreen: bool=?,
@@ -606,7 +606,6 @@ module ExpansionPanel = {
   external make:
     (
       ~children: React.element=?,
-      ~className: string=?,
       ~classes: string=?,
       ~defaultExpanded: bool=?,
       ~disabled: bool=?,
@@ -624,7 +623,7 @@ module ExpansionPanelActions = {
   external make:
     (
       ~children: React.element=?,
-      ~className: string=?,
+      ~classes: string=?,
       ~disableSpacing: bool=?
     ) =>
     React.element =
@@ -636,7 +635,7 @@ module ExpansionPanelDetails = {
   external make:
     (
       ~children: React.element=?,
-      ~className: string=?
+      ~classes: string=?
     ) =>
     React.element =
     "default";
@@ -647,7 +646,7 @@ module ExpansionPanelSummary = {
   external make:
     (
       ~children: React.element=?,
-      ~className: string=?,
+      ~classes: string=?,
       ~expandIcon: React.element=?,
       ~iconButtonProps: Js.t('a)=?
     ) =>
@@ -660,7 +659,7 @@ module Fab = {
   external make:
     (
       ~children: React.element=?,
-      ~className: string=?,
+      ~classes: string=?,
       ~color: string =?,
       ~component: string=?,
       ~disabled: bool=?,
