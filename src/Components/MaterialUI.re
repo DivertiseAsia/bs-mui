@@ -643,7 +643,16 @@ module ExpansionPanelDetails = {
 };
 
 module ExpansionPanelSummary = {
-  // TODO: Implement
+  [@react.component] [@bs.module "@material-ui/core/ExpansionPanelSummary"]
+  external make:
+    (
+      ~children: React.element=?,
+      ~className: string=?,
+      ~expandIcon: React.element=?,
+      ~iconButtonProps: Js.t('a)=?
+    ) =>
+    React.element =
+    "default";
 };
 
 module Fab = {
