@@ -8,11 +8,34 @@ external makeStyles: (Js.Dict.t(string), 'a) => Js.Dict.t(string) =
   "makeStyles";
 
 module Alert = {
-  // TODO: @material-ui/lab/Alert
+  [@react.component] [@bs.module "@material-ui/lab/Alert"]
+  external make:
+    (
+      ~action: React.element=?,
+      ~children: React.element=?,
+      ~className: string=?,
+      ~color: Color.t=?,
+      ~closeText: string=?,
+      ~icon: React.element=?,
+      ~iconMapping: Js.t('a)=?,
+      ~onClose: unit => unit=?,
+      ~role: string=?,
+      ~severity: string=?,
+      ~variant: string=?
+    ) =>
+    React.element =
+    "default";
 };
 
 module AlertTitle = {
-  // TODO: @material-ui/lab/AlertTitle
+  [@react.component] [@bs.module "@material-ui/lab/AlertTitle"]
+  external make:
+    (
+      ~children: React.element=?,
+      ~className: string=?
+    ) =>
+    React.element =
+    "default";
 };
 
 module AppBar = {
@@ -411,23 +434,84 @@ module CssBaseline = {
 };
 
 module Dialog = {
-  // TODO: Implement
+  [@react.component] [@bs.module "@material-ui/core/Dialog"]
+  external make:
+    (
+      ~children: React.element=?,
+      ~className: string=?,
+      ~disableBackdropClick: bool=?,
+      ~disableEscapeKeyDown: bool=?,
+      ~fullScreen: bool=?,
+      ~fullWidth: bool=?,
+      ~maxWidth: 'a=?,
+      ~onBackdropClick: unit => unit=?,
+      ~onClose: unit => unit=?,
+      ~onEnter: unit => unit=?,
+      ~onEntered: unit => unit=?,
+      ~onEntering: unit => unit=?,
+      ~onEscapeKeyDown: unit => unit=?,
+      ~onExit: unit => unit=?,
+      ~onExited: unit => unit=?,
+      ~onExiting: unit => unit=?,
+      ~_open: bool=?,
+      ~paperComponent: string=?,
+      ~paperProps: Js.t('a)=?,
+      ~scroll: 'a=?,
+      ~transitionComponent: string=?,
+      ~transitionDuration: 'a=?,
+      ~transitionProps: Js.t('a)=?
+    ) =>
+    React.element =
+    "default";
 };
 
 module DialogActions = {
-  // TODO: Implement
+  [@react.component] [@bs.module "@material-ui/core/DialogActions"]
+  external make:
+    (
+      ~children: React.element=?,
+      ~className: string=?,
+      ~disableSpacing: bool=?
+    ) =>
+    React.element =
+    "default";
 };
 
 module DialogContent = {
-  // TODO: Implement
+  [@react.component] [@bs.module "@material-ui/core/DialogContent"]
+  external make:
+    (
+      ~children: React.element=?,
+      ~className: string=?,
+      ~dividers: bool=?
+    ) =>
+    React.element =
+    "default";
 };
 
 module DialogContentText = {
-  // TODO: Implement
+  [@react.component] [@bs.module "@material-ui/core/DialogContentText"]
+  external make:
+    (
+      ~id: string=?,
+      ~children: React.element=?,
+      ~className: string=?
+    ) =>
+    React.element =
+    "default";
 };
 
 module DialogTitle = {
-  // TODO: Implement
+  [@react.component] [@bs.module "@material-ui/core/DialogTitle"]
+  external make:
+    (
+      ~id: string=?,
+      ~children: React.element=?,
+      ~className: string=?,
+      ~disableTypography: bool=?
+    ) =>
+    React.element =
+    "default";
 };
 
 module Divider = {
