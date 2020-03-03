@@ -758,7 +758,15 @@ module FormControlLabel = {
 };
 
 module FormGroup = {
-  // TODO: Implement
+  [@react.component] [@bs.module "@material-ui/core/FormGroup"]
+  external make: 
+  (
+    ~children: React.element=?, 
+    ~classes: string=?,
+    ~row: bool=?
+  ) => 
+  React.element =
+    "default";
 };
 
 module FormHelperText = {
