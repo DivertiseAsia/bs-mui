@@ -132,7 +132,15 @@ module Avatar = {
 };
 
 module AvatarGroup = {
-  // TODO: @material-ui/lab/AvatarGroup
+  [@react.component] [@bs.module "@material-ui/lab/AvatarGroup"]
+  external make:
+    (
+      ~children: React.element=?,
+      ~className: string=?,
+      ~spacing: string=?
+    ) =>
+    React.element =
+    "default";
 };
 
 module Backdrop = {
