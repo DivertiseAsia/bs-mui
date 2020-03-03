@@ -602,7 +602,21 @@ module Drawer = {
 };
 
 module ExpansionPanel = {
-  // TODO: Implement
+  [@react.component] [@bs.module "@material-ui/core/ExpansionPanel"]
+  external make:
+    (
+      ~children: React.element=?,
+      ~className: string=?,
+      ~classes: string=?,
+      ~defaultExpanded: bool=?,
+      ~disabled: bool=?,
+      ~expanded: bool=?,
+      ~onChange: unit=>unit=?,
+      ~transitionComponent: string=?,
+      ~transitionProps: Js.t('a)=?
+    ) =>
+    React.element =
+    "default";
 };
 
 module ExpansionPanelActions = {
