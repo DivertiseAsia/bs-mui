@@ -841,7 +841,17 @@ module GridList = {
 };
 
 module GridListTitle = {
-  // TODO: Implement
+  [@react.component] [@bs.module "@material-ui/core/GridListTile"]
+  external make:
+    (
+      ~children: React.element=?,
+      ~classes: string=?,
+      ~cols: int=?,
+      ~component: string=?,
+      ~rows: int=?
+    ) =>
+    React.element =
+    "default";
 };
 
 module GridListTitleBar = {
