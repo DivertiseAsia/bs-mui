@@ -1006,11 +1006,56 @@ module Input = {
 };
 
 module InputAdornment = {
-  // TODO: Implement
+  [@react.component] [@bs.module "@material-ui/core/InputAdornment"]
+  external make:
+    (
+      ~children : React.element,
+      ~classes: string=?,
+      ~component: string=?,
+      ~disablePointerEvents: bool=?,
+      ~disableTypography: bool=?,
+      ~position: string=?,
+      ~variant: string=?
+    ) =>
+    React.element =
+    "default";
 };
 
 module InputBase = {
-  // TODO: Implement
+  [@react.component] [@bs.module "@material-ui/core/InputBase"]
+  external make:
+    (
+      ~autoComplete : string=?,
+      ~autoFocus: bool=?,
+      ~classes: string=?,
+      ~className: string=?,
+      ~color: string=?,
+      ~defaultValue: 'a=?,
+      ~disabled: bool=?,
+      ~endAdornment: React.element=?,
+      ~error: bool=?,
+      ~fullWidth: bool=?,
+      ~id: string=?,
+      ~inputComponent: string=?,
+      ~inputProps: Js.t('a)=?,
+      ~inputRef: 'b=?,
+      ~margin: string=?,
+      ~multiline: bool=?,
+      ~name: string=?,
+      ~onBlur: unit=>unit=?,
+      ~onChange: unit=>unit=?,
+      ~placeholder: string=?,
+      ~readOnly: bool=?,
+      ~required: bool=?,
+      ~rows: string=?,
+      ~rowsMax: string=?,
+      ~rowsMin: string=?,
+      ~startAdornment: React.element=?,
+      ~_type: string=?,
+      ~value: 'c=?
+    ) =>
+    React.element =
+    "default";
 };
 
 module InputLabel = {
