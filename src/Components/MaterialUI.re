@@ -1227,31 +1227,154 @@ module MenuList = {
 };
 
 module MobileStepper = {
-  // TODO: Implement
+  [@react.component] [@bs.module "@material-ui/core/MobileStepper"]
+  external make:
+    (
+      ~activeStep: int=?,
+      ~backButton: React.element=?,
+      ~classes: string=?,
+      ~linearProgressProps: Js.t('a)=?,
+      ~nextButton: React.element=?,
+      ~position: string=?,
+      ~steps: int,
+      ~variant: string=?
+    ) =>
+    React.element = "default";
 };
 
 module Modal = {
-  // TODO: Implement
+  [@react.component] [@bs.module "@material-ui/core/Modal"]
+  external make:
+    (
+      ~backdropComponent: string=?,
+      ~backdropProps: Js.t('a)=?,
+      ~children : string,
+      ~closeAfterTransition: bool=?,
+      ~container: 'a=?,
+      ~disableAutoFocus: bool=?,
+      ~disableBackdropClick: bool=?,
+      ~disableEnforceFocus: bool=?,
+      ~disableEscapeKeyDown: bool=?,
+      ~disablePortal: bool=?,
+      ~disableRestoreFocus: bool=?,
+      ~disableScrollLock: bool=?,
+      ~hideBackdrop: bool=?,
+      ~keepMounted: bool=?,
+      ~onBackdropClick: unit=>unit=?,
+      ~onClose: unit=>unit=?,
+      ~onEscapeKeyDown: unit=>unit=?,
+      ~onRendered: unit=>unit=?,
+      ~_open: bool
+    ) =>
+    React.element = "default";
 };
 
 module NativeSelect = {
-  // TODO: Implement
+  [@react.component] [@bs.module "@material-ui/core/NativeSelect"]
+  external make:
+    (
+      ~children : string,
+      ~classes: string=?,
+      ~iconComponent: string=?,
+      ~input: React.element=?,
+      ~inputProps: Js.t('a)=?,
+      ~onChange: unit=>unit=?,
+      ~value: 'a=?,
+      ~variant: string=?
+    ) =>
+    React.element = "default";
 };
 
 module NoSsr = {
-  // TODO: Implement
+  [@react.component] [@bs.module "@material-ui/core/NoSsr"]
+  external make:
+    (
+      ~children : string=?,
+      ~defer: bool=?,
+      ~fallback: React.element=?
+    ) =>
+    React.element = "default";
 };
 
 module OutlinedInput = {
-  // TODO: Implement
+  [@react.component] [@bs.module "@material-ui/core/OutlinedInput"]
+  external make:
+    (
+      ~autoComplete : string=?,
+      ~autoFocus: bool=?,
+      ~classes: string=?,
+      ~className: string=?,
+      ~color: string=?,
+      ~defaultValue: 'a=?,
+      ~disabled: bool=?,
+      ~endAdornment: React.element=?,
+      ~error: bool=?,
+      ~fullWidth: bool=?,
+      ~id: string=?,
+      ~inputComponent: string=?,
+      ~inputProps: Js.t('a)=?,
+      ~inputRef: 'b=?,
+      ~label: React.element=?,
+      ~labelWidth: int=?,
+      ~margin: string=?,
+      ~multiline: bool=?,
+      ~name: string=?,
+      ~notched: bool=?,
+      ~onChange: unit=>unit=?,
+      ~placeholder: string=?,
+      ~readOnly: bool=?,
+      ~required: bool=?,
+      ~rows: string=?,
+      ~rowsMax: string=?,
+      ~startAdornment: React.element=?,
+      ~_type: string=?,
+      ~value: 'c=?
+    ) =>
+    React.element = "default";
 };
 
 module Pagination = {
-  // TODO: Implement
+  [@react.component] [@bs.module "@material-ui/lab/Pagination"]
+  external make:
+    (
+      ~boundaryCount : int=?,
+      ~children: React.element=?,
+      ~classes: string=?,
+      ~color: string=?,
+      ~count: int=?,
+      ~defaultPage: int=?,
+      ~disabled: bool=?,
+      ~getItemAriaLabel: unit=>unit=?,
+      ~hideNextButton: bool=?,
+      ~hidePrevButton: bool=?,
+      ~onChange: unit=>unit=?,
+      ~page: int=?,
+      ~renderItem: unit=>unit=?,
+      ~shape: string=?,
+      ~showFirstButton: bool=?,
+      ~showLastButton: bool=?,
+      ~siblingCount: int=?,
+      ~size: string=?,
+      ~variant: string=?
+    ) =>
+    React.element = "default";
 };
 
 module PaginationItem = {
-  // TODO: Implement
+  [@react.component] [@bs.module "@material-ui/lab/PaginationItem"]
+  external make:
+    (
+      ~color: string=?,
+      ~component: string=?,
+      ~disabled: bool=?,
+      ~page: int=?,
+      ~selected: bool=?,
+      ~shape: string=?,
+      ~size: string=?,
+      ~_type: string=?,
+      ~variant: string=?
+    ) =>
+    React.element = "default";
 };
 
 module Paper = {
@@ -1267,15 +1390,69 @@ module Paper = {
 };
 
 module Popover = {
-  // TODO: Implement
+  [@react.component] [@bs.module "@material-ui/core/Popover"]
+  external make:
+    (
+      ~action: 'a=?,
+      ~anchorEl: 'a=?,
+      ~anchorOrigin: Js.t('a)=?,
+      ~anchorPosition: Js.t('a)=?,
+      ~anchorReference: string=?,
+      ~children: React.element=?,
+      ~classes: string=?,
+      ~container: 'a=?,
+      ~elevation: int=?,
+      ~getContentAnchorEl: unit=>unit=?,
+      ~marginThreshold: int=?,
+      ~onClose: unit=>unit=?,
+      ~onEnter: unit=>unit=?,
+      ~onEntered: unit=>unit=?,
+      ~onEntering: unit=>unit=?,
+      ~onExit: unit=>unit=?,
+      ~onExited: unit=>unit=?,
+      ~onExiting: unit=>unit=?,
+      ~_open: bool,
+      ~paperProps: Js.t('a)=?,
+      ~transformOrigin: Js.t('a)=?,
+      ~transitionComponent: string=?,
+      ~transitionDuration: string=?,
+      ~transitionProps: Js.t('a)=?
+    ) =>
+    React.element =
+    "default";
 };
 
 module Popper = {
-  // TODO: Implement
+  [@react.component] [@bs.module "@material-ui/core/Popper"]
+  external make:
+    (
+      ~anchorEl: 'a=?,
+      ~children: 'b,
+      ~container: 'c=?,
+      ~disablePortal: bool=?,
+      ~keepMounted: bool=?,
+      ~modifiers: 'd=?,
+      ~_open: bool,
+      ~placement: string=?,
+      ~popperOptions: Js.t('a)=?,
+      ~popperRef: 'e=?,
+      ~transition: bool=?
+    ) =>
+    React.element =
+    "default";
 };
 
 module Portal = {
-  // TODO: Implement
+  [@react.component] [@bs.module "@material-ui/core/Portal"]
+  external make:
+    (
+      ~children: React.element=?,
+      ~container: 'a=?,
+      ~disablePortal: bool=?,
+      ~onRendered: unit=>unit=?
+    ) =>
+    React.element =
+    "default";
 };
 
 module Radio = {
@@ -1345,11 +1522,25 @@ module Rating = {
 };
 
 module RootRef = {
-  // TODO: Implement
+  [@react.component] [@bs.module "@material-ui/core/RootRef"]
+  external make:
+    (
+      ~children: React.element=?,
+      ~rootRef : 'a=?
+    ) =>
+    React.element =
+    "default";
 };
 
 module ScopedCssBaseline = {
-  // TODO: Implement
+  [@react.component] [@bs.module "@material-ui/core/ScopedCssBaseline"]
+  external make:
+    (
+      ~children: React.element=?,
+      ~classes : string=?
+    ) =>
+    React.element =
+    "default";
 };
 
 module Select = {
@@ -1383,79 +1574,338 @@ module Select = {
 };
 
 module Skeleton = {
-  // TODO: Implement
+  [@react.component] [@bs.module "@material-ui/lab/Skeleton"]
+  external make:
+    (
+      ~animation: string=?,
+      ~classes: string=?,
+      ~component: string=?,
+      ~height: string=?,
+      ~variant: string=?,
+      ~width: string=?
+    ) =>
+    React.element =
+    "default";
 };
 
 module Slide = {
-  // TODO: Implement
+  [@react.component] [@bs.module "@material-ui/core/Slide"]
+  external make:
+    (
+      ~children: React.element=?,
+      ~direction: string=?,
+      ~_in: bool=?,
+      ~timeout: Js.t('a)=?
+    ) =>
+    React.element =
+    "default";
 };
 
 module Slider = {
-  // TODO: Implement
+  [@react.component] [@bs.module "@material-ui/core/Slider"]
+  external make:
+    (
+      ~aria_label: string=?,
+      ~aria_labelledby: string=?,
+      ~aria_valuetext: string=?,
+      ~classes: string=?,
+      ~color: string=?,
+      ~component: string=?,
+      ~defaultValue: 'a=?,
+      ~disabled: bool=?,
+      ~getAriaLabel: unit=>unit=?,
+      ~getAriaValueText: unit=>unit=?,
+      ~marks: 'b=?,
+      ~max: int=?,
+      ~min: int=?,
+      ~name: string=?,
+      ~onChange: unit=>unit=?,
+      ~onChangeCommitted: unit=>unit=?,
+      ~orientation: string=?,
+      ~scale: unit=>unit=?,
+      ~step: int=?,
+      ~thumbComponent: string=?,
+      ~track: string=?,
+      ~value: 'c=?,
+      ~valueLabelComponent: string=?,
+      ~valueLabelDisplay: string=?,
+      ~valueLabelFormat: 'd=?
+    ) =>
+    React.element =
+    "default";
 };
 
 module Snackbar = {
-  // TODO: Implement
+  [@react.component] [@bs.module "@material-ui/core/Snackbar"]
+  external make:
+    (
+      ~action: React.element=?,
+      ~anchorOrigin: Js.t('a)=?,
+      ~autoHideDuration: int=?,
+      ~children: React.element=?,
+      ~classes: string=?,
+      ~clickAwayListenerProps: Js.t('a)=?,
+      ~contentProps: Js.t('a)=?,
+      ~disableWindowBlurListener: bool=?,
+      ~key: 'a=?,
+      ~message: React.element=?,
+      ~onClose: unit=>unit=?,
+      ~onEnter: unit=>unit=?,
+      ~onEntered: unit=>unit=?,
+      ~onEntering: unit=>unit=?,
+      ~onExit: unit=>unit=?,
+      ~onExited: unit=>unit=?,
+      ~onExiting: unit=>unit=?,
+      ~_open: bool=?
+    ) =>
+    React.element =
+    "default";
 };
 
 module SnackbarContent = {
-  // TODO: Implement
+  [@react.component] [@bs.module "@material-ui/core/SnackbarContent"]
+  external make:
+    (
+      ~action: React.element=?,
+      ~classes: string=?,
+      ~message: React.element=?,
+      ~role: string=?
+    ) =>
+    React.element =
+    "default";
 };
 
 module SpeedDial = {
-  // TODO: Implement
+  [@react.component] [@bs.module "@material-ui/lab/SpeedDial"]
+  external make:
+    (
+      ~ariaLabel: string,
+      ~children: React.element=?,
+      ~classes: string=?,
+      ~direction: string=?,
+      ~fabProps: Js.t('a)=?,
+      ~hidden: bool=?,
+      ~icon: React.element=?,
+      ~onClose: unit=>unit=?,
+      ~onOpen: unit=>unit=?,
+      ~_open: bool,
+      ~openIcon: React.element=?,
+      ~transitionComponent: string=?,
+      ~transitionDuration: Js.t('a)=?,
+      ~transitionProps: Js.t('a)=?
+    ) =>
+    React.element =
+    "default";
 };
 
 module SpeedDialAction = {
-  // TODO: Implement
+  [@react.component] [@bs.module "@material-ui/lab/SpeedDialAction"]
+  external make:
+    (
+      ~classes: string=?,
+      ~delay: int=?,
+      ~fabProps: Js.t('a)=?,
+      ~icon: React.element=?,
+      ~tooltipClasses: string=?,
+      ~tooltipOpen: bool=?,
+      ~tooltipPlacement: string,
+      ~tooltipTitle: React.element=?
+    ) =>
+    React.element =
+    "default";
 };
 
 module SpeedDialIcon = {
-  // TODO: Implement
+  [@react.component] [@bs.module "@material-ui/lab/SpeedDialIcon"]
+  external make:
+    (
+      ~classes: string=?,
+      ~icon: React.element=?,
+      ~openIcon: React.element=?
+    ) =>
+    React.element =
+    "default";
 };
 
 module Step = {
-  // TODO: Implement
+  [@react.component] [@bs.module "@material-ui/core/Step"]
+  external make:
+    (
+      ~active: bool=?,
+      ~children: React.element=?,
+      ~classes: string=?,
+      ~completed: bool=?,
+      ~disabled: bool=?,
+      ~expanded: bool=?
+    ) =>
+    React.element =
+    "default";
 };
 
 module StepButton = {
-  // TODO: Implement
+  [@react.component] [@bs.module "@material-ui/core/StepButton"]
+  external make:
+    (
+      ~children: React.element=?,
+      ~classes: string=?,
+      ~icon: React.element=?,
+      ~optional: React.element=?
+    ) =>
+    React.element =
+    "default";
 };
 
 module StepConnector = {
-  // TODO: Implement
+  [@react.component] [@bs.module "@material-ui/core/StepConnector"]
+  external make:
+    (
+      ~classes: string=?
+    ) =>
+    React.element =
+    "default";
 };
 
 module StepContent = {
-  // TODO: Implement
+  [@react.component] [@bs.module "@material-ui/core/StepContent"]
+  external make:
+    (
+      ~children: React.element=?,
+      ~classes: string=?,
+      ~transitionComponent: string=?,
+      ~transitionDuration: string=?,
+      ~transitionProps: Js.t('a)=?
+    ) =>
+    React.element =
+    "default";
 };
 
 module StepIcon = {
-  // TODO: Implement
+  [@react.component] [@bs.module "@material-ui/core/StepIcon"]
+  external make:
+    (
+      ~active: bool=?,
+      ~classes: string=?,
+      ~completed: bool=?,
+      ~error: bool=?,
+      ~icon: React.element
+    ) =>
+    React.element =
+    "default";
 };
 
 module StepLabel = {
-  // TODO: Implement
+  [@react.component] [@bs.module "@material-ui/core/StepLabel"]
+  external make:
+    (
+      ~children: React.element=?,
+      ~classes: string=?,
+      ~disabled: bool=?,
+      ~error: bool=?,
+      ~icon: React.element=?,
+      ~optional: React.element=?,
+      ~stepIconComponent: string=?,
+      ~stepIconProps: Js.t('a)=?
+    ) =>
+    React.element =
+    "default";
 };
 
 module Stepper = {
-  // TODO: Implement
+  [@react.component] [@bs.module "@material-ui/core/Stepper"]
+  external make:
+    (
+      ~activeStep: int=?,
+      ~alternativeLabel: bool=?,
+      ~children: React.element,
+      ~classes: string=?,
+      ~connector: React.element=?,
+      ~nonLinear: bool=?,
+      ~orientation: string=?
+    ) =>
+    React.element =
+    "default";
 };
 
 module SvgIcon = {
-  // TODO: Implement
+  [@react.component] [@bs.module "@material-ui/core/SvgIcon"]
+  external make:
+    (
+      ~children: React.element=?,
+      ~classes: string=?,
+      ~color: string=?,
+      ~component: string=?,
+      ~fontSize: string=?,
+      ~htmlColor: string=?,
+      ~shapeRendering: string=?,
+      ~titleAccess: string=?,
+      ~viewBox: string=?
+    ) =>
+    React.element =
+    "default";
 };
 
 module SwipeableDrawer = {
-  // TODO: Implement
+  [@react.component] [@bs.module "@material-ui/core/SwipeableDrawer"]
+  external make:
+    (
+      ~children: React.element=?,
+      ~disableBackdropTransition: bool=?,
+      ~disableDiscovery: bool=?,
+      ~disableSwipeToOpen: bool=?,
+      ~hysteresis: int=?,
+      ~minFlingVelocity: int=?,
+      ~onClose: unit=>unit,
+      ~onOpen: unit=>unit,
+      ~_open: bool,
+      ~swipeAreaProps: Js.t('a)=?,
+      ~swipeAreaWidth: int=?,
+      ~transitionDuration: Js.t('a)=?
+    ) =>
+    React.element =
+    "default";
 };
 
 module Switch = {
-  // TODO: Implement
+  [@react.component] [@bs.module "@material-ui/core/Switch"]
+  external make:
+    (
+      ~checked: bool=?,
+      ~checkedIcon: React.element=?,
+      ~classes: string=?,
+      ~color: string=?,
+      ~disabled: bool=?,
+      ~disableRipple: bool=?,
+      ~edge: string=?,
+      ~icon: React.element=?,
+      ~id: string=?,
+      ~inputProps: Js.t('a)=?,
+      ~inputRef: 'a=?,
+      ~onChange: unit=>unit=?,
+      ~required: bool=?,
+      ~size: string=?,
+      ~_type: string=?,
+      ~value: 'b=?
+    ) =>
+    React.element =
+    "default";
 };
 
 module Tab = {
-  // TODO: Implement
+  [@react.component] [@bs.module "@material-ui/core/Tab"]
+  external make:
+    (
+      ~children: React.element=?,
+      ~classes: string=?,
+      ~disabled: bool=?,
+      ~disableFocusRipple: bool=?,
+      ~disableRipple: bool=?,
+      ~icon: React.element=?,
+      ~label: string=?,
+      ~value: 'b=?,
+      ~wrapped: bool=?
+    ) =>
+    React.element =
+    "default";
 };
 
 module Table = {
@@ -1496,7 +1946,15 @@ module TableCell = {
 };
 
 module TableFooter = {
-  // TODO: Implement
+  [@react.component] [@bs.module "@material-ui/core/TableFooter"]
+  external make:
+    (
+      ~children: React.element=?,
+      ~classes: string=?,
+      ~component: string=?
+    ) =>
+    React.element =
+    "default";
 };
 
 module TableHead = {
@@ -1546,11 +2004,41 @@ module TableRow = {
 };
 
 module TableSortLabel = {
-  // TODO: Implement
+  [@react.component] [@bs.module "@material-ui/core/TableSortLabel"]
+  external make:
+    (
+      ~active: bool=?,
+      ~children: React.element=?,
+      ~classes: string=?,
+      ~direction: string=?,
+      ~hideSortIcon: bool=?,
+      ~iconComponent: string=?
+    ) =>
+    React.element =
+    "default";
 };
 
 module Tabs = {
-  // TODO: Implement
+  [@react.component] [@bs.module "@material-ui/core/Tabs"]
+  external make:
+    (
+      ~action: 'a=?,
+      ~centered: bool=?,
+      ~children: string=?,
+      ~classes: string=?,
+      ~component: string=?,
+      ~indicatorColor: string=?,
+      ~onChange: unit=>unit=?,
+      ~orientation: string=?,
+      ~scrollButtonComponent: string=?,
+      ~scrollButtons: string=?,
+      ~tabIndicatorProps: Js.t('a)=?,
+      ~textColor: string=?,
+      ~value: 'a=?,
+      ~variant: string=?
+    ) =>
+    React.element =
+    "default";
 };
 
 module TabTextareaAutosizes = {
