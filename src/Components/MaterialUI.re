@@ -1089,7 +1089,17 @@ module InputLabel = {
 };
 
 module LinearProgress = {
-  // TODO: Implement
+  [@react.component] [@bs.module "@material-ui/core/LinearProgress"]
+  external make:
+    (
+      ~classes: string=?,
+      ~color: string=?,
+      ~value: int=?,
+      ~valueBuffer: int=?,
+      ~variant: string=?
+    ) =>
+    React.element =
+    "default";
 };
 
 module Link = {
@@ -1151,7 +1161,28 @@ module ListSubheader = {
 };
 
 module Menu = {
-  // TODO: Implement
+  [@react.component] [@bs.module "@material-ui/core/Menu"]
+  external make:
+    (
+      ~anchorEl: 'a=?,
+      ~autoFocus: bool=?,
+      ~children: React.element=?,
+      ~classes: string=?,
+      ~disableAutoFocusItem: bool=?,
+      ~menuListProps: Js.t('a)=?,
+      ~onClose: unit=>unit=?,
+      ~onEnter: unit=>unit=?,
+      ~onEntered: unit=>unit=?,
+      ~onEntering: unit=>unit=?,
+      ~onExit: unit=>unit=?,
+      ~onExited: unit=>unit=?,
+      ~onExiting: unit=>unit=?,
+      ~_open: bool,
+      ~popoverClasses: string=?,
+      ~transitionDuration: string=?,
+      ~variant: string=?
+    ) =>
+    React.element = "default";
 };
 
 module MenuItem = {
