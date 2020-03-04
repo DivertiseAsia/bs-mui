@@ -1135,7 +1135,14 @@ module ListItem = {
 };
 
 module ListItemAvatar = {
-  // TODO: Implement
+  [@react.component] [@bs.module "@material-ui/core/ListItemAvatar"]
+  external make:
+    (
+      ~children: React.element,
+      ~classes: string=?
+    ) =>
+    React.element =
+    "default";
 };
 
 module ListItemIcon = {
@@ -1144,7 +1151,14 @@ module ListItemIcon = {
 };
 
 module ListItemSecondaryAction = {
-  // TODO: Implement
+  [@react.component] [@bs.module "@material-ui/core/ListItemSecondaryAction"]
+  external make:
+    (
+      ~children: React.element,
+      ~classes: string=?
+    ) =>
+    React.element =
+    "default";
 };
 
 module ListItemText = {
@@ -1200,7 +1214,16 @@ module MenuItem = {
 };
 
 module MenuList = {
-  // TODO: Implement
+  [@react.component] [@bs.module "@material-ui/core/MenuList"]
+  external make:
+    (
+      ~autoFocus: bool=?,
+      ~autoFocusItem: bool=?,
+      ~children: React.element=?,
+      ~disableListWrap: bool=?,
+      ~variant: string=?
+    ) =>
+    React.element = "default";
 };
 
 module MobileStepper = {
