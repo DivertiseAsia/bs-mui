@@ -206,3 +206,306 @@ module Select {
             children,
         );       
 };
+
+module Box {
+    open MaterialUI.Box;
+
+    let component = ReasonReact.statelessComponent("Box");
+
+    let make = (
+        ~component=?,
+        ~bgcolor=?,
+        ~color=?,
+        ~p=?,
+        ~m=?,
+        ~mt=?,
+        children) => 
+        ReasonReactCompat.wrapReactForReasonReact(
+            make,
+            makeProps(
+                ~component?,
+                ~bgcolor?,
+                ~color?,
+                ~p?,
+                ~m?,
+                ~mt?,
+                ~children=children |> React.array, ()),
+            children,
+        );       
+};
+
+module Card {
+    open MaterialUI.Card;
+
+    let component = ReasonReact.statelessComponent("Card");
+
+    let make = (
+        ~children=?,
+        ~className=?, 
+        ~raised=?) => 
+        ReasonReactCompat.wrapReactForReasonReact(
+            make,
+            makeProps(
+                ~children?,
+                ~className?, 
+                ~raised?,
+                ()),
+        );       
+};
+
+module CardActionArea {
+    open MaterialUI.CardActionArea;
+
+    let component = ReasonReact.statelessComponent("CardActionArea");
+
+    let make = (
+        ~children=?,
+        ~className=?) => 
+        ReasonReactCompat.wrapReactForReasonReact(
+            make,
+            makeProps(
+                ~children?,
+                ~className?,
+                ()),
+        );       
+};
+
+module CardActions {
+    open MaterialUI.CardActions;
+
+    let component = ReasonReact.statelessComponent("CardActions");
+
+    let make = (
+        ~children=?,
+        ~className=?,
+        ~disableSpacing=?) => 
+        ReasonReactCompat.wrapReactForReasonReact(
+            make,
+            makeProps(
+                ~children?,
+                ~className?,
+                ~disableSpacing?,
+                ()),
+        );       
+};
+
+module CardContent {
+    open MaterialUI.CardContent;
+
+    let component = ReasonReact.statelessComponent("CardContent");
+
+    let make = (
+        ~children=?,
+        ~className=?,
+        ~component=?,
+        ~padding=?,
+        ~style=?) => 
+        ReasonReactCompat.wrapReactForReasonReact(
+            make,
+            makeProps(
+                ~children?,
+                ~className?,
+                ~component?,
+                ~padding?,
+                ~style?,
+                ()),
+        );       
+};
+
+module CardHeader {
+    open MaterialUI.CardHeader;
+
+    let component = ReasonReact.statelessComponent("CardHeader");
+
+    let make = (
+        ~action=?,
+        ~avatar=?,
+        ~children=?,
+        ~className=?,
+        ~component=?,
+        ~disableTypography=?,
+        ~subheader=?,
+        ~subheaderTypographyProps=?,
+        ~title=?,
+        ~titleTypographyProps=?) => 
+        ReasonReactCompat.wrapReactForReasonReact(
+            make,
+            makeProps(
+                ~action?,
+                ~avatar?,
+                ~children?,
+                ~className?,
+                ~component?,
+                ~disableTypography?,
+                ~subheader?,
+                ~subheaderTypographyProps?,
+                ~title?,
+                ~titleTypographyProps?,
+                ()),
+        );       
+};
+
+module CardMedia {
+    open MaterialUI.CardMedia;
+
+    let component = ReasonReact.statelessComponent("CardMedia");
+
+    let make = (
+        ~children=?,
+        ~className=?,
+        ~component=?,
+        ~image=?,
+        ~src=?) => 
+        ReasonReactCompat.wrapReactForReasonReact(
+            make,
+            makeProps(
+                ~children?,
+                ~className?,
+                ~component?,
+                ~image?,
+                ~src?,
+                ()),
+        );       
+};
+
+module Checkbox {
+    open MaterialUI.Checkbox;
+
+    let component = ReasonReact.statelessComponent("Checkbox");
+
+    let make = (
+        ~checked=?,
+        ~checkedIcon=?,
+        ~className=?,
+        ~color=?,
+        ~disabled=?,
+        ~disableRipple=?,
+        ~icon=?,
+        ~id=?,
+        ~indeterminate=?,
+        ~indeterminateIcon=?,
+        ~inputProps=?,
+        ~inputRef=?,
+        ~onChange=?,
+        ~required=?,
+        ~size=?,
+        ~type_=?,
+        ~value=?) => 
+        ReasonReactCompat.wrapReactForReasonReact(
+            make,
+            makeProps(
+                ~checked?,
+                ~checkedIcon?,
+                ~className?,
+                ~color?,
+                ~disabled?,
+                ~disableRipple?,
+                ~icon?,
+                ~id?,
+                ~indeterminate?,
+                ~indeterminateIcon?,
+                ~inputProps?,
+                ~inputRef?,
+                ~onChange?,
+                ~required?,
+                ~size?,
+                ~type_?,
+                ~value?,
+                ()),
+        );       
+};
+
+module Grid {
+    open MaterialUI.Grid;
+
+    let component = ReasonReact.statelessComponent("Grid");
+
+    let make = (
+        ~selectProps=?,
+        ~item=?,
+        ~container=?,
+        ~spacing=?,
+        ~wrap=?,
+        ~item=?,
+        ~justify=?,
+        ~zeroMinWidth=?,
+        ~xs=?,
+        ~xl=?,
+        ~sm=?,
+        ~md=?,
+        ~children=?) => 
+        ReasonReactCompat.wrapReactForReasonReact(
+            make,
+            makeProps(
+                ~selectProps?,
+                ~item?,
+                ~container?,
+                ~spacing?,
+                ~wrap?,
+                ~item?,
+                ~justify?,
+                ~zeroMinWidth?,
+                ~xs?,
+                ~xl?,
+                ~sm?,
+                ~md?,
+                ~children?,
+                ()),
+        );       
+};
+
+module Paper {
+    open MaterialUI.Paper;
+
+    let component = ReasonReact.statelessComponent("Paper");
+
+    let make = (
+        ~className=?,
+        ~style=?,
+        ~children=?,
+        ~elevation=?,
+        ~square=?,
+        ~variant=?) => 
+        ReasonReactCompat.wrapReactForReasonReact(
+            make,
+            makeProps(
+                ~className?,
+                ~style?,
+                ~children?,
+                ~elevation?,
+                ~square?,
+                ~variant?,
+                ()),
+        );       
+};
+
+module Avatar {
+    open MaterialUI.Avatar;
+
+    let component = ReasonReact.statelessComponent("Avatar");
+
+    let make = (
+        ~alt=?,
+        ~children=?,
+        ~classes=?,
+        ~component=?,
+        ~imgProps=?,
+        ~sizes=?,
+        ~src=?,
+        ~srcSet=?,
+        ~variant=?) => 
+        ReasonReactCompat.wrapReactForReasonReact(
+            make,
+            makeProps(
+                ~alt?,
+                ~children?,
+                ~classes?,
+                ~component?,
+                ~imgProps?,
+                ~sizes?,
+                ~src?,
+                ~srcSet?,
+                ~variant?,
+                ()),
+        );       
+};
