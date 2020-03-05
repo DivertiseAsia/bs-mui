@@ -91,6 +91,21 @@ test("Test alert component",()=>
     |> toMatchSnapshot
 )
 
+test("Test appbar component",()=>
+  <AppBar position="static">
+    <Toolbar>
+      <IconButton edge="start" color="inherit" />
+      <Typography variant="h6">
+        {string("News")}
+      </Typography>
+    </Toolbar>
+  </AppBar>
+  |> render
+  |> container
+  |> expect
+  |> toMatchSnapshot
+)
+
 test("Test autoComplete component", () =>
   <Autocomplete
     id="autocomplete"
