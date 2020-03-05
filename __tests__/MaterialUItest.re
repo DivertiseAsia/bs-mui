@@ -118,3 +118,22 @@ test("Test avatar component",()=>
     |> toMatchSnapshot
 )
 
+test("Test ExpantionPanel component",()=>
+  <ExpansionPanel>
+      <ExpansionPanelSummary
+      >
+        <Typography>{string("Expansion Panel 1")}</Typography>
+      </ExpansionPanelSummary>
+      <ExpansionPanelDetails>
+        <Typography>
+          {string("Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse malesuada lacus ex,
+          sit amet blandit leo lobortis eget.")}
+        </Typography>
+      </ExpansionPanelDetails>
+    </ExpansionPanel>
+    |> render
+    |> container
+    |> expect
+    |> toMatchSnapshot
+)
+

@@ -2101,12 +2101,12 @@ module Typography = {
   external make:
     (
       ~component: string=?,
-      ~variant: string,
+      ~variant: string=?,
       ~color: string=?,
       ~align: string=?,
       ~className: string=?,
       ~noWrap: bool=?,
-      ~children: React.element
+      ~children: React.element=?
     ) =>
     React.element =
     "default";
