@@ -228,6 +228,7 @@ module Box = {
   [@react.component] [@bs.module "@material-ui/core/Box"]
   external make:
     (
+      ~component: string=?,
       ~bgcolor: string=?,
       ~color: string=?,
       ~p: int=?,
@@ -827,7 +828,10 @@ module Grid = {
       ~item: bool=?,
       ~container: bool=?,
       ~spacing: int=?,
+      ~wrap: string=?,
       ~item: bool=?,
+      ~justify: string=?,
+      ~zeroMinWidth: bool=?,
       ~xs: 'b=?,
       ~xl: 'b=?,
       ~sm: 'b=?,
@@ -1379,7 +1383,10 @@ module Paper = {
     (
       ~className: string=?,
       ~style: ReactDOMRe.Style.t=?,
-      ~children: React.element=?
+      ~children: React.element=?,
+      ~elevation: int=?,
+      ~square: bool=?,
+      ~variant: string=?
     ) =>
     React.element =
     "default";

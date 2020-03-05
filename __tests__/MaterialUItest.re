@@ -162,3 +162,68 @@ test("Test ExpantionPanel component",()=>
     |> toMatchSnapshot
 )
 
+test("Test Box component",()=>
+    <Box component="span" m={1}>
+      <Button>{string("Large Button")}</Button>
+    </Box>
+    |> render
+    |> container
+    |> expect
+    |> toMatchSnapshot
+)
+
+test("Test Grid and Paper component",()=>
+  <Grid spacing={3}>
+    <Grid item=true xs={12}>
+      <Paper >{string("xs=12")}</Paper>
+    </Grid>
+    <Grid item=true xs={6}>
+      <Paper >{string("xs=6")}</Paper>
+    </Grid>
+    <Grid item=true xs={6}>
+      <Paper >{string("xs=6")}</Paper>
+    </Grid>
+  </Grid>
+  |> render
+  |> container
+  |> expect
+  |> toMatchSnapshot
+)
+
+test("Test checkbox component",()=>
+    <Checkbox
+        checked=true
+        value="primary"
+        inputProps={ "aria-label": "primary checkbox" }
+      />
+    |> render
+    |> container
+    |> expect
+    |> toMatchSnapshot
+)
+
+test("Test card component",()=>
+  <Card>
+    <CardContent>
+      <Typography color="textSecondary">
+        {string("Word of the Day")}
+      </Typography>
+      <Typography variant="h5" component="h2">
+        {string("be{bull}nev{bull}o{bull}lent")}
+      </Typography>
+      <Typography color="textSecondary">
+        {string("adjective")}
+      </Typography>
+      <Typography variant="body2" component="p">
+        {string("well meaning and kindly.")}
+      </Typography>
+    </CardContent>
+    <CardActions>
+      <Button size="small">{string("Learn More")}</Button>
+    </CardActions>
+  </Card>
+  |> render
+  |> container
+  |> expect
+  |> toMatchSnapshot
+)

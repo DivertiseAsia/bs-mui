@@ -44,7 +44,7 @@ let make = () => {
 
   <StylesProvider injectFirst=true>
   <Container id="container-id" className={classes->Js.Dict.unsafeGet("root")}>
-    <Container id="container-button">
+    /* <Container id="container-button">
       <FormLabel> {string("Button")} </FormLabel>
       <Button> {string("Button")} </Button>
       <Button size=Size.large> {string("Large Button")} </Button>
@@ -91,7 +91,7 @@ let make = () => {
       <Alert severity="error">
         {string("This is an error alert")}
       </Alert>
-    </Container>
+    </Container> */
     /* <Autocomplete
       autoComplete=true
       options= [
@@ -100,7 +100,7 @@ let make = () => {
         { "title": "The Dark Knight", "year": 2008 }]
       renderInput = {params => <TextField label="Combo box" variant="outlined" />}
     ></Autocomplete> */
-    <AvatarGroup>
+    /* <AvatarGroup>
       <Avatar alt="Remy Sharp" src="https://www.w3schools.com/howto/img_avatar2.png" />
       <Avatar alt="Travis Howard" src="https://www.w3schools.com/howto/img_avatar2.png" />
       <Avatar alt="Cindy Baker" src="https://www.w3schools.com/howto/img_avatar2.png" />
@@ -126,10 +126,52 @@ let make = () => {
           {string("News")}
         </Typography>
       </Toolbar>
-    </AppBar>
+    </AppBar> */
     <Backdrop _open=false>
       <CircularProgress color="inherit" />
     </Backdrop>
+    
+    <Box component="span" m={1}>
+      <Button>{string("Large Button")}</Button>
+    </Box>
+
+    <Grid spacing={3}>
+      <Grid item=true xs={12}>
+        <Paper >{string("xs=12")}</Paper>
+      </Grid>
+      <Grid item=true xs={6}>
+        <Paper >{string("xs=6")}</Paper>
+      </Grid>
+      <Grid item=true xs={6}>
+        <Paper >{string("xs=6")}</Paper>
+      </Grid>
+    </Grid>
+
+    <Checkbox
+        checked=true
+        value="primary"
+        inputProps={ "aria-label": "primary checkbox" }
+      />
+
+    <Card>
+      <CardContent>
+        <Typography color="textSecondary">
+          {string("Word of the Day")}
+        </Typography>
+        <Typography variant="h5" component="h2">
+          {string("be{bull}nev{bull}o{bull}lent")}
+        </Typography>
+        <Typography color="textSecondary">
+          {string("adjective")}
+        </Typography>
+        <Typography variant="body2" component="p">
+          {string("well meaning and kindly.")}
+        </Typography>
+      </CardContent>
+      <CardActions>
+        <Button size="small">{string("Learn More")}</Button>
+      </CardActions>
+    </Card>
   </Container>
   </StylesProvider>
   ;
