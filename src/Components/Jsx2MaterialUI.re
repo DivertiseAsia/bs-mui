@@ -48,6 +48,30 @@ module Button {
         );       
 };
 
+module Container = {
+    open MaterialUI.Container;
+    let component = ReasonReact.statelessComponent("Container");
+
+    let make = (
+        ~id=?,
+        ~maxWidth=?,
+        ~component=?,
+        ~className=?,
+        children
+      ) => ReasonReactCompat.wrapReactForReasonReact(
+        make,
+        makeProps(
+          ~id?,
+          ~maxWidth?,
+          ~component?,
+          ~className?,
+          ~children=children |> React.array,
+          (),
+        ),
+        children,
+      );
+};
+
 module InputLabel = {
     open MaterialUI.InputLabel;
     let component = ReasonReact.statelessComponent("InputLabel");
