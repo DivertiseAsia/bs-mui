@@ -133,6 +133,16 @@ test("Test avatar component",()=>
     |> toMatchSnapshot
 )
 
+test("Test Backdrop component",()=>
+  <Backdrop _open=false>
+    <CircularProgress color="inherit" />
+  </Backdrop>
+  |> render
+  |> container
+  |> expect
+  |> toMatchSnapshot
+)
+
 test("Test ExpantionPanel component",()=>
   <ExpansionPanel>
       <ExpansionPanelSummary
