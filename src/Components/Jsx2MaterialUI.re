@@ -106,6 +106,48 @@ module MenuItem {
         );       
 }
 
+module TextField {
+    open MaterialUI.TextField;
+    let component = ReasonReact.statelessComponent("TextField");
+
+    let make = (
+        ~id=?,
+        ~label=?,
+        ~name=?,
+        ~helperText=?,
+        ~variant=?,
+        ~margin=?,
+        ~required=?,
+        ~fullWidth=?,
+        ~autoComplete=?,
+        ~autoFocus=?,
+        ~defaultValue=?,
+        ~value=?,
+        ~required=?,
+        ~onChange=?,
+        ~type_=?) => 
+    ReasonReactCompat.wrapReactForReasonReact(
+        make,
+        makeProps(
+            ~id?,
+            ~label?,
+            ~name?,
+            ~helperText?,
+            ~variant?,
+            ~margin?,
+            ~required?,
+            ~fullWidth?,
+            ~autoComplete?,
+            ~autoFocus?,
+            ~defaultValue?,
+            ~value?,
+            ~required?,
+            ~onChange?,
+            ~type_?,
+            ()),
+    );   
+}
+
 module Select {
     open MaterialUI.Select;
 

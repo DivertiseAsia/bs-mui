@@ -92,10 +92,10 @@ let make = () => {
     //   {string("This is an info alert — check it out!")}
     // </Alert>
     <Container id="container-alert">
-      <Alert severity="error">
+      //<Alert severity="error">
         // <AlertTitle>{string("Error")}</AlertTitle>
         {string("This is an error alert")}
-      </Alert>
+      //</Alert>
     </Container>
   </Container>
   </StylesProvider>

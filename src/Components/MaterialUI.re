@@ -2044,16 +2044,17 @@ module TextField = {
   [@react.component] [@bs.module "@material-ui/core/TextField"]
   external make:
     (
+      ~id: string=?,
+      ~label: string=?,
+      ~name: string=?,
       ~helperText: string=?,
       ~variant: string=?,
       ~margin: string=?,
       ~required: bool=?,
       ~fullWidth: bool=?,
-      ~id: string=?,
-      ~label: string=?,
-      ~name: string=?,
       ~autoComplete: string=?,
       ~autoFocus: bool=?,
+      ~defaultValue: string=?,
       ~value: string=?,
       ~required: bool=?,
       ~onChange: ReactEvent.Form.t => unit=?,
