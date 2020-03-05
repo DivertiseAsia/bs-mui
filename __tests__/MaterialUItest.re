@@ -106,3 +106,15 @@ test("Test autoComplete component", () =>
     |> toMatchSnapshot
 )
 
+test("Test avatar component",()=>
+    <AvatarGroup>
+      <Avatar alt="Remy Sharp" src="https://www.w3schools.com/howto/img_avatar2.png" />
+      <Avatar alt="Travis Howard" src="https://www.w3schools.com/howto/img_avatar2.png" />
+      <Avatar alt="Cindy Baker" src="https://www.w3schools.com/howto/img_avatar2.png" />
+    </AvatarGroup>
+    |> render
+    |> container
+    |> expect
+    |> toMatchSnapshot
+)
+

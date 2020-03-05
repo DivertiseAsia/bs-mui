@@ -97,16 +97,17 @@ module Autocomplete = {
       ~onOpen: unit=>unit=?,
       ~_open: bool=?,
       ~openText: string=?,
-      ~options: array(int)=?,
+      ~options: list(Js.t('a)),
       ~paperComponent: string=?,
       ~popperComponent: string=?,
       ~popupIcon: React.element=?,
-      ~renderGroup: unit=>unit=?,
-      ~renderInput: unit=>unit=?,
-      ~renderOption: unit=>unit=?,
-      ~renderTags: unit=>unit=?,
+      ~renderGroup: unit=>React.element=?,
+      ~renderInput: unit=>React.element,
+      ~renderOption: unit=>React.element=?,
+      ~renderTags: unit=>React.element=?,
       ~selectOnFocus: bool=?,
       ~size: string=?,
+      ~style: Js.t('a)=?,
       ~value: array(int)=?
     ) =>
     React.element =
