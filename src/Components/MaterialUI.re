@@ -109,7 +109,7 @@ module Autocomplete = {
       ~onOpen: unit=>unit=?,
       ~_open: bool=?,
       ~openText: string=?,
-      ~options: array(int)=?,
+      ~options: array('a)=?,
       ~paperComponent: string=?,
       ~popperComponent: string=?,
       ~popupIcon: React.element=?,

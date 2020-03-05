@@ -5,5 +5,7 @@ open Jsx2MaterialUI;
 
 [@react.component]
 let make = () => {
+    <Container id="test-container">
     <Button>(string("Jsx2Button"))</Button>
+    </Container>
 };
