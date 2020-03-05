@@ -65,7 +65,37 @@ let make = () => {
           label="Medium"
         />
         <FormControlLabel control={<Radio size=Size.small />} label="Small" />
-      </RadioGroup>
+      </RadioGroup>      
+    </Container>
+
+    // <Dialog
+    //     _open=true
+    //   >
+    //     <DialogTitle id="alert-dialog-title">{string("Use Google's location service?")}</DialogTitle>
+    //     <DialogContent>
+    //       <DialogContentText id="alert-dialog-description">
+    //         {string("Let Google help apps determine location. This means sending anonymous location data to
+    //         Google, even when no apps are running.")}
+    //       </DialogContentText>
+    //     </DialogContent>
+    //     <DialogActions>
+    //       <Button color="primary">
+    //         {string("Disagree")}
+    //       </Button>
+    //       <Button color="primary">
+    //         {string("Agree")}
+    //       </Button>
+    //     </DialogActions>
+    //   </Dialog>
+    // <Alert severity="info">
+    //   <AlertTitle>{string("Info")}</AlertTitle>
+    //   {string("This is an info alert — check it out!")}
+    // </Alert>
+    <Container id="container-alert">
+      <Alert severity="error">
+        // <AlertTitle>{string("Error")}</AlertTitle>
+        {string("This is an error alert")}
+      </Alert>
     </Container>
   </Container>
   </StylesProvider>
