@@ -1,11 +1,23 @@
 open MaterialUIDataType;
 
 [@bs.module "@material-ui/core/styles"]
-external createStyles: Js.Dict.t('a) => Js.Dict.t('a) = "createStyles";
+external createStyles: Js.Dict.t('a) => Js.Dict.t(string) = "createStyles";
 
 [@bs.module "@material-ui/core/styles"]
-external makeStyles: (Js.Dict.t(string), 'a) => Js.Dict.t(string) =
+external makeStyles: Js.Dict.t('a) => ((. 'props) => Js.Dict.t(string)) =
   "makeStyles";
+
+module StylesProvider = {
+
+  [@react.component] [@bs.module "@material-ui/core/styles"]
+  external make:
+    (
+      ~injectFirst: bool=?,
+      ~children: React.element
+    ) =>
+    React.element = "StylesProvider";
+}
+
 
 module Alert = {
   [@react.component] [@bs.module "@material-ui/lab/Alert"]
@@ -1070,23 +1082,6 @@ module InputLabel = {
     ) =>
     React.element =
     "default";
-
-  module Jsx2 = {
-    let component = ReasonReact.statelessComponent("InputLabel");
-
-    let make = (~id=?, ~htmlFor=?, ~className=?, children) =>
-      ReasonReactCompat.wrapReactForReasonReact(
-        make,
-        makeProps(
-          ~id?,
-          ~htmlFor?,
-          ~className?,
-          ~children=children |> React.array,
-          (),
-        ),
-        children,
-      );
-  };
 };
 
 module LinearProgress = {
@@ -2050,16 +2045,17 @@ module TextField = {
   [@react.component] [@bs.module "@material-ui/core/TextField"]
   external make:
     (
+      ~id: string=?,
+      ~label: string=?,
+      ~name: string=?,
       ~helperText: string=?,
       ~variant: string=?,
       ~margin: string=?,
       ~required: bool=?,
       ~fullWidth: bool=?,
-      ~id: string=?,
-      ~label: string=?,
-      ~name: string=?,
       ~autoComplete: string=?,
       ~autoFocus: bool=?,
+      ~defaultValue: string=?,
       ~value: string=?,
       ~required: bool=?,
       ~onChange: ReactEvent.Form.t => unit=?,

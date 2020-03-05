@@ -1,3 +1,21 @@
+
+module StylesProvider = {
+    open MaterialUI.StylesProvider;
+
+    let component = ReasonReact.statelessComponent("StylesProvider");
+    let make = (
+        ~injectFirst=?,
+        children
+      ) =>
+        ReasonReactCompat.wrapReactForReasonReact(
+            make,
+            makeProps(
+                ~injectFirst?,
+                ~children=children |> React.array, ()),
+            children,
+        );  
+  }
+
 module Button {
     open MaterialUI.Button;
 
@@ -29,6 +47,48 @@ module Button {
             children,
         );       
 };
+
+module Container = {
+    open MaterialUI.Container;
+    let component = ReasonReact.statelessComponent("Container");
+
+    let make = (
+        ~id=?,
+        ~maxWidth=?,
+        ~component=?,
+        ~className=?,
+        children
+      ) => ReasonReactCompat.wrapReactForReasonReact(
+        make,
+        makeProps(
+          ~id?,
+          ~maxWidth?,
+          ~component?,
+          ~className?,
+          ~children=children |> React.array,
+          (),
+        ),
+        children,
+      );
+};
+
+module InputLabel = {
+    open MaterialUI.InputLabel;
+    let component = ReasonReact.statelessComponent("InputLabel");
+
+    let make = (~id=?, ~htmlFor=?, ~className=?, children) =>
+      ReasonReactCompat.wrapReactForReasonReact(
+        make,
+        makeProps(
+          ~id?,
+          ~htmlFor?,
+          ~className?,
+          ~children=children |> React.array,
+          (),
+        ),
+        children,
+      );
+  };
 
 module FormControl {
     open MaterialUI.FormControl;
@@ -68,6 +128,48 @@ module MenuItem {
             ~children=children |> React.array, ()),
         children,
         );       
+}
+
+module TextField {
+    open MaterialUI.TextField;
+    let component = ReasonReact.statelessComponent("TextField");
+
+    let make = (
+        ~id=?,
+        ~label=?,
+        ~name=?,
+        ~helperText=?,
+        ~variant=?,
+        ~margin=?,
+        ~required=?,
+        ~fullWidth=?,
+        ~autoComplete=?,
+        ~autoFocus=?,
+        ~defaultValue=?,
+        ~value=?,
+        ~required=?,
+        ~onChange=?,
+        ~type_=?) => 
+    ReasonReactCompat.wrapReactForReasonReact(
+        make,
+        makeProps(
+            ~id?,
+            ~label?,
+            ~name?,
+            ~helperText?,
+            ~variant?,
+            ~margin?,
+            ~required?,
+            ~fullWidth?,
+            ~autoComplete?,
+            ~autoFocus?,
+            ~defaultValue?,
+            ~value?,
+            ~required?,
+            ~onChange?,
+            ~type_?,
+            ()),
+    );   
 }
 
 module Select {
