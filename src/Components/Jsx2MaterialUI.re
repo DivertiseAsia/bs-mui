@@ -509,3 +509,22 @@ module Avatar {
                 ()),
         );       
 };
+
+module AvatarGroup {
+    open MaterialUI.AvatarGroup;
+
+    let component = ReasonReact.statelessComponent("AvatarGroup");
+
+    let make = (
+        ~children=?,
+        ~className=?,
+        ~spacing=?) => 
+        ReasonReactCompat.wrapReactForReasonReact(
+            make,
+            makeProps(
+                ~children?,
+                ~className?,
+                ~spacing?,
+                ()),
+        );       
+};

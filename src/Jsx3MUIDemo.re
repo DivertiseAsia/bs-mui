@@ -172,6 +172,29 @@ let make = () => {
         <Button size="small">{string("Learn More")}</Button>
       </CardActions>
     </Card>
+
+    <Badge badgeContent={4} color="error" />
+
+    <BottomNavigation>
+      <BottomNavigationAction label="Recents" icon={<RestoreIcon />} />
+      <BottomNavigationAction label="Favorites" icon={<FavoriteIcon />}  />
+    </BottomNavigation>
+
+    <Breadcrumbs>
+      <Link color="inherit" href="/">
+        {string("Material-UI")}
+      </Link>
+      <Link color="inherit" href="/getting-started/installation/">
+        {string("Core")}
+      </Link>
+      <Typography color="textPrimary">{string("Breadcrumb")}</Typography>
+    </Breadcrumbs>
+
+    <ButtonGroup variant="contained" color="primary">
+      <Button>{string("One")}</Button>
+      <Button>{string("Two")}</Button>
+      <Button>{string("Three")}</Button>
+    </ButtonGroup>
   </Container>
   </StylesProvider>
   ;

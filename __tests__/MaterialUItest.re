@@ -143,6 +143,63 @@ test("Test Backdrop component",()=>
   |> toMatchSnapshot
 )
 
+test("Test Badge component",()=>
+  <Badge badgeContent={4} color="error" />
+  |> render
+  |> container
+  |> expect
+  |> toMatchSnapshot
+)
+
+test("Test BottomNavigation component",()=>
+  <BottomNavigation>
+    <BottomNavigationAction label="Recents" icon={<RestoreIcon />} />
+    <BottomNavigationAction label="Favorites" icon={<FavoriteIcon />}  />
+  </BottomNavigation>
+  |> render
+  |> container
+  |> expect
+  |> toMatchSnapshot
+)
+
+test("Test BottomGroup component",()=>
+  <ButtonGroup variant="contained" color="primary">
+    <Button>{string("One")}</Button>
+    <Button>{string("Two")}</Button>
+    <Button>{string("Three")}</Button>
+  </ButtonGroup>
+  |> render
+  |> container
+  |> expect
+  |> toMatchSnapshot
+)
+
+test("Test Box component",()=>
+    <Box component="span" m={1}>
+      <Button>{string("Large Button")}</Button>
+    </Box>
+    |> render
+    |> container
+    |> expect
+    |> toMatchSnapshot
+)
+
+test("Test Breadcrumbs component",()=>
+  <Breadcrumbs>
+    <Link color="inherit" href="/">
+      {string("Material-UI")}
+    </Link>
+    <Link color="inherit" href="/getting-started/installation/">
+      {string("Core")}
+    </Link>
+    <Typography color="textPrimary">{string("Breadcrumb")}</Typography>
+  </Breadcrumbs>
+  |> render
+  |> container
+  |> expect
+  |> toMatchSnapshot
+)
+
 test("Test ExpantionPanel component",()=>
   <ExpansionPanel>
       <ExpansionPanelSummary
@@ -156,16 +213,6 @@ test("Test ExpantionPanel component",()=>
         </Typography>
       </ExpansionPanelDetails>
     </ExpansionPanel>
-    |> render
-    |> container
-    |> expect
-    |> toMatchSnapshot
-)
-
-test("Test Box component",()=>
-    <Box component="span" m={1}>
-      <Button>{string("Large Button")}</Button>
-    </Box>
     |> render
     |> container
     |> expect

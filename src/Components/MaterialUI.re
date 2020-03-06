@@ -180,7 +180,7 @@ module Badge = {
     (
       ~anchorOrigin: anchorOriginType=?,
       ~badgeContent: int=?,
-      ~children: React.element,
+      ~children: React.element=?,
       ~className: string=?,
       ~color: MainWithDefaultErrorColor.t=?,
       ~component: string=?,
@@ -216,7 +216,7 @@ module BottomNavigationAction = {
       ~children: React.element=?,
       ~className: string=?,
       ~icon: React.element=?,
-      ~label: React.element=?,
+      ~label: string=?,
       ~showLabel: bool=?,
       ~value: 'a=?
     ) => /* children type is unsupportedProp */
@@ -2117,4 +2117,14 @@ module Typography = {
 
 module Zoom = {
   // TODO: Implement
+};
+
+module RestoreIcon = {
+  [@react.component] [@bs.module "@material-ui/icons/Restore"]
+  external make: unit => React.element = "default";
+};
+
+module FavoriteIcon = {
+  [@react.component] [@bs.module "@material-ui/icons/Favorite"]
+  external make: unit => React.element = "default";
 };
