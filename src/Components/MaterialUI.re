@@ -394,7 +394,9 @@ module CardMedia = {
       ~className: string=?,
       ~component: string=?,
       ~image: string=?,
-      ~src: string=?
+      ~src: string=?,
+      ~height: string=?,
+      ~alt: string=?
     ) =>
     React.element =
     "default";
@@ -595,7 +597,18 @@ module DialogTitle = {
 
 module Divider = {
   [@react.component] [@bs.module "@material-ui/core/Divider"]
-  external make: unit => React.element = "default";
+  external make:
+    (
+      ~absolute: bool=?,
+      ~classes: string=?,
+      ~component: string=?,
+      ~flexItem: bool,
+      ~light: bool=?,
+      ~orientation: string=?,
+      ~variant: string=?
+    ) =>
+    React.element =
+    "default";
 };
 
 module Drawer = {
@@ -1248,7 +1261,7 @@ module Modal = {
     (
       ~backdropComponent: string=?,
       ~backdropProps: Js.t('a)=?,
-      ~children : string,
+      ~children : React.element,
       ~closeAfterTransition: bool=?,
       ~container: 'a=?,
       ~disableAutoFocus: bool=?,
@@ -1289,7 +1302,7 @@ module NoSsr = {
   [@react.component] [@bs.module "@material-ui/core/NoSsr"]
   external make:
     (
-      ~children : string=?,
+      ~children : React.element=?,
       ~defer: bool=?,
       ~fallback: React.element=?
     ) =>

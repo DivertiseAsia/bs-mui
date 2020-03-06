@@ -136,9 +136,11 @@ let make = () => {
     </Box>
 
     <Grid spacing={3}>
+      <Divider orientation="vertical" flexItem=true />
       <Grid item=true xs={12}>
         <Paper >{string("xs=12")}</Paper>
       </Grid>
+      <Divider orientation="vertical" flexItem=true />
       <Grid item=true xs={6}>
         <Paper >{string("xs=6")}</Paper>
       </Grid>
@@ -154,22 +156,28 @@ let make = () => {
       />
 
     <Card>
-      <CardContent>
-        <Typography color="textSecondary">
-          {string("Word of the Day")}
-        </Typography>
-        <Typography variant="h5" component="h2">
-          {string("be{bull}nev{bull}o{bull}lent")}
-        </Typography>
-        <Typography color="textSecondary">
-          {string("adjective")}
-        </Typography>
-        <Typography variant="body2" component="p">
-          {string("well meaning and kindly.")}
-        </Typography>
-      </CardContent>
+      <CardActionArea>
+        <CardMedia
+          component="img"
+          image="https://animals.sandiegozoo.org/sites/default/files/2016-11/animals_hero_lizards.jpg"
+        />
+        <CardContent>
+          <Typography variant="h5" component="h2">
+            {string("Lizard")}
+          </Typography>
+          <Typography variant="body2" color="textSecondary" component="p">
+            {string("Lizards are a widespread group of squamate reptiles, with over 6,000 species, ranging
+            across all continents except Antarctica")}
+          </Typography>
+        </CardContent>
+      </CardActionArea>
       <CardActions>
-        <Button size="small">{string("Learn More")}</Button>
+        <Button size="small" color="primary">
+          {string("Share")}
+        </Button>
+        <Button size="small" color="primary">
+          {string("Learn More")}
+        </Button>
       </CardActions>
     </Card>
 
@@ -195,6 +203,67 @@ let make = () => {
       <Button>{string("Two")}</Button>
       <Button>{string("Three")}</Button>
     </ButtonGroup>
+
+    <Chip label="Basic" />
+
+    <ClickAwayListener>
+        <Button>
+          {string("Open menu dropdown")}
+        </Button>
+    </ClickAwayListener>
+
+     <React.Fragment>
+      <CssBaseline />
+    </React.Fragment>
+
+    <Drawer _open=false>
+      <Typography>
+        {string("Test Drawer")}
+      </Typography>
+    </Drawer>
+
+    <Hidden xsUp=false>
+      <Paper>{string("xsUp")}</Paper>
+    </Hidden>
+
+    <Icon className="fa fa-plus-circle" color="primary">{string("add_circle")}</Icon>
+
+    <Menu
+      _open=false
+    >
+      <MenuItem>{string("Profile")}</MenuItem>
+      <MenuItem>{string("My account")}</MenuItem>
+      <MenuItem>{string("Logout")}</MenuItem>
+    </Menu>
+
+    <Modal
+      _open=false
+    >
+        <Typography>{string("Server-side modal")}</Typography>
+    </Modal>
+
+    <NoSsr>
+      <Box p={2} bgcolor="secondary.main" color="primary.contrastText">
+        {string("Client only")}
+      </Box>
+    </NoSsr>
+
+    <Pagination count={10} />
+
+    <Popover
+        _open=false
+        anchorOrigin={{
+          "vertical": "bottom",
+          "horizontal": "center",
+        }}
+        transformOrigin={{
+          "vertical": "top",
+          "horizontal": "center",
+        }}
+    >
+      <Typography>{string("The content of the Popover.")}</Typography>
+    </Popover>
+
   </Container>
   </StylesProvider>
   ;

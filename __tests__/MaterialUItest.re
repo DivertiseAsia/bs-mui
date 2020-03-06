@@ -200,6 +200,48 @@ test("Test Breadcrumbs component",()=>
   |> toMatchSnapshot
 )
 
+test("Test Chip component",()=>
+  <Chip label="Basic" />
+  |> render
+  |> container
+  |> expect
+  |> toMatchSnapshot
+)
+
+test("Test ClickAwayListener component",()=>
+  <ClickAwayListener>
+      <Button>
+        {string("Open menu dropdown")}
+      </Button>
+  </ClickAwayListener>
+  |> render
+  |> container
+  |> expect
+  |> toMatchSnapshot
+)
+
+test("Test CSS Baseline component",()=>
+  <React.Fragment>
+    <CssBaseline />
+  </React.Fragment>
+  |> render
+  |> container
+  |> expect
+  |> toMatchSnapshot
+)
+
+test("Test Drawer component",()=>
+  <Drawer _open=true>
+    <Typography>
+      {string("Test Drawer")}
+    </Typography>
+  </Drawer>
+  |> render
+  |> container
+  |> expect
+  |> toMatchSnapshot
+)
+
 test("Test ExpantionPanel component",()=>
   <ExpansionPanel>
       <ExpansionPanelSummary
@@ -221,9 +263,11 @@ test("Test ExpantionPanel component",()=>
 
 test("Test Grid and Paper component",()=>
   <Grid spacing={3}>
+    <Divider orientation="vertical" flexItem=true />
     <Grid item=true xs={12}>
       <Paper >{string("xs=12")}</Paper>
     </Grid>
+    <Divider orientation="vertical" flexItem=true />
     <Grid item=true xs={6}>
       <Paper >{string("xs=6")}</Paper>
     </Grid>
@@ -231,6 +275,90 @@ test("Test Grid and Paper component",()=>
       <Paper >{string("xs=6")}</Paper>
     </Grid>
   </Grid>
+  |> render
+  |> container
+  |> expect
+  |> toMatchSnapshot
+)
+
+test("Test Hidden component",()=>
+  <Hidden xsUp=false>
+    <Paper>{string("xsUp")}</Paper>
+  </Hidden>
+  |> render
+  |> container
+  |> expect
+  |> toMatchSnapshot
+)
+
+test("Test Icon component",()=>
+  <Icon className="fa fa-plus-circle" color="primary">{string("add_circle")}</Icon>
+  |> render
+  |> container
+  |> expect
+  |> toMatchSnapshot
+)
+
+test("Test Menu component",()=>
+  <Menu
+    _open=true
+  >
+    <MenuItem>{string("Profile")}</MenuItem>
+    <MenuItem>{string("My account")}</MenuItem>
+    <MenuItem>{string("Logout")}</MenuItem>
+  </Menu>
+  |> render
+  |> container
+  |> expect
+  |> toMatchSnapshot
+)
+
+test("Test Modal component",()=>
+  <Modal
+    _open=false
+  >
+      <Typography>{string("Server-side modal")}</Typography>
+  </Modal>
+  |> render
+  |> container
+  |> expect
+  |> toMatchSnapshot
+)
+
+test("Test NoSsr component",()=>
+  <NoSsr>
+    <Box p={2} bgcolor="secondary.main" color="primary.contrastText">
+      {string("Client only")}
+    </Box>
+  </NoSsr>
+  |> render
+  |> container
+  |> expect
+  |> toMatchSnapshot
+)
+
+test("Test Pagination component",() =>
+  <Pagination count={10} />
+  |> render
+  |> container
+  |> expect
+  |> toMatchSnapshot
+)
+
+test("Test Popover component",()=>
+  <Popover
+      _open=false
+      anchorOrigin={{
+        "vertical": "bottom",
+        "horizontal": "center",
+      }}
+      transformOrigin={{
+        "vertical": "top",
+        "horizontal": "center",
+      }}
+  >
+    <Typography>{string("The content of the Popover.")}</Typography>
+  </Popover>
   |> render
   |> container
   |> expect
@@ -251,22 +379,28 @@ test("Test checkbox component",()=>
 
 test("Test card component",()=>
   <Card>
-    <CardContent>
-      <Typography color="textSecondary">
-        {string("Word of the Day")}
-      </Typography>
-      <Typography variant="h5" component="h2">
-        {string("be{bull}nev{bull}o{bull}lent")}
-      </Typography>
-      <Typography color="textSecondary">
-        {string("adjective")}
-      </Typography>
-      <Typography variant="body2" component="p">
-        {string("well meaning and kindly.")}
-      </Typography>
-    </CardContent>
+    <CardActionArea>
+      <CardMedia
+        component="img"
+        image="https://animals.sandiegozoo.org/sites/default/files/2016-11/animals_hero_lizards.jpg"
+      />
+      <CardContent>
+        <Typography variant="h5" component="h2">
+          {string("Lizard")}
+        </Typography>
+        <Typography variant="body2" color="textSecondary" component="p">
+          {string("Lizards are a widespread group of squamate reptiles, with over 6,000 species, ranging
+          across all continents except Antarctica")}
+        </Typography>
+      </CardContent>
+    </CardActionArea>
     <CardActions>
-      <Button size="small">{string("Learn More")}</Button>
+      <Button size="small" color="primary">
+        {string("Share")}
+      </Button>
+      <Button size="small" color="primary">
+        {string("Learn More")}
+      </Button>
     </CardActions>
   </Card>
   |> render
