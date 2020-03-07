@@ -95,7 +95,7 @@ test("Test appbar component",()=>
   <AppBar position="static">
     <Toolbar>
       <IconButton edge="start" color="inherit" />
-      <Typography variant="h6">
+      <Typography variant=Typography.Variant.h6>
         {string("News")}
       </Typography>
     </Toolbar>
@@ -113,7 +113,7 @@ test("Test autoComplete component", () =>
       { "title": "The Shawshank Redemption", "year": 1994 },
       { "title": "The Godfathe", "year": 1972 },
       { "title": "The Dark Knight", "year": 2008 }]
-    renderInput = {params => <TextField label="Combo box" variant="outlined" />}
+    renderInput = {params => <TextField label="Combo box" variant=Variant.outlined />}
     ></Autocomplete>
     |> render
     |> container
@@ -163,7 +163,7 @@ test("Test BottomNavigation component",()=>
 )
 
 test("Test BottomGroup component",()=>
-  <ButtonGroup variant="contained" color="primary">
+  <ButtonGroup variant=Button.Variant.contained color="primary">
     <Button>{string("One")}</Button>
     <Button>{string("Two")}</Button>
     <Button>{string("Three")}</Button>
@@ -385,10 +385,10 @@ test("Test card component",()=>
         image="https://animals.sandiegozoo.org/sites/default/files/2016-11/animals_hero_lizards.jpg"
       />
       <CardContent>
-        <Typography variant="h5" component="h2">
+        <Typography variant=Typography.Variant.h5 component="h2">
           {string("Lizard")}
         </Typography>
-        <Typography variant="body2" color="textSecondary" component="p">
+        <Typography variant=Typography.Variant.body2 color="textSecondary" component="p">
           {string("Lizards are a widespread group of squamate reptiles, with over 6,000 species, ranging
           across all continents except Antarctica")}
         </Typography>

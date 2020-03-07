@@ -33,7 +33,7 @@ module Alert = {
       ~onClose: unit => unit=?,
       ~role: string=?,
       ~severity: string=?,
-      ~variant: string=?
+      ~variant: Variant.t=?
     ) =>
     React.element =
     "default";
@@ -127,6 +127,18 @@ module Autocomplete = {
 };
 
 module Avatar = {
+  module Variant :{
+    type t;
+    let circle:t;
+    let rounded:t;
+    let square:t;
+  } = {
+    type t = string;
+    [@bs.inline] let circle:t = "circle";
+    [@bs.inline] let rounded:t = "rounded";
+    [@bs.inline] let square:t = "square";
+  };
+
   [@react.component] [@bs.module "@material-ui/core/Avatar"]
   external make:
     (
@@ -138,7 +150,7 @@ module Avatar = {
       ~sizes: string=?,
       ~src: string=?,
       ~srcSet: string=?,
-      ~variant: AvatarVariant.t=?
+      ~variant: Variant.t=?
     ) =>
     React.element =
     "default";
@@ -175,6 +187,16 @@ module Badge = {
     vertical: HorizontalAnchor.t,
     horizontal: VerticalAnchor.t,
   };
+  module Variant : { 
+    type t;
+    let dot:t;
+    let standard:t;
+  } = {
+    type t = string;
+    [@bs.inline] let dot = "dot";
+    [@bs.inline] let standard = "standard";
+  };
+
   [@react.component] [@bs.module "@material-ui/core/Badge"]
   external make:
     (
@@ -188,7 +210,7 @@ module Badge = {
       ~max: int=?,
       ~overlap: Overlap.t=?,
       ~showZero: bool=?,
-      ~variant: BadgeVariant.t=?
+      ~variant: Variant.t=?
     ) =>
     React.element =
     "default";
@@ -258,6 +280,17 @@ module Breadcrumbs = {
 };
 
 module Button = {
+  module Variant : {
+    type t;
+    let text:t;
+    let outlined:t;
+    let contained:t;
+    } = {
+    type t = string;
+    [@bs.inline] let text = "text";
+    [@bs.inline] let outlined = "outlined";
+    [@bs.inline] let contained = "contained";
+  };
   [@react.component] [@bs.module "@material-ui/core/Button"]
   external make:
     (
@@ -271,11 +304,10 @@ module Button = {
       ~disableRipple: bool=?,
       ~endIcon: React.element=?,
       ~fullWidth: bool=?,
-      ~variant: string=?,
       ~href: string=?,
       ~size: Size.t=?,
       ~startIcon: React.element=?,
-      ~variant: ButtonVariant.t=?,
+      ~variant: Variant.t=?,
       ~onClick: unit => unit=?,
       ~type_: string=?,
       ~ref: 'a=?
@@ -320,7 +352,7 @@ module ButtonGroup = {
       ~fullWidth: bool=?,
       ~orientation: Orientation.t=?,
       ~size: Size.t=?,
-      ~variant: ButtonVariant.t=?
+      ~variant: Button.Variant.t=?
     ) =>
     React.element =
     "default";
@@ -429,6 +461,15 @@ module Checkbox = {
 };
 
 module Chip = {
+  module Variant : {
+    type t;
+    let default:t;
+    let outlined:t;
+  } = {
+    type t = string;
+    [@bs.inline] let default = "default";
+    [@bs.inline] let outlined = "outlined";
+  };
   [@react.component] [@bs.module "@material-ui/core/Chip"]
   external make:
     (
@@ -444,13 +485,25 @@ module Chip = {
       ~label: string=?,
       ~onDelete: unit => unit=?,
       ~size: NoLargeSize.t=?,
-      ~variant: ChipVariant.t=?
+      ~variant: Variant.t=?
     ) =>
     React.element =
     "default";
 };
 
 module CircularProgress = {
+  module Variant : {
+    type t;
+    let determinate:t;
+    let indeterminate:t;
+    let static:t;
+  } = {
+    type t = string;
+    [@bs.inline] let determinate = "determinate";
+    [@bs.inline] let indeterminate = "indeterminate";
+    [@bs.inline] let static = "static";
+  };
+
   [@react.component] [@bs.module "@material-ui/core/CircularProgress"]
   external make:
     (
@@ -461,7 +514,7 @@ module CircularProgress = {
       ~size: int=?, // Can be string
       ~thickness: float=?,
       ~value: int=?,
-      ~variant: CircularProgressVariant.t=?
+      ~variant: Variant.t=?
     ) =>
     React.element =
     "default";
@@ -605,7 +658,7 @@ module Divider = {
       ~flexItem: bool,
       ~light: bool=?,
       ~orientation: string=?,
-      ~variant: string=?
+      ~variant: Variant.t=?
     ) =>
     React.element =
     "default";
@@ -620,7 +673,7 @@ module Drawer = {
       ~classes: string=?,
       ~onClose: unit => unit=?,
       ~_open: bool,
-      ~variant: string=?,
+      ~variant: Variant.t=?,
       ~style: ReactDOMRe.Style.t=?,
       ~children: React.element=?
     ) =>
@@ -694,7 +747,7 @@ module Fab = {
       ~disableRipple: bool=?,
       ~href: string=?,
       ~size: string=?,
-      ~variant: string=?
+      ~variant: Variant.t=?
     ) =>
     React.element =
     "default";
@@ -753,7 +806,7 @@ module FormControl = {
   external make:
     (
       ~id: string=?,
-      ~variant: string=?,
+      ~variant: Variant.t=?,
       ~className: string=?,
       ~children: React.element=?
     ) =>
@@ -809,7 +862,7 @@ module FormHelperText = {
     ~focused: bool=?,
     ~margin: string=?,
     ~required: bool=?,
-    ~variant: string=?
+    ~variant: Variant.t=?
   ) => 
   React.element =
     "default";
@@ -1045,7 +1098,7 @@ module InputAdornment = {
       ~disablePointerEvents: bool=?,
       ~disableTypography: bool=?,
       ~position: string=?,
-      ~variant: string=?
+      ~variant: Variant.t=?
     ) =>
     React.element =
     "default";
@@ -1109,7 +1162,7 @@ module LinearProgress = {
       ~color: string=?,
       ~value: int=?,
       ~valueBuffer: int=?,
-      ~variant: string=?
+      ~variant: Variant.t=?
     ) =>
     React.element =
     "default";
@@ -1121,7 +1174,7 @@ module Link = {
     (
       ~color: string=?,
       ~href: string=?,
-      ~variant: string=?,
+      ~variant: Variant.t=?,
       ~children: React.element=?
     ) =>
     React.element =
@@ -1207,7 +1260,7 @@ module Menu = {
       ~_open: bool,
       ~popoverClasses: string=?,
       ~transitionDuration: string=?,
-      ~variant: string=?
+      ~variant: Variant.t=?
     ) =>
     React.element = "default";
 };
@@ -1234,7 +1287,7 @@ module MenuList = {
       ~autoFocusItem: bool=?,
       ~children: React.element=?,
       ~disableListWrap: bool=?,
-      ~variant: string=?
+      ~variant: Variant.t=?
     ) =>
     React.element = "default";
 };
@@ -1250,7 +1303,7 @@ module MobileStepper = {
       ~nextButton: React.element=?,
       ~position: string=?,
       ~steps: int,
-      ~variant: string=?
+      ~variant: Variant.t=?
     ) =>
     React.element = "default";
 };
@@ -1293,7 +1346,7 @@ module NativeSelect = {
       ~inputProps: Js.t('a)=?,
       ~onChange: unit=>unit=?,
       ~value: 'a=?,
-      ~variant: string=?
+      ~variant: Variant.t=?
     ) =>
     React.element = "default";
 };
@@ -1368,7 +1421,7 @@ module Pagination = {
       ~showLastButton: bool=?,
       ~siblingCount: int=?,
       ~size: string=?,
-      ~variant: string=?
+      ~variant: Variant.t=?
     ) =>
     React.element = "default";
 };
@@ -1385,7 +1438,7 @@ module PaginationItem = {
       ~shape: string=?,
       ~size: string=?,
       ~_type: string=?,
-      ~variant: string=?
+      ~variant: Variant.t=?
     ) =>
     React.element = "default";
 };
@@ -1399,7 +1452,7 @@ module Paper = {
       ~children: React.element=?,
       ~elevation: int=?,
       ~square: bool=?,
-      ~variant: string=?
+      ~variant: Variant.t=?
     ) =>
     React.element =
     "default";
@@ -1560,20 +1613,11 @@ module ScopedCssBaseline = {
 };
 
 module Select = {
-  module Variant = {
-    type t = string;
-    [@bs.inline]
-    let standard = "standard";
-    [@bs.inline]
-    let outlined = "outlined";
-    [@bs.inline]
-    let filled = "filled";
-  }
-
   [@react.component] [@bs.module "@material-ui/core/Select"]
   external make:
     (
       ~id: string=?,
+      ~label: string=?,
       ~labelId: string=?,
       ~disabled: bool=?,
       ~native: bool=?,
@@ -1597,7 +1641,7 @@ module Skeleton = {
       ~classes: string=?,
       ~component: string=?,
       ~height: string=?,
-      ~variant: string=?,
+      ~variant: Variant.t=?,
       ~width: string=?
     ) =>
     React.element =
@@ -2051,7 +2095,7 @@ module Tabs = {
       ~tabIndicatorProps: Js.t('a)=?,
       ~textColor: string=?,
       ~value: 'a=?,
-      ~variant: string=?
+      ~variant: Variant.t=?
     ) =>
     React.element =
     "default";
@@ -2069,7 +2113,7 @@ module TextField = {
       ~label: string=?,
       ~name: string=?,
       ~helperText: string=?,
-      ~variant: string=?,
+      ~variant: Variant.t=?,
       ~margin: string=?,
       ~required: bool=?,
       ~fullWidth: bool=?,
@@ -2113,11 +2157,47 @@ module TreeView = {
 };
 
 module Typography = {
+  module Variant : {
+    type t;
+    let h1:t;
+    let h2:t;
+    let h3:t;
+    let h4:t;
+    let h5:t;
+    let h6:t;
+    let subtitle1:t;
+    let subtitle2:t;
+    let body1:t;
+    let body2:t;
+    let caption:t;
+    let button:t;
+    let overline:t;
+    let srOnly:t;
+    let inherit_:t;
+  } = {
+    type t = string;
+    let h1:t = "h1";
+    let h2:t = "h2";
+    let h3:t = "h3";
+    let h4:t = "h4";
+    let h5:t = "h5";
+    let h6:t = "h6";
+    let subtitle1:t = "subtitle1";
+    let subtitle2:t = "subtitle2";
+    let body1:t = "body1";
+    let body2:t = "body2";
+    let caption:t = "caption";
+    let button:t = "button";
+    let overline:t = "overline";
+    let srOnly:t = "srOnly";
+    let inherit_:t = "inherit";
+  };
+
   [@react.component] [@bs.module "@material-ui/core/Typography"]
   external make:
     (
       ~component: string=?,
-      ~variant: string=?,
+      ~variant: Variant.t=?,
       ~color: string=?,
       ~align: string=?,
       ~className: string=?,

@@ -179,6 +179,7 @@ module Select {
 
     let make = (
         ~id=?,
+        ~label=?,
         ~labelId=?,
         ~disabled=?,
         ~native=?,
@@ -193,6 +194,7 @@ module Select {
             make,
             makeProps(
                 ~id?,
+                ~label?,
                 ~labelId?,
                 ~disabled?,
                 ~native?,

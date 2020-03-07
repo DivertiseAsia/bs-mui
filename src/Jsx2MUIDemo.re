@@ -2,6 +2,7 @@
 
 open ReasonReact;
 open Jsx2MaterialUI;
+open MaterialUIDataType;
 
 [@react.component]
 let make = () => {
@@ -11,7 +12,7 @@ let make = () => {
           label="Helper text"
           defaultValue="Default Value"
           helperText="Some important text"
-          variant="outlined"
+          variant=Variant.outlined
         />
     <Button>(string("Jsx2Button"))</Button>
     </Container>
