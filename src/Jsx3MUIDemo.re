@@ -43,6 +43,7 @@ let make = () => {
   let classes = madeStyle(. 0);
 
   <StylesProvider injectFirst=true>
+  <div>(string("Jsx3"))</div>
   <Container id="container-id" className={classes->Js.Dict.unsafeGet("root")}>
     /* <Container id="container-button">
       <FormLabel> {string("Button")} </FormLabel>
@@ -264,6 +265,26 @@ let make = () => {
       <Typography>{string("The content of the Popover.")}</Typography>
     </Popover>
 
+  </Container>
+
+  <Container>
+    <FormControl variant=Variant.outlined>
+      <InputLabel id="demo-simple-select-outlined-label">
+        (string("Age"))
+      </InputLabel>
+      <Select
+        labelId="demo-simple-select-outlined-label"
+        id="demo-simple-select-outlined"
+        value=10
+      >
+        <MenuItem value="">
+          <em>(string("None"))</em>
+        </MenuItem>
+        <MenuItem value=10>(string("Ten"))</MenuItem>
+        <MenuItem value=20>(string("Twenty"))</MenuItem>
+        <MenuItem value=30>(string("Thirty"))</MenuItem>
+      </Select>
+    </FormControl>
   </Container>
   </StylesProvider>
   ;
