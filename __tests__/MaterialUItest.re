@@ -365,6 +365,46 @@ test("Test Popover component",()=>
   |> toMatchSnapshot
 )
 
+test("Test Portal component",()=>
+  <Portal>
+    <Typography>{string("The content of the Popper.")}</Typography>
+  </Portal>
+  |> render
+  |> container
+  |> expect
+  |> toMatchSnapshot
+)
+
+test("Test Radio component",()=>
+  <Radio
+        value="a"
+        name="radio-button-demo"
+      />
+  |> render
+  |> container
+  |> expect
+  |> toMatchSnapshot
+)
+
+test("Test RadioGroup component",()=>
+  <Container id="container-radio-group">
+    <FormLabel> {string("Radio Group")} </FormLabel>
+    <RadioGroup name="radio-group">
+      <FormControlLabel control={<Radio />} label="Default" />
+      <FormControlLabel control={<Radio disabled=true />} label="Disabled" />
+      <FormControlLabel
+        control={<Radio size=Size.medium />}
+        label="Medium"
+      />
+      <FormControlLabel control={<Radio size=Size.small />} label="Small" />
+    </RadioGroup>      
+  </Container>
+  |> render
+  |> container
+  |> expect
+  |> toMatchSnapshot
+)
+
 test("Test checkbox component",()=>
     <Checkbox
         checked=true

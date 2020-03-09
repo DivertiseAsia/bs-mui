@@ -183,7 +183,7 @@ let make = () => {
 
     <Badge badgeContent={4} color="error" />
 
-    <BottomNavigation>
+    <BottomNavigation showLabels=true component="div">
       <BottomNavigationAction label="Recents" icon={<RestoreIcon />} />
       <BottomNavigationAction label="Favorites" icon={<FavoriteIcon />}  />
     </BottomNavigation>
@@ -206,7 +206,7 @@ let make = () => {
 
     <Chip label="Basic" />
 
-    <ClickAwayListener>
+    <ClickAwayListener onClickAway={_=>Js.log("Click Away Listener");}>
         <Button>
           {string("Open menu dropdown")}
         </Button>
@@ -260,10 +260,28 @@ let make = () => {
           "vertical": "top",
           "horizontal": "center",
         }}
+        // anchorEl= { None}
     >
       <Typography>{string("The content of the Popover.")}</Typography>
     </Popover>
 
+    // <Popper 
+    //   _open=true transition=true>
+    //     {transitionProp => 
+    //     <Fade timeout={"350"}>
+    //       <Typography>{string("The content of the Popper.")}</Typography>
+    //     </Fade>}
+    // </Popper>
+
+    <Portal>
+      <Typography>{string("The content of the Popper.")}</Typography>
+    </Portal>
+
+    <Radio
+        value="a"
+        name="radio-button-demo"
+      />
+    
   </Container>
   </StylesProvider>
   ;
