@@ -281,7 +281,61 @@ let make = () => {
         value="a"
         name="radio-button-demo"
       />
+
+    <Box component="fieldset">
+        <Typography component="legend">{string("Controlled")}</Typography>
+        <Rating
+        name="test rating"
+        disabled=false
+        value={12}
+      />
+      </Box>
+
+    <Skeleton variant="text" />
+    <Skeleton variant="circle" width="40" height="40" />
+    <Skeleton variant="rect" width="210" height="118" />
     
+    <Slider
+        defaultValue={30}
+        aria_labelledby="discrete-slider"
+        valueLabelDisplay="auto"
+        step={10}
+        min={10}
+        max={110}
+      />
+
+    <Snackbar
+        anchorOrigin={{
+          "vertical": "bottom",
+          "horizontal": "left",
+        }}
+        _open=true
+        autoHideDuration={6000}
+        message="Note archived"
+      />
+
+    <SnackbarContent message="I love snacks." />
+
+    <SpeedDial
+        ariaLabel="SpeedDial openIcon example"
+        hidden=false
+        icon={<SpeedDialIcon openIcon={<FavoriteIcon />} />}
+        _open=true
+      >
+      </SpeedDial>
+
+    // <SpeedDialAction
+    //   icon={<SpeedDialIcon openIcon={<FavoriteIcon />} />}
+    //   tooltipTitle={<div>{string("Test Speed Action")}</div>}
+    //   tooltipOpen=true
+    // />
+
+    <Stepper activeStep={10} alternativeLabel=true>
+        <Step>
+          <StepLabel>{string("Test Step Label")}</StepLabel>
+        </Step>
+    </Stepper>
+
   </Container>
   </StylesProvider>
   ;
