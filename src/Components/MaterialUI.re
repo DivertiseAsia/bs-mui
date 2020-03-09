@@ -473,7 +473,7 @@ module ClickAwayListener = {
     (
       ~children: React.element=?,
       ~mouseEvent: MouseEvent.t=?,
-      ~onClickAway: unit => unit=?,
+      ~onClickAway: unit => unit,
       ~touchEvent: TouchEvent.t=?
     ) =>
     React.element =
@@ -1410,7 +1410,7 @@ module Popover = {
   external make:
     (
       ~action: 'a=?,
-      ~anchorEl: 'a=?,
+      ~anchorEl: 'b=?,
       ~anchorOrigin: Js.t('a)=?,
       ~anchorPosition: Js.t('a)=?,
       ~anchorReference: string=?,
@@ -1491,7 +1491,7 @@ module Radio = {
       ~required: bool=?,
       ~size: NoLargeSize.t=?,
       ~type_: string=?,
-      ~value: 'b=?
+      ~value: 'b=?,
     ) =>
     React.element =
     "default";

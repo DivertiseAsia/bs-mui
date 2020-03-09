@@ -209,7 +209,7 @@ test("Test Chip component",()=>
 )
 
 test("Test ClickAwayListener component",()=>
-  <ClickAwayListener>
+  <ClickAwayListener onClickAway={_=>Js.log("Click Away Listener");}>
       <Button>
         {string("Open menu dropdown")}
       </Button>
@@ -262,7 +262,7 @@ test("Test ExpantionPanel component",()=>
 )
 
 test("Test Grid and Paper component",()=>
-  <Grid spacing={3}>
+  <Grid>
     <Divider orientation="vertical" flexItem=true />
     <Grid item=true xs={12}>
       <Paper >{string("xs=12")}</Paper>
