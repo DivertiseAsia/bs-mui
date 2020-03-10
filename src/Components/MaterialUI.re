@@ -263,7 +263,7 @@ module Box = {
 };
 
 module Breadcrumbs = {
-  [@react.component] [@bs.module "@material-ui/core/BottomNavigation"]
+  [@react.component] [@bs.module "@material-ui/core/Breadcrumbs"]
   external make:
     (
       ~children: React.element=?,
@@ -308,7 +308,7 @@ module Button = {
       ~size: Size.t=?,
       ~startIcon: React.element=?,
       ~variant: Variant.t=?,
-      ~onClick: unit => unit=?,
+      ~onClick: ReactEvent.Synthetic.t => unit=?,
       ~type_: string=?,
       ~ref: 'a=?
     ) =>
@@ -526,7 +526,7 @@ module ClickAwayListener = {
     (
       ~children: React.element=?,
       ~mouseEvent: MouseEvent.t=?,
-      ~onClickAway: unit => unit=?,
+      ~onClickAway: unit => unit,
       ~touchEvent: TouchEvent.t=?
     ) =>
     React.element =
@@ -1246,7 +1246,7 @@ module Menu = {
   [@react.component] [@bs.module "@material-ui/core/Menu"]
   external make:
     (
-      ~anchorEl: 'a=?,
+      ~anchorEl: Js.Nullable.t(Js.t('a)),
       ~autoFocus: bool=?,
       ~children: React.element=?,
       ~classes: string=?,

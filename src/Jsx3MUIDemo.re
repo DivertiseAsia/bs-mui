@@ -42,6 +42,17 @@ let make = () => {
   let madeStyle = makeStyles(styleObj);
   let classes = madeStyle(. 0);
 
+  let (menuRef, setMenuRef) = React.useState(()=>Js.Nullable.null);
+  let (menuOpen, setMenuOpen) = React.useState(() => false);
+
+  let menuButton = <ClickAwayListener onClickAway={_=>setMenuRef(_=>Js.Nullable.null)}>
+        <Button onClick={evt=>{
+          setMenuRef(_=>Js.Nullable.return(ReactEvent.Synthetic.target(evt)))
+        }}>
+          {string("Open menu dropdown")}
+        </Button>
+    </ClickAwayListener>;
+
   <StylesProvider injectFirst=true>
   <div>(string("Jsx3"))</div>
   <Container id="container-id" className={classes->Js.Dict.unsafeGet("root")}>
@@ -136,7 +147,7 @@ let make = () => {
       <Button>{string("Large Button")}</Button>
     </Box>
 
-    <Grid spacing={3}>
+    <Grid container=true spacing={3}>
       <Divider orientation="vertical" flexItem=true />
       <Grid item=true xs=GridSize.size(12)>
         <Paper >{string("xs=12")}</Paper>
@@ -184,12 +195,12 @@ let make = () => {
 
     <Badge badgeContent={4} color="error" />
 
-    <BottomNavigation>
+    /* <BottomNavigation>
       <BottomNavigationAction label="Recents" icon={<RestoreIcon />} />
       <BottomNavigationAction label="Favorites" icon={<FavoriteIcon />}  />
-    </BottomNavigation>
+    </BottomNavigation> */
 
-    <Breadcrumbs>
+     <Breadcrumbs>
       <Link color="inherit" href="/">
         {string("Material-UI")}
       </Link>
@@ -205,13 +216,10 @@ let make = () => {
       <Button>{string("Three")}</Button>
     </ButtonGroup>
 
-    <Chip label="Basic" />
+    
+    menuButton
 
-    <ClickAwayListener>
-        <Button>
-          {string("Open menu dropdown")}
-        </Button>
-    </ClickAwayListener>
+    <Chip label="Basic" />
 
      <React.Fragment>
       <CssBaseline />
@@ -222,7 +230,7 @@ let make = () => {
         {string("Test Drawer")}
       </Typography>
     </Drawer>
-
+    
     <Hidden xsUp=false>
       <Paper>{string("xsUp")}</Paper>
     </Hidden>
@@ -230,7 +238,8 @@ let make = () => {
     <Icon className="fa fa-plus-circle" color="primary">{string("add_circle")}</Icon>
 
     <Menu
-      _open=false
+      anchorEl=menuRef
+      _open=(!Js.Nullable.isNullable(menuRef))
     >
       <MenuItem>{string("Profile")}</MenuItem>
       <MenuItem>{string("My account")}</MenuItem>

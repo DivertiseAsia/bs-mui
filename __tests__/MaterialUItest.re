@@ -152,7 +152,7 @@ test("Test Badge component",()=>
 )
 
 test("Test BottomNavigation component",()=>
-  <BottomNavigation>
+  <BottomNavigation showLabels=true>
     <BottomNavigationAction label="Recents" icon={<RestoreIcon />} />
     <BottomNavigationAction label="Favorites" icon={<FavoriteIcon />}  />
   </BottomNavigation>
@@ -209,7 +209,7 @@ test("Test Chip component",()=>
 )
 
 test("Test ClickAwayListener component",()=>
-  <ClickAwayListener>
+  <ClickAwayListener onClickAway={()=>Js.log("clicked away!")}>
       <Button>
         {string("Open menu dropdown")}
       </Button>
@@ -262,7 +262,7 @@ test("Test ExpantionPanel component",()=>
 )
 
 test("Test Grid and Paper component",()=>
-  <Grid spacing={3}>
+  <Grid container=true spacing={3}>
     <Divider orientation="vertical" flexItem=true />
     <Grid item=true xs=GridSize.size(12)>
       <Paper >{string("xs=12")}</Paper>
@@ -302,6 +302,7 @@ test("Test Icon component",()=>
 test("Test Menu component",()=>
   <Menu
     _open=true
+    anchorEl=Js.Nullable.null
   >
     <MenuItem>{string("Profile")}</MenuItem>
     <MenuItem>{string("My account")}</MenuItem>
