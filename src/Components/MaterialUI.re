@@ -1465,7 +1465,7 @@ module Popover = {
   external make:
     (
       ~action: 'a=?,
-      ~anchorEl: 'a=?,
+      ~anchorEl: 'b=?,
       ~anchorOrigin: Js.t('a)=?,
       ~anchorPosition: Js.t('a)=?,
       ~anchorReference: string=?,
@@ -1546,7 +1546,7 @@ module Radio = {
       ~required: bool=?,
       ~size: NoLargeSize.t=?,
       ~type_: string=?,
-      ~value: 'b=?
+      ~value: 'b=?,
     ) =>
     React.element =
     "default";
@@ -1586,7 +1586,7 @@ module Rating = {
       ~required: bool=?,
       ~size: string=?,
       ~type_: string=?,
-      ~value: 'b=?
+      ~value: int=?
     ) =>
     React.element =
     "default";
@@ -1710,7 +1710,7 @@ module Snackbar = {
       ~contentProps: Js.t('a)=?,
       ~disableWindowBlurListener: bool=?,
       ~key: 'a=?,
-      ~message: React.element=?,
+      ~message: string=?,
       ~onClose: unit=>unit=?,
       ~onEnter: unit=>unit=?,
       ~onEntered: unit=>unit=?,
@@ -1730,7 +1730,7 @@ module SnackbarContent = {
     (
       ~action: React.element=?,
       ~classes: string=?,
-      ~message: React.element=?,
+      ~message: string=?,
       ~role: string=?
     ) =>
     React.element =
@@ -1770,7 +1770,7 @@ module SpeedDialAction = {
       ~icon: React.element=?,
       ~tooltipClasses: string=?,
       ~tooltipOpen: bool=?,
-      ~tooltipPlacement: string,
+      ~tooltipPlacement: string=?,
       ~tooltipTitle: React.element=?
     ) =>
     React.element =
