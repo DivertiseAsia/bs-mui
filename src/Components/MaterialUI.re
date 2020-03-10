@@ -1952,7 +1952,13 @@ module TableCell = {
   [@react.component] [@bs.module "@material-ui/core/TableCell"]
   external make:
     (
+      ~align: string=?,
+      ~component: string=?,
       ~padding: string=?,
+      ~scope: string=?,
+      ~size: string=?,
+      ~sortDirection: string=?,
+      ~variant: string=?,
       ~className: string=?,
       ~style: ReactDOMRe.Style.t=?,
       ~children: React.element=?
@@ -2040,7 +2046,7 @@ module Tabs = {
     (
       ~action: 'a=?,
       ~centered: bool=?,
-      ~children: string=?,
+      ~children: React.element=?,
       ~classes: string=?,
       ~component: string=?,
       ~indicatorColor: string=?,

@@ -336,6 +336,53 @@ let make = () => {
         </Step>
     </Stepper>
 
+    <SvgIcon>
+      <path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z" />
+    </SvgIcon>
+
+    <SwipeableDrawer 
+      onClose={_=>Js.log("on close")}
+      onOpen={_=>Js.log("on open")}
+      _open=false
+      disableBackdropTransition=true 
+      disableDiscovery=true />
+
+    <Switch
+      checked=true
+      value="checkedB"
+      color="primary"
+    />
+
+    <Tabs value="test">
+      <Tab label="Item One" />
+      <Tab label="Item Two" />
+      <Tab label="Item Three" />
+    </Tabs>
+
+      <Table>
+        <TableBody>          
+            <TableRow>
+              <TableCell scope="row">
+                {string("name")}
+              </TableCell>
+              <TableCell align="right">{string("category")}</TableCell>
+              <TableCell align="right">{string("fat")}</TableCell>
+            </TableRow>
+            <TableRow>
+              <TableCell />
+            </TableRow>
+        </TableBody>
+        <TableFooter>
+          <TableRow>
+            <TablePagination
+              count={10}
+              rowsPerPage={2}
+              page={2}
+            />
+          </TableRow>
+        </TableFooter>
+      </Table>
+
   </Container>
   </StylesProvider>
   ;
