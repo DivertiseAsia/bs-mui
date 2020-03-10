@@ -16,5 +16,23 @@ let make = () => {
           variant=Variant.outlined
         />
     <Button>(string("Jsx2Button"))</Button>
+
+    <FormControl variant=Variant.outlined>
+      <InputLabel id="demo-simple-select-outlined-label">
+        (string("Age"))
+      </InputLabel>
+      <Select
+        labelId="demo-simple-select-outlined-label"
+        id="demo-simple-select-outlined"
+        value=10
+      >
+        <MenuItem value="">
+          <em>(string("None"))</em>
+        </MenuItem>
+        <MenuItem value=10>(string("Ten"))</MenuItem>
+        <MenuItem value=20>(string("Twenty"))</MenuItem>
+        <MenuItem value=30>(string("Thirty"))</MenuItem>
+      </Select>
+    </FormControl>
     </Container>
 };
