@@ -264,14 +264,14 @@ test("Test ExpantionPanel component",()=>
 test("Test Grid and Paper component",()=>
   <Grid spacing={3}>
     <Divider orientation="vertical" flexItem=true />
-    <Grid item=true xs={12}>
+    <Grid item=true xs=GridSize.size(12)>
       <Paper >{string("xs=12")}</Paper>
     </Grid>
     <Divider orientation="vertical" flexItem=true />
-    <Grid item=true xs={6}>
+    <Grid item=true xs=GridSize.size(6)>
       <Paper >{string("xs=6")}</Paper>
     </Grid>
-    <Grid item=true xs={6}>
+    <Grid item=true xs=GridSize.size(6)>
       <Paper >{string("xs=6")}</Paper>
     </Grid>
   </Grid>
