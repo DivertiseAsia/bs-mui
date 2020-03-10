@@ -263,7 +263,7 @@ module Box = {
 };
 
 module Breadcrumbs = {
-  [@react.component] [@bs.module "@material-ui/core/BottomNavigation"]
+  [@react.component] [@bs.module "@material-ui/core/Breadcrumbs"]
   external make:
     (
       ~children: React.element=?,
@@ -308,7 +308,7 @@ module Button = {
       ~size: Size.t=?,
       ~startIcon: React.element=?,
       ~variant: Variant.t=?,
-      ~onClick: unit => unit=?,
+      ~onClick: ReactEvent.Synthetic.t => unit=?,
       ~type_: string=?,
       ~ref: 'a=?
     ) =>
@@ -526,7 +526,7 @@ module ClickAwayListener = {
     (
       ~children: React.element=?,
       ~mouseEvent: MouseEvent.t=?,
-      ~onClickAway: unit => unit=?,
+      ~onClickAway: unit => unit,
       ~touchEvent: TouchEvent.t=?
     ) =>
     React.element =
@@ -896,12 +896,14 @@ module Grid = {
       ~spacing: int=?,
       ~wrap: string=?,
       ~item: bool=?,
-      ~justify: string=?,
+      ~justify: Justify.t=?,
+      ~alignContent: AlignContent.t=?,
+      ~alignItems: AlignItems.t=?,
       ~zeroMinWidth: bool=?,
-      ~xs: 'b=?,
-      ~xl: 'b=?,
-      ~sm: 'b=?,
-      ~md: 'b=?,
+      ~xs: GridSize.t=?,
+      ~xl: GridSize.t=?,
+      ~sm: GridSize.t=?,
+      ~md: GridSize.t=?,
       ~children: React.element=?
     ) =>
     React.element =
@@ -1244,7 +1246,7 @@ module Menu = {
   [@react.component] [@bs.module "@material-ui/core/Menu"]
   external make:
     (
-      ~anchorEl: 'a=?,
+      ~anchorEl: Js.Nullable.t(Js.t('a)),
       ~autoFocus: bool=?,
       ~children: React.element=?,
       ~classes: string=?,
@@ -1463,7 +1465,7 @@ module Popover = {
   external make:
     (
       ~action: 'a=?,
-      ~anchorEl: 'a=?,
+      ~anchorEl: 'b=?,
       ~anchorOrigin: Js.t('a)=?,
       ~anchorPosition: Js.t('a)=?,
       ~anchorReference: string=?,
@@ -1544,7 +1546,7 @@ module Radio = {
       ~required: bool=?,
       ~size: NoLargeSize.t=?,
       ~type_: string=?,
-      ~value: 'b=?
+      ~value: 'b=?,
     ) =>
     React.element =
     "default";
@@ -1584,7 +1586,7 @@ module Rating = {
       ~required: bool=?,
       ~size: string=?,
       ~type_: string=?,
-      ~value: 'b=?
+      ~value: int=?
     ) =>
     React.element =
     "default";
@@ -1634,6 +1636,18 @@ module Select = {
 };
 
 module Skeleton = {
+  module Variant : { 
+    type t;
+    let text:t;
+    let rect:t;
+    let circle:t;
+  }= {
+    type t = string;
+    [@bs.inline] let text:t = "text";
+    [@bs.inline] let rect:t = "rect";
+    [@bs.inline] let circle:t = "circle";
+  };
+
   [@react.component] [@bs.module "@material-ui/lab/Skeleton"]
   external make:
     (
@@ -1708,7 +1722,7 @@ module Snackbar = {
       ~contentProps: Js.t('a)=?,
       ~disableWindowBlurListener: bool=?,
       ~key: 'a=?,
-      ~message: React.element=?,
+      ~message: string=?,
       ~onClose: unit=>unit=?,
       ~onEnter: unit=>unit=?,
       ~onEntered: unit=>unit=?,
@@ -1728,7 +1742,7 @@ module SnackbarContent = {
     (
       ~action: React.element=?,
       ~classes: string=?,
-      ~message: React.element=?,
+      ~message: string=?,
       ~role: string=?
     ) =>
     React.element =
@@ -1768,7 +1782,7 @@ module SpeedDialAction = {
       ~icon: React.element=?,
       ~tooltipClasses: string=?,
       ~tooltipOpen: bool=?,
-      ~tooltipPlacement: string,
+      ~tooltipPlacement: string=?,
       ~tooltipTitle: React.element=?
     ) =>
     React.element =

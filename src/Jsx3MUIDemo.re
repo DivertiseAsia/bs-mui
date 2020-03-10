@@ -42,7 +42,19 @@ let make = () => {
   let madeStyle = makeStyles(styleObj);
   let classes = madeStyle(. 0);
 
+  let (menuRef, setMenuRef) = React.useState(()=>Js.Nullable.null);
+  let (menuOpen, setMenuOpen) = React.useState(() => false);
+
+  let menuButton = <ClickAwayListener onClickAway={_=>setMenuRef(_=>Js.Nullable.null)}>
+        <Button onClick={evt=>{
+          setMenuRef(_=>Js.Nullable.return(ReactEvent.Synthetic.target(evt)))
+        }}>
+          {string("Open menu dropdown")}
+        </Button>
+    </ClickAwayListener>;
+
   <StylesProvider injectFirst=true>
+  <div>(string("Jsx3"))</div>
   <Container id="container-id" className={classes->Js.Dict.unsafeGet("root")}>
     /* <Container id="container-button">
       <FormLabel> {string("Button")} </FormLabel>
@@ -135,16 +147,16 @@ let make = () => {
       <Button>{string("Large Button")}</Button>
     </Box>
 
-    <Grid spacing={3}>
+    <Grid container=true spacing={3}>
       <Divider orientation="vertical" flexItem=true />
-      <Grid item=true xs={12}>
+      <Grid item=true xs=GridSize.size(12)>
         <Paper >{string("xs=12")}</Paper>
       </Grid>
       <Divider orientation="vertical" flexItem=true />
-      <Grid item=true xs={6}>
+      <Grid item=true xs=GridSize.size(6)>
         <Paper >{string("xs=6")}</Paper>
       </Grid>
-      <Grid item=true xs={6}>
+      <Grid item=true xs=GridSize.size(6)>
         <Paper >{string("xs=6")}</Paper>
       </Grid>
     </Grid>
@@ -183,12 +195,12 @@ let make = () => {
 
     <Badge badgeContent={4} color="error" />
 
-    <BottomNavigation>
+    <BottomNavigation showLabels=true component="div">
       <BottomNavigationAction label="Recents" icon={<RestoreIcon />} />
       <BottomNavigationAction label="Favorites" icon={<FavoriteIcon />}  />
     </BottomNavigation>
 
-    <Breadcrumbs>
+     <Breadcrumbs>
       <Link color="inherit" href="/">
         {string("Material-UI")}
       </Link>
@@ -204,13 +216,10 @@ let make = () => {
       <Button>{string("Three")}</Button>
     </ButtonGroup>
 
-    <Chip label="Basic" />
+    
+    menuButton
 
-    <ClickAwayListener>
-        <Button>
-          {string("Open menu dropdown")}
-        </Button>
-    </ClickAwayListener>
+    <Chip label="Basic" />
 
      <React.Fragment>
       <CssBaseline />
@@ -221,7 +230,7 @@ let make = () => {
         {string("Test Drawer")}
       </Typography>
     </Drawer>
-
+    
     <Hidden xsUp=false>
       <Paper>{string("xsUp")}</Paper>
     </Hidden>
@@ -229,7 +238,8 @@ let make = () => {
     <Icon className="fa fa-plus-circle" color="primary">{string("add_circle")}</Icon>
 
     <Menu
-      _open=false
+      anchorEl=menuRef
+      _open=(!Js.Nullable.isNullable(menuRef))
     >
       <MenuItem>{string("Profile")}</MenuItem>
       <MenuItem>{string("My account")}</MenuItem>
@@ -260,10 +270,102 @@ let make = () => {
           "vertical": "top",
           "horizontal": "center",
         }}
+        // anchorEl= { None}
     >
       <Typography>{string("The content of the Popover.")}</Typography>
     </Popover>
 
+    // <Popper 
+    //   _open=true transition=true>
+    //     {transitionProp => 
+    //     <Fade timeout={"350"}>
+    //       <Typography>{string("The content of the Popper.")}</Typography>
+    //     </Fade>}
+    // </Popper>
+
+    <Portal>
+      <Typography>{string("The content of the Popper.")}</Typography>
+    </Portal>
+
+    <Radio
+        value="a"
+        name="radio-button-demo"
+      />
+
+    <Box component="fieldset">
+        <Typography component="legend">{string("Controlled")}</Typography>
+        <Rating
+        name="test rating"
+        disabled=false
+        value={12}
+      />
+      </Box>
+
+    <Skeleton variant=Skeleton.Variant.text />
+    <Skeleton variant=Skeleton.Variant.circle width="40" height="40" />
+    <Skeleton variant=Skeleton.Variant.rect width="210" height="118" />
+    
+    <Slider
+        defaultValue={30}
+        aria_labelledby="discrete-slider"
+        valueLabelDisplay="auto"
+        step={10}
+        min={10}
+        max={110}
+      />
+
+    <Snackbar
+        anchorOrigin={{
+          "vertical": "bottom",
+          "horizontal": "left",
+        }}
+        _open=true
+        autoHideDuration={6000}
+        message="Note archived"
+      />
+
+    <SnackbarContent message="I love snacks." />
+
+    <SpeedDial
+        ariaLabel="SpeedDial openIcon example"
+        hidden=false
+        icon={<SpeedDialIcon openIcon={<FavoriteIcon />} />}
+        _open=true
+      >
+      </SpeedDial>
+
+    // <SpeedDialAction
+    //   icon={<SpeedDialIcon openIcon={<FavoriteIcon />} />}
+    //   tooltipTitle={<div>{string("Test Speed Action")}</div>}
+    //   tooltipOpen=true
+    // />
+
+    <Stepper activeStep={10} alternativeLabel=true>
+        <Step>
+          <StepLabel>{string("Test Step Label")}</StepLabel>
+        </Step>
+    </Stepper>
+
+  </Container>
+
+  <Container>
+    <FormControl variant=Variant.outlined>
+      <InputLabel id="demo-simple-select-outlined-label">
+        (string("Age"))
+      </InputLabel>
+      <Select
+        labelId="demo-simple-select-outlined-label"
+        id="demo-simple-select-outlined"
+        value=10
+      >
+        <MenuItem value="">
+          <em>(string("None"))</em>
+        </MenuItem>
+        <MenuItem value=10>(string("Ten"))</MenuItem>
+        <MenuItem value=20>(string("Twenty"))</MenuItem>
+        <MenuItem value=30>(string("Thirty"))</MenuItem>
+      </Select>
+    </FormControl>
   </Container>
   </StylesProvider>
   ;

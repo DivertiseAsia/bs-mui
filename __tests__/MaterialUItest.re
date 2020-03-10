@@ -152,7 +152,7 @@ test("Test Badge component",()=>
 )
 
 test("Test BottomNavigation component",()=>
-  <BottomNavigation>
+  <BottomNavigation showLabels={true} component="div">
     <BottomNavigationAction label="Recents" icon={<RestoreIcon />} />
     <BottomNavigationAction label="Favorites" icon={<FavoriteIcon />}  />
   </BottomNavigation>
@@ -209,7 +209,7 @@ test("Test Chip component",()=>
 )
 
 test("Test ClickAwayListener component",()=>
-  <ClickAwayListener>
+  <ClickAwayListener onClickAway={_=>Js.log("Click Away Listener");}>
       <Button>
         {string("Open menu dropdown")}
       </Button>
@@ -262,16 +262,16 @@ test("Test ExpantionPanel component",()=>
 )
 
 test("Test Grid and Paper component",()=>
-  <Grid spacing={3}>
+  <Grid container=true spacing={3}>
     <Divider orientation="vertical" flexItem=true />
-    <Grid item=true xs={12}>
+    <Grid item=true xs=GridSize.size(12)>
       <Paper >{string("xs=12")}</Paper>
     </Grid>
     <Divider orientation="vertical" flexItem=true />
-    <Grid item=true xs={6}>
+    <Grid item=true xs=GridSize.size(6)>
       <Paper >{string("xs=6")}</Paper>
     </Grid>
-    <Grid item=true xs={6}>
+    <Grid item=true xs=GridSize.size(6)>
       <Paper >{string("xs=6")}</Paper>
     </Grid>
   </Grid>
@@ -302,6 +302,7 @@ test("Test Icon component",()=>
 test("Test Menu component",()=>
   <Menu
     _open=true
+    anchorEl=Js.Nullable.null
   >
     <MenuItem>{string("Profile")}</MenuItem>
     <MenuItem>{string("My account")}</MenuItem>
@@ -356,9 +357,178 @@ test("Test Popover component",()=>
         "vertical": "top",
         "horizontal": "center",
       }}
+      anchorEl= {React.null}
   >
     <Typography>{string("The content of the Popover.")}</Typography>
   </Popover>
+  |> render
+  |> container
+  |> expect
+  |> toMatchSnapshot
+)
+
+test("Test Portal component",()=>
+  <Portal>
+    <Typography>{string("The content of the Popper.")}</Typography>
+  </Portal>
+  |> render
+  |> container
+  |> expect
+  |> toMatchSnapshot
+)
+
+test("Test Radio component",()=>
+  <Radio
+        value="a"
+        name="radio-button-demo"
+      />
+  |> render
+  |> container
+  |> expect
+  |> toMatchSnapshot
+)
+
+test("Test RadioGroup component",()=>
+  <Container id="container-radio-group">
+    <FormLabel> {string("Radio Group")} </FormLabel>
+    <RadioGroup name="radio-group">
+      <FormControlLabel control={<Radio />} label="Default" />
+      <FormControlLabel control={<Radio disabled=true />} label="Disabled" />
+      <FormControlLabel
+        control={<Radio size=Size.medium />}
+        label="Medium"
+      />
+      <FormControlLabel control={<Radio size=Size.small />} label="Small" />
+    </RadioGroup>      
+  </Container>
+  |> render
+  |> container
+  |> expect
+  |> toMatchSnapshot
+)
+
+test("Test Rating component ",()=>
+  <Box component="fieldset">
+      <Typography component="legend">{string("Controlled")}</Typography>
+        <Rating
+        name="test rating"
+        disabled=false
+        value={12}
+      />
+    </Box>
+  |> render
+  |> container
+  |> expect
+  |> toMatchSnapshot
+)
+
+// test("Test RootRef component",()=>
+//     <RootRef rootRef={React.createRef(<div></div>)}>
+//       <div >{string("Test rootref")}</div>
+//     </RootRef>
+//     |> render
+//     |> container
+//     |> expect
+//     |> toMatchSnapshot
+// )
+
+test("Test Skeleton component",()=> {
+    open Skeleton.Variant;
+    <Container>
+      
+      <Skeleton variant=text />
+      <Skeleton variant=circle width="40" height="40" />
+      <Skeleton variant=rect width="210" height="118" />
+      
+    </Container>
+    |> render
+    |> container
+    |> expect
+    |> toMatchSnapshot
+    }
+)
+
+test("Test slide component",()=>
+  <Slide direction="up" >
+    <div></div>
+  </Slide>
+  |> render
+  |> container
+  |> expect
+  |> toMatchSnapshot
+)
+
+test("Test slider component",()=>
+    <Slider
+        defaultValue={30}
+        aria_labelledby="discrete-slider"
+        valueLabelDisplay="auto"
+        step={10}
+        min={10}
+        max={110}
+      />
+    |> render
+    |> container
+    |> expect
+    |> toMatchSnapshot
+)
+
+test("Test SnackBar component",()=>
+    <Snackbar
+      anchorOrigin={{
+        "vertical": "bottom",
+        "horizontal": "left",
+      }}
+      _open=true
+      autoHideDuration={6000}
+      message="Note archived"
+    />
+    |> render
+    |> container
+    |> expect
+    |> toMatchSnapshot
+)
+
+test("Test SnackbarContent component",()=>
+  <SnackbarContent message="I love snacks." />
+  |> render
+  |> container
+  |> expect
+  |> toMatchSnapshot
+)
+
+test("Test SpeedDial component",()=>
+    <SpeedDial
+        ariaLabel="SpeedDial openIcon example"
+        hidden=false
+        icon={<SpeedDialIcon openIcon={<FavoriteIcon />} />}
+        _open=true
+      >
+      </SpeedDial>
+    |> render
+    |> container
+    |> expect
+    |> toMatchSnapshot
+)
+
+test("Test SpeedDialAction component",()=>
+    <SpeedDialAction
+      icon={<SpeedDialIcon openIcon={<FavoriteIcon />} />}
+      tooltipTitle={<div>{string("Test Speed Action")}</div>}
+      tooltipOpen=true
+    />
+    |> render
+    |> container
+    |> expect
+    |> toMatchSnapshot
+)
+
+test("Test Stepper component",()=>
+  <Stepper activeStep={10} alternativeLabel=true>
+      <Step>
+        <StepLabel>{string("Test Step Label")}</StepLabel>
+      </Step>
+  </Stepper>
   |> render
   |> container
   |> expect
