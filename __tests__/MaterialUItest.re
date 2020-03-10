@@ -432,16 +432,20 @@ test("Test Rating component ",()=>
 //     |> toMatchSnapshot
 // )
 
-test("Test Skeleton component",()=>
+test("Test Skeleton component",()=> {
+    open Skeleton.Variant;
     <Container>
-      <Skeleton variant="text" />
-      <Skeleton variant="circle" width="40" height="40" />
-      <Skeleton variant="rect" width="210" height="118" />
+      
+      <Skeleton variant=text />
+      <Skeleton variant=circle width="40" height="40" />
+      <Skeleton variant=rect width="210" height="118" />
+      
     </Container>
     |> render
     |> container
     |> expect
     |> toMatchSnapshot
+    }
 )
 
 test("Test slide component",()=>
