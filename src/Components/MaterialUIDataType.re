@@ -123,3 +123,76 @@ module Variant:{
   [@bs.inline] let outlined:t = "outlined";
   [@bs.inline] let filled:t = "filled";
 }
+
+module AlignContent : { 
+  type t;
+  let stretch:t;
+  let center:t;
+  let flexStart:t;
+  let flexEnd:t;
+  let spaceBetween:t;
+  let spaceAround:t;
+} = {
+  type t = string;
+  [@bs.inline] let stretch:t = "stretch";
+  [@bs.inline] let center:t = "center";
+  [@bs.inline] let flexStart:t = "flex-start";
+  [@bs.inline] let flexEnd:t = "flex-end";
+  [@bs.inline] let spaceBetween:t = "space-between";
+  [@bs.inline] let spaceAround:t = "space-around";
+};
+
+module AlignItems : {
+  type t;
+  let flexStart:t;
+  let center:t;
+  let flexEnd:t;
+  let stretch:t;
+  let baseline:t;
+} = {
+  type t = string;
+  [@bs.inline] let flexStart:t = "flex-start";
+  [@bs.inline] let center:t = "center";
+  [@bs.inline] let flexEnd:t = "flex-end";
+  [@bs.inline] let stretch:t = "stretch";
+  [@bs.inline] let baseline:t = "baseline";
+};
+
+module Justify : {
+  type t;
+  let flexStart:t;
+  let center:t;
+  let flexEnd:t;
+  let spaceBetween:t;
+  let spaceAround:t;
+  let spaceEvenly:t;
+} = {
+  type t = string;
+  [@bs.inline] let flexStart:t = "flex-start";
+  [@bs.inline] let center:t = "center";
+  [@bs.inline] let flexEnd:t = "flex-end";
+  [@bs.inline] let spaceBetween:t = "space-between";
+  [@bs.inline] let spaceAround:t = "space-around";
+  [@bs.inline] let spaceEvenly:t = "space-evenly";
+};
+
+module GridSize : {
+  type t;
+  let auto: t;
+  let true_: t;
+  let false_: t;
+  let size: int => t;
+} = {
+  [@unboxed]
+  type t = | Any('a): t;
+
+  let auto = Any("auto");
+  let true_ = Any(true);
+  let false_ = Any(false);
+
+  let size = (i: int) => if (i >= 1 && i <= 12) {
+    Any(i)
+  } else {
+    false_
+  };
+};
