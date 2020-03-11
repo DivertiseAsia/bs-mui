@@ -891,7 +891,6 @@ module Grid = {
   external make:
     (
       ~selectProps: 'a=?,
-      ~item: bool=?,
       ~container: bool=?,
       ~spacing: int=?,
       ~wrap: string=?,
@@ -906,8 +905,8 @@ module Grid = {
       ~md: GridSize.t=?,
       ~children: React.element=?
     ) =>
-    React.element =
-    "default";
+    React.element = "default";
+    
 };
 
 module GridList = {

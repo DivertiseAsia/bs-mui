@@ -299,15 +299,19 @@ test("Test Icon component",()=>
   |> toMatchSnapshot
 )
 
-test("Test Menu component",()=>
-  <Menu
-    _open=true
-    anchorEl=Js.Nullable.null
-  >
-    <MenuItem>{string("Profile")}</MenuItem>
-    <MenuItem>{string("My account")}</MenuItem>
-    <MenuItem>{string("Logout")}</MenuItem>
-  </Menu>
+test("Test Menu component",()=>{
+    <>
+    
+    <Menu
+      _open=true
+      anchorEl=Js.Nullable.null
+    >
+      <MenuItem>{string("Profile")}</MenuItem>
+      <MenuItem>{string("My account")}</MenuItem>
+      <MenuItem>{string("Logout")}</MenuItem>
+    </Menu>
+    </>
+  }
   |> render
   |> container
   |> expect
@@ -357,7 +361,7 @@ test("Test Popover component",()=>
         "vertical": "top",
         "horizontal": "center",
       }}
-      anchorEl= {React.null}
+      anchorEl={Js.Nullable.return(<Button></Button>)}
   >
     <Typography>{string("The content of the Popover.")}</Typography>
   </Popover>

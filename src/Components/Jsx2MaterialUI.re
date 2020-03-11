@@ -420,44 +420,69 @@ module Checkbox {
 module Grid {
     open MaterialUI.Grid;
 
-    let component = ReasonReact.statelessComponent("Grid");
+    module Container {
+        let component = ReasonReact.statelessComponent("GridContainer");
 
-    let make = (
-        ~selectProps=?,
-        ~item=?,
-        ~container=?,
-        ~spacing=?,
-        ~wrap=?,
-        ~item=?,
-        ~justify=?,
-        ~alignContent=?,
-        ~alignItems=?,
-        ~zeroMinWidth=?,
-        ~xs=?,
-        ~xl=?,
-        ~sm=?,
-        ~md=?,
-        ~children=?) => 
-        ReasonReactCompat.wrapReactForReasonReact(
-            make,
-            makeProps(
-                ~selectProps?,
-                ~item?,
-                ~container?,
-                ~spacing?,
-                ~wrap?,
-                ~item?,
-                ~justify?,
-                ~alignContent?,
-                ~alignItems?,
-                ~zeroMinWidth?,
-                ~xs?,
-                ~xl?,
-                ~sm?,
-                ~md?,
-                ~children?,
-                ()),
-        );       
+        let make = (
+            ~selectProps=?,
+            ~spacing=?,
+            ~wrap=?,
+            ~justify=?,
+            ~alignContent=?,
+            ~alignItems=?,
+            ~zeroMinWidth=?,
+            ~children=?) => 
+            ReasonReactCompat.wrapReactForReasonReact(
+                make,
+                makeProps(
+                    ~selectProps?,
+                    ~spacing?,
+                    ~container=true,
+                    ~wrap?,
+                    ~justify?,
+                    ~alignContent?,
+                    ~alignItems?,
+                    ~zeroMinWidth?,
+                    ~children?,
+                    ()),
+            );   
+    }
+
+    module Grid {
+        let component = ReasonReact.statelessComponent("GridItem");
+
+        let make = (
+            ~selectProps=?,
+            ~spacing=?,
+            ~wrap=?,
+            ~justify=?,
+            ~alignContent=?,
+            ~alignItems=?,
+            ~zeroMinWidth=?,
+            ~xs=?,
+            ~xl=?,
+            ~sm=?,
+            ~md=?,
+            ~children=?) => 
+            ReasonReactCompat.wrapReactForReasonReact(
+                make,
+                makeProps(
+                    ~selectProps?,
+                    ~spacing?,
+                    ~wrap?,
+                    ~item=true,
+                    ~justify?,
+                    ~alignContent?,
+                    ~alignItems?,
+                    ~zeroMinWidth?,
+                    ~xs?,
+                    ~xl?,
+                    ~sm?,
+                    ~md?,
+                    ~children?,
+                    ()),
+            );   
+    }  
 };
 
 module Paper {
