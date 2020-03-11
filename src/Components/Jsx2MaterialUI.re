@@ -149,7 +149,8 @@ module TextField {
         ~value=?,
         ~required=?,
         ~onChange=?,
-        ~type_=?) => 
+        ~type_=?,
+        ~disabled=?) => 
     ReasonReactCompat.wrapReactForReasonReact(
         make,
         makeProps(
@@ -168,6 +169,7 @@ module TextField {
             ~required?,
             ~onChange?,
             ~type_?,
+            ~disabled?,
             ()),
     );   
 }

@@ -2136,7 +2136,8 @@ module TextField = {
       ~value: string=?,
       ~required: bool=?,
       ~onChange: ReactEvent.Form.t => unit=?,
-      ~type_: string=?
+      ~type_: string=?,
+      ~disabled: bool=?
     ) =>
     React.element =
     "default";
