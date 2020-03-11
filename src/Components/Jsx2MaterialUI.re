@@ -448,7 +448,7 @@ module Grid {
             );   
     }
 
-    module Grid {
+    module Item {
         let component = ReasonReact.statelessComponent("GridItem");
 
         let make = (
