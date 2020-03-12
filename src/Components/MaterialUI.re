@@ -1193,8 +1193,13 @@ module ListItem = {
     (
       ~href: string=?,
       ~button: bool=?,
+      ~selected: bool=?,
+      ~dense: bool=?,
+      ~disableGutters: bool=?,
+      ~divider: bool=?,
       ~onClick: unit => unit=?,
       ~component: 'b=?,
+      ~className: string=?,
       ~children: React.element=?
     ) =>
     React.element =
@@ -1231,14 +1236,28 @@ module ListItemSecondaryAction = {
 module ListItemText = {
   [@react.component] [@bs.module "@material-ui/core/ListItemText"]
   external make:
-    (~primary: string=?, ~children: React.element=?) => React.element =
+    (
+      ~primary: string=?, 
+      ~secondary: string=?,
+      ~inset: bool=?,
+      ~disableTypography: bool=?,
+      ~primaryTypographyProps: Js.t('a)=?,
+      ~secondaryTypographyProps: Js.t('a)=?,
+      ~children: React.element=?
+    ) => React.element =
     "default";
 };
 
 module ListSubheader = {
   [@react.component] [@bs.module "@material-ui/core/ListSubheader"]
-  external make: (~inset: bool=?, ~children: React.element=?) => React.element =
-    "default";
+  external make: 
+    (
+      ~className: string=?,
+      ~disableGutters: bool=?,
+      ~disableSticky: bool=?,
+      ~inset: bool=?, 
+      ~children: React.element=?
+    ) => React.element = "default";
 };
 
 module Menu = {
