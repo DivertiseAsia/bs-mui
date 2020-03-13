@@ -566,7 +566,7 @@ test("Test Switch component",()=>
 )
 
 test("Test tab component",()=>
-    <Tabs value="test">
+    <Tabs value=false>
       <Tab label="Item One" />
       <Tab label="Item Two" />
       <Tab label="Item Three" />
@@ -597,6 +597,7 @@ test("Test Table component",()=>
             count={10}
             rowsPerPage={2}
             page={2}
+            onChangePage={_=>Js.log("on change page")}
           />
         </TableRow>
       </TableFooter>

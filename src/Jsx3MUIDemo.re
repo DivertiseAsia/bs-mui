@@ -135,7 +135,7 @@ let make = () => {
       <Button>{string("Large Button")}</Button>
     </Box>
 
-    <Grid spacing={3}>
+    <Grid>
       <Divider orientation="vertical" flexItem=true />
       <Grid item=true xs={12}>
         <Paper >{string("xs=12")}</Paper>
@@ -184,8 +184,8 @@ let make = () => {
     <Badge badgeContent={4} color="error" />
 
     <BottomNavigation showLabels=true component="div">
-      <BottomNavigationAction label="Recents" icon={<RestoreIcon />} />
-      <BottomNavigationAction label="Favorites" icon={<FavoriteIcon />}  />
+      <BottomNavigationAction  label="Recents" icon={<RestoreIcon />} />
+      <BottomNavigationAction  label="Favorites" icon={<FavoriteIcon />}  />
     </BottomNavigation>
 
     <Breadcrumbs>
@@ -260,7 +260,7 @@ let make = () => {
           "vertical": "top",
           "horizontal": "center",
         }}
-        // anchorEl= { None}
+        // anchorEl= {_=>Js.log("Test Popover")}
     >
       <Typography>{string("The content of the Popover.")}</Typography>
     </Popover>
@@ -353,7 +353,7 @@ let make = () => {
       color="primary"
     />
 
-    <Tabs value="test">
+    <Tabs value=false>
       <Tab label="Item One" />
       <Tab label="Item Two" />
       <Tab label="Item Three" />
@@ -378,6 +378,7 @@ let make = () => {
               count={10}
               rowsPerPage={2}
               page={2}
+              onChangePage={_=>Js.log("on change page")}
             />
           </TableRow>
         </TableFooter>

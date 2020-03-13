@@ -217,7 +217,7 @@ module BottomNavigationAction = {
       ~className: string=?,
       ~icon: React.element=?,
       ~label: string=?,
-      ~showLabel: bool=?,
+      // ~showLabel: bool=?,
       ~value: 'a=?
     ) => /* children type is unsupportedProp */
     React.element =
@@ -2000,7 +2000,7 @@ module TablePagination = {
       ~page: int=?,
       ~rowsPerPage: int=?,
       ~rowsPerPageOptions: array(int)=?,
-      ~onChangePage: (ReactEvent.Synthetic.t, int) => unit=?,
+      ~onChangePage: unit => unit,
       ~onChangeRowsPerPage: ReactEvent.Synthetic.t => unit=?,
       ~className: string=?,
       ~style: ReactDOMRe.Style.t=?,
@@ -2185,7 +2185,11 @@ module Typography = {
       ~align: string=?,
       ~className: string=?,
       ~noWrap: bool=?,
-      ~children: React.element=?
+      ~children: React.element=?,
+      ~display: string=?,
+      ~gutterBottom: bool=?,
+      ~paragraph	: bool=?,
+      ~variantMapping: Js.t('a)=?
     ) =>
     React.element =
     "default";
