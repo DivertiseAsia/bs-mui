@@ -383,6 +383,31 @@ let make = () => {
         </TableFooter>
       </Table>
 
+      <TextareaAutosize rowsMax="3" />
+
+      <ToggleButtonGroup
+          onChange={_=>Js.log("toggle button")}
+        >
+        <ToggleButton value="left" >
+          <FavoriteIcon />
+        </ToggleButton>
+        <ToggleButton value="center" >
+          <FavoriteIcon />
+        </ToggleButton>
+        <ToggleButton value="right" >
+          <FavoriteIcon />
+        </ToggleButton>
+        <ToggleButton value="justify">
+          <FavoriteIcon />
+        </ToggleButton>
+      </ToggleButtonGroup>
+
+      // <Tooltip title="Delete">
+      //   <IconButton edge="start" color="inherit">
+      //     <RestoreIcon />
+      //   </IconButton>
+      // </Tooltip>
+
   </Container>
   </StylesProvider>
   ;

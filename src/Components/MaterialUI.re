@@ -2063,8 +2063,16 @@ module Tabs = {
     "default";
 };
 
-module TabTextareaAutosizes = {
-  // TODO: Implement
+module TextareaAutosize = {
+  [@react.component] [@bs.module "@material-ui/core/TextareaAutosize"]
+  external make:
+    (
+      ~rows: string=?,
+      ~rowsMax: string=?,
+      ~rowsMin: string=?
+    ) =>
+    React.element =
+    "default";
 };
 
 module TextField = {
@@ -2092,11 +2100,34 @@ module TextField = {
 };
 
 module ToggleButton = {
-  // TODO: Implement
+  [@react.component] [@bs.module "@material-ui/lab/ToggleButton"]
+  external make:
+    (
+      ~children : React.element,
+      ~classes: string=?,
+      ~disabled: bool=?,
+      ~disableFocusRipple: bool=?,
+      ~disableRipple: bool=?,
+      ~selected: bool=?,
+      ~value: 'a
+    ) =>
+    React.element =
+    "default";
 };
 
 module ToggleButtonGroup = {
-  // TODO: Implement
+  [@react.component] [@bs.module "@material-ui/lab/ToggleButtonGroup"]
+  external make:
+    (
+      ~children : React.element=?,
+      ~classes: string=?,
+      ~exclusive: bool=?,
+      ~onChange: unit=>unit=?,
+      ~size: string=?,
+      ~value: 'a=?
+    ) =>
+    React.element =
+    "default";
 };
 
 module Toolbar = {
@@ -2107,7 +2138,33 @@ module Toolbar = {
 };
 
 module Tooltip = {
-  // TODO: Implement
+  [@react.component] [@bs.module "@material-ui/core/Tooltip"]
+  external make:
+    (
+      ~children : React.element,
+      ~arrow: bool=?,
+      ~classes: string=?,
+      ~disableFocusListener: bool=?,
+      ~disableHoverListener: bool=?,
+      ~disableTouchListener: bool=?,
+      ~enterDelay: int=?,
+      ~enterNextDelay: int=?,
+      ~enterTouchDelay: int=?,
+      ~id: string=?,
+      ~interactive: bool=?,
+      ~leaveDelay: int=?,
+      ~leaveTouchDelay: int=?,
+      ~onClose: unit=>unit=?,
+      ~onOpen: unit=>unit=?,
+      ~_open: bool=?,
+      ~placement: string=?,
+      ~popperProps: Js.t('a)=?,
+      ~title: string,
+      ~transitionComponent: string=?,
+      ~transitionProps: Js.t('a)=?
+    ) =>
+    React.element =
+    "default";
 };
 
 module TreeItem = {

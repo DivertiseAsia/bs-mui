@@ -607,6 +607,49 @@ test("Test Table component",()=>
     |> toMatchSnapshot
 )
 
+test("Test textAreaAutoSize component",()=>
+    <TextareaAutosize rowsMax="3" />
+    |> render
+    |> container
+    |> expect
+    |> toMatchSnapshot
+)
+
+test("Test ToggleButton component",()=>
+  <ToggleButtonGroup
+        onChange={_=>Js.log("toggle button")}
+      >
+      <ToggleButton value="left" >
+        <FavoriteIcon />
+      </ToggleButton>
+      <ToggleButton value="center" >
+        <FavoriteIcon />
+      </ToggleButton>
+      <ToggleButton value="right" >
+        <FavoriteIcon />
+      </ToggleButton>
+      <ToggleButton value="justify">
+        <FavoriteIcon />
+      </ToggleButton>
+    </ToggleButtonGroup>
+    |> render
+    |> container
+    |> expect
+    |> toMatchSnapshot
+)
+
+test("Test Tooltip component",()=>
+ <Tooltip title="Delete">
+    <IconButton edge="start" color="inherit">
+      <RestoreIcon />
+    </IconButton>
+  </Tooltip>
+  |> render
+  |> container
+  |> expect
+  |> toMatchSnapshot
+)
+
 test("Test checkbox component",()=>
     <Checkbox
         checked=true
