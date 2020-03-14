@@ -239,7 +239,7 @@ module BottomNavigationAction = {
       ~className: string=?,
       ~icon: React.element=?,
       ~label: string=?,
-      ~showLabel: bool=?,
+      // ~showLabel: bool=?,
       ~value: 'a=?
     ) => /* children type is unsupportedProp */
     React.element =
@@ -2028,7 +2028,13 @@ module TableCell = {
   [@react.component] [@bs.module "@material-ui/core/TableCell"]
   external make:
     (
+      ~align: string=?,
+      ~component: string=?,
       ~padding: string=?,
+      ~scope: string=?,
+      ~size: string=?,
+      ~sortDirection: string=?,
+      ~variant: string=?,
       ~className: string=?,
       ~style: ReactDOMRe.Style.t=?,
       ~children: React.element=?
@@ -2070,7 +2076,7 @@ module TablePagination = {
       ~page: int=?,
       ~rowsPerPage: int=?,
       ~rowsPerPageOptions: array(int)=?,
-      ~onChangePage: (ReactEvent.Synthetic.t, int) => unit=?,
+      ~onChangePage: unit => unit,
       ~onChangeRowsPerPage: ReactEvent.Synthetic.t => unit=?,
       ~className: string=?,
       ~style: ReactDOMRe.Style.t=?,
@@ -2116,7 +2122,7 @@ module Tabs = {
     (
       ~action: 'a=?,
       ~centered: bool=?,
-      ~children: string=?,
+      ~children: React.element=?,
       ~classes: string=?,
       ~component: string=?,
       ~indicatorColor: string=?,
@@ -2133,8 +2139,16 @@ module Tabs = {
     "default";
 };
 
-module TabTextareaAutosizes = {
-  // TODO: Implement
+module TextareaAutosize = {
+  [@react.component] [@bs.module "@material-ui/core/TextareaAutosize"]
+  external make:
+    (
+      ~rows: string=?,
+      ~rowsMax: string=?,
+      ~rowsMin: string=?
+    ) =>
+    React.element =
+    "default";
 };
 
 module TextField = {
@@ -2163,11 +2177,34 @@ module TextField = {
 };
 
 module ToggleButton = {
-  // TODO: Implement
+  [@react.component] [@bs.module "@material-ui/lab/ToggleButton"]
+  external make:
+    (
+      ~children : React.element,
+      ~classes: string=?,
+      ~disabled: bool=?,
+      ~disableFocusRipple: bool=?,
+      ~disableRipple: bool=?,
+      ~selected: bool=?,
+      ~value: 'a
+    ) =>
+    React.element =
+    "default";
 };
 
 module ToggleButtonGroup = {
-  // TODO: Implement
+  [@react.component] [@bs.module "@material-ui/lab/ToggleButtonGroup"]
+  external make:
+    (
+      ~children : React.element=?,
+      ~classes: string=?,
+      ~exclusive: bool=?,
+      ~onChange: unit=>unit=?,
+      ~size: string=?,
+      ~value: 'a=?
+    ) =>
+    React.element =
+    "default";
 };
 
 module Toolbar = {
@@ -2178,7 +2215,33 @@ module Toolbar = {
 };
 
 module Tooltip = {
-  // TODO: Implement
+  [@react.component] [@bs.module "@material-ui/core/Tooltip"]
+  external make:
+    (
+      ~children : React.element,
+      ~arrow: bool=?,
+      ~classes: string=?,
+      ~disableFocusListener: bool=?,
+      ~disableHoverListener: bool=?,
+      ~disableTouchListener: bool=?,
+      ~enterDelay: int=?,
+      ~enterNextDelay: int=?,
+      ~enterTouchDelay: int=?,
+      ~id: string=?,
+      ~interactive: bool=?,
+      ~leaveDelay: int=?,
+      ~leaveTouchDelay: int=?,
+      ~onClose: unit=>unit=?,
+      ~onOpen: unit=>unit=?,
+      ~_open: bool=?,
+      ~placement: string=?,
+      ~popperProps: Js.t('a)=?,
+      ~title: string,
+      ~transitionComponent: string=?,
+      ~transitionProps: Js.t('a)=?
+    ) =>
+    React.element =
+    "default";
 };
 
 module TreeItem = {
@@ -2235,7 +2298,11 @@ module Typography = {
       ~align: string=?,
       ~className: string=?,
       ~noWrap: bool=?,
-      ~children: React.element=?
+      ~children: React.element=?,
+      ~display: string=?,
+      ~gutterBottom: bool=?,
+      ~paragraph	: bool=?,
+      ~variantMapping: Js.t('a)=?
     ) =>
     React.element =
     "default";
