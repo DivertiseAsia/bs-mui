@@ -1,5 +1,4 @@
 open Jest;
-open JestDom;
 open Expect;
 open ReactTestingLibrary;
 open MaterialUI;
@@ -113,7 +112,7 @@ test("Test autoComplete component", () =>
       { "title": "The Shawshank Redemption", "year": 1994 },
       { "title": "The Godfathe", "year": 1972 },
       { "title": "The Dark Knight", "year": 2008 }]
-    renderInput = {params => <TextField label="Combo box" variant=Variant.outlined />}
+    renderInput = { _params => <TextField label="Combo box" variant=Variant.outlined />}
     ></Autocomplete>
     |> render
     |> container
