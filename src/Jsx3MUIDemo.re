@@ -196,8 +196,8 @@ let make = () => {
     <Badge badgeContent={4} color="error" />
 
     <BottomNavigation showLabels=true component="div">
-      <BottomNavigationAction label="Recents" icon={<RestoreIcon />} />
-      <BottomNavigationAction label="Favorites" icon={<FavoriteIcon />}  />
+      <BottomNavigationAction  label="Recents" icon={<RestoreIcon />} />
+      <BottomNavigationAction  label="Favorites" icon={<FavoriteIcon />}  />
     </BottomNavigation>
 
      <Breadcrumbs>
@@ -270,7 +270,7 @@ let make = () => {
           "vertical": "top",
           "horizontal": "center",
         }}
-        // anchorEl= { None}
+        // anchorEl= {_=>Js.log("Test Popover")}
     >
       <Typography>{string("The content of the Popover.")}</Typography>
     </Popover>
@@ -345,6 +345,79 @@ let make = () => {
           <StepLabel>{string("Test Step Label")}</StepLabel>
         </Step>
     </Stepper>
+
+    <SvgIcon>
+      <path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z" />
+    </SvgIcon>
+
+    <SwipeableDrawer 
+      onClose={_=>Js.log("on close")}
+      onOpen={_=>Js.log("on open")}
+      _open=false
+      disableBackdropTransition=true 
+      disableDiscovery=true />
+
+    <Switch
+      checked=true
+      value="checkedB"
+      color="primary"
+    />
+
+    <Tabs value=false>
+      <Tab label="Item One" />
+      <Tab label="Item Two" />
+      <Tab label="Item Three" />
+    </Tabs>
+
+      <Table>
+        <TableBody>          
+            <TableRow>
+              <TableCell scope="row">
+                {string("name")}
+              </TableCell>
+              <TableCell align="right">{string("category")}</TableCell>
+              <TableCell align="right">{string("fat")}</TableCell>
+            </TableRow>
+            <TableRow>
+              <TableCell />
+            </TableRow>
+        </TableBody>
+        <TableFooter>
+          <TableRow>
+            <TablePagination
+              count={10}
+              rowsPerPage={2}
+              page={2}
+              onChangePage={_=>Js.log("on change page")}
+            />
+          </TableRow>
+        </TableFooter>
+      </Table>
+
+      <TextareaAutosize rowsMax="3" />
+
+      <ToggleButtonGroup
+          onChange={_=>Js.log("toggle button")}
+        >
+        <ToggleButton value="left" >
+          <FavoriteIcon />
+        </ToggleButton>
+        <ToggleButton value="center" >
+          <FavoriteIcon />
+        </ToggleButton>
+        <ToggleButton value="right" >
+          <FavoriteIcon />
+        </ToggleButton>
+        <ToggleButton value="justify">
+          <FavoriteIcon />
+        </ToggleButton>
+      </ToggleButtonGroup>
+
+      // <Tooltip title="Delete">
+      //   <IconButton edge="start" color="inherit">
+      //     <RestoreIcon />
+      //   </IconButton>
+      // </Tooltip>
 
   </Container>
 

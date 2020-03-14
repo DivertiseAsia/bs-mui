@@ -539,6 +539,127 @@ test("Test Stepper component",()=>
   |> toMatchSnapshot
 )
 
+test("Test SVGIcon component",()=>
+  <SvgIcon>
+    <path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z" />
+  </SvgIcon>
+  |> render
+  |> container
+  |> expect
+  |> toMatchSnapshot
+)
+
+test("Test SwipeableDrawer component",()=>
+  <SwipeableDrawer 
+    onClose={_=>Js.log("on close")}
+    onOpen={_=>Js.log("on open")}
+    _open=false
+    disableBackdropTransition=true 
+    disableDiscovery=true />
+  |> render
+  |> container
+  |> expect
+  |> toMatchSnapshot
+)
+
+test("Test Switch component",()=>
+  <Switch
+    checked=true
+    value="checkedB"
+    color="primary"
+    />
+  |> render
+  |> container
+  |> expect
+  |> toMatchSnapshot
+)
+
+test("Test tab component",()=>
+    <Tabs value=false>
+      <Tab label="Item One" />
+      <Tab label="Item Two" />
+      <Tab label="Item Three" />
+    </Tabs>
+    |> render
+    |> container
+    |> expect
+    |> toMatchSnapshot
+)
+
+test("Test Table component",()=>
+    <Table>
+      <TableBody>          
+          <TableRow>
+            <TableCell scope="row">
+              {string("name")}
+            </TableCell>
+            <TableCell align="right">{string("category")}</TableCell>
+            <TableCell align="right">{string("fat")}</TableCell>
+          </TableRow>
+          <TableRow>
+            <TableCell />
+          </TableRow>
+      </TableBody>
+      <TableFooter>
+        <TableRow>
+          <TablePagination
+            count={10}
+            rowsPerPage={2}
+            page={2}
+            onChangePage={_=>Js.log("on change page")}
+          />
+        </TableRow>
+      </TableFooter>
+    </Table>
+    |> render
+    |> container
+    |> expect
+    |> toMatchSnapshot
+)
+
+test("Test textAreaAutoSize component",()=>
+    <TextareaAutosize rowsMax="3" />
+    |> render
+    |> container
+    |> expect
+    |> toMatchSnapshot
+)
+
+test("Test ToggleButton component",()=>
+  <ToggleButtonGroup
+        onChange={_=>Js.log("toggle button")}
+      >
+      <ToggleButton value="left" >
+        <FavoriteIcon />
+      </ToggleButton>
+      <ToggleButton value="center" >
+        <FavoriteIcon />
+      </ToggleButton>
+      <ToggleButton value="right" >
+        <FavoriteIcon />
+      </ToggleButton>
+      <ToggleButton value="justify">
+        <FavoriteIcon />
+      </ToggleButton>
+    </ToggleButtonGroup>
+    |> render
+    |> container
+    |> expect
+    |> toMatchSnapshot
+)
+
+test("Test Tooltip component",()=>
+ <Tooltip title="Delete">
+    <IconButton edge="start" color="inherit">
+      <RestoreIcon />
+    </IconButton>
+  </Tooltip>
+  |> render
+  |> container
+  |> expect
+  |> toMatchSnapshot
+)
+
 test("Test checkbox component",()=>
     <Checkbox
         checked=true
