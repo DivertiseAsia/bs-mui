@@ -417,6 +417,142 @@ module Checkbox {
         );       
 };
 
+module Dialog {
+    open MaterialUI.Dialog;
+
+    let component = ReasonReact.statelessComponent("Dialog");
+
+    let make = (
+      ~classes=?,
+      ~disableBackdropClick=?,
+      ~disableEscapeKeyDown=?,
+      ~fullScreen=?,
+      ~fullWidth=?,
+      ~maxWidth=?,
+      ~onBackdropClick=?,
+      ~onClose=?,
+      ~onEnter=?,
+      ~onEntered=?,
+      ~onEntering=?,
+      ~onEscapeKeyDown=?,
+      ~onExit=?,
+      ~onExited=?,
+      ~onExiting=?,
+      ~_open=?,
+      ~paperComponent=?,
+      ~paperProps=?,
+      ~scroll=?,
+      ~transitionComponent=?,
+      ~transitionDuration=?,
+      ~transitionProps=?,
+      ~children=?
+    ) =>ReasonReactCompat.wrapReactForReasonReact(
+        make,
+        makeProps(
+            ~classes?,
+            ~disableBackdropClick?,
+            ~disableEscapeKeyDown?,
+            ~fullScreen?,
+            ~fullWidth?,
+            ~maxWidth?,
+            ~onBackdropClick?,
+            ~onClose?,
+            ~onEnter?,
+            ~onEntered?,
+            ~onEntering?,
+            ~onEscapeKeyDown?,
+            ~onExit?,
+            ~onExited?,
+            ~onExiting?,
+            ~_open?,
+            ~paperComponent?,
+            ~paperProps?,
+            ~scroll?,
+            ~transitionComponent?,
+            ~transitionDuration?,
+            ~transitionProps?,
+            ~children?,
+            ()),
+    );   
+};
+
+module DialogActions = {
+    open MaterialUI.DialogActions;
+
+    let component = ReasonReact.statelessComponent("DialogActions");
+
+    let make = (
+        ~children=?,
+        ~className=?,
+        ~disableSpacing=?
+      ) => ReasonReactCompat.wrapReactForReasonReact(
+        make,
+        makeProps(
+            ~className?,
+            ~disableSpacing?,
+            ~children?,
+            ())
+    );
+  };
+  
+  module DialogContent = {
+    open MaterialUI.DialogContent;
+
+    let component = ReasonReact.statelessComponent("DialogContent");
+    
+    let make = (
+        ~children=?,
+        ~className=?,
+        ~dividers=?
+        ) => ReasonReactCompat.wrapReactForReasonReact(
+        make,
+        makeProps(
+            ~className?,
+            ~dividers?,
+            ~children?,
+            ())
+        );
+  };
+  
+  module DialogContentText = {
+    open MaterialUI.DialogContentText;
+
+    let component = ReasonReact.statelessComponent("DialogContentText");
+
+    let make = (
+        ~id=?,
+        ~children=?,
+        ~className=?
+      ) => ReasonReactCompat.wrapReactForReasonReact(
+        make,
+        makeProps(
+            ~id?,
+            ~className?,
+            ~children?,
+            ())
+        );
+  };
+  
+  module DialogTitle = {
+    open MaterialUI.DialogTitle;
+
+    let component = ReasonReact.statelessComponent("DialogTitle");
+    let make = (
+        ~id=?,
+        ~children=?,
+        ~className=?,
+        ~disableTypography=?
+      ) => ReasonReactCompat.wrapReactForReasonReact(
+        make,
+        makeProps(
+            ~id?,
+            ~className?,
+            ~children?,
+            ~disableTypography?,
+            ())
+        );
+  };
+
 module Grid {
     open MaterialUI.Grid;
 
