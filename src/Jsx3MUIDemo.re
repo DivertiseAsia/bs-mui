@@ -44,7 +44,7 @@ let make = () => {
 
   <StylesProvider injectFirst=true>
   <Container id="container-id" className={classes->Js.Dict.unsafeGet("root")}>
-    /* <Container id="container-button">
+     <Container id="container-button">
       <FormLabel> {string("Button")} </FormLabel>
       <Button> {string("Button")} </Button>
       <Button size=Size.large> {string("Large Button")} </Button>
@@ -91,16 +91,18 @@ let make = () => {
       <Alert severity="error">
         {string("This is an error alert")}
       </Alert>
-    </Container> */
-    /* <Autocomplete
+    </Container>
+
+     <Autocomplete
       autoComplete=true
       options= [
         { "title": "The Shawshank Redemption", "year": 1994 },
         { "title": "The Godfathe", "year": 1972 },
         { "title": "The Dark Knight", "year": 2008 }]
       renderInput = {params => <TextField label="Combo box" variant="outlined" />}
-    ></Autocomplete> */
-    /* <AvatarGroup>
+    ></Autocomplete> 
+
+     <AvatarGroup>
       <Avatar alt="Remy Sharp" src="https://www.w3schools.com/howto/img_avatar2.png" />
       <Avatar alt="Travis Howard" src="https://www.w3schools.com/howto/img_avatar2.png" />
       <Avatar alt="Cindy Baker" src="https://www.w3schools.com/howto/img_avatar2.png" />
@@ -126,7 +128,7 @@ let make = () => {
           {string("News")}
         </Typography>
       </Toolbar>
-    </AppBar> */
+    </AppBar> 
     <Backdrop _open=false>
       <CircularProgress color="inherit" />
     </Backdrop>
@@ -265,13 +267,13 @@ let make = () => {
       <Typography>{string("The content of the Popover.")}</Typography>
     </Popover>
 
-    // <Popper 
-    //   _open=true transition=true>
-    //     {transitionProp => 
-    //     <Fade timeout={"350"}>
-    //       <Typography>{string("The content of the Popper.")}</Typography>
-    //     </Fade>}
-    // </Popper>
+    <Popper 
+      _open=true transition=true>
+        {transitionProp => 
+        <Fade timeout={"350"}>
+          <Typography>{string("The content of the Popper.")}</Typography>
+        </Fade>}
+    </Popper>
 
     <Portal>
       <Typography>{string("The content of the Popper.")}</Typography>
@@ -324,11 +326,11 @@ let make = () => {
       >
       </SpeedDial>
 
-    // <SpeedDialAction
-    //   icon={<SpeedDialIcon openIcon={<FavoriteIcon />} />}
-    //   tooltipTitle={<div>{string("Test Speed Action")}</div>}
-    //   tooltipOpen=true
-    // />
+    <SpeedDialAction
+      icon={<SpeedDialIcon openIcon={<FavoriteIcon />} />}
+      tooltipTitle={<div>{string("Test Speed Action")}</div>}
+      tooltipOpen=true
+    />
 
     <Stepper activeStep={10} alternativeLabel=true>
         <Step>
@@ -403,11 +405,11 @@ let make = () => {
         </ToggleButton>
       </ToggleButtonGroup>
 
-      // <Tooltip title="Delete">
-      //   <IconButton edge="start" color="inherit">
-      //     <RestoreIcon />
-      //   </IconButton>
-      // </Tooltip>
+      <Tooltip title="Delete">
+        <IconButton edge="start" color="inherit">
+          <RestoreIcon />
+        </IconButton>
+      </Tooltip>
 
     <TreeView>
     <TreeItem nodeId="1" label="Applications">
