@@ -56,7 +56,7 @@ let make = () => {
   <StylesProvider injectFirst=true>
   <div>(string("Jsx3"))</div>
   <Container id="container-id" className={classes->Js.Dict.unsafeGet("root")}>
-    /* <Container id="container-button">
+     <Container id="container-button">
       <FormLabel> {string("Button")} </FormLabel>
       <Button> {string("Button")} </Button>
       <Button size=Size.large> {string("Large Button")} </Button>
@@ -103,16 +103,17 @@ let make = () => {
       <Alert severity="error">
         {string("This is an error alert")}
       </Alert>
-    </Container> */
-    /* <Autocomplete
+    </Container>
+
+     <Autocomplete
       autoComplete=true
       options= [
         { "title": "The Shawshank Redemption", "year": 1994 },
         { "title": "The Godfathe", "year": 1972 },
         { "title": "The Dark Knight", "year": 2008 }]
       renderInput = {params => <TextField label="Combo box" variant=Variant.outlined />}
-    ></Autocomplete> */
-    /* <AvatarGroup>
+    ></Autocomplete>
+    <AvatarGroup>
       <Avatar alt="Remy Sharp" src="https://www.w3schools.com/howto/img_avatar2.png" />
       <Avatar alt="Travis Howard" src="https://www.w3schools.com/howto/img_avatar2.png" />
       <Avatar alt="Cindy Baker" src="https://www.w3schools.com/howto/img_avatar2.png" />
@@ -134,11 +135,11 @@ let make = () => {
       <Toolbar>
         <IconButton edge="start" color="inherit" >
         </IconButton>
-        <Typography variant=Variant.h6>
+        <Typography variant=Typography.Variant.h6>
           {string("News")}
         </Typography>
       </Toolbar>
-    </AppBar> */
+    </AppBar> 
     <Backdrop _open=false>
       <CircularProgress color="inherit" />
     </Backdrop>
@@ -275,13 +276,13 @@ let make = () => {
       <Typography>{string("The content of the Popover.")}</Typography>
     </Popover>
 
-    // <Popper 
-    //   _open=true transition=true>
-    //     {transitionProp => 
-    //     <Fade timeout={"350"}>
-    //       <Typography>{string("The content of the Popper.")}</Typography>
-    //     </Fade>}
-    // </Popper>
+    <Popper 
+      _open=true transition=true>
+        {transitionProp => 
+        <Fade timeout={"350"}>
+          <Typography>{string("The content of the Popper.")}</Typography>
+        </Fade>}
+    </Popper>
 
     <Portal>
       <Typography>{string("The content of the Popper.")}</Typography>
@@ -334,11 +335,11 @@ let make = () => {
       >
       </SpeedDial>
 
-    // <SpeedDialAction
-    //   icon={<SpeedDialIcon openIcon={<FavoriteIcon />} />}
-    //   tooltipTitle={<div>{string("Test Speed Action")}</div>}
-    //   tooltipOpen=true
-    // />
+    <SpeedDialAction
+      icon={<SpeedDialIcon openIcon={<FavoriteIcon />} />}
+      tooltipTitle={<div>{string("Test Speed Action")}</div>}
+      tooltipOpen=true
+    />
 
     <Stepper activeStep={10} alternativeLabel=true>
         <Step>
@@ -413,11 +414,36 @@ let make = () => {
         </ToggleButton>
       </ToggleButtonGroup>
 
-      // <Tooltip title="Delete">
-      //   <IconButton edge="start" color="inherit">
-      //     <RestoreIcon />
-      //   </IconButton>
-      // </Tooltip>
+      <Tooltip title="Delete">
+        <IconButton edge="start" color="inherit">
+          <RestoreIcon />
+        </IconButton>
+      </Tooltip>
+
+    <TreeView>
+    <TreeItem nodeId="1" label="Applications">
+      <TreeItem nodeId="2" label="Calendar" />
+      <TreeItem nodeId="3" label="Chrome" />
+      <TreeItem nodeId="4" label="Webstorm" />
+      </TreeItem>
+      <TreeItem nodeId="5" label="Documents">
+        <TreeItem nodeId="10" label="OSS" />
+        <TreeItem nodeId="6" label="Material-UI">
+          <TreeItem nodeId="7" label="src">
+            <TreeItem nodeId="8" label="index.js" />
+            <TreeItem nodeId="9" label="tree-view.js" />
+          </TreeItem>
+        </TreeItem>
+      </TreeItem>
+    </TreeView>
+
+    <Zoom _in=true>
+      <Paper elevation={4} >
+        <svg>
+          <polygon points="0,100 50,00, 100,100" />
+        </svg>
+      </Paper>
+    </Zoom>
 
   </Container>
 
