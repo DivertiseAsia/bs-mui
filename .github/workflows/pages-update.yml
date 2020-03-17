@@ -26,7 +26,27 @@ jobs:
       - name: webpack build
         run: |
           webpack --config webpack.site.config.js
-      - name: Copy index.js to gh-pages branch and commit
+      - name: Upload index.js artifact
+          uses: actions/upload-artifact@v1
+          with:
+            name: bundle
+            path: index.js
+      - name: stash index.js for branch change
+        run: |
+          git stash -u
+      - name: Checkout gh-pages branch
+        uses: actions/checkout@v2
+        with:
+            ref: gh-pages
+      - name: Download index.js artifact
+        uses: actions/download-artifact@v1
+        with:
+          name: bundle
+      - name: replace old index.js
+        run: |
+          rm index.js
+          mv bundle/index.js index.js
+      - name: Commit new index.js to gh-pages branch
         uses: github-actions-x/commit@v2.5
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
