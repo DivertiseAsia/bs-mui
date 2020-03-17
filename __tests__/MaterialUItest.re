@@ -1,5 +1,4 @@
 open Jest;
-open JestDom;
 open Expect;
 open ReactTestingLibrary;
 open MaterialUI;
@@ -95,7 +94,7 @@ test("Test appbar component",()=>
   <AppBar position="static">
     <Toolbar>
       <IconButton edge="start" color="inherit" />
-      <Typography variant="h6">
+      <Typography variant=Typography.Variant.h6>
         {string("News")}
       </Typography>
     </Toolbar>
@@ -113,7 +112,7 @@ test("Test autoComplete component", () =>
       { "title": "The Shawshank Redemption", "year": 1994 },
       { "title": "The Godfathe", "year": 1972 },
       { "title": "The Dark Knight", "year": 2008 }]
-    renderInput = {params => <TextField label="Combo box" variant="outlined" />}
+    renderInput = { _params => <TextField label="Combo box" variant=Variant.outlined />}
     ></Autocomplete>
     |> render
     |> container
@@ -163,7 +162,7 @@ test("Test BottomNavigation component",()=>
 )
 
 test("Test BottomGroup component",()=>
-  <ButtonGroup variant="contained" color="primary">
+  <ButtonGroup variant=Button.Variant.contained color="primary">
     <Button>{string("One")}</Button>
     <Button>{string("Two")}</Button>
     <Button>{string("Three")}</Button>
@@ -262,16 +261,16 @@ test("Test ExpantionPanel component",()=>
 )
 
 test("Test Grid and Paper component",()=>
-  <Grid>
+  <Grid container=true spacing={3}>
     <Divider orientation="vertical" flexItem=true />
-    <Grid item=true xs={12}>
+    <Grid item=true xs=GridSize.size(12)>
       <Paper >{string("xs=12")}</Paper>
     </Grid>
     <Divider orientation="vertical" flexItem=true />
-    <Grid item=true xs={6}>
+    <Grid item=true xs=GridSize.size(6)>
       <Paper >{string("xs=6")}</Paper>
     </Grid>
-    <Grid item=true xs={6}>
+    <Grid item=true xs=GridSize.size(6)>
       <Paper >{string("xs=6")}</Paper>
     </Grid>
   </Grid>
@@ -299,14 +298,19 @@ test("Test Icon component",()=>
   |> toMatchSnapshot
 )
 
-test("Test Menu component",()=>
-  <Menu
-    _open=true
-  >
-    <MenuItem>{string("Profile")}</MenuItem>
-    <MenuItem>{string("My account")}</MenuItem>
-    <MenuItem>{string("Logout")}</MenuItem>
-  </Menu>
+test("Test Menu component",()=>{
+    <>
+    
+    <Menu
+      _open=true
+      anchorEl=Js.Nullable.null
+    >
+      <MenuItem>{string("Profile")}</MenuItem>
+      <MenuItem>{string("My account")}</MenuItem>
+      <MenuItem>{string("Logout")}</MenuItem>
+    </Menu>
+    </>
+  }
   |> render
   |> container
   |> expect
@@ -356,7 +360,7 @@ test("Test Popover component",()=>
         "vertical": "top",
         "horizontal": "center",
       }}
-      anchorEl= {React.null}
+      anchorEl={Js.Nullable.return(<Button></Button>)}
   >
     <Typography>{string("The content of the Popover.")}</Typography>
   </Popover>
@@ -431,16 +435,20 @@ test("Test Rating component ",()=>
 //     |> toMatchSnapshot
 // )
 
-test("Test Skeleton component",()=>
+test("Test Skeleton component",()=> {
+    open Skeleton.Variant;
     <Container>
-      <Skeleton variant="text" />
-      <Skeleton variant="circle" width="40" height="40" />
-      <Skeleton variant="rect" width="210" height="118" />
+      
+      <Skeleton variant=text />
+      <Skeleton variant=circle width="40" height="40" />
+      <Skeleton variant=rect width="210" height="118" />
+      
     </Container>
     |> render
     |> container
     |> expect
     |> toMatchSnapshot
+    }
 )
 
 test("Test slide component",()=>
@@ -708,10 +716,10 @@ test("Test card component",()=>
         image="https://animals.sandiegozoo.org/sites/default/files/2016-11/animals_hero_lizards.jpg"
       />
       <CardContent>
-        <Typography variant="h5" component="h2">
+        <Typography variant=Typography.Variant.h5 component="h2">
           {string("Lizard")}
         </Typography>
-        <Typography variant="body2" color="textSecondary" component="p">
+        <Typography variant=Typography.Variant.body2 color="textSecondary" component="p">
           {string("Lizards are a widespread group of squamate reptiles, with over 6,000 species, ranging
           across all continents except Antarctica")}
         </Typography>

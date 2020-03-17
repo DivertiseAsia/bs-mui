@@ -1376,7 +1376,6 @@ module Grid {
                 ~container?,
                 ~spacing?,
                 ~wrap?,
-                ~item?,
                 ~justify?,
                 ~zeroMinWidth?,
                 ~xs?,
@@ -1979,7 +1978,7 @@ module Menu = {
     let component = ReasonReact.statelessComponent("Menu");
     
     let make = (
-        ~anchorEl=?,
+        ~anchorEl,
         ~autoFocus=?,
         ~children=?,
         ~classes=?,
@@ -1999,7 +1998,7 @@ module Menu = {
         ReasonReactCompat.wrapReactForReasonReact(
         make,
         makeProps(
-            ~anchorEl?,
+            ~anchorEl,
             ~autoFocus?,
             ~children?,
             ~classes?,

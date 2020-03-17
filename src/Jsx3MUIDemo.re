@@ -42,7 +42,19 @@ let make = () => {
   let madeStyle = makeStyles(styleObj);
   let classes = madeStyle(. 0);
 
+  let (menuRef, setMenuRef) = React.useState(()=>Js.Nullable.null);
+  let (menuOpen, setMenuOpen) = React.useState(() => false);
+
+  let menuButton = <ClickAwayListener onClickAway={_=>setMenuRef(_=>Js.Nullable.null)}>
+        <Button onClick={evt=>{
+          setMenuRef(_=>Js.Nullable.return(ReactEvent.Synthetic.target(evt)))
+        }}>
+          {string("Open menu dropdown")}
+        </Button>
+    </ClickAwayListener>;
+
   <StylesProvider injectFirst=true>
+  <div>(string("Jsx3"))</div>
   <Container id="container-id" className={classes->Js.Dict.unsafeGet("root")}>
      <Container id="container-button">
       <FormLabel> {string("Button")} </FormLabel>
@@ -99,10 +111,9 @@ let make = () => {
         { "title": "The Shawshank Redemption", "year": 1994 },
         { "title": "The Godfathe", "year": 1972 },
         { "title": "The Dark Knight", "year": 2008 }]
-      renderInput = {params => <TextField label="Combo box" variant="outlined" />}
-    ></Autocomplete> 
-
-     <AvatarGroup>
+      renderInput = {params => <TextField label="Combo box" variant=Variant.outlined />}
+    ></Autocomplete>
+    <AvatarGroup>
       <Avatar alt="Remy Sharp" src="https://www.w3schools.com/howto/img_avatar2.png" />
       <Avatar alt="Travis Howard" src="https://www.w3schools.com/howto/img_avatar2.png" />
       <Avatar alt="Cindy Baker" src="https://www.w3schools.com/howto/img_avatar2.png" />
@@ -124,7 +135,7 @@ let make = () => {
       <Toolbar>
         <IconButton edge="start" color="inherit" >
         </IconButton>
-        <Typography variant="h6">
+        <Typography variant=Typography.Variant.h6>
           {string("News")}
         </Typography>
       </Toolbar>
@@ -137,16 +148,16 @@ let make = () => {
       <Button>{string("Large Button")}</Button>
     </Box>
 
-    <Grid>
+    <Grid container=true spacing={3}>
       <Divider orientation="vertical" flexItem=true />
-      <Grid item=true xs={12}>
+      <Grid item=true xs=GridSize.size(12)>
         <Paper >{string("xs=12")}</Paper>
       </Grid>
       <Divider orientation="vertical" flexItem=true />
-      <Grid item=true xs={6}>
+      <Grid item=true xs=GridSize.size(6)>
         <Paper >{string("xs=6")}</Paper>
       </Grid>
-      <Grid item=true xs={6}>
+      <Grid item=true xs=GridSize.size(6)>
         <Paper >{string("xs=6")}</Paper>
       </Grid>
     </Grid>
@@ -164,10 +175,10 @@ let make = () => {
           image="https://animals.sandiegozoo.org/sites/default/files/2016-11/animals_hero_lizards.jpg"
         />
         <CardContent>
-          <Typography variant="h5" component="h2">
+          <Typography variant=Typography.Variant.h5 component="h2">
             {string("Lizard")}
           </Typography>
-          <Typography variant="body2" color="textSecondary" component="p">
+          <Typography variant=Typography.Variant.body2 color="textSecondary" component="p">
             {string("Lizards are a widespread group of squamate reptiles, with over 6,000 species, ranging
             across all continents except Antarctica")}
           </Typography>
@@ -190,7 +201,7 @@ let make = () => {
       <BottomNavigationAction  label="Favorites" icon={<FavoriteIcon />}  />
     </BottomNavigation>
 
-    <Breadcrumbs>
+     <Breadcrumbs>
       <Link color="inherit" href="/">
         {string("Material-UI")}
       </Link>
@@ -200,19 +211,16 @@ let make = () => {
       <Typography color="textPrimary">{string("Breadcrumb")}</Typography>
     </Breadcrumbs>
 
-    <ButtonGroup variant="contained" color="primary">
+    <ButtonGroup variant=Button.Variant.contained color="primary">
       <Button>{string("One")}</Button>
       <Button>{string("Two")}</Button>
       <Button>{string("Three")}</Button>
     </ButtonGroup>
 
-    <Chip label="Basic" />
+    
+    menuButton
 
-    <ClickAwayListener onClickAway={_=>Js.log("Click Away Listener");}>
-        <Button>
-          {string("Open menu dropdown")}
-        </Button>
-    </ClickAwayListener>
+    <Chip label="Basic" />
 
      <React.Fragment>
       <CssBaseline />
@@ -223,7 +231,7 @@ let make = () => {
         {string("Test Drawer")}
       </Typography>
     </Drawer>
-
+    
     <Hidden xsUp=false>
       <Paper>{string("xsUp")}</Paper>
     </Hidden>
@@ -231,7 +239,8 @@ let make = () => {
     <Icon className="fa fa-plus-circle" color="primary">{string("add_circle")}</Icon>
 
     <Menu
-      _open=false
+      anchorEl=menuRef
+      _open=(!Js.Nullable.isNullable(menuRef))
     >
       <MenuItem>{string("Profile")}</MenuItem>
       <MenuItem>{string("My account")}</MenuItem>
@@ -293,9 +302,9 @@ let make = () => {
       />
       </Box>
 
-    <Skeleton variant="text" />
-    <Skeleton variant="circle" width="40" height="40" />
-    <Skeleton variant="rect" width="210" height="118" />
+    <Skeleton variant=Skeleton.Variant.text />
+    <Skeleton variant=Skeleton.Variant.circle width="40" height="40" />
+    <Skeleton variant=Skeleton.Variant.rect width="210" height="118" />
     
     <Slider
         defaultValue={30}
@@ -436,6 +445,26 @@ let make = () => {
       </Paper>
     </Zoom>
 
+  </Container>
+
+  <Container>
+    <FormControl variant=Variant.outlined>
+      <InputLabel id="demo-simple-select-outlined-label">
+        (string("Age"))
+      </InputLabel>
+      <Select
+        labelId="demo-simple-select-outlined-label"
+        id="demo-simple-select-outlined"
+        value=10
+      >
+        <MenuItem value="">
+          <em>(string("None"))</em>
+        </MenuItem>
+        <MenuItem value=10>(string("Ten"))</MenuItem>
+        <MenuItem value=20>(string("Twenty"))</MenuItem>
+        <MenuItem value=30>(string("Thirty"))</MenuItem>
+      </Select>
+    </FormControl>
   </Container>
   </StylesProvider>
   ;
