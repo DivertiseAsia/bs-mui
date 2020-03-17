@@ -1184,19 +1184,6 @@ module LinearProgress = {
     "default";
 };
 
-module Link = {
-  [@react.component] [@bs.module "@material-ui/core/Link"]
-  external make:
-    (
-      ~color: string=?,
-      ~href: string=?,
-      ~variant: Variant.t=?,
-      ~children: React.element=?
-    ) =>
-    React.element =
-    "default";
-};
-
 module UIList = {
   [@react.component] [@bs.module "@material-ui/core/List"]
   external make: (~children: React.element=?) => React.element = "default";
@@ -2352,6 +2339,20 @@ module Typography = {
       ~gutterBottom: bool=?,
       ~paragraph	: bool=?,
       ~variantMapping: Js.t('a)=?
+    ) =>
+    React.element =
+    "default";
+};
+
+module Link = {
+  module Variant = Typography.Variant;
+  [@react.component] [@bs.module "@material-ui/core/Link"]
+  external make:
+    (
+      ~color: string=?,
+      ~href: string=?,
+      ~variant: Variant.t=?,
+      ~children: React.element=?
     ) =>
     React.element =
     "default";
