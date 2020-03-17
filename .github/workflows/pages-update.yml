@@ -20,9 +20,11 @@ jobs:
           npm run build
           npm run test
       - name: webpack install
+        run: |
           npm install webpack
           npm install webpack-cli
       - name: webpack build
+        run: |
           webpack --config webpack.site.config.js
       - name: Copy index.js to gh-pages branch and commit
         uses: github-actions-x/commit@v2.5
