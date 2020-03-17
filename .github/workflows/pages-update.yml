@@ -46,6 +46,9 @@ jobs:
         run: |
           mv bundle/index.js index.js
           rm -rf bundle
+          git add .
+          git commit -m "Updated documentation via ${{ github.ref }}"
+          git status
       - name: Commit new index.js to gh-pages branch
         uses: github-actions-x/commit@v2.5
         with:
