@@ -44,10 +44,10 @@ jobs:
           name: bundle
       - name: replace old index.js
         run: |
-          ls bundle/*
-          pwd
-          ls
-          mv -f bundle/index.js index.js
+          ls -l bundle/*
+          mv bundle/index.js index.js
+          ls -l
+          git diff
       - name: Commit new index.js to gh-pages branch
         uses: github-actions-x/commit@v2.5
         with:
