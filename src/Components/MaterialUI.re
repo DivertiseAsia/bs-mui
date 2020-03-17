@@ -658,7 +658,7 @@ module Divider = {
       ~absolute: bool=?,
       ~classes: string=?,
       ~component: string=?,
-      ~flexItem: bool,
+      ~flexItem: bool=?,
       ~light: bool=?,
       ~orientation: string=?,
       ~variant: Variant.t=?
