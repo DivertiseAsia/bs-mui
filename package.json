@@ -1,6 +1,6 @@
 {
   "name": "@divertise_asia/bs-mui",
-  "version": "0.1.26",
+  "version": "0.1.27",
   "scripts": {
     "build": "bsb -make-world",
     "start": "bsb -make-world -w -ws _ ",
