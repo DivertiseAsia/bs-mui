@@ -2260,11 +2260,45 @@ module Tooltip = {
 };
 
 module TreeItem = {
-  // TODO: Implement
+  [@react.component] [@bs.module "@material-ui/lab/TreeItem"]
+  external make:
+    (
+      ~children : React.element=?,
+      ~classes: string=?,
+      ~collapseIcon: React.element=?,
+      ~endIcon: React.element=?,
+      ~expandIcon: React.element=?,
+      ~icon: React.element=?,
+      ~label: string=?,
+      ~nodeId: string,
+      ~transitionComponent: string=?,
+      ~transitionProps: Js.t('a)=?
+    ) =>
+    React.element =
+    "default";
 };
 
 module TreeView = {
-  // TODO: Implement
+  [@react.component] [@bs.module "@material-ui/lab/TreeView"]
+  external make:
+    (
+      ~children : React.element=?,
+      ~classes: string=?,
+      ~defaultCollapseIcon: React.element=?,
+      ~defaultEndIcon: React.element=?,
+      ~defaultExpanded: list(string)=?,
+      ~defaultExpandIcon: React.element=?,
+      ~defaultParentIcon: React.element=?,
+      ~defaultSelected: list(string)=?,
+      ~disableSelection	: bool=?,
+      ~expanded: list(string)=?,
+      ~multiSelect: bool=?,
+      ~onNodeSelect: unit=>unit=?,
+      ~onNodeToggle: unit=>unit=?,
+      ~selected: list(string)=?
+    ) =>
+    React.element =
+    "default";
 };
 
 module Typography = {
@@ -2324,7 +2358,15 @@ module Typography = {
 };
 
 module Zoom = {
-  // TODO: Implement
+  [@react.component] [@bs.module "@material-ui/core/Zoom"]
+  external make:
+    (
+      ~children: React.element=?,
+      ~_in: bool=?,
+      ~timeout: 'a=?
+    ) =>
+    React.element =
+    "default";
 };
 
 module RestoreIcon = {

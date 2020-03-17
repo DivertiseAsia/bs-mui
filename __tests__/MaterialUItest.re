@@ -659,6 +659,43 @@ test("Test Tooltip component",()=>
   |> toMatchSnapshot
 )
 
+test("Test TreeView component",()=>
+  <TreeView>
+    <TreeItem nodeId="1" label="Applications">
+      <TreeItem nodeId="2" label="Calendar" />
+      <TreeItem nodeId="3" label="Chrome" />
+      <TreeItem nodeId="4" label="Webstorm" />
+      </TreeItem>
+      <TreeItem nodeId="5" label="Documents">
+        <TreeItem nodeId="10" label="OSS" />
+        <TreeItem nodeId="6" label="Material-UI">
+          <TreeItem nodeId="7" label="src">
+            <TreeItem nodeId="8" label="index.js" />
+            <TreeItem nodeId="9" label="tree-view.js" />
+          </TreeItem>
+        </TreeItem>
+      </TreeItem>
+    </TreeView>
+  |> render
+  |> container
+  |> expect
+  |> toMatchSnapshot
+)
+
+test("Test Zoom Component",()=>
+  <Zoom _in=true>
+    <Paper elevation={4} >
+      <svg>
+        <polygon points="0,100 50,00, 100,100" />
+      </svg>
+    </Paper>
+  </Zoom>
+  |> render
+  |> container
+  |> expect
+  |> toMatchSnapshot
+)
+
 test("Test checkbox component",()=>
     <Checkbox
         checked=true

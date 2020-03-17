@@ -15,7 +15,272 @@ module StylesProvider = {
             children,
         );  
   }
+module Alert {
+    open MaterialUI.Alert;
 
+    let component = ReasonReact.statelessComponent("Alert");
+
+    let make = (
+        ~action=?,
+        ~classes=?,
+        ~color=?,
+        ~closeText=?,
+        ~icon=?,
+        ~iconMapping=?,
+        ~onClose=?,
+        ~role=?,
+        ~severity=?,
+        ~variant=?,
+        children) => 
+        ReasonReactCompat.wrapReactForReasonReact(
+            make,
+            makeProps(~action?,
+                ~classes?,
+                ~color?,
+                ~closeText?,
+                ~icon?,
+                ~iconMapping?,
+                ~onClose?,
+                ~role?,
+                ~severity?,
+                ~variant?,
+                ~children=children |> React.array, ()),
+            children,
+        );       
+};
+
+module AlertTitle {
+    open MaterialUI.AlertTitle;
+
+    let component = ReasonReact.statelessComponent("AlertTitle");
+
+    let make = (
+        ~classes=?,
+        children) => 
+        ReasonReactCompat.wrapReactForReasonReact(
+            make,
+            makeProps(
+                ~classes?,
+                ~children=children |> React.array, ()),
+            children,
+        );       
+};
+
+module AppBar {
+    open MaterialUI.AppBar;
+
+    let component = ReasonReact.statelessComponent("AppBar");
+
+    let make = (
+        ~classes=?,
+        ~color=?,
+        ~position=?,
+        ~style=?,
+        children) => 
+        ReasonReactCompat.wrapReactForReasonReact(
+            make,
+            makeProps(
+                ~classes?,
+                ~color?,
+                ~position?,
+                ~style?,
+                ~children=children |> React.array, ()),
+            children,
+        );       
+};
+
+module Autocomplete {
+    open MaterialUI.Autocomplete;
+
+    let component = ReasonReact.statelessComponent("Autocomplete");
+
+    let make = (
+        ~autoComplete=?,
+        ~autoHighlight=?,
+        ~autoSelect=?,
+        ~blurOnSelect=?,
+        ~chipProps=?,
+        ~classes=?,
+        ~clearOnEscape=?,
+        ~clearText=?,
+        ~closeIcon=?,
+        ~closeText=?,
+        ~debug=?,
+        ~defaultValue=?,
+        ~disableClearable=?,
+        ~disableCloseOnSelect=?,
+        ~disabled=?,
+        ~disableListWrap=?,
+        ~disableOpenOnFocus=?,
+        ~disablePortal=?,
+        ~filterOptions=?,
+        ~filterSelectedOptions=?,
+        ~forcePopupIcon=?,
+        ~freeSolo=?,
+        ~getOptionDisabled=?,
+        ~getOptionLabel=?,
+        ~getOptionSelected=?,
+        ~groupBy=?,
+        ~id=?,
+        ~includeInputInList=?,
+        ~inputValue=?,
+        ~listboxComponent=?,
+        ~listboxProps=?,
+        ~loading=?,
+        ~loadingText=?,
+        ~multiple=?,
+        ~noOptionsText=?,
+        ~onChange=?,
+        ~onClose=?,
+        ~onInputChange=?,
+        ~onOpen=?,
+        ~_open=?,
+        ~openText=?,
+        ~options,
+        ~paperComponent=?,
+        ~popperComponent=?,
+        ~popupIcon=?,
+        ~renderGroup=?,
+        ~renderInput,
+        ~renderOption=?,
+        ~renderTags=?,
+        ~selectOnFocus=?,
+        ~size=?,
+        ~style=?,
+        ~value=?
+        ) => 
+        ReasonReactCompat.wrapReactForReasonReact(
+            make,
+            makeProps(
+                ~autoComplete?,
+                ~autoHighlight?,
+                ~autoSelect?,
+                ~blurOnSelect?,
+                ~chipProps?,
+                ~classes?,
+                ~clearOnEscape?,
+                ~clearText?,
+                ~closeIcon?,
+                ~closeText?,
+                ~debug?,
+                ~defaultValue?,
+                ~disableClearable?,
+                ~disableCloseOnSelect?,
+                ~disabled?,
+                ~disableListWrap?,
+                ~disableOpenOnFocus?,
+                ~disablePortal?,
+                ~filterOptions?,
+                ~filterSelectedOptions?,
+                ~forcePopupIcon?,
+                ~freeSolo?,
+                ~getOptionDisabled?,
+                ~getOptionLabel?,
+                ~getOptionSelected?,
+                ~groupBy?,
+                ~id?,
+                ~includeInputInList?,
+                ~inputValue?,
+                ~listboxComponent?,
+                ~listboxProps?,
+                ~loading?,
+                ~loadingText?,
+                ~multiple?,
+                ~noOptionsText?,
+                ~onChange?,
+                ~onClose?,
+                ~onInputChange?,
+                ~onOpen?,
+                ~_open?,
+                ~openText?,
+                ~options,
+                ~paperComponent?,
+                ~popperComponent?,
+                ~popupIcon?,
+                ~renderGroup?,
+                ~renderInput,
+                ~renderOption?,
+                ~renderTags?,
+                ~selectOnFocus?,
+                ~size?,
+                ~style?,
+                ~value?,
+            (),)
+        );       
+};
+
+module Avatar {
+    open MaterialUI.Avatar;
+
+    let component = ReasonReact.statelessComponent("Avatar");
+
+    let make = (
+        ~alt=?,
+        ~children=?,
+        ~classes=?,
+        ~component=?,
+        ~imgProps=?,
+        ~sizes=?,
+        ~src=?,
+        ~srcSet=?,
+        ~variant=?) => 
+        ReasonReactCompat.wrapReactForReasonReact(
+            make,
+            makeProps(
+                ~alt?,
+                ~children?,
+                ~classes?,
+                ~component?,
+                ~imgProps?,
+                ~sizes?,
+                ~src?,
+                ~srcSet?,
+                ~variant?,
+                ()),
+        );       
+};
+
+module AvatarGroup {
+    open MaterialUI.AvatarGroup;
+
+    let component = ReasonReact.statelessComponent("AvatarGroup");
+
+    let make = (
+        ~children=?,
+        ~className=?,
+        ~spacing=?) => 
+        ReasonReactCompat.wrapReactForReasonReact(
+            make,
+            makeProps(
+                ~children?,
+                ~className?,
+                ~spacing?,
+                ()),
+        );       
+};
+
+module Backdrop {
+    open MaterialUI.Backdrop;
+
+    let component = ReasonReact.statelessComponent("Backdrop");
+
+    let make = (
+        ~className=?,
+        ~invisible=?,
+        ~_open=?,
+        ~transitionDuration=?,
+        children) => 
+        ReasonReactCompat.wrapReactForReasonReact(
+            make,
+            makeProps(
+                ~className?,
+                ~invisible?,
+                ~_open?,
+                ~transitionDuration?,
+               ~children=children |> React.array, ()),
+            children,
+        );       
+};
 module Button {
     open MaterialUI.Button;
 
@@ -644,56 +909,6 @@ module Paper {
                 ~elevation?,
                 ~square?,
                 ~variant?,
-                ()),
-        );       
-};
-
-module Avatar {
-    open MaterialUI.Avatar;
-
-    let component = ReasonReact.statelessComponent("Avatar");
-
-    let make = (
-        ~alt=?,
-        ~children=?,
-        ~classes=?,
-        ~component=?,
-        ~imgProps=?,
-        ~sizes=?,
-        ~src=?,
-        ~srcSet=?,
-        ~variant=?) => 
-        ReasonReactCompat.wrapReactForReasonReact(
-            make,
-            makeProps(
-                ~alt?,
-                ~children?,
-                ~classes?,
-                ~component?,
-                ~imgProps?,
-                ~sizes?,
-                ~src?,
-                ~srcSet?,
-                ~variant?,
-                ()),
-        );       
-};
-
-module AvatarGroup {
-    open MaterialUI.AvatarGroup;
-
-    let component = ReasonReact.statelessComponent("AvatarGroup");
-
-    let make = (
-        ~children=?,
-        ~className=?,
-        ~spacing=?) => 
-        ReasonReactCompat.wrapReactForReasonReact(
-            make,
-            makeProps(
-                ~children?,
-                ~className?,
-                ~spacing?,
                 ()),
         );       
 };
