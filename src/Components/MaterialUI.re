@@ -2078,7 +2078,7 @@ module TablePagination = {
       ~page: int=?,
       ~rowsPerPage: int=?,
       ~rowsPerPageOptions: array(int)=?,
-      ~onChangePage: unit => unit,
+      ~onChangePage: (ReactEvent.Synthetic.t, int) => unit=?,
       ~onChangeRowsPerPage: ReactEvent.Synthetic.t => unit=?,
       ~className: string=?,
       ~style: ReactDOMRe.Style.t=?,
