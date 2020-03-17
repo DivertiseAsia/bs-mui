@@ -50,6 +50,6 @@ jobs:
         uses: Automattic/action-commit-to-branch@master
         with:
           branch: 'gh-pages'
-          commit_message:  'Updated documentation via ${{ github.ref }}'
+          commit_message:  'Updated documentation via ${{ github.sha }}'
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # Required
