@@ -1,0 +1,34 @@
+name: pages-update
+on:
+  push:
+    branches:
+      - release-dummy
+jobs:
+  pages-update:
+    name: pages-update
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+      - name: Set up Node.js
+        uses: actions/setup-node@v1
+        with:
+          node-version: 10.0.0
+      - name: npm install and npm test
+        run: |
+          npm run setup-test
+          npm run build
+          npm run test
+      - name: webpack install
+          npm install webpack
+          npm install webpack-cli
+      - name: webpack build
+          webpack --config webpack.site.config.js
+      - name: Copy index.js to gh-pages branch and commit
+        uses: github-actions-x/commit@v2.5
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          push-branch: gh-pages
+          commit-message: 'Updated documentation via ${{ github.ref }}'
+          files: index.js
+          force-add: 'true'
