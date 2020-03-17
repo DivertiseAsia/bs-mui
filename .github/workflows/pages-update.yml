@@ -44,15 +44,11 @@ jobs:
           name: bundle
       - name: replace old index.js
         run: |
-          ls -l bundle/*
           mv bundle/index.js index.js
-          ls -l
-          git diff
+          rm -rf bundle
       - name: Commit new index.js to gh-pages branch
         uses: github-actions-x/commit@v2.5
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
           push-branch: gh-pages
           commit-message: 'Updated documentation via ${{ github.ref }}'
-          files: index.js
-          force-add: 'true'
