@@ -2905,3 +2905,133 @@ module Snackbar {
                 ~_open?, ())
         );       
 };
+
+module SnackbarContent {
+    open MaterialUI.SnackbarContent;
+
+    let component = ReasonReact.statelessComponent("SnackbarContent");
+
+    let make = (
+        ~action=?,
+        ~classes=?,
+        ~message=?,
+        ~role=?) => 
+        ReasonReactCompat.wrapReactForReasonReact(
+            make,
+            makeProps(
+                ~action?,
+                ~classes?,
+                ~message?,
+                ~role?, ())
+        );       
+};
+
+module SpeedDial {
+    open MaterialUI.SpeedDial;
+
+    let component = ReasonReact.statelessComponent("SpeedDial");
+
+    let make = (
+        ~ariaLabel,
+        ~children=?,
+        ~classes=?,
+        ~direction=?,
+        ~fabProps=?,
+        ~hidden=?,
+        ~icon=?,
+        ~onClose=?,
+        ~onOpen=?,
+        ~_open,
+        ~openIcon=?,
+        ~transitionComponent=?,
+        ~transitionDuration=?,
+        ~transitionProps=?) => 
+        ReasonReactCompat.wrapReactForReasonReact(
+            make,
+            makeProps(
+                ~ariaLabel,
+                ~children?,
+                ~classes?,
+                ~direction?,
+                ~fabProps?,
+                ~hidden?,
+                ~icon?,
+                ~onClose?,
+                ~onOpen?,
+                ~_open,
+                ~openIcon?,
+                ~transitionComponent?,
+                ~transitionDuration?,
+                ~transitionProps?, ())
+        );       
+};
+
+module SpeedDialAction {
+    open MaterialUI.SpeedDialAction;
+
+    let component = ReasonReact.statelessComponent("SpeedDialAction");
+
+    let make = (
+        ~classes=?,
+        ~delay=?,
+        ~fabProps=?,
+        ~icon=?,
+        ~tooltipClasses=?,
+        ~tooltipOpen=?,
+        ~tooltipPlacement=?,
+        ~tooltipTitle=?) => 
+        ReasonReactCompat.wrapReactForReasonReact(
+            make,
+            makeProps(
+                ~classes?,
+                ~delay?,
+                ~fabProps?,
+                ~icon?,
+                ~tooltipClasses?,
+                ~tooltipOpen?,
+                ~tooltipPlacement?,
+                ~tooltipTitle?, ())
+        );       
+};
+
+module SpeedDialIcon {
+    open MaterialUI.SpeedDialIcon;
+
+    let component = ReasonReact.statelessComponent("SpeedDialIcon");
+
+    let make = (
+        ~classes=?,
+        ~icon=?,
+        ~openIcon=?) => 
+        ReasonReactCompat.wrapReactForReasonReact(
+            make,
+            makeProps(
+                ~classes?,
+                ~icon?,
+                ~openIcon?, ())
+        );       
+};
+
+module Step {
+    open MaterialUI.Step;
+
+    let component = ReasonReact.statelessComponent("Step");
+
+    let make = (
+        ~active=?,
+        ~children=?,
+        ~classes=?,
+        ~completed=?,
+        ~disabled=?,
+        ~expanded=?) => 
+        ReasonReactCompat.wrapReactForReasonReact(
+            make,
+            makeProps(
+                ~active?,
+                ~children?,
+                ~classes?,
+                ~completed?,
+                ~disabled?,
+                ~expanded?, ())
+        );       
+};
