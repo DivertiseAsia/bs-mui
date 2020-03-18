@@ -3035,3 +3035,101 @@ module Step {
                 ~expanded?, ())
         );       
 };
+
+module StepButton {
+    open MaterialUI.StepButton;
+
+    let component = ReasonReact.statelessComponent("StepButton");
+
+    let make = (
+        ~children=?,
+        ~classes=?,
+        ~icon=?,
+        ~optional=?) => 
+        ReasonReactCompat.wrapReactForReasonReact(
+            make,
+            makeProps(
+                ~children?,
+                ~classes?,
+                ~icon?,
+                ~optional?, ())
+        );       
+};
+
+module StepConnector {
+    open MaterialUI.StepConnector;
+
+    let component = ReasonReact.statelessComponent("StepConnector");
+
+    let make = (
+        ~classes=?) => 
+        ReasonReactCompat.wrapReactForReasonReact(
+            make,
+            makeProps(
+                ~classes?, ())
+        );       
+};
+
+module StepContent {
+    open MaterialUI.StepContent;
+
+    let component = ReasonReact.statelessComponent("StepContent");
+
+    let make = (
+        ~classes=?) => 
+        ReasonReactCompat.wrapReactForReasonReact(
+            make,
+            makeProps(
+                ~classes?, ())
+        );       
+};
+
+module StepIcon {
+    open MaterialUI.StepIcon;
+
+    let component = ReasonReact.statelessComponent("StepIcon");
+
+    let make = (
+        ~active=?,
+        ~classes=?,
+        ~completed=?,
+        ~error=?,
+        ~icon) => 
+        ReasonReactCompat.wrapReactForReasonReact(
+            make,
+            makeProps(
+            ~active?,
+            ~classes?,
+            ~completed?,
+            ~error?,
+            ~icon, ())
+        );       
+};
+
+module StepLabel {
+    open MaterialUI.StepLabel;
+
+    let component = ReasonReact.statelessComponent("StepLabel");
+
+    let make = (
+        ~children=?,
+        ~classes=?,
+        ~disabled=?,
+        ~error=?,
+        ~icon=?,
+        ~optional=?,
+        ~stepIconComponent=?,
+        ~stepIconProps=?) => 
+        ReasonReactCompat.wrapReactForReasonReact(
+            make,
+            makeProps(
+            ~children?,
+            ~classes?,
+            ~disabled?,
+            ~error?,
+            ~icon?,
+            ~optional?,
+            ~stepIconComponent?,
+            ~stepIconProps?, ())
+        );       
+};
