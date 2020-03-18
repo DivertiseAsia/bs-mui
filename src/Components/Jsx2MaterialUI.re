@@ -3403,3 +3403,141 @@ module TableFooter {
             ~component?, ())
         );
 };
+
+module TableHead {
+    open MaterialUI.TableHead;
+
+    let component = ReasonReact.statelessComponent("TableHead");
+
+    let make = (
+        ~children=?,
+        ~className=?,
+        ~style=?) => 
+        ReasonReactCompat.wrapReactForReasonReact(
+            make,
+            makeProps(
+            ~children?,
+            ~className?,
+            ~style?, ())
+        );
+};
+
+module TablePagination {
+    open MaterialUI.TablePagination;
+
+    let component = ReasonReact.statelessComponent("TablePagination");
+
+    let make = (
+        ~component=?,
+        ~count=?,
+        ~page=?,
+        ~rowsPerPage=?,
+        ~rowsPerPageOptions=?,
+        ~onChangePage=?,
+        ~onChangeRowsPerPage=?,
+        ~className=?,
+        ~style=?,
+        ~children=?) => 
+        ReasonReactCompat.wrapReactForReasonReact(
+            make,
+            makeProps(
+            ~component?,
+            ~count?,
+            ~page?,
+            ~rowsPerPage?,
+            ~rowsPerPageOptions?,
+            ~onChangePage?,
+            ~onChangeRowsPerPage?,
+            ~className?,
+            ~style?,
+            ~children?, ())
+        );
+};
+
+module TableRow {
+    open MaterialUI.TableRow;
+
+    let component = ReasonReact.statelessComponent("TableRow");
+
+    let make = (
+        ~hover=?,
+        ~selected=?,
+        ~padding=?,
+        ~className=?,
+        ~style=?,
+        ~children=?) => 
+        ReasonReactCompat.wrapReactForReasonReact(
+            make,
+            makeProps(
+            ~hover?,
+            ~selected?,
+            ~padding?,
+            ~className?,
+            ~style?,
+            ~children?, ())
+        );
+};
+
+module TableSortLabel {
+    open MaterialUI.TableSortLabel;
+
+    let component = ReasonReact.statelessComponent("TableSortLabel");
+
+    let make = (
+        ~active=?,
+        ~children=?,
+        ~classes=?,
+        ~direction=?,
+        ~hideSortIcon=?,
+        ~iconComponent=?) => 
+        ReasonReactCompat.wrapReactForReasonReact(
+            make,
+            makeProps(
+            ~active?,
+            ~children?,
+            ~classes?,
+            ~direction?,
+            ~hideSortIcon?,
+            ~iconComponent?, ())
+        );
+};
+
+module Tabs {
+    open MaterialUI.Tabs;
+
+    let component = ReasonReact.statelessComponent("Tabs");
+
+    let make = (
+        ~action=?,
+        ~centered=?,
+        ~children=?,
+        ~classes=?,
+        ~component=?,
+        ~indicatorColor=?,
+        ~onChange=?,
+        ~orientation=?,
+        ~scrollButtonComponent=?,
+        ~scrollButtons=?,
+        ~tabIndicatorProps=?,
+        ~textColor=?,
+        ~value=?,
+        ~variant=?) => 
+        ReasonReactCompat.wrapReactForReasonReact(
+            make,
+            makeProps(
+            ~action?,
+            ~centered?,
+            ~children?,
+            ~classes?,
+            ~component?,
+            ~indicatorColor?,
+            ~onChange?,
+            ~orientation?,
+            ~scrollButtonComponent?,
+            ~scrollButtons?,
+            ~tabIndicatorProps?,
+            ~textColor?,
+            ~value?,
+            ~variant?, ())
+        );
+};
