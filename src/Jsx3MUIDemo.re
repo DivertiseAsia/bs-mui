@@ -101,6 +101,7 @@ let make = () => {
        </Dialog>
     <Container id="container-alert">
       <Alert severity="error">
+        <AlertTitle>{string("Warning")}</AlertTitle>
         {string("This is an error alert")}
       </Alert>
     </Container>
