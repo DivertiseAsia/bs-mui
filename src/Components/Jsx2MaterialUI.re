@@ -3133,3 +3133,169 @@ module StepLabel {
             ~stepIconProps?, ())
         );       
 };
+
+module Stepper {
+    open MaterialUI.Stepper;
+
+    let component = ReasonReact.statelessComponent("Stepper");
+
+    let make = (
+        ~activeStep=?,
+        ~alternativeLabel=?,
+        ~children,
+        ~classes=?,
+        ~connector=?,
+        ~nonLinear=?,
+        ~orientation=?) => 
+        ReasonReactCompat.wrapReactForReasonReact(
+            make,
+            makeProps(
+            ~activeStep?,
+            ~alternativeLabel?,
+            ~children,
+            ~classes?,
+            ~connector?,
+            ~nonLinear?,
+            ~orientation?, ())
+        );       
+};
+
+module SvgIcon {
+    open MaterialUI.SvgIcon;
+
+    let component = ReasonReact.statelessComponent("SvgIcon");
+
+    let make = (
+        ~children=?,
+        ~classes=?,
+        ~color=?,
+        ~component=?,
+        ~fontSize=?,
+        ~htmlColor=?,
+        ~shapeRendering=?,
+        ~titleAccess=?,
+        ~viewBox=?) => 
+        ReasonReactCompat.wrapReactForReasonReact(
+            make,
+            makeProps(
+            ~children?,
+            ~classes?,
+            ~color?,
+            ~component?,
+            ~fontSize?,
+            ~htmlColor?,
+            ~shapeRendering?,
+            ~titleAccess?,
+            ~viewBox?, ())
+        );       
+};
+
+module SwipeableDrawer {
+    open MaterialUI.SwipeableDrawer;
+
+    let component = ReasonReact.statelessComponent("SwipeableDrawer");
+
+    let make = (
+        ~children=?,
+        ~disableBackdropTransition=?,
+        ~disableDiscovery=?,
+        ~disableSwipeToOpen=?,
+        ~hysteresis=?,
+        ~minFlingVelocity=?,
+        ~onClose,
+        ~onOpen,
+        ~_open,
+        ~swipeAreaProps=?,
+        ~swipeAreaWidth=?,
+        ~transitionDuration=?) => 
+        ReasonReactCompat.wrapReactForReasonReact(
+            make,
+            makeProps(
+            ~children?,
+            ~disableBackdropTransition?,
+            ~disableDiscovery?,
+            ~disableSwipeToOpen?,
+            ~hysteresis?,
+            ~minFlingVelocity?,
+            ~onClose,
+            ~onOpen,
+            ~_open,
+            ~swipeAreaProps?,
+            ~swipeAreaWidth?,
+            ~transitionDuration?, ())
+        );
+};
+
+module Switch {
+    open MaterialUI.Switch;
+
+    let component = ReasonReact.statelessComponent("Switch");
+
+    let make = (
+        ~checked=?,
+        ~checkedIcon=?,
+        ~classes=?,
+        ~color=?,
+        ~disabled=?,
+        ~disableRipple=?,
+        ~edge=?,
+        ~icon=?,
+        ~id=?,
+        ~inputProps=?,
+        ~inputRef=?,
+        ~onChange=?,
+        ~required=?,
+        ~size=?,
+        ~_type=?,
+        ~value=?) => 
+        ReasonReactCompat.wrapReactForReasonReact(
+            make,
+            makeProps(
+            ~checked?,
+            ~checkedIcon?,
+            ~classes?,
+            ~color?,
+            ~disabled?,
+            ~disableRipple?,
+            ~edge?,
+            ~icon?,
+            ~id?,
+            ~inputProps?,
+            ~inputRef?,
+            ~onChange?,
+            ~required?,
+            ~size?,
+            ~_type?,
+            ~value?, ())
+        );
+};
+
+module Tab {
+    open MaterialUI.Tab;
+
+    let component = ReasonReact.statelessComponent("Tab");
+
+    let make = (
+        ~children=?,
+        ~classes=?,
+        ~disabled=?,
+        ~disableFocusRipple=?,
+        ~disableRipple=?,
+        ~icon=?,
+        ~label=?,
+        ~value=?,
+        ~wrapped=?) => 
+        ReasonReactCompat.wrapReactForReasonReact(
+            make,
+            makeProps(
+            ~children?,
+            ~classes?,
+            ~disabled?,
+            ~disableFocusRipple?,
+            ~disableRipple?,
+            ~icon?,
+            ~label?,
+            ~value?,
+            ~wrapped?, ())
+        );
+};
