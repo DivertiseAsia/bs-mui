@@ -2169,10 +2169,22 @@ module TextField = {
       ~autoFocus: bool=?,
       ~defaultValue: string=?,
       ~value: string=?,
-      ~required: bool=?,
       ~onChange: ReactEvent.Form.t => unit=?,
       ~type_: string=?,
-      ~disabled: bool=?
+      ~disabled: bool=?,
+      ~classes: string=?,
+      ~color: string=?,
+      ~error: bool=?,
+      ~formHelperTextProps: Js.t('a)=?,
+      ~inputLabelProps: Js.t('a)=?,
+      ~_InputProps: Js.t('a)=?,
+      ~inputProps: Js.t('a)=?,
+      ~inputRef: 'a=?,
+      ~multiline: bool=?,
+      ~placeholder: string=?,
+      ~rows: string=?,
+      ~rowsMax: string=?,
+      ~size: string=?,
     ) =>
     React.element =
     "default";
