@@ -242,7 +242,7 @@ module BottomNavigationAction = {
       ~className: string=?,
       ~icon: React.element=?,
       ~label: string=?,
-      // ~showLabel: bool=?,
+      ~showLabel: bool=?,
       ~value: 'a=?
     ) => /* children type is unsupportedProp */
     React.element =
@@ -1587,7 +1587,7 @@ module RadioGroup = {
 };
 
 module Rating = {
-  [@react.component] [@bs.module "@material-ui/core/Radio"]
+  [@react.component] [@bs.module "@material-ui/lab/Rating"]
   external make:
     (
       ~checked: bool=?,
