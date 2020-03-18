@@ -3299,3 +3299,89 @@ module Tab {
             ~wrapped?, ())
         );
 };
+
+module Table {
+    open MaterialUI.Table;
+
+    let component = ReasonReact.statelessComponent("Table");
+
+    let make = (
+        ~className=?,
+        ~style=?,
+        ~children=?) => 
+        ReasonReactCompat.wrapReactForReasonReact(
+            make,
+            makeProps(
+            ~className?,
+            ~style?,
+            ~children?, ())
+        );
+};
+
+module TableBody {
+    open MaterialUI.TableBody;
+
+    let component = ReasonReact.statelessComponent("TableBody");
+
+    let make = (
+        ~className=?,
+        ~style=?,
+        ~children=?) => 
+        ReasonReactCompat.wrapReactForReasonReact(
+            make,
+            makeProps(
+            ~className?,
+            ~style?,
+            ~children?, ())
+        );
+};
+
+module TableCell {
+    open MaterialUI.TableCell;
+
+    let component = ReasonReact.statelessComponent("TableCell");
+
+    let make = (
+        ~align=?,
+        ~component=?,
+        ~padding=?,
+        ~scope=?,
+        ~size=?,
+        ~sortDirection=?,
+        ~variant=?,
+        ~className=?,
+        ~style=?,
+        ~children=?) => 
+        ReasonReactCompat.wrapReactForReasonReact(
+            make,
+            makeProps(
+            ~align?,
+            ~component?,
+            ~padding?,
+            ~scope?,
+            ~size?,
+            ~sortDirection?,
+            ~variant?,
+            ~className?,
+            ~style?,
+            ~children?, ())
+        );
+};
+
+module TableFooter {
+    open MaterialUI.TableFooter;
+
+    let component = ReasonReact.statelessComponent("TableFooter");
+
+    let make = (
+        ~children=?,
+        ~classes=?,
+        ~component=?) => 
+        ReasonReactCompat.wrapReactForReasonReact(
+            make,
+            makeProps(
+            ~children?,
+            ~classes?,
+            ~component?, ())
+        );
+};
