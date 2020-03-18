@@ -2678,7 +2678,135 @@ module Skeleton {
         );       
 };
 
+module Slide {
+    open MaterialUI.Slide;
 
+    let component = ReasonReact.statelessComponent("Slide");
+
+    let make = (
+        ~children=?,
+        ~direction=?,
+        ~_in=?,
+        ~timeout=?) => 
+        ReasonReactCompat.wrapReactForReasonReact(
+            make,
+            makeProps(
+                ~children?,
+                ~direction?,
+                ~_in?,
+                ~timeout?, ())
+        );       
+};
+
+module Slider {
+    open MaterialUI.Slider;
+
+    let component = ReasonReact.statelessComponent("Slider");
+
+    let make = (
+        ~aria_label=?,
+        ~aria_labelledby=?,
+        ~aria_valuetext=?,
+        ~classes=?,
+        ~color=?,
+        ~component=?,
+        ~defaultValue=?,
+        ~disabled=?,
+        ~getAriaLabel=?,
+        ~getAriaValueText=?,
+        ~marks=?,
+        ~max=?,
+        ~min=?,
+        ~name=?,
+        ~onChange=?,
+        ~onChangeCommitted=?,
+        ~orientation=?,
+        ~scale=?,
+        ~step=?,
+        ~thumbComponent=?,
+        ~track=?,
+        ~value=?,
+        ~valueLabelComponent=?,
+        ~valueLabelDisplay=?,
+        ~valueLabelFormat=?) => 
+        ReasonReactCompat.wrapReactForReasonReact(
+            make,
+            makeProps(
+                ~aria_label?,
+                ~aria_labelledby?,
+                ~aria_valuetext?,
+                ~classes?,
+                ~color?,
+                ~component?,
+                ~defaultValue?,
+                ~disabled?,
+                ~getAriaLabel?,
+                ~getAriaValueText?,
+                ~marks?,
+                ~max?,
+                ~min?,
+                ~name?,
+                ~onChange?,
+                ~onChangeCommitted?,
+                ~orientation?,
+                ~scale?,
+                ~step?,
+                ~thumbComponent?,
+                ~track?,
+                ~value?,
+                ~valueLabelComponent?,
+                ~valueLabelDisplay?,
+                ~valueLabelFormat?, ())
+        );       
+};
+
+module Snackbar {
+    open MaterialUI.Snackbar;
+
+    let component = ReasonReact.statelessComponent("Snackbar");
+
+    let make = (
+        ~action=?,
+        ~anchorOrigin=?,
+        ~autoHideDuration=?,
+        ~children=?,
+        ~classes=?,
+        ~clickAwayListenerProps=?,
+        ~contentProps=?,
+        ~disableWindowBlurListener=?,
+        ~key=?,
+        ~message=?,
+        ~onClose=?,
+        ~onEnter=?,
+        ~onEntered=?,
+        ~onEntering=?,
+        ~onExit=?,
+        ~onExited=?,
+        ~onExiting=?,
+        ~_open=?) => 
+        ReasonReactCompat.wrapReactForReasonReact(
+            make,
+            makeProps(
+                ~action?,
+                ~anchorOrigin?,
+                ~autoHideDuration?,
+                ~children?,
+                ~classes?,
+                ~clickAwayListenerProps?,
+                ~contentProps?,
+                ~disableWindowBlurListener?,
+                ~key?,
+                ~message?,
+                ~onClose?,
+                ~onEnter?,
+                ~onEntered?,
+                ~onEntering?,
+                ~onExit?,
+                ~onExited?,
+                ~onExiting?,
+                ~_open?, ())
+        );       
+};
 module TextField {
     open MaterialUI.TextField;
     let component = ReasonReact.statelessComponent("TextField");
