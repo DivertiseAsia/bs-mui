@@ -371,6 +371,7 @@ let make = () => {
       <Tab label="Item Three" />
     </Tabs>
 
+    <TableContainer>
       <Table>
         <TableBody>          
             <TableRow>
@@ -395,6 +396,7 @@ let make = () => {
           </TableRow>
         </TableFooter>
       </Table>
+    </TableContainer>
 
       <TextareaAutosize rowsMax="3" />
 

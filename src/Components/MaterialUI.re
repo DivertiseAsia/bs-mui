@@ -2045,6 +2045,18 @@ module TableCell = {
     "default";
 };
 
+module TableContainer = {
+  [@react.component] [@bs.module "@material-ui/core/TableContainer"]
+  external make:
+    (
+      ~children: React.element=?,
+      ~classes: string=?,
+      ~component: string=?
+    ) =>
+    React.element =
+    "default";
+};
+
 module TableFooter = {
   [@react.component] [@bs.module "@material-ui/core/TableFooter"]
   external make:

@@ -3368,6 +3368,24 @@ module TableCell {
         );
 };
 
+module TableContainer {
+    open MaterialUI.TableContainer;
+
+    let component = ReasonReact.statelessComponent("TableContainer");
+
+    let make = (
+        ~component=?,
+        ~classes=?,
+        ~children=?) => 
+        ReasonReactCompat.wrapReactForReasonReact(
+            make,
+            makeProps(
+            ~component?,
+            ~classes?,
+            ~children?, ())
+        );
+};
+
 module TableFooter {
     open MaterialUI.TableFooter;
 

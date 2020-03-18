@@ -587,6 +587,7 @@ test("Test tab component",()=>
 )
 
 test("Test Table component",()=>
+  <TableContainer>
     <Table>
       <TableBody>          
           <TableRow>
@@ -611,10 +612,11 @@ test("Test Table component",()=>
         </TableRow>
       </TableFooter>
     </Table>
-    |> render
-    |> container
-    |> expect
-    |> toMatchSnapshot
+  </TableContainer>
+  |> render
+  |> container
+  |> expect
+  |> toMatchSnapshot
 )
 
 test("Test textAreaAutoSize component",()=>
