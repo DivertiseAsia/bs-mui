@@ -2619,6 +2619,66 @@ module ScopedCssBaseline {
     );   
 }
 
+module Select {
+    open MaterialUI.Select;
+
+    let component = ReasonReact.statelessComponent("Select");
+
+    let make = (
+        ~id=?,
+        ~labelId=?,
+        ~disabled=?,
+        ~native=?,
+        ~value=?,
+        ~onChange=?,
+        ~inputProps=?,
+        ~className=?,
+        ~style=?,
+        ~variant=?,
+        children) => 
+        ReasonReactCompat.wrapReactForReasonReact(
+            make,
+            makeProps(
+                ~id?,
+                ~labelId?,
+                ~disabled?,
+                ~native?,
+                ~value?,
+                ~onChange?,
+                ~inputProps?,
+                ~className?,
+                ~style?,
+                ~variant?,
+                ~children=children |> React.array, ()),
+            children,
+        );       
+};
+
+module Skeleton {
+    open MaterialUI.Skeleton;
+
+    let component = ReasonReact.statelessComponent("Skeleton");
+
+    let make = (
+        ~animation=?,
+        ~classes=?,
+        ~component=?,
+        ~height=?,
+        ~variant=?,
+        ~width=?) => 
+        ReasonReactCompat.wrapReactForReasonReact(
+            make,
+            makeProps(
+                ~animation?,
+                ~classes?,
+                ~component?,
+                ~height?,
+                ~variant?,
+                ~width?, ())
+        );       
+};
+
+
 module TextField {
     open MaterialUI.TextField;
     let component = ReasonReact.statelessComponent("TextField");
@@ -2660,38 +2720,3 @@ module TextField {
             ()),
     );   
 }
-
-module Select {
-    open MaterialUI.Select;
-
-    let component = ReasonReact.statelessComponent("Select");
-
-    let make = (
-        ~id=?,
-        ~labelId=?,
-        ~disabled=?,
-        ~native=?,
-        ~value=?,
-        ~onChange=?,
-        ~inputProps=?,
-        ~className=?,
-        ~style=?,
-        ~variant=?,
-        children) => 
-        ReasonReactCompat.wrapReactForReasonReact(
-            make,
-            makeProps(
-                ~id?,
-                ~labelId?,
-                ~disabled?,
-                ~native?,
-                ~value?,
-                ~onChange?,
-                ~inputProps?,
-                ~className?,
-                ~style?,
-                ~variant?,
-                ~children=children |> React.array, ()),
-            children,
-        );       
-};
