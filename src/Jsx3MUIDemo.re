@@ -190,6 +190,29 @@ let make = () => {
       </Grid>
     </Grid>
 
+    <GridList cellHeight={"200"} spacing={1} >
+          <GridListTitle cols={1} rows={1}>
+            <GridListTitleBar
+              title="Grid List title"
+              titlePosition="top"
+              actionIcon={
+                <IconButton>
+                  <Icon.ShoppingCart />
+                </IconButton>
+              }
+              actionPosition="left"
+            />
+          </GridListTitle>
+      </GridList>
+
+    <Grow _in=true>
+      <Paper elevation={4} className="paper">
+        <svg className="svg">
+          <polygon points="0,100 50,00, 100,100" className="polygon" />
+        </svg>
+      </Paper>
+    </Grow>
+
     <Checkbox
         checked=true
         value="primary"
@@ -507,6 +530,39 @@ let make = () => {
       </Select>
     </FormControl>
   </Container>
+
+  <Input placeholder="Input text" />
+
+  <InputBase
+        className="input"
+        placeholder="Search Google Maps"
+        inputProps={ "aria-label": "search google maps" }
+      />
+
+  <LinearProgress color="secondary" />
+
+  <List subheader={<ListSubheader>{string("Settings")}</ListSubheader>} component="nav">
+    <ListItem button=true>
+      <ListItemAvatar>
+          <Avatar
+            src="https://www.w3schools.com/howto/img_avatar2.png"
+          />
+      </ListItemAvatar>
+      <ListItemIcon>
+        <Icon.Menu />
+      </ListItemIcon>
+      <ListItemText primary="Chelsea Otakan" />
+      <ListItemSecondaryAction>
+        <Checkbox
+          inputProps={ "aria-labelledby": "labelId" }
+        />
+      </ListItemSecondaryAction>
+    </ListItem>
+    <ListItem button=true>
+      <ListItemText inset=true primary="Eric Hoffman" />
+    </ListItem>
+  </List>
+
   </StylesProvider>
   ;
 };

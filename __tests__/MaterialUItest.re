@@ -326,6 +326,41 @@ test("Test Grid and Paper component",()=>
   |> toMatchSnapshot
 )
 
+test("Test GridList component",()=>
+  <GridList cellHeight={"200"} spacing={1} >
+      <GridListTitle cols={1} rows={1}>
+        <GridListTitleBar
+          title="Grid List title"
+          titlePosition="top"
+          actionIcon={
+            <IconButton>
+              <Icon.ShoppingCart />
+            </IconButton>
+          }
+          actionPosition="left"
+        />
+      </GridListTitle>
+  </GridList>
+  |> render
+  |> container
+  |> expect
+  |> toMatchSnapshot
+)
+
+test("Test Grow component",()=>
+  <Grow _in=true>
+    <Paper elevation={4} className="paper">
+      <svg className="svg">
+        <polygon points="0,100 50,00, 100,100" className="polygon" />
+      </svg>
+    </Paper>
+  </Grow>
+  |> render
+  |> container
+  |> expect
+  |> toMatchSnapshot
+)
+
 test("Test Hidden component",()=>
   <Hidden xsUp=false>
     <Paper>{string("xsUp")}</Paper>
@@ -338,6 +373,62 @@ test("Test Hidden component",()=>
 
 test("Test Icon component",()=>
   <Icon className="fa fa-plus-circle" color="primary">{string("add_circle")}</Icon>
+  |> render
+  |> container
+  |> expect
+  |> toMatchSnapshot
+)
+
+test("Test Input component",()=>
+  <Input placeholder="Input text" />
+  |> render
+  |> container
+  |> expect
+  |> toMatchSnapshot
+)
+
+test("Test InputBase",()=>
+  <InputBase
+      className="input"
+      placeholder="Search Google Maps"
+      inputProps={ "aria-label": "search google maps" }
+    />
+  |> render
+  |> container
+  |> expect
+  |> toMatchSnapshot
+)
+
+test("Test LinearProgress component",()=>
+  <LinearProgress color="secondary" />
+  |> render
+  |> container
+  |> expect
+  |> toMatchSnapshot
+)
+
+test("Test List component",()=>
+  <List subheader={<ListSubheader>{string("Settings")}</ListSubheader>} component="nav">
+    <ListItem button=true>
+      <ListItemAvatar>
+          <Avatar
+            src="https://www.w3schools.com/howto/img_avatar2.png"
+          />
+      </ListItemAvatar>
+      <ListItemIcon>
+        <Icon.Menu />
+      </ListItemIcon>
+      <ListItemText primary="Chelsea Otakan" />
+      <ListItemSecondaryAction>
+        <Checkbox
+          inputProps={ "aria-labelledby": "labelId" }
+        />
+      </ListItemSecondaryAction>
+    </ListItem>
+    <ListItem button=true>
+      <ListItemText inset=true primary="Eric Hoffman" />
+    </ListItem>
+  </List>
   |> render
   |> container
   |> expect

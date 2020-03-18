@@ -961,7 +961,7 @@ module GridListTitleBar = {
       ~actionPosition: string=?,
       ~classes: string=?,
       ~subtitle: unit=>unit=?,
-      ~title: unit=>unit=?,
+      ~title: string=?,
       ~titlePosition: string=?
     ) =>
     React.element =
@@ -1214,6 +1214,21 @@ module ListItem = {
       ~component: 'b=?,
       ~className: string=?,
       ~children: React.element=?
+    ) =>
+    React.element =
+    "default";
+};
+
+module List = {
+  [@react.component] [@bs.module "@material-ui/core/List"]
+  external make:
+    (
+      ~children: React.element,
+      ~classes: string=?,
+      ~component: string=?,
+      ~dense: bool=?,
+      ~disablePadding: bool=?,
+      ~subheader: React.element=?
     ) =>
     React.element =
     "default";

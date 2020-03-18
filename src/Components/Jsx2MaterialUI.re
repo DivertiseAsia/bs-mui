@@ -2001,6 +2001,27 @@ module UIList = {
         );
     };
 
+module List = {
+    open MaterialUI.List;
+    let component = ReasonReact.statelessComponent("List");
+    
+    let make = (~children,
+            ~classes=?,
+            ~component=?,
+            ~dense=?,
+            ~disablePadding=?,
+            ~subheader=?) =>
+        ReasonReactCompat.wrapReactForReasonReact(
+        make,
+        makeProps(~children,
+            ~classes?,
+            ~component?,
+            ~dense?,
+            ~disablePadding?,
+            ~subheader?,())
+        );
+    };
+
 module ListItem = {
     open MaterialUI.ListItem;
     let component = ReasonReact.statelessComponent("ListItem");
