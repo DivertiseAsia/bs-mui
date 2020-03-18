@@ -1566,7 +1566,7 @@ module RadioGroup = {
 };
 
 module Rating = {
-  [@react.component] [@bs.module "@material-ui/core/Rating"]
+  [@react.component] [@bs.module "@material-ui/lab/Rating"]
   external make:
     (
       ~checked: bool=?,
