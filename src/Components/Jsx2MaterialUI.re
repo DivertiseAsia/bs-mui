@@ -3625,3 +3625,181 @@ module Toolbar {
                 ~className?, ())
             );
 };
+
+module Tooltip {
+    open MaterialUI.Tooltip;
+
+    let component = ReasonReact.statelessComponent("Tooltip");
+
+    let make = (
+        ~children,
+        ~arrow=?,
+        ~classes=?,
+        ~disableFocusListener=?,
+        ~disableHoverListener=?,
+        ~disableTouchListener=?,
+        ~enterDelay=?,
+        ~enterNextDelay=?,
+        ~enterTouchDelay=?,
+        ~id=?,
+        ~interactive=?,
+        ~leaveDelay=?,
+        ~leaveTouchDelay=?,
+        ~onClose=?,
+        ~onOpen=?,
+        ~_open=?,
+        ~placement=?,
+        ~popperProps=?,
+        ~title,
+        ~transitionComponent=?,
+        ~transitionProps=?) => 
+        ReasonReactCompat.wrapReactForReasonReact(
+            make,
+            makeProps(
+                ~children,
+                ~arrow?,
+                ~classes?,
+                ~disableFocusListener?,
+                ~disableHoverListener?,
+                ~disableTouchListener?,
+                ~enterDelay?,
+                ~enterNextDelay?,
+                ~enterTouchDelay?,
+                ~id?,
+                ~interactive?,
+                ~leaveDelay?,
+                ~leaveTouchDelay?,
+                ~onClose?,
+                ~onOpen?,
+                ~_open?,
+                ~placement?,
+                ~popperProps?,
+                ~title,
+                ~transitionComponent?,
+                ~transitionProps?, ())
+            );
+};
+
+module TreeItem {
+    open MaterialUI.TreeItem;
+
+    let component = ReasonReact.statelessComponent("TreeItem");
+
+    let make = (
+        ~children=?,
+        ~classes=?,
+        ~collapseIcon=?,
+        ~endIcon=?,
+        ~expandIcon=?,
+        ~icon=?,
+        ~label=?,
+        ~nodeId,
+        ~transitionComponent=?,
+        ~transitionProps=?) => 
+        ReasonReactCompat.wrapReactForReasonReact(
+            make,
+            makeProps(
+                ~children?,
+                ~classes?,
+                ~collapseIcon?,
+                ~endIcon?,
+                ~expandIcon?,
+                ~icon?,
+                ~label?,
+                ~nodeId,
+                ~transitionComponent?,
+                ~transitionProps?, ())
+            );
+};
+
+module TreeView {
+    open MaterialUI.TreeView;
+
+    let component = ReasonReact.statelessComponent("TreeView");
+
+    let make = (
+            ~children=?,
+            ~classes=?,
+            ~defaultCollapseIcon=?,
+            ~defaultEndIcon=?,
+            ~defaultExpanded=?,
+            ~defaultExpandIcon=?,
+            ~defaultParentIcon=?,
+            ~defaultSelected=?,
+            ~disableSelection=?,
+            ~expanded=?,
+            ~multiSelect=?,
+            ~onNodeSelect=?,
+            ~onNodeToggle=?,
+            ~selected=?) => 
+        ReasonReactCompat.wrapReactForReasonReact(
+            make,
+            makeProps(
+                ~children?,
+                ~classes?,
+                ~defaultCollapseIcon?,
+                ~defaultEndIcon?,
+                ~defaultExpanded?,
+                ~defaultExpandIcon?,
+                ~defaultParentIcon?,
+                ~defaultSelected?,
+                ~disableSelection?,
+                ~expanded?,
+                ~multiSelect?,
+                ~onNodeSelect?,
+                ~onNodeToggle?,
+                ~selected?, ())
+            );
+};
+
+module Typography {
+    open MaterialUI.Typography;
+
+    let component = ReasonReact.statelessComponent("Typography");
+
+    let make = (
+            ~component=?,
+            ~variant=?,
+            ~color=?,
+            ~align=?,
+            ~className=?,
+            ~noWrap=?,
+            ~children=?,
+            ~display=?,
+            ~gutterBottom=?,
+            ~paragraph=?,
+            ~variantMapping=?) => 
+        ReasonReactCompat.wrapReactForReasonReact(
+            make,
+            makeProps(
+                ~component?,
+                ~variant?,
+                ~color?,
+                ~align?,
+                ~className?,
+                ~noWrap?,
+                ~children?,
+                ~display?,
+                ~gutterBottom?,
+                ~paragraph?,
+                ~variantMapping?, ())
+            );
+};
+
+module Zoom {
+    open MaterialUI.Zoom;
+
+    let component = ReasonReact.statelessComponent("Zoom");
+
+    let make = (
+            ~children=?,
+            ~_in=?,
+            ~timeout=?) => 
+        ReasonReactCompat.wrapReactForReasonReact(
+            make,
+            makeProps(
+                    ~children?,
+                    ~_in?,
+                    ~timeout?, ())
+            );
+};
