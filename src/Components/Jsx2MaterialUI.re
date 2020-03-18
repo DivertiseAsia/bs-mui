@@ -340,7 +340,51 @@ module BottomNavigation {
                ~children=children |> React.array, ()),
             children,
         );       
-};
+}
+
+module TextField {
+    open MaterialUI.TextField;
+    let component = ReasonReact.statelessComponent("TextField");
+
+    let make = (
+        ~id=?,
+        ~label=?,
+        ~name=?,
+        ~helperText=?,
+        ~variant=?,
+        ~margin=?,
+        ~required=?,
+        ~fullWidth=?,
+        ~autoComplete=?,
+        ~autoFocus=?,
+        ~defaultValue=?,
+        ~value=?,
+        ~required=?,
+        ~onChange=?,
+        ~type_=?,
+        ~disabled=?) => 
+    ReasonReactCompat.wrapReactForReasonReact(
+        make,
+        makeProps(
+            ~id?,
+            ~label?,
+            ~name?,
+            ~helperText?,
+            ~variant?,
+            ~margin?,
+            ~required?,
+            ~fullWidth?,
+            ~autoComplete?,
+            ~autoFocus?,
+            ~defaultValue?,
+            ~value?,
+            ~required?,
+            ~onChange?,
+            ~type_?,
+            ~disabled?,
+            ()),
+    );   
+}
 
 module BottomNavigationAction {
     open MaterialUI.BottomNavigationAction;
@@ -1352,39 +1396,69 @@ module FormLabel = {
 module Grid {
     open MaterialUI.Grid;
 
-    let component = ReasonReact.statelessComponent("Grid");
+    module Container {
+        let component = ReasonReact.statelessComponent("GridContainer");
 
-    let make = (
-        ~selectProps=?,
-        ~item=?,
-        ~container=?,
-        ~spacing=?,
-        ~wrap=?,
-        ~item=?,
-        ~justify=?,
-        ~zeroMinWidth=?,
-        ~xs=?,
-        ~xl=?,
-        ~sm=?,
-        ~md=?,
-        ~children=?) => 
-        ReasonReactCompat.wrapReactForReasonReact(
-            make,
-            makeProps(
-                ~selectProps?,
-                ~item?,
-                ~container?,
-                ~spacing?,
-                ~wrap?,
-                ~justify?,
-                ~zeroMinWidth?,
-                ~xs?,
-                ~xl?,
-                ~sm?,
-                ~md?,
-                ~children?,
-                ()),
-        );       
+        let make = (
+            ~selectProps=?,
+            ~spacing=?,
+            ~wrap=?,
+            ~justify=?,
+            ~alignContent=?,
+            ~alignItems=?,
+            ~zeroMinWidth=?,
+            ~children=?) => 
+            ReasonReactCompat.wrapReactForReasonReact(
+                make,
+                makeProps(
+                    ~selectProps?,
+                    ~spacing?,
+                    ~container=true,
+                    ~wrap?,
+                    ~justify?,
+                    ~alignContent?,
+                    ~alignItems?,
+                    ~zeroMinWidth?,
+                    ~children?,
+                    ()),
+            );   
+    }
+
+    module Item {
+        let component = ReasonReact.statelessComponent("GridItem");
+
+        let make = (
+            ~selectProps=?,
+            ~spacing=?,
+            ~wrap=?,
+            ~justify=?,
+            ~alignContent=?,
+            ~alignItems=?,
+            ~zeroMinWidth=?,
+            ~xs=?,
+            ~xl=?,
+            ~sm=?,
+            ~md=?,
+            ~children=?) => 
+            ReasonReactCompat.wrapReactForReasonReact(
+                make,
+                makeProps(
+                    ~selectProps?,
+                    ~spacing?,
+                    ~wrap?,
+                    ~item=true,
+                    ~justify?,
+                    ~alignContent?,
+                    ~alignItems?,
+                    ~zeroMinWidth?,
+                    ~xs?,
+                    ~xl?,
+                    ~sm?,
+                    ~md?,
+                    ~children?,
+                    ()),
+            );   
+    }  
 };
 
 module GridList {
@@ -2807,44 +2881,3 @@ module Snackbar {
                 ~_open?, ())
         );       
 };
-module TextField {
-    open MaterialUI.TextField;
-    let component = ReasonReact.statelessComponent("TextField");
-
-    let make = (
-        ~id=?,
-        ~label=?,
-        ~name=?,
-        ~helperText=?,
-        ~variant=?,
-        ~margin=?,
-        ~required=?,
-        ~fullWidth=?,
-        ~autoComplete=?,
-        ~autoFocus=?,
-        ~defaultValue=?,
-        ~value=?,
-        ~required=?,
-        ~onChange=?,
-        ~type_=?) => 
-    ReasonReactCompat.wrapReactForReasonReact(
-        make,
-        makeProps(
-            ~id?,
-            ~label?,
-            ~name?,
-            ~helperText?,
-            ~variant?,
-            ~margin?,
-            ~required?,
-            ~fullWidth?,
-            ~autoComplete?,
-            ~autoFocus?,
-            ~defaultValue?,
-            ~value?,
-            ~required?,
-            ~onChange?,
-            ~type_?,
-            ()),
-    );   
-}

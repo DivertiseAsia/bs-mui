@@ -605,7 +605,7 @@ test("Test Table component",()=>
             count={10}
             rowsPerPage={2}
             page={2}
-            onChangePage={_=>Js.log("on change page")}
+            onChangePage={ (_,_) =>Js.log("on change page") }
           />
         </TableRow>
       </TableFooter>

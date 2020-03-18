@@ -1,5 +1,7 @@
 open MaterialUIDataType;
 
+module DataType = MaterialUIDataType;
+
 [@bs.module "@material-ui/core/styles"]
 external createStyles: Js.Dict.t('a) => Js.Dict.t(string) = "createStyles";
 
@@ -55,6 +57,7 @@ module AppBar = {
   external make:
     (
       ~children: React.element=?,
+      ~className: string=?,
       ~classes: string=?,
       ~color: Color.t=?,
       ~position: Position.t=?,
@@ -655,7 +658,7 @@ module Divider = {
       ~absolute: bool=?,
       ~classes: string=?,
       ~component: string=?,
-      ~flexItem: bool,
+      ~flexItem: bool=?,
       ~light: bool=?,
       ~orientation: string=?,
       ~variant: Variant.t=?
@@ -665,6 +668,18 @@ module Divider = {
 };
 
 module Drawer = {
+  module Variant :{
+    type t;
+    let permanent:t;
+    let persistent:t;
+    let temporary:t;
+  } = {
+    type t = string;
+    [@bs.inline] let permanent:t = "permanent";
+    [@bs.inline] let persistent:t = "persistent";
+    [@bs.inline] let temporary:t = "temporary";
+  };
+  
   [@react.component] [@bs.module "@material-ui/core/Drawer"]
   external make:
     (
@@ -1169,19 +1184,6 @@ module LinearProgress = {
     "default";
 };
 
-module Link = {
-  [@react.component] [@bs.module "@material-ui/core/Link"]
-  external make:
-    (
-      ~color: string=?,
-      ~href: string=?,
-      ~variant: Variant.t=?,
-      ~children: React.element=?
-    ) =>
-    React.element =
-    "default";
-};
-
 module UIList = {
   [@react.component] [@bs.module "@material-ui/core/List"]
   external make: (~children: React.element=?) => React.element = "default";
@@ -1193,8 +1195,13 @@ module ListItem = {
     (
       ~href: string=?,
       ~button: bool=?,
+      ~selected: bool=?,
+      ~dense: bool=?,
+      ~disableGutters: bool=?,
+      ~divider: bool=?,
       ~onClick: unit => unit=?,
       ~component: 'b=?,
+      ~className: string=?,
       ~children: React.element=?
     ) =>
     React.element =
@@ -1231,14 +1238,28 @@ module ListItemSecondaryAction = {
 module ListItemText = {
   [@react.component] [@bs.module "@material-ui/core/ListItemText"]
   external make:
-    (~primary: string=?, ~children: React.element=?) => React.element =
+    (
+      ~primary: string=?, 
+      ~secondary: string=?,
+      ~inset: bool=?,
+      ~disableTypography: bool=?,
+      ~primaryTypographyProps: Js.t('a)=?,
+      ~secondaryTypographyProps: Js.t('a)=?,
+      ~children: React.element=?
+    ) => React.element =
     "default";
 };
 
 module ListSubheader = {
   [@react.component] [@bs.module "@material-ui/core/ListSubheader"]
-  external make: (~inset: bool=?, ~children: React.element=?) => React.element =
-    "default";
+  external make: 
+    (
+      ~className: string=?,
+      ~disableGutters: bool=?,
+      ~disableSticky: bool=?,
+      ~inset: bool=?, 
+      ~children: React.element=?
+    ) => React.element = "default";
 };
 
 module Menu = {
@@ -2057,7 +2078,7 @@ module TablePagination = {
       ~page: int=?,
       ~rowsPerPage: int=?,
       ~rowsPerPageOptions: array(int)=?,
-      ~onChangePage: unit => unit,
+      ~onChangePage: (ReactEvent.Synthetic.t, int) => unit=?,
       ~onChangeRowsPerPage: ReactEvent.Synthetic.t => unit=?,
       ~className: string=?,
       ~style: ReactDOMRe.Style.t=?,
@@ -2150,7 +2171,8 @@ module TextField = {
       ~value: string=?,
       ~required: bool=?,
       ~onChange: ReactEvent.Form.t => unit=?,
-      ~type_: string=?
+      ~type_: string=?,
+      ~disabled: bool=?
     ) =>
     React.element =
     "default";
@@ -2317,6 +2339,20 @@ module Typography = {
       ~gutterBottom: bool=?,
       ~paragraph	: bool=?,
       ~variantMapping: Js.t('a)=?
+    ) =>
+    React.element =
+    "default";
+};
+
+module Link = {
+  module Variant = Typography.Variant;
+  [@react.component] [@bs.module "@material-ui/core/Link"]
+  external make:
+    (
+      ~color: string=?,
+      ~href: string=?,
+      ~variant: Variant.t=?,
+      ~children: React.element=?
     ) =>
     React.element =
     "default";
