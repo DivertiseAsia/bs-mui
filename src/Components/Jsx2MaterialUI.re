@@ -3541,3 +3541,87 @@ module Tabs {
             ~variant?, ())
         );
 };
+
+module TextareaAutosize {
+    open MaterialUI.TextareaAutosize;
+
+    let component = ReasonReact.statelessComponent("TextareaAutosize");
+
+    let make = (
+        ~rows=?,
+        ~rowsMax=?,
+        ~rowsMin=?) => 
+        ReasonReactCompat.wrapReactForReasonReact(
+            make,
+            makeProps(
+                ~rows?,
+                ~rowsMax?,
+                ~rowsMin?, ())
+        );
+};
+
+module ToggleButton {
+    open MaterialUI.ToggleButton;
+
+    let component = ReasonReact.statelessComponent("ToggleButton");
+
+    let make = (
+        ~children,
+        ~classes=?,
+        ~disabled=?,
+        ~disableFocusRipple=?,
+        ~disableRipple=?,
+        ~selected=?,
+        ~value) => 
+        ReasonReactCompat.wrapReactForReasonReact(
+            make,
+            makeProps(
+                ~children,
+                ~classes?,
+                ~disabled?,
+                ~disableFocusRipple?,
+                ~disableRipple?,
+                ~selected?,
+                ~value, ())
+        );
+};
+
+module ToggleButtonGroup {
+    open MaterialUI.ToggleButtonGroup;
+
+    let component = ReasonReact.statelessComponent("ToggleButtonGroup");
+
+    let make = (
+        ~children=?,
+        ~classes=?,
+        ~exclusive=?,
+        ~onChange=?,
+        ~size=?,
+        ~value=?) => 
+        ReasonReactCompat.wrapReactForReasonReact(
+            make,
+            makeProps(
+                ~children?,
+                ~classes?,
+                ~exclusive?,
+                ~onChange?,
+                ~size?,
+                ~value?, ())
+            );
+};
+
+module Toolbar {
+    open MaterialUI.Toolbar;
+
+    let component = ReasonReact.statelessComponent("Toolbar");
+
+    let make = (
+        ~children,
+        ~className=?) => 
+        ReasonReactCompat.wrapReactForReasonReact(
+            make,
+            makeProps(
+                ~children,
+                ~className?, ())
+            );
+};
