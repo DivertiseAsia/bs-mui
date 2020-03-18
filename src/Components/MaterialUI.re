@@ -148,6 +148,7 @@ module Avatar = {
       ~alt: string=?,
       ~children: React.element=?,
       ~classes: string=?,
+      ~className: string=?,
       ~component: string=?,
       ~imgProps: Js.t('a)=?,
       ~sizes: string=?,
