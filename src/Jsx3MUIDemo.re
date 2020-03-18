@@ -63,6 +63,9 @@ let make = () => {
       <Button size=Size.medium> {string("Medium Button")} </Button>
       <Button size=Size.small> {string("Small Button")} </Button>
     </Container>
+    <Container>
+      <ButtonBase>{string("Base Button")}</ButtonBase>
+    </Container>
     <Container id="container-radio">
       <FormLabel> {string("Radio")} </FormLabel>
       <Radio />
@@ -131,7 +134,31 @@ let make = () => {
           sit amet blandit leo lobortis eget.")}
         </Typography>
       </ExpansionPanelDetails>
+      <ExpansionPanelActions>
+          <Button size="small">{string("Cancel")}</Button>
+          <Button size="small" color="primary">
+            {string("Save")}
+          </Button>
+        </ExpansionPanelActions>
     </ExpansionPanel>
+
+    <Fab>
+      <Icon.Notifications className="extendedIcon" />
+      {string("Notification")}
+    </Fab>
+
+    <FormControl variant=Variant.filled>
+      <FilledInput
+        id="filled-adornment-weight"
+        value="weight"
+        endAdornment={<InputAdornment position="end">{string("Kg")}</InputAdornment>}
+        inputProps={
+          "aria-label": "weight"
+        }
+      />
+      <FormHelperText>{string("Weight")}</FormHelperText>
+    </FormControl>
+
     <AppBar position="static">
       <Toolbar>
         <IconButton edge="start" color="inherit" >
@@ -170,20 +197,31 @@ let make = () => {
       />
 
     <Card>
+      <CardHeader 
+            avatar={<Avatar alt="Remy Sharp" src="https://www.w3schools.com/howto/img_avatar2.png" />}
+            action=
+            {<IconButton>
+              <Icon.RestoreIcon />
+            </IconButton>}
+            title="Shrimp and Chorizo Paella"
+            subheader="September 14, 2016"
+          />
       <CardActionArea>
         <CardMedia
           component="img"
           image="https://animals.sandiegozoo.org/sites/default/files/2016-11/animals_hero_lizards.jpg"
         />
-        <CardContent>
-          <Typography variant=Typography.Variant.h5 component="h2">
-            {string("Lizard")}
-          </Typography>
-          <Typography variant=Typography.Variant.body2 color="textSecondary" component="p">
-            {string("Lizards are a widespread group of squamate reptiles, with over 6,000 species, ranging
-            across all continents except Antarctica")}
-          </Typography>
-        </CardContent>
+        <Collapse in_=true timeout="auto">
+          <CardContent>
+            <Typography variant=Typography.Variant.h5 component="h2">
+              {string("Lizard")}
+            </Typography>
+            <Typography variant=Typography.Variant.body2 color="textSecondary" component="p">
+              {string("Lizards are a widespread group of squamate reptiles, with over 6,000 species, ranging
+              across all continents except Antarctica")}
+            </Typography>
+          </CardContent>
+        </Collapse>
       </CardActionArea>
       <CardActions>
         <Button size="small" color="primary">

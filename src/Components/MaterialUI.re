@@ -545,7 +545,7 @@ module Collapse = {
       ~collapsedHeight: int=?, // Can be string
       ~component: string=?,
       ~in_: bool=?,
-      ~timeout: int=?
+      ~timeout: string=?
     ) => /* timeout can be { enter?: number, exit?: number } or "auto" */
     React.element =
     "default";

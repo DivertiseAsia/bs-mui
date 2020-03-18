@@ -18,6 +18,16 @@ test("Button Component with different sizes renders", () =>
   |> toMatchSnapshot
 );
 
+test("Test ButtonBase component",()=>
+  <Container>
+    <ButtonBase>{string("Base Button")}</ButtonBase>
+  </Container>
+  |> render
+  |> container
+  |> expect
+  |> toMatchSnapshot
+)
+
 test("Test container with child elements", () =>
   <Container id="container-button">
     <FormLabel> {string("Button")} </FormLabel>
@@ -254,7 +264,42 @@ test("Test ExpantionPanel component",()=>
           sit amet blandit leo lobortis eget.")}
         </Typography>
       </ExpansionPanelDetails>
+      <ExpansionPanelActions>
+          <Button size="small">{string("Cancel")}</Button>
+          <Button size="small" color="primary">
+            {string("Save")}
+          </Button>
+        </ExpansionPanelActions>
     </ExpansionPanel>
+    |> render
+    |> container
+    |> expect
+    |> toMatchSnapshot
+)
+
+test("Test Fab component",()=>
+  <Fab>
+    <Icon.Notifications className="extendedIcon" />
+    {string("Notification")}
+  </Fab>
+  |> render
+  |> container
+  |> expect
+  |> toMatchSnapshot
+)
+
+test("Test FilledInput component",()=>
+  <FormControl variant=Variant.filled>
+      <FilledInput
+        id="filled-adornment-weight"
+        value="weight"
+        endAdornment={<InputAdornment position="end">{string("Kg")}</InputAdornment>}
+        inputProps={
+          "aria-label": "weight"
+        }
+      />
+      <FormHelperText>{string("Weight")}</FormHelperText>
+    </FormControl>
     |> render
     |> container
     |> expect
@@ -713,20 +758,31 @@ test("Test checkbox component",()=>
 
 test("Test card component",()=>
   <Card>
+    <CardHeader 
+          avatar={<Avatar alt="Remy Sharp" src="https://www.w3schools.com/howto/img_avatar2.png" />}
+          action=
+          {<IconButton>
+            <Icon.RestoreIcon />
+          </IconButton>}
+          title="Shrimp and Chorizo Paella"
+          subheader="September 14, 2016"
+          />
     <CardActionArea>
       <CardMedia
         component="img"
         image="https://animals.sandiegozoo.org/sites/default/files/2016-11/animals_hero_lizards.jpg"
-      />
-      <CardContent>
-        <Typography variant=Typography.Variant.h5 component="h2">
-          {string("Lizard")}
-        </Typography>
-        <Typography variant=Typography.Variant.body2 color="textSecondary" component="p">
-          {string("Lizards are a widespread group of squamate reptiles, with over 6,000 species, ranging
-          across all continents except Antarctica")}
-        </Typography>
-      </CardContent>
+      />      
+      <Collapse in_=true timeout="auto">  
+        <CardContent>
+          <Typography variant=Typography.Variant.h5 component="h2">
+            {string("Lizard")}
+          </Typography>
+          <Typography variant=Typography.Variant.body2 color="textSecondary" component="p">
+            {string("Lizards are a widespread group of squamate reptiles, with over 6,000 species, ranging
+            across all continents except Antarctica")}
+          </Typography>
+        </CardContent>
+      </Collapse>
     </CardActionArea>
     <CardActions>
       <Button size="small" color="primary">
