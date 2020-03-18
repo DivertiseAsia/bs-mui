@@ -198,8 +198,8 @@ let make = () => {
     <Badge badgeContent={4} color="error" />
 
     <BottomNavigation showLabels=true component="div">
-      <BottomNavigationAction  label="Recents" icon={<RestoreIcon />} />
-      <BottomNavigationAction  label="Favorites" icon={<FavoriteIcon />}  />
+      <BottomNavigationAction  label="Recents" icon={<Icon.RestoreIcon />} />
+      <BottomNavigationAction  label="Favorites" icon={<Icon.FavoriteIcon />}  />
     </BottomNavigation>
 
      <Breadcrumbs>
@@ -331,13 +331,13 @@ let make = () => {
     <SpeedDial
         ariaLabel="SpeedDial openIcon example"
         hidden=false
-        icon={<SpeedDialIcon openIcon={<FavoriteIcon />} />}
+        icon={<SpeedDialIcon openIcon={<Icon.FavoriteIcon />} />}
         _open=true
       >
       </SpeedDial>
 
     <SpeedDialAction
-      icon={<SpeedDialIcon openIcon={<FavoriteIcon />} />}
+      icon={<SpeedDialIcon openIcon={<Icon.FavoriteIcon />} />}
       tooltipTitle={<div>{string("Test Speed Action")}</div>}
       tooltipOpen=true
     />
@@ -404,22 +404,22 @@ let make = () => {
           onChange={_=>Js.log("toggle button")}
         >
         <ToggleButton value="left" >
-          <FavoriteIcon />
+          <Icon.FavoriteIcon />
         </ToggleButton>
         <ToggleButton value="center" >
-          <FavoriteIcon />
+          <Icon.FavoriteIcon />
         </ToggleButton>
         <ToggleButton value="right" >
-          <FavoriteIcon />
+          <Icon.FavoriteIcon />
         </ToggleButton>
         <ToggleButton value="justify">
-          <FavoriteIcon />
+          <Icon.FavoriteIcon />
         </ToggleButton>
       </ToggleButtonGroup>
 
       <Tooltip title="Delete">
         <IconButton edge="start" color="inherit">
-          <RestoreIcon />
+          <Icon.RestoreIcon />
         </IconButton>
       </Tooltip>
 

@@ -1771,6 +1771,28 @@ module Icon = {
             makeProps(~className?,())
             );
         };
+
+    module RestoreIcon = {
+        open MaterialUI.Icon.RestoreIcon;
+        let component = ReasonReact.statelessComponent("RestoreIcon");
+        
+        let make = (~className=?) =>
+            ReasonReactCompat.wrapReactForReasonReact(
+            make,
+            makeProps(~className?,())
+            );
+        };
+
+    module FavoriteIcon = {
+        open MaterialUI.Icon.FavoriteIcon;
+        let component = ReasonReact.statelessComponent("FavoriteIcon");
+        
+        let make = (~className=?) =>
+            ReasonReactCompat.wrapReactForReasonReact(
+            make,
+            makeProps(~className?,())
+            );
+        };
   };
 
 module IconButton = {

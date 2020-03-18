@@ -1075,6 +1075,17 @@ module Icon = {
     [@react.component] [@bs.module "@material-ui/icons/ShoppingCart"]
     external make: (~className: string=?) => React.element = "default";
   };
+
+  module RestoreIcon = {
+  [@react.component] [@bs.module "@material-ui/icons/Restore"]
+    external make: (~className: string=?) => React.element = "default";
+  };
+
+  module FavoriteIcon = {
+    [@react.component] [@bs.module "@material-ui/icons/Favorite"]
+    external make: (~className: string=?) => React.element = "default";
+  };
+
 };
 
 module IconButton = {
@@ -2392,14 +2403,4 @@ module Zoom = {
     ) =>
     React.element =
     "default";
-};
-
-module RestoreIcon = {
-  [@react.component] [@bs.module "@material-ui/icons/Restore"]
-  external make: unit => React.element = "default";
-};
-
-module FavoriteIcon = {
-  [@react.component] [@bs.module "@material-ui/icons/Favorite"]
-  external make: unit => React.element = "default";
 };

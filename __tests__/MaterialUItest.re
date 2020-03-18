@@ -153,8 +153,8 @@ test("Test Badge component",()=>
 
 test("Test BottomNavigation component",()=>
   <BottomNavigation showLabels={true} component="div">
-    <BottomNavigationAction label="Recents" icon={<RestoreIcon />} />
-    <BottomNavigationAction label="Favorites" icon={<FavoriteIcon />}  />
+    <BottomNavigationAction label="Recents" icon={<Icon.RestoreIcon />} />
+    <BottomNavigationAction label="Favorites" icon={<Icon.FavoriteIcon />}  />
   </BottomNavigation>
   |> render
   |> container
@@ -505,7 +505,7 @@ test("Test SpeedDial component",()=>
     <SpeedDial
         ariaLabel="SpeedDial openIcon example"
         hidden=false
-        icon={<SpeedDialIcon openIcon={<FavoriteIcon />} />}
+        icon={<SpeedDialIcon openIcon={<Icon.FavoriteIcon />} />}
         _open=true
       >
       </SpeedDial>
@@ -517,7 +517,7 @@ test("Test SpeedDial component",()=>
 
 test("Test SpeedDialAction component",()=>
     <SpeedDialAction
-      icon={<SpeedDialIcon openIcon={<FavoriteIcon />} />}
+      icon={<SpeedDialIcon openIcon={<Icon.FavoriteIcon />} />}
       tooltipTitle={<div>{string("Test Speed Action")}</div>}
       tooltipOpen=true
     />
@@ -632,16 +632,16 @@ test("Test ToggleButton component",()=>
         onChange={_=>Js.log("toggle button")}
       >
       <ToggleButton value="left" >
-        <FavoriteIcon />
+        <Icon.FavoriteIcon />
       </ToggleButton>
       <ToggleButton value="center" >
-        <FavoriteIcon />
+        <Icon.FavoriteIcon />
       </ToggleButton>
       <ToggleButton value="right" >
-        <FavoriteIcon />
+        <Icon.FavoriteIcon />
       </ToggleButton>
       <ToggleButton value="justify">
-        <FavoriteIcon />
+        <Icon.FavoriteIcon />
       </ToggleButton>
     </ToggleButtonGroup>
     |> render
@@ -653,7 +653,7 @@ test("Test ToggleButton component",()=>
 test("Test Tooltip component",()=>
  <Tooltip title="Delete">
     <IconButton edge="start" color="inherit">
-      <RestoreIcon />
+      <Icon.RestoreIcon />
     </IconButton>
   </Tooltip>
   |> render
