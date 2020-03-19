@@ -454,6 +454,60 @@ test("Test Menu component",()=>{
   |> toMatchSnapshot
 )
 
+test("Test MenuList component",()=>
+<Paper className="root">
+      <MenuList>
+        <MenuItem>
+          <ListItemIcon>
+            <Icon.Notifications />
+          </ListItemIcon>
+          <Typography>{string("A short message")}</Typography>
+        </MenuItem>
+        <MenuItem>
+          <ListItemIcon>
+            <Icon.Search />
+          </ListItemIcon>
+          <Typography>{string("A very long text that overflows")}</Typography>
+        </MenuItem>
+        <MenuItem>
+          <ListItemIcon>
+            <Icon.RestoreIcon />
+          </ListItemIcon>
+          <Typography noWrap=true>
+            {string("A very long text that overflows")}
+          </Typography>
+        </MenuItem>
+      </MenuList>
+    </Paper>
+    |> render
+    |> container
+    |> expect
+    |> toMatchSnapshot
+)
+
+test("Test Mobile Stepper",()=>
+  <MobileStepper
+    variant="progress"
+    steps={6}
+    position="static"
+    activeStep={0}
+    nextButton={
+      <Button size="small" disabled=false>
+        {string("Next")}
+      </Button>
+    }
+    backButton={
+      <Button size="small" disabled=true>
+        {string("Back")}
+      </Button>
+    }
+  />
+  |> render
+  |> container
+  |> expect
+  |> toMatchSnapshot
+)
+
 test("Test Modal component",()=>
   <Modal
     _open=false
@@ -466,12 +520,46 @@ test("Test Modal component",()=>
   |> toMatchSnapshot
 )
 
+test("Test NativeSelect component",()=>
+  <FormControl>
+    <InputLabel htmlFor="age-native-helper">{string("Age")}</InputLabel>
+    <NativeSelect
+      onChange={_=>Js.log("Native Select")}
+      inputProps={{
+        "name": "age",
+        "id": "age-native-helper",
+      }}
+    >
+      <option value="" />
+      <option value={"10"}>{string("Ten")}</option>
+      <option value={"20"}>{string("Twenty")}</option>
+      <option value={"30"}>{string("Thirty")}</option>
+    </NativeSelect>
+    <FormHelperText>{string("Some important helper text")}</FormHelperText>
+  </FormControl>
+  |> render
+  |> container
+  |> expect
+  |> toMatchSnapshot
+)
+
 test("Test NoSsr component",()=>
   <NoSsr>
     <Box p={2} bgcolor="secondary.main" color="primary.contrastText">
       {string("Client only")}
     </Box>
   </NoSsr>
+  |> render
+  |> container
+  |> expect
+  |> toMatchSnapshot
+)
+
+test("Test OutlinedInput component",()=>
+  <FormControl variant=Variant.outlined>
+    <InputLabel htmlFor="component-outlined">{string("Name")}</InputLabel>
+    <OutlinedInput id="component-outlined" onChange={_=>Js.log("outlined input")} label="Name" />
+  </FormControl>
   |> render
   |> container
   |> expect

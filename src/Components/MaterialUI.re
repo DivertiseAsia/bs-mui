@@ -1351,7 +1351,7 @@ module MobileStepper = {
       ~nextButton: React.element=?,
       ~position: string=?,
       ~steps: int,
-      ~variant: Variant.t=?
+      ~variant: string=?
     ) =>
     React.element = "default";
 };
@@ -1387,7 +1387,7 @@ module NativeSelect = {
   [@react.component] [@bs.module "@material-ui/core/NativeSelect"]
   external make:
     (
-      ~children : string,
+      ~children : React.element,
       ~classes: string=?,
       ~iconComponent: string=?,
       ~input: React.element=?,
@@ -1428,7 +1428,7 @@ module OutlinedInput = {
       ~inputComponent: string=?,
       ~inputProps: Js.t('a)=?,
       ~inputRef: 'b=?,
-      ~label: React.element=?,
+      ~label: string=?,
       ~labelWidth: int=?,
       ~margin: string=?,
       ~multiline: bool=?,
