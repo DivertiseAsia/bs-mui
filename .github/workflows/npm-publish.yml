@@ -26,3 +26,52 @@ jobs:
       env:
         CI: true
         NODE_AUTH_TOKEN: ${{ secrets.NPM_AUTH_TOKEN }}
+  pages-update:
+    name: pages-update
+    needs: npm-publish
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v2
+    - name: Set up Node.js
+      uses: actions/setup-node@v1
+      with:
+        node-version: 10.0.0
+    - name: npm install and build
+      run: |
+        npm run setup-test
+        npm run build
+    - name: webpack install
+      run: |
+        npm install webpack
+        npm install webpack-cli
+    - name: webpack build
+      run: |
+        webpack --config webpack.site.config.js
+    - name: Upload index.js artifact
+      uses: actions/upload-artifact@v1
+      with:
+        name: bundle
+        path: index.js
+    - name: stash index.js for branch change
+      run: |
+        git stash -u
+    - name: Checkout gh-pages branch
+      uses: actions/checkout@v2
+      with:
+          ref: gh-pages
+    - name: Download index.js artifact
+      uses: actions/download-artifact@v1
+      with:
+        name: bundle
+    - name: replace old index.js
+      run: |
+        mv bundle/index.js index.js
+        rm -rf bundle
+    - name: Commit new index.js to gh-pages branch
+      uses: Automattic/action-commit-to-branch@master
+      with:
+        branch: 'gh-pages'
+        commit_message:  'Updated documentation via ${{ github.sha }}'
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # Required
