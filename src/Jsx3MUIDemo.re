@@ -234,7 +234,7 @@ let make = () => {
           component="img"
           image="https://animals.sandiegozoo.org/sites/default/files/2016-11/animals_hero_lizards.jpg"
         />
-        <Collapse in_=true timeout="auto">
+        <Collapse _in=true timeout="auto">
           <CardContent>
             <Typography variant=Typography.Variant.h5 component="h2">
               {string("Lizard")}
@@ -385,7 +385,15 @@ let make = () => {
       <OutlinedInput id="component-outlined" onChange={_=>Js.log("outlined input")} label="Name" />
     </FormControl>
 
-    <Pagination count={10} />
+    <Pagination 
+      count={10} 
+      renderItem={item => (
+        <PaginationItem
+          _type="first"
+          selected=true
+        />
+      )}
+    />
 
     <Popover
         _open=false
@@ -418,6 +426,10 @@ let make = () => {
         value="a"
         name="radio-button-demo"
       />
+
+    <RootRef rootRef=React.useRef(Js.Nullable.null)>
+      <div >{string("Test rootref")}</div>
+    </RootRef>
 
     <Box component="fieldset">
         <Typography component="legend">{string("Controlled")}</Typography>
@@ -472,6 +484,25 @@ let make = () => {
           <StepLabel>{string("Test Step Label")}</StepLabel>
         </Step>
     </Stepper>
+
+    <Stepper nonLinear=true activeStep={3}>
+          <Step>
+            <StepButton>
+              {string("step button")}
+            </StepButton>
+          </Step>
+      </Stepper>
+
+      /* <Stepper activeStep={5} orientation="vertical">
+        <Step>
+          <StepLabel stepIconComponent={<StepIcon active=true icon={<Icon.FavoriteIcon />} />}>
+              <Typography>{string("step label")}</Typography>
+          </StepLabel>
+          <StepContent>
+            <Typography>{string("step content")}</Typography>
+          </StepContent>
+        </Step>
+    </Stepper> */
 
     <SvgIcon>
       <path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z" />

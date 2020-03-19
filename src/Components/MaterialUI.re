@@ -544,7 +544,7 @@ module Collapse = {
       ~className: string=?,
       ~collapsedHeight: int=?, // Can be string
       ~component: string=?,
-      ~in_: bool=?,
+      ~_in: bool=?,
       ~timeout: string=?
     ) => /* timeout can be { enter?: number, exit?: number } or "auto" */
     React.element =
@@ -1463,7 +1463,7 @@ module Pagination = {
       ~hidePrevButton: bool=?,
       ~onChange: unit=>unit=?,
       ~page: int=?,
-      ~renderItem: unit=>unit=?,
+      ~renderItem: unit=> React.element=?,
       ~shape: string=?,
       ~showFirstButton: bool=?,
       ~showLastButton: bool=?,
@@ -1642,8 +1642,8 @@ module RootRef = {
   [@react.component] [@bs.module "@material-ui/core/RootRef"]
   external make:
     (
-      ~children: React.element=?,
-      ~rootRef : 'a=?
+      ~children: React.element,
+      ~rootRef : 'a
     ) =>
     React.element =
     "default";
@@ -1923,7 +1923,7 @@ module StepLabel = {
       ~error: bool=?,
       ~icon: React.element=?,
       ~optional: React.element=?,
-      ~stepIconComponent: string=?,
+      ~stepIconComponent: React.element=?,
       ~stepIconProps: Js.t('a)=?
     ) =>
     React.element =

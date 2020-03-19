@@ -874,7 +874,7 @@ module Collapse {
         ~className=?,
         ~collapsedHeight=?, 
         ~component=?,
-        ~in_=?,
+        ~_in=?,
         ~timeout=?,
         children) => 
         ReasonReactCompat.wrapReactForReasonReact(
@@ -883,7 +883,7 @@ module Collapse {
                 ~className?,
                 ~collapsedHeight?, 
                 ~component?,
-                ~in_?,
+                ~_in?,
                 ~timeout?,
                 ~children=children |> React.array,
                 ())
@@ -2733,13 +2733,13 @@ module RootRef {
     let component = ReasonReact.statelessComponent("RootRef");
 
     let make = (
-        ~children=?,
-        ~rootRef=?) => 
+        ~children,
+        ~rootRef) => 
     ReasonReactCompat.wrapReactForReasonReact(
         make,
         makeProps(
-            ~children?,
-            ~rootRef?,
+            ~children,
+            ~rootRef,
             ()),
     );   
 }

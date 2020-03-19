@@ -567,7 +567,15 @@ test("Test OutlinedInput component",()=>
 )
 
 test("Test Pagination component",() =>
-  <Pagination count={10} />
+  <Pagination 
+    count={10} 
+    renderItem={item => (
+      <PaginationItem
+        _type="first"
+        selected=true
+      />
+    )}
+  />
   |> render
   |> container
   |> expect
@@ -650,15 +658,15 @@ test("Test Rating component ",()=>
   |> toMatchSnapshot
 )
 
-// test("Test RootRef component",()=>
-//     <RootRef rootRef={React.createRef(<div></div>)}>
-//       <div >{string("Test rootref")}</div>
-//     </RootRef>
-//     |> render
-//     |> container
-//     |> expect
-//     |> toMatchSnapshot
-// )
+ test("Test RootRef component",()=>
+    <RootRef rootRef=React.useRef(Js.Nullable.null)>
+      <div >{string("Test rootref")}</div>
+    </RootRef>
+     |> render
+     |> container
+     |> expect
+     |> toMatchSnapshot
+ )
 
 test("Test Skeleton component",()=> {
     open Skeleton.Variant;
@@ -755,6 +763,20 @@ test("Test Stepper component",()=>
   <Stepper activeStep={10} alternativeLabel=true>
       <Step>
         <StepLabel>{string("Test Step Label")}</StepLabel>
+      </Step>
+  </Stepper>
+  |> render
+  |> container
+  |> expect
+  |> toMatchSnapshot
+)
+
+test("Test StepperButton component",()=>
+  <Stepper nonLinear=true activeStep={3}>
+      <Step>
+        <StepButton>
+          {string("step button")}
+        </StepButton>
       </Step>
   </Stepper>
   |> render
@@ -951,7 +973,7 @@ test("Test card component",()=>
         component="img"
         image="https://animals.sandiegozoo.org/sites/default/files/2016-11/animals_hero_lizards.jpg"
       />      
-      <Collapse in_=true timeout="auto">  
+      <Collapse _in=true timeout="auto">  
         <CardContent>
           <Typography variant=Typography.Variant.h5 component="h2">
             {string("Lizard")}
