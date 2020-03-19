@@ -190,7 +190,7 @@ let make = () => {
       </Grid>
     </Grid>
 
-    <GridList cellHeight={"200"} spacing={1} >
+    <GridList cellHeight={"auto"} spacing={1} >
           <GridListTitle cols={1} rows={1}>
             <GridListTitleBar
               title="Grid List title"
@@ -490,19 +490,22 @@ let make = () => {
             <StepButton>
               {string("step button")}
             </StepButton>
+            <StepContent>
+              <Typography>{string("step content")}</Typography>
+            </StepContent>
           </Step>
       </Stepper>
 
-      /* <Stepper activeStep={5} orientation="vertical">
+      <Stepper activeStep={5} orientation="vertical">
         <Step>
-          <StepLabel stepIconComponent={<StepIcon active=true icon={<Icon.FavoriteIcon />} />}>
+          /* <StepLabel stepIconComponent={<StepIcon active=true icon={<Icon.FavoriteIcon />} />}>
               <Typography>{string("step label")}</Typography>
-          </StepLabel>
+          </StepLabel> */
           <StepContent>
             <Typography>{string("step content")}</Typography>
           </StepContent>
         </Step>
-    </Stepper> */
+    </Stepper>
 
     <SvgIcon>
       <path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z" />
