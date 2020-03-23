@@ -680,6 +680,19 @@ module Drawer = {
     [@bs.inline] let persistent:t = "persistent";
     [@bs.inline] let temporary:t = "temporary";
   };
+
+  [@bs.deriving abstract]
+  type props('a) = {
+    [@bs.optional] anchor: string,
+    [@bs.optional] className: string,
+    [@bs.optional] classes: string,
+    [@bs.optional] onClose: unit => unit,
+    [@bs.as "open"][@bs.optional] _open: bool,
+    [@bs.optional] variant: Variant.t,
+    [@bs.optional] style: ReactDOMRe.Style.t,
+    [@bs.as "ModalProps"][@bs.optional] modalProps: 'a,
+    [@bs.optional] children: React.element
+  };
   
   [@react.component] [@bs.module "@material-ui/core/Drawer"]
   external make:
@@ -691,6 +704,7 @@ module Drawer = {
       ~_open: bool,
       ~variant: Variant.t=?,
       ~style: ReactDOMRe.Style.t=?,
+      ~modalProps: 'a=?,
       ~children: React.element=?
     ) =>
     React.element =

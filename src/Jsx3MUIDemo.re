@@ -226,7 +226,7 @@ let make = () => {
       <CssBaseline />
     </React.Fragment>
 
-    <Drawer _open=false>
+    <Drawer _open=false modalProps={"onBackdropClick": _ => Js.log("backdropClicked")}>
       <Typography>
         {string("Test Drawer")}
       </Typography>
