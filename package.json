@@ -38,6 +38,6 @@
     "bs-platform": "^7.2.0",
     "bs-react-testing-library": "^0.6.0",
     "bs-webapi": "^0.15.8",
-    "moduleserve": "^0.9.0"
+    "moduleserve": "github:marijnh/moduleserve#7db414e"
   }
 }
