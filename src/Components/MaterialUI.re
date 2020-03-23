@@ -1,5 +1,7 @@
 open MaterialUIDataType;
 
+module DataType = MaterialUIDataType;
+
 [@bs.module "@material-ui/core/styles"]
 external createStyles: Js.Dict.t('a) => Js.Dict.t(string) = "createStyles";
 
@@ -55,6 +57,7 @@ module AppBar = {
   external make:
     (
       ~children: React.element=?,
+      ~className: string=?,
       ~classes: string=?,
       ~color: Color.t=?,
       ~position: Position.t=?,
@@ -655,7 +658,7 @@ module Divider = {
       ~absolute: bool=?,
       ~classes: string=?,
       ~component: string=?,
-      ~flexItem: bool,
+      ~flexItem: bool=?,
       ~light: bool=?,
       ~orientation: string=?,
       ~variant: Variant.t=?
@@ -665,6 +668,18 @@ module Divider = {
 };
 
 module Drawer = {
+  module Variant :{
+    type t;
+    let permanent:t;
+    let persistent:t;
+    let temporary:t;
+  } = {
+    type t = string;
+    [@bs.inline] let permanent:t = "permanent";
+    [@bs.inline] let persistent:t = "persistent";
+    [@bs.inline] let temporary:t = "temporary";
+  };
+  
   [@react.component] [@bs.module "@material-ui/core/Drawer"]
   external make:
     (
@@ -1169,19 +1184,6 @@ module LinearProgress = {
     "default";
 };
 
-module Link = {
-  [@react.component] [@bs.module "@material-ui/core/Link"]
-  external make:
-    (
-      ~color: string=?,
-      ~href: string=?,
-      ~variant: Variant.t=?,
-      ~children: React.element=?
-    ) =>
-    React.element =
-    "default";
-};
-
 module UIList = {
   [@react.component] [@bs.module "@material-ui/core/List"]
   external make: (~children: React.element=?) => React.element = "default";
@@ -1193,8 +1195,13 @@ module ListItem = {
     (
       ~href: string=?,
       ~button: bool=?,
+      ~selected: bool=?,
+      ~dense: bool=?,
+      ~disableGutters: bool=?,
+      ~divider: bool=?,
       ~onClick: unit => unit=?,
       ~component: 'b=?,
+      ~className: string=?,
       ~children: React.element=?
     ) =>
     React.element =
@@ -1231,14 +1238,28 @@ module ListItemSecondaryAction = {
 module ListItemText = {
   [@react.component] [@bs.module "@material-ui/core/ListItemText"]
   external make:
-    (~primary: string=?, ~children: React.element=?) => React.element =
+    (
+      ~primary: string=?, 
+      ~secondary: string=?,
+      ~inset: bool=?,
+      ~disableTypography: bool=?,
+      ~primaryTypographyProps: Js.t('a)=?,
+      ~secondaryTypographyProps: Js.t('a)=?,
+      ~children: React.element=?
+    ) => React.element =
     "default";
 };
 
 module ListSubheader = {
   [@react.component] [@bs.module "@material-ui/core/ListSubheader"]
-  external make: (~inset: bool=?, ~children: React.element=?) => React.element =
-    "default";
+  external make: 
+    (
+      ~className: string=?,
+      ~disableGutters: bool=?,
+      ~disableSticky: bool=?,
+      ~inset: bool=?, 
+      ~children: React.element=?
+    ) => React.element = "default";
 };
 
 module Menu = {
@@ -1566,7 +1587,7 @@ module RadioGroup = {
 };
 
 module Rating = {
-  [@react.component] [@bs.module "@material-ui/core/Radio"]
+  [@react.component] [@bs.module "@material-ui/lab/Rating"]
   external make:
     (
       ~checked: bool=?,
@@ -2009,7 +2030,13 @@ module TableCell = {
   [@react.component] [@bs.module "@material-ui/core/TableCell"]
   external make:
     (
+      ~align: string=?,
+      ~component: string=?,
       ~padding: string=?,
+      ~scope: string=?,
+      ~size: string=?,
+      ~sortDirection: string=?,
+      ~variant: string=?,
       ~className: string=?,
       ~style: ReactDOMRe.Style.t=?,
       ~children: React.element=?
@@ -2097,7 +2124,7 @@ module Tabs = {
     (
       ~action: 'a=?,
       ~centered: bool=?,
-      ~children: string=?,
+      ~children: React.element=?,
       ~classes: string=?,
       ~component: string=?,
       ~indicatorColor: string=?,
@@ -2114,8 +2141,16 @@ module Tabs = {
     "default";
 };
 
-module TabTextareaAutosizes = {
-  // TODO: Implement
+module TextareaAutosize = {
+  [@react.component] [@bs.module "@material-ui/core/TextareaAutosize"]
+  external make:
+    (
+      ~rows: string=?,
+      ~rowsMax: string=?,
+      ~rowsMin: string=?
+    ) =>
+    React.element =
+    "default";
 };
 
 module TextField = {
@@ -2136,18 +2171,42 @@ module TextField = {
       ~value: string=?,
       ~required: bool=?,
       ~onChange: ReactEvent.Form.t => unit=?,
-      ~type_: string=?
+      ~type_: string=?,
+      ~disabled: bool=?
     ) =>
     React.element =
     "default";
 };
 
 module ToggleButton = {
-  // TODO: Implement
+  [@react.component] [@bs.module "@material-ui/lab/ToggleButton"]
+  external make:
+    (
+      ~children : React.element,
+      ~classes: string=?,
+      ~disabled: bool=?,
+      ~disableFocusRipple: bool=?,
+      ~disableRipple: bool=?,
+      ~selected: bool=?,
+      ~value: 'a
+    ) =>
+    React.element =
+    "default";
 };
 
 module ToggleButtonGroup = {
-  // TODO: Implement
+  [@react.component] [@bs.module "@material-ui/lab/ToggleButtonGroup"]
+  external make:
+    (
+      ~children : React.element=?,
+      ~classes: string=?,
+      ~exclusive: bool=?,
+      ~onChange: unit=>unit=?,
+      ~size: string=?,
+      ~value: 'a=?
+    ) =>
+    React.element =
+    "default";
 };
 
 module Toolbar = {
@@ -2158,15 +2217,75 @@ module Toolbar = {
 };
 
 module Tooltip = {
-  // TODO: Implement
+  [@react.component] [@bs.module "@material-ui/core/Tooltip"]
+  external make:
+    (
+      ~children : React.element,
+      ~arrow: bool=?,
+      ~classes: string=?,
+      ~disableFocusListener: bool=?,
+      ~disableHoverListener: bool=?,
+      ~disableTouchListener: bool=?,
+      ~enterDelay: int=?,
+      ~enterNextDelay: int=?,
+      ~enterTouchDelay: int=?,
+      ~id: string=?,
+      ~interactive: bool=?,
+      ~leaveDelay: int=?,
+      ~leaveTouchDelay: int=?,
+      ~onClose: unit=>unit=?,
+      ~onOpen: unit=>unit=?,
+      ~_open: bool=?,
+      ~placement: string=?,
+      ~popperProps: Js.t('a)=?,
+      ~title: string,
+      ~transitionComponent: string=?,
+      ~transitionProps: Js.t('a)=?
+    ) =>
+    React.element =
+    "default";
 };
 
 module TreeItem = {
-  // TODO: Implement
+  [@react.component] [@bs.module "@material-ui/lab/TreeItem"]
+  external make:
+    (
+      ~children : React.element=?,
+      ~classes: string=?,
+      ~collapseIcon: React.element=?,
+      ~endIcon: React.element=?,
+      ~expandIcon: React.element=?,
+      ~icon: React.element=?,
+      ~label: string=?,
+      ~nodeId: string,
+      ~transitionComponent: string=?,
+      ~transitionProps: Js.t('a)=?
+    ) =>
+    React.element =
+    "default";
 };
 
 module TreeView = {
-  // TODO: Implement
+  [@react.component] [@bs.module "@material-ui/lab/TreeView"]
+  external make:
+    (
+      ~children : React.element=?,
+      ~classes: string=?,
+      ~defaultCollapseIcon: React.element=?,
+      ~defaultEndIcon: React.element=?,
+      ~defaultExpanded: list(string)=?,
+      ~defaultExpandIcon: React.element=?,
+      ~defaultParentIcon: React.element=?,
+      ~defaultSelected: list(string)=?,
+      ~disableSelection	: bool=?,
+      ~expanded: list(string)=?,
+      ~multiSelect: bool=?,
+      ~onNodeSelect: unit=>unit=?,
+      ~onNodeToggle: unit=>unit=?,
+      ~selected: list(string)=?
+    ) =>
+    React.element =
+    "default";
 };
 
 module Typography = {
@@ -2215,6 +2334,24 @@ module Typography = {
       ~align: string=?,
       ~className: string=?,
       ~noWrap: bool=?,
+      ~children: React.element=?,
+      ~display: string=?,
+      ~gutterBottom: bool=?,
+      ~paragraph	: bool=?,
+      ~variantMapping: Js.t('a)=?
+    ) =>
+    React.element =
+    "default";
+};
+
+module Link = {
+  module Variant = Typography.Variant;
+  [@react.component] [@bs.module "@material-ui/core/Link"]
+  external make:
+    (
+      ~color: string=?,
+      ~href: string=?,
+      ~variant: Variant.t=?,
       ~children: React.element=?
     ) =>
     React.element =
@@ -2222,7 +2359,15 @@ module Typography = {
 };
 
 module Zoom = {
-  // TODO: Implement
+  [@react.component] [@bs.module "@material-ui/core/Zoom"]
+  external make:
+    (
+      ~children: React.element=?,
+      ~_in: bool=?,
+      ~timeout: 'a=?
+    ) =>
+    React.element =
+    "default";
 };
 
 module RestoreIcon = {

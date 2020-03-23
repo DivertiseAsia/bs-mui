@@ -113,16 +113,17 @@ let make = () => {
       <Alert severity="error">
         {string("This is an error alert")}
       </Alert>
-    </Container> */
-    /* <Autocomplete
+    </Container>
+
+     <Autocomplete
       autoComplete=true
       options= [
         { "title": "The Shawshank Redemption", "year": 1994 },
         { "title": "The Godfathe", "year": 1972 },
         { "title": "The Dark Knight", "year": 2008 }]
       renderInput = {params => <TextField label="Combo box" variant=Variant.outlined />}
-    ></Autocomplete> */
-    /* <AvatarGroup>
+    ></Autocomplete>
+    <AvatarGroup>
       <Avatar alt="Remy Sharp" src="https://www.w3schools.com/howto/img_avatar2.png" />
       <Avatar alt="Travis Howard" src="https://www.w3schools.com/howto/img_avatar2.png" />
       <Avatar alt="Cindy Baker" src="https://www.w3schools.com/howto/img_avatar2.png" />
@@ -144,7 +145,7 @@ let make = () => {
       <Toolbar>
         <IconButton edge="start" color="inherit" >
         </IconButton>
-        <Typography variant=Variant.h6>
+        <Typography variant=Typography.Variant.h6>
           {string("News")}
         </Typography>
       </Toolbar>
