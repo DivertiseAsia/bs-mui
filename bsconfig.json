@@ -6,7 +6,7 @@
   "sources": [
     {
     "dir" : "src",
-    "subdirs" : ["Components"]
+    "subdirs" : ["Components", "Containers"]
     },
     {
       "dir": "__tests__",
