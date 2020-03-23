@@ -2002,7 +2002,7 @@ module UIList = {
     };
 
 module List = {
-    open MaterialUI.List;
+    open MaterialUI.UIList;
     let component = ReasonReact.statelessComponent("List");
     
     let make = (~children,

@@ -1210,11 +1210,6 @@ module LinearProgress = {
     "default";
 };
 
-module UIList = {
-  [@react.component] [@bs.module "@material-ui/core/List"]
-  external make: (~children: React.element=?) => React.element = "default";
-};
-
 module ListItem = {
   [@react.component] [@bs.module "@material-ui/core/ListItem"]
   external make:
@@ -1234,11 +1229,11 @@ module ListItem = {
     "default";
 };
 
-module List = {
+module UIList = {
   [@react.component] [@bs.module "@material-ui/core/List"]
   external make:
     (
-      ~children: React.element,
+      ~children: React.element=?,
       ~classes: string=?,
       ~component: string=?,
       ~dense: bool=?,

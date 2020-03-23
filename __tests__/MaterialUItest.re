@@ -408,7 +408,7 @@ test("Test LinearProgress component",()=>
 )
 
 test("Test List component",()=>
-  <List subheader={<ListSubheader>{string("Settings")}</ListSubheader>} component="nav">
+  <UIList subheader={<ListSubheader>{string("Settings")}</ListSubheader>} component="nav">
     <ListItem button=true>
       <ListItemAvatar>
           <Avatar
@@ -428,7 +428,7 @@ test("Test List component",()=>
     <ListItem button=true>
       <ListItemText inset=true primary="Eric Hoffman" />
     </ListItem>
-  </List>
+  </UIList>
   |> render
   |> container
   |> expect

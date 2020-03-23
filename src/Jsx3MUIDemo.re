@@ -639,7 +639,7 @@ let make = () => {
 
   <LinearProgress color="secondary" />
 
-  <List subheader={<ListSubheader>{string("Settings")}</ListSubheader>} component="nav">
+  <UIList subheader={<ListSubheader>{string("Settings")}</ListSubheader>} component="nav">
     <ListItem button=true>
       <ListItemAvatar>
           <Avatar
@@ -659,7 +659,7 @@ let make = () => {
     <ListItem button=true>
       <ListItemText inset=true primary="Eric Hoffman" />
     </ListItem>
-  </List>
+  </UIList>
 
   </StylesProvider>
   ;
