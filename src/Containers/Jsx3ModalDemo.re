@@ -10,15 +10,6 @@ type state = {
 type action =
   | ToggleModal(bool);
 
-let styleWrapperComponent = ReactDOMRe.Style.make(
-  ~background="lightgray", 
-  ~border="0px", 
-  ~borderRadius="3px",
-  ~padding="15px",
-  ~textAlign="center",
-  ()
-  );
-
 [@react.component]
 let make = () => {
   let (state, dispatch) = React.useReducer(
@@ -31,12 +22,9 @@ let make = () => {
       openModal: false,
     }
   );
-  <> 
-    <h2>{string("Modal")}</h2>
-    <h4>
-      {string("The modal component provides a solid foundation for creating dialogs, popovers, lightboxes, or whatever else.")}
-    </h4>
-    <div style=styleWrapperComponent>
+  let mainInfo = "The modal component provides a solid foundation for creating dialogs, popovers, lightboxes, or whatever else.";
+  <Jsx3LayoutComponent title="Modal" mainInfo> 
+    <>
       <Button 
         variant=Button.Variant.contained 
         color="primary"
@@ -50,6 +38,6 @@ let make = () => {
       >
           <Typography>{string("Server-side modal")}</Typography>
       </Modal>
-    </div>
-  </>;
+    </>
+  </Jsx3LayoutComponent>;
 };

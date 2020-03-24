@@ -10,15 +10,6 @@ type state = {
 type action =
   | ToggleSnackbar(bool);
 
-let styleWrapperComponent = ReactDOMRe.Style.make(
-  ~background="lightgray", 
-  ~border="0px", 
-  ~borderRadius="3px",
-  ~padding="15px",
-  ~textAlign="center",
-  ()
-  );
-
 [@react.component]
 let make = () => {
   let (state, dispatch) = React.useReducer(
@@ -31,12 +22,9 @@ let make = () => {
       openSnackbar: false,
     }
   );
-  <> 
-    <h2>{string("Snackbar")}</h2>
-    <h4>
-      {string("Snackbars provide brief messages about app processes. The component is also known as a toast.")}
-    </h4>
-    <div style=styleWrapperComponent>
+  let mainInfo = "Snackbars provide brief messages about app processes. The component is also known as a toast.";
+  <Jsx3LayoutComponent title="Snackbar" mainInfo>
+    <>
       <p>{string("Snackbar")}</p>
       <Button 
         variant=Button.Variant.contained 
@@ -56,6 +44,6 @@ let make = () => {
       />
       <p>{string("Snackbar Content")}</p>
       <SnackbarContent message="I love snacks." />
-    </div>
-  </>;
+    </>
+  </Jsx3LayoutComponent>;
 };

@@ -10,15 +10,6 @@ type state = {
 type action =
   | ControlBackdrop(bool);
 
-let styleWrapperComponent = ReactDOMRe.Style.make(
-  ~background="lightgray", 
-  ~border="0px", 
-  ~borderRadius="3px",
-  ~padding="15px",
-  ~textAlign="center",
-  ()
-  );
-
 [@react.component]
 let make = () => {
   let (state, dispatch) = React.useReducer(
@@ -31,14 +22,11 @@ let make = () => {
       openBackdrop: false,
     }
   );
-  <> 
-    <h2>{string("Backdrop")}</h2>
-    <h4>{string("The backdrop component is used to provide emphasis on a particular element or parts of it.")}</h4>
-    <p>
-      {string("The overlay signals to the user of a state change within the application and can be used for creating loaders, 
-      dialogs and more. In its simplest form, the backdrop component will add a dimmed layer over your application.")}
-    </p>
-    <div style=styleWrapperComponent>
+  let mainInfo = "The backdrop component is used to provide emphasis on a particular element or parts of it.";
+  let subInfo = "The overlay signals to the user of a state change within the application and can be used for creating loaders, 
+  dialogs and more. In its simplest form, the backdrop component will add a dimmed layer over your application.";
+  <Jsx3LayoutComponent title="Backdrop" mainInfo subInfo> 
+    <> 
       <Button 
         variant=Button.Variant.contained 
         color="primary"
@@ -49,6 +37,6 @@ let make = () => {
       <Backdrop _open=state.openBackdrop>
         <CircularProgress color="inherit" />
       </Backdrop>
-    </div>
-  </>;
+    </>
+  </Jsx3LayoutComponent>;
 };
