@@ -3,7 +3,7 @@
   "version": "0.1.33",
   "scripts": {
     "build": "bsb -make-world",
-    "start": "bsb -make-world -w -ws _ ",
+    "start": "bsb -make-world -w -ws _",
     "clean": "bsb -clean-world",
     "server": "moduleserve ./ --port 8000",
     "setup-test": "npm install bs-react-testing-library @glennsl/bs-jest bs-webapi bs-jest-dom",
@@ -38,6 +38,6 @@
     "bs-platform": "^7.2.0",
     "bs-react-testing-library": "^0.6.0",
     "bs-webapi": "^0.15.8",
-    "moduleserve": "^0.9.0"
+    "moduleserve": "^0.9.1"
   }
 }

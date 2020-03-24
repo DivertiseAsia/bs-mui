@@ -687,28 +687,17 @@ module Drawer = {
     [@bs.optional] className: string,
     [@bs.optional] classes: string,
     [@bs.optional] onClose: unit => unit,
-    [@bs.as "open"][@bs.optional] _open: bool,
+    [@bs.optional] _open: bool,
     [@bs.optional] variant: Variant.t,
     [@bs.optional] style: ReactDOMRe.Style.t,
-    [@bs.as "ModalProps"][@bs.optional] modalProps: 'a,
+    [@bs.optional] [@bs.as "ModalProps"] modalProps: 'a,
     [@bs.optional] children: React.element
   };
+
+  let makeProps = props;
   
-  [@react.component] [@bs.module "@material-ui/core/Drawer"]
-  external make:
-    (
-      ~anchor: string=?,
-      ~className: string=?,
-      ~classes: string=?,
-      ~onClose: unit => unit=?,
-      ~_open: bool,
-      ~variant: Variant.t=?,
-      ~style: ReactDOMRe.Style.t=?,
-      ~modalProps: 'a=?,
-      ~children: React.element=?
-    ) =>
-    React.element =
-    "default";
+  [@bs.module "@material-ui/core/Drawer"]
+  external make: React.component(props('a)) = "default";
 };
 
 module ExpansionPanel = {
@@ -1732,12 +1721,17 @@ module Slide = {
 };
 
 module Slider = {
+  [@bs.deriving abstract]
+  type props = {
+    [@bs.optional][@bs.as "aria-label"] ariaLabel: string
+  };
+
   [@react.component] [@bs.module "@material-ui/core/Slider"]
   external make:
     (
-      ~aria_label: string=?,
-      ~aria_labelledby: string=?,
-      ~aria_valuetext: string=?,
+      ~ariaLabel: string=?,
+      ~ariaLabelledby: string=?,
+      ~ariaValuetext: string=?,
       ~classes: string=?,
       ~color: string=?,
       ~component: string=?,
@@ -2388,6 +2382,7 @@ module Typography = {
   [@react.component] [@bs.module "@material-ui/core/Typography"]
   external make:
     (
+      ~id: string=?,
       ~component: string=?,
       ~variant: Variant.t=?,
       ~color: string=?,

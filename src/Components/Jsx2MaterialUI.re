@@ -1734,8 +1734,8 @@ module Icon = {
         
         let make = (~className=?) =>
             ReasonReactCompat.wrapReactForReasonReact(
-            make,
-            makeProps(~className?,())
+                MaterialUI.Icon.Notifications.make,
+                MaterialUI.Icon.Notifications.makeProps(~className?,())
             );
         };
 
@@ -1745,8 +1745,8 @@ module Icon = {
         
         let make = (~className=?) =>
             ReasonReactCompat.wrapReactForReasonReact(
-            make,
-            makeProps(~className?,())
+                MaterialUI.Icon.People.make,
+                MaterialUI.Icon.People.makeProps(~className?,())
             );
         };
 
@@ -1756,8 +1756,8 @@ module Icon = {
         
         let make = (~className=?) =>
             ReasonReactCompat.wrapReactForReasonReact(
-            make,
-            makeProps(~className?,())
+                MaterialUI.Icon.Search.make,
+                MaterialUI.Icon.Search.makeProps(~className?,())
             );
         };
     
@@ -1767,30 +1767,29 @@ module Icon = {
         
         let make = (~className=?) =>
             ReasonReactCompat.wrapReactForReasonReact(
-            make,
-            makeProps(~className?,())
+                MaterialUI.Icon.ShoppingCart.make,
+                MaterialUI.Icon.ShoppingCart.makeProps(~className?,())
             );
         };
 
     module RestoreIcon = {
-        open MaterialUI.Icon.RestoreIcon;
         let component = ReasonReact.statelessComponent("RestoreIcon");
         
         let make = (~className=?) =>
             ReasonReactCompat.wrapReactForReasonReact(
-            make,
-            makeProps(~className?,())
+                MaterialUI.Icon.RestoreIcon.make,
+                MaterialUI.Icon.RestoreIcon.makeProps(~className?,())
             );
         };
 
     module FavoriteIcon = {
-        open MaterialUI.Icon.FavoriteIcon;
+        
         let component = ReasonReact.statelessComponent("FavoriteIcon");
         
         let make = (~className=?) =>
             ReasonReactCompat.wrapReactForReasonReact(
-            make,
-            makeProps(~className?,())
+            MaterialUI.Icon.FavoriteIcon.make,
+            MaterialUI.Icon.FavoriteIcon.makeProps(~className?,())
             );
         };
   };
@@ -1803,7 +1802,7 @@ module IconButton = {
             ~color=?,
             ~className=?,
             ~onClick=?,
-            ~children=?) =>
+            children) =>
         ReasonReactCompat.wrapReactForReasonReact(
         make,
         makeProps(
@@ -1811,9 +1810,8 @@ module IconButton = {
             ~color?,
             ~className?,
             ~onClick?,
-            ~children?,
-            (),
-        ),
+            ~children=children |> React.array,
+            ()),
         children,
         );
     };
@@ -2845,9 +2843,9 @@ module Slider {
     let component = ReasonReact.statelessComponent("Slider");
 
     let make = (
-        ~aria_label=?,
-        ~aria_labelledby=?,
-        ~aria_valuetext=?,
+        ~ariaLabel=?,
+        ~ariaLabelledby=?,
+        ~ariaValuetext=?,
         ~classes=?,
         ~color=?,
         ~component=?,
@@ -2873,9 +2871,9 @@ module Slider {
         ReasonReactCompat.wrapReactForReasonReact(
             make,
             makeProps(
-                ~aria_label?,
-                ~aria_labelledby?,
-                ~aria_valuetext?,
+                ~ariaLabel?,
+                ~ariaLabelledby?,
+                ~ariaValuetext?,
                 ~classes?,
                 ~color?,
                 ~component?,
@@ -3801,6 +3799,7 @@ module Typography {
     let component = ReasonReact.statelessComponent("Typography");
 
     let make = (
+            ~id=?,
             ~component=?,
             ~variant=?,
             ~color=?,
@@ -3815,6 +3814,7 @@ module Typography {
         ReasonReactCompat.wrapReactForReasonReact(
             make,
             makeProps(
+                ~id?,
                 ~component?,
                 ~variant?,
                 ~color?,

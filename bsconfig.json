@@ -13,7 +13,7 @@
       "type": "dev"
     }
   ],
-  "bsc-flags": ["-bs-super-errors", "-bs-no-version-header"],
+  "bsc-flags": ["-bs-super-errors", "-bs-no-version-header", "-w -48"],
   "package-specs": [{
     "module": "commonjs",
     "in-source": false

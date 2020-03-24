@@ -288,7 +288,11 @@ let make = () => {
       <CssBaseline />
     </React.Fragment>
 
-    <Drawer _open=false>
+    <Drawer 
+    variant=Drawer.Variant.temporary 
+    _open=false 
+    modalProps={ "onBackdropClick": { _ => Js.log("backdropclick") }}
+    >
       <Typography>
         {string("Test Drawer")}
       </Typography>
@@ -444,9 +448,13 @@ let make = () => {
     <Skeleton variant=Skeleton.Variant.circle width="40" height="40" />
     <Skeleton variant=Skeleton.Variant.rect width="210" height="118" />
     
+    <Typography id="discrete-slider" gutterBottom=true>
+        (string("Discrete Slider"))
+    </Typography>
     <Slider
         defaultValue={30}
-        aria_labelledby="discrete-slider"
+        ariaLabel="test-slider"
+        ariaLabelledby="discrete-slider"
         valueLabelDisplay="auto"
         step={10}
         min={10}
