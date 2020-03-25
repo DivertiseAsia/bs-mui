@@ -54,7 +54,8 @@ let make = () => {
   let (menuRef, setMenuRef) = React.useState(()=>Js.Nullable.null);
   let (menuOpen, setMenuOpen) = React.useState(() => false);
 
-  let menuButton = <ClickAwayListener onClickAway={_=>setMenuRef(_=>Js.Nullable.null)}>
+  let menuButton = 
+    <ClickAwayListener onClickAway={_=>setMenuRef(_=>Js.Nullable.null)}>
         <Button variant=Button.Variant.contained color="default" onClick={evt=>{
           setMenuRef(_=>Js.Nullable.return(ReactEvent.Synthetic.target(evt)))
         }}>
@@ -199,16 +200,7 @@ let make = () => {
     <Jsx3NoSsrDemo />
     <Jsx3PaginationDemo />
     <Jsx3PopoverDemo />
-    
-
-    /* <Popper 
-      _open=true transition=true>
-        {transitionProp => 
-        <Fade timeout={"350"}>
-          <Typography>{string("The content of the Popper.")}</Typography>
-        </Fade>}
-    </Popper> */
-
+    <Jsx3PopperDemo />
     <Jsx3PortalDemo />
     <Jsx3RadioDemo />
     <Jsx3RatingDemo />
