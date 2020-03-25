@@ -28,103 +28,12 @@ module Autocomplete = MaterialUI_Autocomplete;
 module Avatar = MaterialUI_Avatar;
 module AvatarGroup = MaterialUI_Avatar.AvatarGroup;
 module Backdrop = MaterialUI_Backdrop;
+module Badge = MaterialUI_Badge;
+module BottomNavigation = MaterialUI_BottomNavigation;
+module BottomNavigationAction = MaterialUI_BottomNavigation.BottomNavigationAction;
+module Box = MaterialUI_Box;
 
-module Badge = {
-  type anchorOriginType = {
-    vertical: HorizontalAnchor.t,
-    horizontal: VerticalAnchor.t,
-  };
-  module Variant : { 
-    type t;
-    let dot:t;
-    let standard:t;
-  } = {
-    type t = string;
-    [@bs.inline] let dot = "dot";
-    [@bs.inline] let standard = "standard";
-  };
-
-  [@react.component] [@bs.module "@material-ui/core/Badge"]
-  external make:
-    (
-      ~anchorOrigin: anchorOriginType=?,
-      ~badgeContent: int=?,
-      ~children: React.element=?,
-      ~className: string=?,
-      ~color: MainWithDefaultErrorColor.t=?,
-      ~component: string=?,
-      ~invisible: bool=?,
-      ~max: int=?,
-      ~overlap: Overlap.t=?,
-      ~showZero: bool=?,
-      ~variant: Variant.t=?
-    ) =>
-    React.element =
-    "default";
-};
-
-module BottomNavigation = {
-  [@react.component] [@bs.module "@material-ui/core/BottomNavigation"]
-  external make:
-    (
-      ~children: React.element=?,
-      ~className: string=?,
-      ~component: string=?,
-      ~onChange: ReactEvent.Synthetic.t => unit=?,
-      ~showLabels: bool=?,
-      ~value: 'a=?
-    ) =>
-    React.element =
-    "default";
-};
-
-module BottomNavigationAction = {
-  [@react.component] [@bs.module "@material-ui/core/BottomNavigationAction"]
-  external make:
-    (
-      ~children: React.element=?,
-      ~className: string=?,
-      ~icon: React.element=?,
-      ~label: string=?,
-      ~showLabel: bool=?,
-      ~value: 'a=?
-    ) => /* children type is unsupportedProp */
-    React.element =
-    "default";
-};
-
-module Box = {
-  [@react.component] [@bs.module "@material-ui/core/Box"]
-  external make:
-    (
-      ~component: string=?,
-      ~bgcolor: string=?,
-      ~color: string=?,
-      ~p: int=?,
-      ~m: int=?,
-      ~mt: int=?,
-      ~children: React.element
-    ) =>
-    React.element =
-    "default";
-};
-
-module Breadcrumbs = {
-  [@react.component] [@bs.module "@material-ui/core/Breadcrumbs"]
-  external make:
-    (
-      ~children: React.element=?,
-      ~className: string=?,
-      ~component: string=?,
-      ~expandText: string=?,
-      ~itemsAfterCollapse: int=?,
-      ~itemsBeforeCollapse: int=?,
-      ~maxItems: int=?,
-      ~separator: React.element=?
-    ) => /* separator type is node (default = "/") */
-    React.element =
-    "default";
-};
+module Breadcrumbs = MaterialUI_Breadcrumbs;
 
 module Button = {
   module Variant : {
