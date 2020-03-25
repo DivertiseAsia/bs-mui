@@ -21,51 +21,9 @@ module StylesProvider = {
 }
 
 
-module Alert = {
-  [@react.component] [@bs.module "@material-ui/lab/Alert"]
-  external make:
-    (
-      ~action: React.element=?,
-      ~children: React.element=?,
-      ~classes: string=?,
-      ~color: Color.t=?,
-      ~closeText: string=?,
-      ~icon: React.element=?,
-      ~iconMapping: Js.t('a)=?,
-      ~onClose: unit => unit=?,
-      ~role: string=?,
-      ~severity: string=?,
-      ~variant: Variant.t=?
-    ) =>
-    React.element =
-    "default";
-};
-
-module AlertTitle = {
-  [@react.component] [@bs.module "@material-ui/lab/AlertTitle"]
-  external make:
-    (
-      ~children: React.element=?,
-      ~classes: string=?
-    ) =>
-    React.element =
-    "default";
-};
-
-module AppBar = {
-  [@react.component] [@bs.module "@material-ui/core/AppBar"]
-  external make:
-    (
-      ~children: React.element=?,
-      ~className: string=?,
-      ~classes: string=?,
-      ~color: Color.t=?,
-      ~position: Position.t=?,
-      ~style: ReactDOMRe.Style.t=?
-    ) =>
-    React.element =
-    "default";
-};
+module Alert = MaterialUI_Alert;
+module AlertTitle = MaterialUI_Alert.Title;
+module AppBar = MaterialUI_AppBar;
 
 module Autocomplete = {
   [@react.component] [@bs.module "@material-ui/lab/Autocomplete"]
