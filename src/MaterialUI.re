@@ -42,105 +42,10 @@ module CardActions = MaterialUI_Card.CardActions;
 module CardContent = MaterialUI_Card.CardContent;
 module CardHeader = MaterialUI_Card.CardHeader;
 module CardMedia = MaterialUI_Card.CardMedia;
-
-module Checkbox = {
-  [@react.component] [@bs.module "@material-ui/core/Checkbox"]
-  external make:
-    (
-      ~checked: bool=?,
-      ~checkedIcon: React.element=?,
-      ~className: string=?,
-      ~color: MainWithDefaultColor.t=?,
-      ~disabled: bool=?,
-      ~disableRipple: bool=?,
-      ~icon: React.element=?,
-      ~id: string=?,
-      ~indeterminate: bool=?,
-      ~indeterminateIcon: React.element=?,
-      ~inputProps: Js.t('a)=?,
-      ~inputRef: 'a=?,
-      ~onChange: ReactEvent.Synthetic.t => unit=?,
-      ~required: bool=?,
-      ~size: NoLargeSize.t=?,
-      ~type_: string=?,
-      ~value: 'b=?
-    ) =>
-    React.element =
-    "default";
-};
-
-module Chip = {
-  module Variant : {
-    type t;
-    let default:t;
-    let outlined:t;
-  } = {
-    type t = string;
-    [@bs.inline] let default = "default";
-    [@bs.inline] let outlined = "outlined";
-  };
-  [@react.component] [@bs.module "@material-ui/core/Chip"]
-  external make:
-    (
-      ~avatar: React.element=?,
-      ~children: React.element=?,
-      ~className: string=?,
-      ~clickable: bool=?,
-      ~color: MainWithDefaultColor.t=?,
-      ~component: string=?,
-      ~deleteIcon: React.element=?,
-      ~disabled: bool=?,
-      ~icon: React.element=?,
-      ~label: string=?,
-      ~onDelete: unit => unit=?,
-      ~size: NoLargeSize.t=?,
-      ~variant: Variant.t=?
-    ) =>
-    React.element =
-    "default";
-};
-
-module CircularProgress = {
-  module Variant : {
-    type t;
-    let determinate:t;
-    let indeterminate:t;
-    let static:t;
-  } = {
-    type t = string;
-    [@bs.inline] let determinate = "determinate";
-    [@bs.inline] let indeterminate = "indeterminate";
-    [@bs.inline] let static = "static";
-  };
-
-  [@react.component] [@bs.module "@material-ui/core/CircularProgress"]
-  external make:
-    (
-      ~className: string=?,
-      ~clickable: bool=?,
-      ~color: MainWithInheritColor.t=?,
-      ~disableShrink: bool=?,
-      ~size: int=?, // Can be string
-      ~thickness: float=?,
-      ~value: int=?,
-      ~variant: Variant.t=?
-    ) =>
-    React.element =
-    "default";
-};
-
-module ClickAwayListener = {
-  [@react.component] [@bs.module "@material-ui/core/ClickAwayListener"]
-  external make:
-    (
-      ~children: React.element=?,
-      ~mouseEvent: MouseEvent.t=?,
-      ~onClickAway: unit => unit,
-      ~touchEvent: TouchEvent.t=?
-    ) =>
-    React.element =
-    "default";
-};
+module Checkbox = MaterialUI_Checkbox;
+module Chip = MaterialUI_Chip;
+module CircularProgress = MaterialUI_CircularProgress;
+module ClickAwayListener = MaterialUI_ClickAwayListener;
 
 module Collapse = {
   [@react.component] [@bs.module "@material-ui/core/Collapse"]
