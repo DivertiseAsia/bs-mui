@@ -21,7 +21,7 @@ let make = () => {
     <div style=styleWrapperComponent>
       <Slider
         defaultValue={30}
-        aria_labelledby="discrete-slider"
+        /* aria_labelledby="discrete-slider" */
         valueLabelDisplay="auto"
         step={10}
         min={10}

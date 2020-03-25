@@ -1751,7 +1751,6 @@ module Icon = {
         };
 
     module Search = {
-        open MaterialUI.Icon.Search;
         let component = ReasonReact.statelessComponent("Search");
         
         let make = (~className=?) =>
@@ -1762,7 +1761,6 @@ module Icon = {
         };
     
     module ShoppingCart = {
-        open MaterialUI.Icon.ShoppingCart;
         let component = ReasonReact.statelessComponent("ShoppingCart");
         
         let make = (~className=?) =>

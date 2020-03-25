@@ -20,8 +20,8 @@ let make = () => {
     </h4>
     <div style=styleWrapperComponent>
       <BottomNavigation showLabels=true component="div">
-        <BottomNavigationAction label="Recents" icon={<RestoreIcon />} />
-        <BottomNavigationAction label="Favorites" icon={<FavoriteIcon />}  />
+        <BottomNavigationAction label="Recents" icon={<Icon.RestoreIcon />} />
+        <BottomNavigationAction label="Favorites" icon={<Icon.FavoriteIcon />}  />
       </BottomNavigation>
     </div>
   </>;
