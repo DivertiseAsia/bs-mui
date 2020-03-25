@@ -1,6 +1,5 @@
 open ReasonReact;
 open MaterialUI;
-open MaterialUIDataType;
 
 let anchors = ["left", "right", "top", "bottom"];
 
@@ -28,7 +27,7 @@ let make = () => {
   Side sheets are surfaces containing supplementary content that are anchored to the left or right edge of the screen.";
   <Jsx3LayoutComponent title="Drawer" mainInfo>  
     {
-      anchors |> List.mapi((index, anchor) => {
+      anchors |> List.map(anchor => {
         <React.Fragment key=("key-drawer" ++ anchor)>
         <Button 
           variant=Button.Variant.contained 

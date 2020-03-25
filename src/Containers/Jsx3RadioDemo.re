@@ -1,6 +1,4 @@
-open ReasonReact;
 open MaterialUI;
-open MaterialUIDataType;
 
 type state = {
   loading: bool,

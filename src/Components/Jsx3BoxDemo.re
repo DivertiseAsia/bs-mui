@@ -1,7 +1,5 @@
 open ReasonReact;
 open MaterialUI;
-open MaterialUIDataType;
-
 
 [@react.component]
 let make = () => {

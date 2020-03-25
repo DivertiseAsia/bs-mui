@@ -1,6 +1,4 @@
 open ReasonReact;
-open MaterialUI;
-open MaterialUIDataType;
 
 let styleWrapperComponent = ReactDOMRe.Style.make(
   ~background="lightgray", 

@@ -1,27 +1,8 @@
 open ReasonReact;
 open MaterialUI;
-open MaterialUIDataType;
-
-type state = {
-  loading: bool,
-  openPopper: bool,
-};
-
-type action =
-  | ControlPopper(bool);
 
 [@react.component]
 let make = () => {
-  let (state, dispatch) = React.useReducer(
-    (state, action) =>
-      switch (action) {
-      | ControlPopper(openPopper) => {...state, openPopper}
-    },
-    {
-      loading: false,
-      openPopper: false,
-    }
-  );
 
   let (anchorEl, setAnchorEl) = React.useState(()=>Js.Nullable.null);
   let mainInfo = "A Popper can be used to display some content on top of another. It's an alternative to react-popper.";
