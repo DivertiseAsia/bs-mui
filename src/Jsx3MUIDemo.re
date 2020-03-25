@@ -1,6 +1,5 @@
 open ReasonReact;
 open MaterialUI;
-open MaterialUIDataType;
 
 module False_or_choice {
   [@unboxed]
@@ -48,11 +47,11 @@ styleObj->Js.Dict.set("root", style);
 [@react.component]
 let make = () => {
   
-  let madeStyle = makeStyles(styleObj);
-  let classes = madeStyle(. 0);
+  /* let madeStyle = makeStyles(styleObj);
+  let classes = madeStyle(. 0); */
 
   let (menuRef, setMenuRef) = React.useState(()=>Js.Nullable.null);
-  let (menuOpen, setMenuOpen) = React.useState(() => false);
+  let (_menuOpen, _setMenuOpen) = React.useState(() => false);
 
   let menuButton = <ClickAwayListener onClickAway={_=>setMenuRef(_=>Js.Nullable.null)}>
         <Button variant=Button.Variant.contained color="default" onClick={evt=>{
