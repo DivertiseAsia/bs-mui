@@ -54,126 +54,13 @@ module DialogActions = MaterialUI_Dialog.DialogActions;
 module DialogContent = MaterialUI_Dialog.DialogContent;
 module DialogContentText = MaterialUI_Dialog.DialogContentText;
 module DialogTitle = MaterialUI_Dialog.DialogTitle;
-
-module Divider = {
-  [@react.component] [@bs.module "@material-ui/core/Divider"]
-  external make:
-    (
-      ~absolute: bool=?,
-      ~classes: string=?,
-      ~component: string=?,
-      ~flexItem: bool=?,
-      ~light: bool=?,
-      ~orientation: string=?,
-      ~variant: Variant.t=?
-    ) =>
-    React.element =
-    "default";
-};
-
-module Drawer = {
-  module Variant :{
-    type t;
-    let permanent:t;
-    let persistent:t;
-    let temporary:t;
-  } = {
-    type t = string;
-    [@bs.inline] let permanent:t = "permanent";
-    [@bs.inline] let persistent:t = "persistent";
-    [@bs.inline] let temporary:t = "temporary";
-  };
-
-  [@bs.deriving abstract]
-  type props('a) = {
-    [@bs.optional] anchor: string,
-    [@bs.optional] className: string,
-    [@bs.optional] classes: string,
-    [@bs.optional] onClose: unit => unit,
-    [@bs.optional] _open: bool,
-    [@bs.optional] variant: Variant.t,
-    [@bs.optional] style: ReactDOMRe.Style.t,
-    [@bs.optional] [@bs.as "ModalProps"] modalProps: 'a,
-    [@bs.optional] children: React.element
-  };
-
-  let makeProps = props;
-  
-  [@bs.module "@material-ui/core/Drawer"]
-  external make: React.component(props('a)) = "default";
-};
-
-module ExpansionPanel = {
-  [@react.component] [@bs.module "@material-ui/core/ExpansionPanel"]
-  external make:
-    (
-      ~children: React.element=?,
-      ~classes: string=?,
-      ~defaultExpanded: bool=?,
-      ~disabled: bool=?,
-      ~expanded: bool=?,
-      ~onChange: unit=>unit=?,
-      ~transitionComponent: string=?,
-      ~transitionProps: Js.t('a)=?
-    ) =>
-    React.element =
-    "default";
-};
-
-module ExpansionPanelActions = {
-  [@react.component] [@bs.module "@material-ui/core/ExpansionPanelActions"]
-  external make:
-    (
-      ~children: React.element=?,
-      ~classes: string=?,
-      ~disableSpacing: bool=?
-    ) =>
-    React.element =
-    "default";
-};
-
-module ExpansionPanelDetails = {
-  [@react.component] [@bs.module "@material-ui/core/ExpansionPanelDetails"]
-  external make:
-    (
-      ~children: React.element=?,
-      ~classes: string=?
-    ) =>
-    React.element =
-    "default";
-};
-
-module ExpansionPanelSummary = {
-  [@react.component] [@bs.module "@material-ui/core/ExpansionPanelSummary"]
-  external make:
-    (
-      ~children: React.element=?,
-      ~classes: string=?,
-      ~expandIcon: React.element=?,
-      ~iconButtonProps: Js.t('a)=?
-    ) =>
-    React.element =
-    "default";
-};
-
-module Fab = {
-  [@react.component] [@bs.module "@material-ui/core/Fab"]
-  external make:
-    (
-      ~children: React.element=?,
-      ~classes: string=?,
-      ~color: string =?,
-      ~component: string=?,
-      ~disabled: bool=?,
-      ~disableFocusRipple: bool=?,
-      ~disableRipple: bool=?,
-      ~href: string=?,
-      ~size: string=?,
-      ~variant: Variant.t=?
-    ) =>
-    React.element =
-    "default";
-};
+module Divider = MaterialUI_Divider;
+module Drawer = MaterialUI_Drawer;
+module ExpansionPanel = MaterialUI_ExpansionPanel;
+module ExpansionPanelActions = MaterialUI_ExpansionPanel.ExpansionPanelActions;
+module ExpansionPanelDetails = MaterialUI_ExpansionPanel.ExpansionPanelDetails;
+module ExpansionPanelSummary = MaterialUI_ExpansionPanel.ExpansionPanelSummary;
+module Fab = MaterialUI_Fab;
 
 module Fade = {
   [@react.component] [@bs.module "@material-ui/core/Fade"]
