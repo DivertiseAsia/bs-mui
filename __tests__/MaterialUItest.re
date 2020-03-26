@@ -105,7 +105,7 @@ test("Test appbar component",()=>
   <AppBar position="static">
     <Toolbar>
       <IconButton edge="start" color="inherit" />
-      <Typography variant=Typography.Variant.h6>
+      <Typography variant=VariantElement.h6>
         {string("News")}
       </Typography>
     </Toolbar>
@@ -975,10 +975,10 @@ test("Test card component",()=>
       />      
       <Collapse _in=true timeout="auto">  
         <CardContent>
-          <Typography variant=Typography.Variant.h5 component="h2">
+          <Typography variant=VariantElement.h5 component="h2">
             {string("Lizard")}
           </Typography>
-          <Typography variant=Typography.Variant.body2 color="textSecondary" component="p">
+          <Typography variant=VariantElement.body2 color="textSecondary" component="p">
             {string("Lizards are a widespread group of squamate reptiles, with over 6,000 species, ranging
             across all continents except Antarctica")}
           </Typography>
