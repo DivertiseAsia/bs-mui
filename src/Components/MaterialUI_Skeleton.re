@@ -1,14 +1,4 @@
-module Variant : { 
-    type t;
-    let text:t;
-    let rect:t;
-    let circle:t;
-  }= {
-    type t = string;
-    [@bs.inline] let text:t = "text";
-    [@bs.inline] let rect:t = "rect";
-    [@bs.inline] let circle:t = "circle";
-  };
+open MaterialUIDataType;
 
   [@react.component] [@bs.module "@material-ui/lab/Skeleton"]
   external make:
@@ -17,7 +7,7 @@ module Variant : {
       ~classes: string=?,
       ~component: string=?,
       ~height: string=?,
-      ~variant: Variant.t=?,
+      ~variant: Variant.Skeleton.t=?,
       ~width: string=?
     ) =>
     React.element =

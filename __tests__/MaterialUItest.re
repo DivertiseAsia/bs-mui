@@ -669,7 +669,7 @@ test("Test Rating component ",()=>
  ) */
 
 test("Test Skeleton component",()=> {
-    open Skeleton.Variant;
+    open Variant.Skeleton;
     <Container>
       
       <Skeleton variant=text />

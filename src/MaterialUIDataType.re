@@ -206,6 +206,42 @@ module Variant = {
     let inherit_:t = "inherit";
   };
 
+  module Circular : {
+    type t;
+    let determinate:t;
+    let indeterminate:t;
+    let static:t;
+  } = {
+    type t = string;
+    [@bs.inline] let determinate = "determinate";
+    [@bs.inline] let indeterminate = "indeterminate";
+    [@bs.inline] let static = "static";
+  };
+
+  module Drawer :{
+    type t;
+    let permanent:t;
+    let persistent:t;
+    let temporary:t;
+  } = {
+    type t = string;
+    [@bs.inline] let permanent:t = "permanent";
+    [@bs.inline] let persistent:t = "persistent";
+    [@bs.inline] let temporary:t = "temporary";
+  };
+
+  module Skeleton : { 
+    type t;
+    let text:t;
+    let rect:t;
+    let circle:t;
+  }= {
+    type t = string;
+    [@bs.inline] let text:t = "text";
+    [@bs.inline] let rect:t = "rect";
+    [@bs.inline] let circle:t = "circle";
+  };
+
 };
 
 module AlignContent : { 

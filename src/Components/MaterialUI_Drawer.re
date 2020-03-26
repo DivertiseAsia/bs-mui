@@ -1,14 +1,4 @@
-module Variant :{
-    type t;
-    let permanent:t;
-    let persistent:t;
-    let temporary:t;
-  } = {
-    type t = string;
-    [@bs.inline] let permanent:t = "permanent";
-    [@bs.inline] let persistent:t = "persistent";
-    [@bs.inline] let temporary:t = "temporary";
-  };
+open MaterialUIDataType;
 
   [@bs.deriving abstract]
   type props('a) = {
@@ -17,7 +7,7 @@ module Variant :{
     [@bs.optional] classes: string,
     [@bs.optional] onClose: unit => unit,
     [@bs.optional] _open: bool,
-    [@bs.optional] variant: Variant.t,
+    [@bs.optional] variant: Variant.Drawer.t,
     [@bs.optional] style: ReactDOMRe.Style.t,
     [@bs.optional] [@bs.as "ModalProps"] modalProps: 'a,
     [@bs.optional] children: React.element
