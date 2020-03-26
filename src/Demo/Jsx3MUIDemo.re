@@ -32,18 +32,6 @@ let styleWrapperComponent = ReactDOMRe.Style.make(
 
 [@react.component]
 let make = () => {
-
-  let (menuRef, setMenuRef) = React.useState(()=>Js.Nullable.null);
-
-  let menuButton = 
-    <ClickAwayListener onClickAway={_=>setMenuRef(_=>Js.Nullable.null)}>
-        <Button variant=Button.Variant.contained color="default" onClick={evt=>{
-          setMenuRef(_=>Js.Nullable.return(ReactEvent.Synthetic.target(evt)))
-        }}>
-          {string("Open menu dropdown")}
-        </Button>
-    </ClickAwayListener>;
-
   <StylesProvider injectFirst=true>
   <div>(string("Jsx3"))</div>
   /* <Container id="container-id" className={classes->Js.Dict.unsafeGet("root")}> */
@@ -169,13 +157,6 @@ let make = () => {
     <Jsx3BottomNavigationDemo />
     <Jsx3BreadcrumbsDemo />
     <Jsx3ButtonGroupDemo />
-    
-
-    <h2>{string("Menu Button")}</h2>
-    <div style=styleWrapperComponent>
-      menuButton
-    </div>
-
     <Jsx3ChipDemo />
 
     <h2>{string("Css Base line")}</h2>
@@ -184,27 +165,10 @@ let make = () => {
         <CssBaseline />
       </React.Fragment>
     </div>
-    
+    <Jsx3MenuDemo />
     <Jsx3DrawerDemo />
     <Jsx3HiddenDemo />
     <Jsx3IconsDemo />
-    
-
-    <h2>{string("Menu")}</h2>
-    <h4>
-      {string("Menus display a list of choices on temporary surfaces.")}
-    </h4>
-    <div style=styleWrapperComponent>
-      <Menu
-        anchorEl=menuRef
-        _open=(!Js.Nullable.isNullable(menuRef))
-      >
-        <MenuItem>{string("Profile")}</MenuItem>
-        <MenuItem>{string("My account")}</MenuItem>
-        <MenuItem>{string("Logout")}</MenuItem>
-    </Menu>
-    </div>
-
     <Jsx3ModalDemo />
     <Jsx3NoSsrDemo />
     <Jsx3PaginationDemo />
