@@ -106,78 +106,10 @@ module Radio = MaterialUI_Radio;
 module RadioGroup = MaterialUI_Radio.RadioGroup;
 module Rating = MaterialUI_Rating;
 module RootRef = MaterialUI_RootRef;
-
-module ScopedCssBaseline = {
-  [@react.component] [@bs.module "@material-ui/core/ScopedCssBaseline"]
-  external make:
-    (
-      ~children: React.element=?,
-      ~classes : string=?
-    ) =>
-    React.element =
-    "default";
-};
-
-module Select = {
-  [@react.component] [@bs.module "@material-ui/core/Select"]
-  external make:
-    (
-      ~id: string=?,
-      ~label: string=?,
-      ~labelId: string=?,
-      ~disabled: bool=?,
-      ~native: bool=?,
-      ~value: 'a=?,
-      ~onChange: ReactEvent.Form.t => unit=?,
-      ~inputProps: Js.t('b)=?,
-      ~className: string=?,
-      ~style: ReactDOMRe.Style.t=?,
-      ~variant: Variant.t=?,
-      ~children: React.element=?
-    ) =>
-    React.element =
-    "default";
-};
-
-module Skeleton = {
-  module Variant : { 
-    type t;
-    let text:t;
-    let rect:t;
-    let circle:t;
-  }= {
-    type t = string;
-    [@bs.inline] let text:t = "text";
-    [@bs.inline] let rect:t = "rect";
-    [@bs.inline] let circle:t = "circle";
-  };
-
-  [@react.component] [@bs.module "@material-ui/lab/Skeleton"]
-  external make:
-    (
-      ~animation: string=?,
-      ~classes: string=?,
-      ~component: string=?,
-      ~height: string=?,
-      ~variant: Variant.t=?,
-      ~width: string=?
-    ) =>
-    React.element =
-    "default";
-};
-
-module Slide = {
-  [@react.component] [@bs.module "@material-ui/core/Slide"]
-  external make:
-    (
-      ~children: React.element=?,
-      ~direction: string=?,
-      ~_in: bool=?,
-      ~timeout: Js.t('a)=?
-    ) =>
-    React.element =
-    "default";
-};
+module ScopedCssBaseline = MaterialUI_ScopedCssBaseline;
+module Select = MaterialUI_Select;
+module Skeleton = MaterialUI_Skeleton;
+module Slide = MaterialUI_Slide;
 
 module Slider = {
   [@bs.deriving abstract]
