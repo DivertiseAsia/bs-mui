@@ -21,51 +21,9 @@ module StylesProvider = {
 }
 
 
-module Alert = {
-  [@react.component] [@bs.module "@material-ui/lab/Alert"]
-  external make:
-    (
-      ~action: React.element=?,
-      ~children: React.element=?,
-      ~classes: string=?,
-      ~color: Color.t=?,
-      ~closeText: string=?,
-      ~icon: React.element=?,
-      ~iconMapping: Js.t('a)=?,
-      ~onClose: unit => unit=?,
-      ~role: string=?,
-      ~severity: string=?,
-      ~variant: Variant.t=?
-    ) =>
-    React.element =
-    "default";
-};
-
-module AlertTitle = {
-  [@react.component] [@bs.module "@material-ui/lab/AlertTitle"]
-  external make:
-    (
-      ~children: React.element=?,
-      ~classes: string=?
-    ) =>
-    React.element =
-    "default";
-};
-
-module AppBar = {
-  [@react.component] [@bs.module "@material-ui/core/AppBar"]
-  external make:
-    (
-      ~children: React.element=?,
-      ~className: string=?,
-      ~classes: string=?,
-      ~color: Color.t=?,
-      ~position: Position.t=?,
-      ~style: ReactDOMRe.Style.t=?
-    ) =>
-    React.element =
-    "default";
-};
+module Alert = MaterialUI_Alert;
+module AlertTitle = MaterialUI_Alert.Title;
+module AppBar = MaterialUI_AppBar;
 
 module Autocomplete = {
   [@react.component] [@bs.module "@material-ui/lab/Autocomplete"]
@@ -148,6 +106,7 @@ module Avatar = {
       ~alt: string=?,
       ~children: React.element=?,
       ~classes: string=?,
+      ~className: string=?,
       ~component: string=?,
       ~imgProps: Js.t('a)=?,
       ~sizes: string=?,
@@ -544,8 +503,8 @@ module Collapse = {
       ~className: string=?,
       ~collapsedHeight: int=?, // Can be string
       ~component: string=?,
-      ~in_: bool=?,
-      ~timeout: int=?
+      ~_in: bool=?,
+      ~timeout: string=?
     ) => /* timeout can be { enter?: number, exit?: number } or "auto" */
     React.element =
     "default";
@@ -679,21 +638,24 @@ module Drawer = {
     [@bs.inline] let persistent:t = "persistent";
     [@bs.inline] let temporary:t = "temporary";
   };
+
+  [@bs.deriving abstract]
+  type props('a) = {
+    [@bs.optional] anchor: string,
+    [@bs.optional] className: string,
+    [@bs.optional] classes: string,
+    [@bs.optional] onClose: unit => unit,
+    [@bs.optional] _open: bool,
+    [@bs.optional] variant: Variant.t,
+    [@bs.optional] style: ReactDOMRe.Style.t,
+    [@bs.optional] [@bs.as "ModalProps"] modalProps: 'a,
+    [@bs.optional] children: React.element
+  };
+
+  let makeProps = props;
   
-  [@react.component] [@bs.module "@material-ui/core/Drawer"]
-  external make:
-    (
-      ~anchor: string=?,
-      ~className: string=?,
-      ~classes: string=?,
-      ~onClose: unit => unit=?,
-      ~_open: bool,
-      ~variant: Variant.t=?,
-      ~style: ReactDOMRe.Style.t=?,
-      ~children: React.element=?
-    ) =>
-    React.element =
-    "default";
+  [@bs.module "@material-ui/core/Drawer"]
+  external make: React.component(props('a)) = "default";
 };
 
 module ExpansionPanel = {
@@ -961,7 +923,7 @@ module GridListTitleBar = {
       ~actionPosition: string=?,
       ~classes: string=?,
       ~subtitle: unit=>unit=?,
-      ~title: unit=>unit=?,
+      ~title: string=?,
       ~titlePosition: string=?
     ) =>
     React.element =
@@ -1075,6 +1037,17 @@ module Icon = {
     [@react.component] [@bs.module "@material-ui/icons/ShoppingCart"]
     external make: (~className: string=?) => React.element = "default";
   };
+
+  module RestoreIcon = {
+  [@react.component] [@bs.module "@material-ui/icons/Restore"]
+    external make: (~className: string=?) => React.element = "default";
+  };
+
+  module FavoriteIcon = {
+    [@react.component] [@bs.module "@material-ui/icons/Favorite"]
+    external make: (~className: string=?) => React.element = "default";
+  };
+
 };
 
 module IconButton = {
@@ -1184,11 +1157,6 @@ module LinearProgress = {
     "default";
 };
 
-module UIList = {
-  [@react.component] [@bs.module "@material-ui/core/List"]
-  external make: (~children: React.element=?) => React.element = "default";
-};
-
 module ListItem = {
   [@react.component] [@bs.module "@material-ui/core/ListItem"]
   external make:
@@ -1203,6 +1171,21 @@ module ListItem = {
       ~component: 'b=?,
       ~className: string=?,
       ~children: React.element=?
+    ) =>
+    React.element =
+    "default";
+};
+
+module UIList = {
+  [@react.component] [@bs.module "@material-ui/core/List"]
+  external make:
+    (
+      ~children: React.element=?,
+      ~classes: string=?,
+      ~component: string=?,
+      ~dense: bool=?,
+      ~disablePadding: bool=?,
+      ~subheader: React.element=?
     ) =>
     React.element =
     "default";
@@ -1325,7 +1308,7 @@ module MobileStepper = {
       ~nextButton: React.element=?,
       ~position: string=?,
       ~steps: int,
-      ~variant: Variant.t=?
+      ~variant: string=?
     ) =>
     React.element = "default";
 };
@@ -1361,7 +1344,7 @@ module NativeSelect = {
   [@react.component] [@bs.module "@material-ui/core/NativeSelect"]
   external make:
     (
-      ~children : string,
+      ~children : React.element,
       ~classes: string=?,
       ~iconComponent: string=?,
       ~input: React.element=?,
@@ -1402,7 +1385,7 @@ module OutlinedInput = {
       ~inputComponent: string=?,
       ~inputProps: Js.t('a)=?,
       ~inputRef: 'b=?,
-      ~label: React.element=?,
+      ~label: string=?,
       ~labelWidth: int=?,
       ~margin: string=?,
       ~multiline: bool=?,
@@ -1437,7 +1420,7 @@ module Pagination = {
       ~hidePrevButton: bool=?,
       ~onChange: unit=>unit=?,
       ~page: int=?,
-      ~renderItem: unit=>unit=?,
+      ~renderItem: unit=> React.element=?,
       ~shape: string=?,
       ~showFirstButton: bool=?,
       ~showLastButton: bool=?,
@@ -1616,8 +1599,8 @@ module RootRef = {
   [@react.component] [@bs.module "@material-ui/core/RootRef"]
   external make:
     (
-      ~children: React.element=?,
-      ~rootRef : 'a=?
+      ~children: React.element,
+      ~rootRef : 'a
     ) =>
     React.element =
     "default";
@@ -1696,12 +1679,17 @@ module Slide = {
 };
 
 module Slider = {
+  [@bs.deriving abstract]
+  type props = {
+    [@bs.optional][@bs.as "aria-label"] ariaLabel: string
+  };
+
   [@react.component] [@bs.module "@material-ui/core/Slider"]
   external make:
     (
-      ~aria_label: string=?,
-      ~aria_labelledby: string=?,
-      ~aria_valuetext: string=?,
+      ~ariaLabel: string=?,
+      ~ariaLabelledby: string=?,
+      ~ariaValuetext: string=?,
       ~classes: string=?,
       ~color: string=?,
       ~component: string=?,
@@ -1897,7 +1885,7 @@ module StepLabel = {
       ~error: bool=?,
       ~icon: React.element=?,
       ~optional: React.element=?,
-      ~stepIconComponent: string=?,
+      ~stepIconComponent: React.element=?,
       ~stepIconProps: Js.t('a)=?
     ) =>
     React.element =
@@ -2045,6 +2033,18 @@ module TableCell = {
     "default";
 };
 
+module TableContainer = {
+  [@react.component] [@bs.module "@material-ui/core/TableContainer"]
+  external make:
+    (
+      ~children: React.element=?,
+      ~classes: string=?,
+      ~component: string=?
+    ) =>
+    React.element =
+    "default";
+};
+
 module TableFooter = {
   [@react.component] [@bs.module "@material-ui/core/TableFooter"]
   external make:
@@ -2169,10 +2169,22 @@ module TextField = {
       ~autoFocus: bool=?,
       ~defaultValue: string=?,
       ~value: string=?,
-      ~required: bool=?,
       ~onChange: ReactEvent.Form.t => unit=?,
       ~type_: string=?,
-      ~disabled: bool=?
+      ~disabled: bool=?,
+      ~classes: string=?,
+      ~color: string=?,
+      ~error: bool=?,
+      ~formHelperTextProps: Js.t('a)=?,
+      ~inputLabelProps: Js.t('a)=?,
+      ~_InputProps: Js.t('a)=?,
+      ~inputProps: Js.t('a)=?,
+      ~inputRef: 'a=?,
+      ~multiline: bool=?,
+      ~placeholder: string=?,
+      ~rows: string=?,
+      ~rowsMax: string=?,
+      ~size: string=?,
     ) =>
     React.element =
     "default";
@@ -2328,6 +2340,7 @@ module Typography = {
   [@react.component] [@bs.module "@material-ui/core/Typography"]
   external make:
     (
+      ~id: string=?,
       ~component: string=?,
       ~variant: Variant.t=?,
       ~color: string=?,
@@ -2368,14 +2381,4 @@ module Zoom = {
     ) =>
     React.element =
     "default";
-};
-
-module RestoreIcon = {
-  [@react.component] [@bs.module "@material-ui/icons/Restore"]
-  external make: unit => React.element = "default";
-};
-
-module FavoriteIcon = {
-  [@react.component] [@bs.module "@material-ui/icons/Favorite"]
-  external make: unit => React.element = "default";
 };

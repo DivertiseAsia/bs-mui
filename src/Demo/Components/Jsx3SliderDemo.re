@@ -6,7 +6,7 @@ let make = () => {
   <Jsx3LayoutComponent title="Slider" mainInfo>  
     <Slider
       defaultValue={30}
-      aria_labelledby="discrete-slider"
+      ariaLabelledby="discrete-slider"
       valueLabelDisplay="auto"
       step={10}
       min={10}

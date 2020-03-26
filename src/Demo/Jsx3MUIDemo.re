@@ -55,6 +55,9 @@ let make = () => {
       <Button size=Size.medium> {string("Medium Button")} </Button>
       <Button size=Size.small> {string("Small Button")} </Button>
     </Container>
+    <Container>
+      <ButtonBase>{string("Base Button")}</ButtonBase>
+    </Container>
     <Container id="container-radio">
       <FormLabel> {string("Radio")} </FormLabel>
       <Radio />
@@ -93,6 +96,7 @@ let make = () => {
        </Dialog>
     <Container id="container-alert">
       <Alert severity="error">
+        <AlertTitle>{string("Warning")}</AlertTitle>
         {string("This is an error alert")}
       </Alert>
     </Container>
@@ -122,7 +126,31 @@ let make = () => {
           sit amet blandit leo lobortis eget.")}
         </Typography>
       </ExpansionPanelDetails>
+      <ExpansionPanelActions>
+          <Button size="small">{string("Cancel")}</Button>
+          <Button size="small" color="primary">
+            {string("Save")}
+          </Button>
+        </ExpansionPanelActions>
     </ExpansionPanel>
+
+    <Fab>
+      <Icon.Notifications className="extendedIcon" />
+      {string("Notification")}
+    </Fab>
+
+    <FormControl variant=Variant.filled>
+      <FilledInput
+        id="filled-adornment-weight"
+        value="weight"
+        endAdornment={<InputAdornment position="end">{string("Kg")}</InputAdornment>}
+        inputProps={
+          "aria-label": "weight"
+        }
+      />
+      <FormHelperText>{string("Weight")}</FormHelperText>
+    </FormControl>
+
     <AppBar position="static">
       <Toolbar>
         <IconButton edge="start" color="inherit" >
@@ -195,6 +223,39 @@ let make = () => {
   <Container>
     <Jsx3FormControlDemo />
   </Container>
+
+  <Input placeholder="Input text" />
+
+  <InputBase
+        className="input"
+        placeholder="Search Google Maps"
+        inputProps={ "aria-label": "search google maps" }
+      />
+
+  <LinearProgress color="secondary" />
+
+  <UIList subheader={<ListSubheader>{string("Settings")}</ListSubheader>} component="nav">
+    <ListItem button=true>
+      <ListItemAvatar>
+          <Avatar
+            src="https://www.w3schools.com/howto/img_avatar2.png"
+          />
+      </ListItemAvatar>
+      <ListItemIcon>
+        <Icon.Menu />
+      </ListItemIcon>
+      <ListItemText primary="Chelsea Otakan" />
+      <ListItemSecondaryAction>
+        <Checkbox
+          inputProps={ "aria-labelledby": "labelId" }
+        />
+      </ListItemSecondaryAction>
+    </ListItem>
+    <ListItem button=true>
+      <ListItemText inset=true primary="Eric Hoffman" />
+    </ListItem>
+  </UIList>
+
   </StylesProvider>
   ;
 };

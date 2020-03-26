@@ -359,10 +359,22 @@ module TextField {
         ~autoFocus=?,
         ~defaultValue=?,
         ~value=?,
-        ~required=?,
         ~onChange=?,
         ~type_=?,
-        ~disabled=?) => 
+        ~disabled=?,
+        ~classes=?,
+        ~color=?,
+        ~error=?,
+        ~formHelperTextProps=?,
+        ~inputLabelProps=?,
+        ~_InputProps=?,
+        ~inputProps=?,
+        ~inputRef=?,
+        ~multiline=?,
+        ~placeholder=?,
+        ~rows=?,
+        ~rowsMax=?,
+        ~size=?) => 
     ReasonReactCompat.wrapReactForReasonReact(
         make,
         makeProps(
@@ -378,10 +390,22 @@ module TextField {
             ~autoFocus?,
             ~defaultValue?,
             ~value?,
-            ~required?,
             ~onChange?,
             ~type_?,
             ~disabled?,
+            ~classes?,
+            ~color?,
+            ~error?,
+            ~formHelperTextProps?,
+            ~inputLabelProps?,
+            ~_InputProps?,
+            ~inputProps?,
+            ~inputRef?,
+            ~multiline?,
+            ~placeholder?,
+            ~rows?,
+            ~rowsMax?,
+            ~size?,
             ()),
     );   
 }
@@ -850,7 +874,7 @@ module Collapse {
         ~className=?,
         ~collapsedHeight=?, 
         ~component=?,
-        ~in_=?,
+        ~_in=?,
         ~timeout=?,
         children) => 
         ReasonReactCompat.wrapReactForReasonReact(
@@ -859,7 +883,7 @@ module Collapse {
                 ~className?,
                 ~collapsedHeight?, 
                 ~component?,
-                ~in_?,
+                ~_in?,
                 ~timeout?,
                 ~children=children |> React.array,
                 ())
@@ -1710,8 +1734,8 @@ module Icon = {
         
         let make = (~className=?) =>
             ReasonReactCompat.wrapReactForReasonReact(
-            make,
-            makeProps(~className?,())
+                MaterialUI.Icon.Notifications.make,
+                MaterialUI.Icon.Notifications.makeProps(~className?,())
             );
         };
 
@@ -1721,30 +1745,49 @@ module Icon = {
         
         let make = (~className=?) =>
             ReasonReactCompat.wrapReactForReasonReact(
-            make,
-            makeProps(~className?,())
+                MaterialUI.Icon.People.make,
+                MaterialUI.Icon.People.makeProps(~className?,())
             );
         };
 
     module Search = {
-        open MaterialUI.Icon.Search;
         let component = ReasonReact.statelessComponent("Search");
         
         let make = (~className=?) =>
             ReasonReactCompat.wrapReactForReasonReact(
-            make,
-            makeProps(~className?,())
+                MaterialUI.Icon.Search.make,
+                MaterialUI.Icon.Search.makeProps(~className?,())
             );
         };
     
     module ShoppingCart = {
-        open MaterialUI.Icon.ShoppingCart;
         let component = ReasonReact.statelessComponent("ShoppingCart");
         
         let make = (~className=?) =>
             ReasonReactCompat.wrapReactForReasonReact(
-            make,
-            makeProps(~className?,())
+                MaterialUI.Icon.ShoppingCart.make,
+                MaterialUI.Icon.ShoppingCart.makeProps(~className?,())
+            );
+        };
+
+    module RestoreIcon = {
+        let component = ReasonReact.statelessComponent("RestoreIcon");
+        
+        let make = (~className=?) =>
+            ReasonReactCompat.wrapReactForReasonReact(
+                MaterialUI.Icon.RestoreIcon.make,
+                MaterialUI.Icon.RestoreIcon.makeProps(~className?,())
+            );
+        };
+
+    module FavoriteIcon = {
+        
+        let component = ReasonReact.statelessComponent("FavoriteIcon");
+        
+        let make = (~className=?) =>
+            ReasonReactCompat.wrapReactForReasonReact(
+            MaterialUI.Icon.FavoriteIcon.make,
+            MaterialUI.Icon.FavoriteIcon.makeProps(~className?,())
             );
         };
   };
@@ -1757,7 +1800,7 @@ module IconButton = {
             ~color=?,
             ~className=?,
             ~onClick=?,
-            ~children=?) =>
+            children) =>
         ReasonReactCompat.wrapReactForReasonReact(
         make,
         makeProps(
@@ -1765,9 +1808,8 @@ module IconButton = {
             ~color?,
             ~className?,
             ~onClick?,
-            ~children?,
-            (),
-        ),
+            ~children=children |> React.array,
+            ()),
         children,
         );
     };
@@ -1952,6 +1994,27 @@ module UIList = {
         ReasonReactCompat.wrapReactForReasonReact(
         make,
         makeProps(~children?,())
+        );
+    };
+
+module List = {
+    open MaterialUI.UIList;
+    let component = ReasonReact.statelessComponent("List");
+    
+    let make = (~children,
+            ~classes=?,
+            ~component=?,
+            ~dense=?,
+            ~disablePadding=?,
+            ~subheader=?) =>
+        ReasonReactCompat.wrapReactForReasonReact(
+        make,
+        makeProps(~children,
+            ~classes?,
+            ~component?,
+            ~dense?,
+            ~disablePadding?,
+            ~subheader?,())
         );
     };
 
@@ -2666,13 +2729,13 @@ module RootRef {
     let component = ReasonReact.statelessComponent("RootRef");
 
     let make = (
-        ~children=?,
-        ~rootRef=?) => 
+        ~children,
+        ~rootRef) => 
     ReasonReactCompat.wrapReactForReasonReact(
         make,
         makeProps(
-            ~children?,
-            ~rootRef?,
+            ~children,
+            ~rootRef,
             ()),
     );   
 }
@@ -2750,4 +2813,1034 @@ module Skeleton {
                 ~variant?,
                 ~width?, ())
         );       
+};
+
+module Slide {
+    open MaterialUI.Slide;
+
+    let component = ReasonReact.statelessComponent("Slide");
+
+    let make = (
+        ~children=?,
+        ~direction=?,
+        ~_in=?,
+        ~timeout=?) => 
+        ReasonReactCompat.wrapReactForReasonReact(
+            make,
+            makeProps(
+                ~children?,
+                ~direction?,
+                ~_in?,
+                ~timeout?, ())
+        );       
+};
+
+module Slider {
+    open MaterialUI.Slider;
+
+    let component = ReasonReact.statelessComponent("Slider");
+
+    let make = (
+        ~ariaLabel=?,
+        ~ariaLabelledby=?,
+        ~ariaValuetext=?,
+        ~classes=?,
+        ~color=?,
+        ~component=?,
+        ~defaultValue=?,
+        ~disabled=?,
+        ~getAriaLabel=?,
+        ~getAriaValueText=?,
+        ~marks=?,
+        ~max=?,
+        ~min=?,
+        ~name=?,
+        ~onChange=?,
+        ~onChangeCommitted=?,
+        ~orientation=?,
+        ~scale=?,
+        ~step=?,
+        ~thumbComponent=?,
+        ~track=?,
+        ~value=?,
+        ~valueLabelComponent=?,
+        ~valueLabelDisplay=?,
+        ~valueLabelFormat=?) => 
+        ReasonReactCompat.wrapReactForReasonReact(
+            make,
+            makeProps(
+                ~ariaLabel?,
+                ~ariaLabelledby?,
+                ~ariaValuetext?,
+                ~classes?,
+                ~color?,
+                ~component?,
+                ~defaultValue?,
+                ~disabled?,
+                ~getAriaLabel?,
+                ~getAriaValueText?,
+                ~marks?,
+                ~max?,
+                ~min?,
+                ~name?,
+                ~onChange?,
+                ~onChangeCommitted?,
+                ~orientation?,
+                ~scale?,
+                ~step?,
+                ~thumbComponent?,
+                ~track?,
+                ~value?,
+                ~valueLabelComponent?,
+                ~valueLabelDisplay?,
+                ~valueLabelFormat?, ())
+        );       
+};
+
+module Snackbar {
+    open MaterialUI.Snackbar;
+
+    let component = ReasonReact.statelessComponent("Snackbar");
+
+    let make = (
+        ~action=?,
+        ~anchorOrigin=?,
+        ~autoHideDuration=?,
+        ~children=?,
+        ~classes=?,
+        ~clickAwayListenerProps=?,
+        ~contentProps=?,
+        ~disableWindowBlurListener=?,
+        ~key=?,
+        ~message=?,
+        ~onClose=?,
+        ~onEnter=?,
+        ~onEntered=?,
+        ~onEntering=?,
+        ~onExit=?,
+        ~onExited=?,
+        ~onExiting=?,
+        ~_open=?) => 
+        ReasonReactCompat.wrapReactForReasonReact(
+            make,
+            makeProps(
+                ~action?,
+                ~anchorOrigin?,
+                ~autoHideDuration?,
+                ~children?,
+                ~classes?,
+                ~clickAwayListenerProps?,
+                ~contentProps?,
+                ~disableWindowBlurListener?,
+                ~key?,
+                ~message?,
+                ~onClose?,
+                ~onEnter?,
+                ~onEntered?,
+                ~onEntering?,
+                ~onExit?,
+                ~onExited?,
+                ~onExiting?,
+                ~_open?, ())
+        );       
+};
+
+module SnackbarContent {
+    open MaterialUI.SnackbarContent;
+
+    let component = ReasonReact.statelessComponent("SnackbarContent");
+
+    let make = (
+        ~action=?,
+        ~classes=?,
+        ~message=?,
+        ~role=?) => 
+        ReasonReactCompat.wrapReactForReasonReact(
+            make,
+            makeProps(
+                ~action?,
+                ~classes?,
+                ~message?,
+                ~role?, ())
+        );       
+};
+
+module SpeedDial {
+    open MaterialUI.SpeedDial;
+
+    let component = ReasonReact.statelessComponent("SpeedDial");
+
+    let make = (
+        ~ariaLabel,
+        ~children=?,
+        ~classes=?,
+        ~direction=?,
+        ~fabProps=?,
+        ~hidden=?,
+        ~icon=?,
+        ~onClose=?,
+        ~onOpen=?,
+        ~_open,
+        ~openIcon=?,
+        ~transitionComponent=?,
+        ~transitionDuration=?,
+        ~transitionProps=?) => 
+        ReasonReactCompat.wrapReactForReasonReact(
+            make,
+            makeProps(
+                ~ariaLabel,
+                ~children?,
+                ~classes?,
+                ~direction?,
+                ~fabProps?,
+                ~hidden?,
+                ~icon?,
+                ~onClose?,
+                ~onOpen?,
+                ~_open,
+                ~openIcon?,
+                ~transitionComponent?,
+                ~transitionDuration?,
+                ~transitionProps?, ())
+        );       
+};
+
+module SpeedDialAction {
+    open MaterialUI.SpeedDialAction;
+
+    let component = ReasonReact.statelessComponent("SpeedDialAction");
+
+    let make = (
+        ~classes=?,
+        ~delay=?,
+        ~fabProps=?,
+        ~icon=?,
+        ~tooltipClasses=?,
+        ~tooltipOpen=?,
+        ~tooltipPlacement=?,
+        ~tooltipTitle=?) => 
+        ReasonReactCompat.wrapReactForReasonReact(
+            make,
+            makeProps(
+                ~classes?,
+                ~delay?,
+                ~fabProps?,
+                ~icon?,
+                ~tooltipClasses?,
+                ~tooltipOpen?,
+                ~tooltipPlacement?,
+                ~tooltipTitle?, ())
+        );       
+};
+
+module SpeedDialIcon {
+    open MaterialUI.SpeedDialIcon;
+
+    let component = ReasonReact.statelessComponent("SpeedDialIcon");
+
+    let make = (
+        ~classes=?,
+        ~icon=?,
+        ~openIcon=?) => 
+        ReasonReactCompat.wrapReactForReasonReact(
+            make,
+            makeProps(
+                ~classes?,
+                ~icon?,
+                ~openIcon?, ())
+        );       
+};
+
+module Step {
+    open MaterialUI.Step;
+
+    let component = ReasonReact.statelessComponent("Step");
+
+    let make = (
+        ~active=?,
+        ~children=?,
+        ~classes=?,
+        ~completed=?,
+        ~disabled=?,
+        ~expanded=?) => 
+        ReasonReactCompat.wrapReactForReasonReact(
+            make,
+            makeProps(
+                ~active?,
+                ~children?,
+                ~classes?,
+                ~completed?,
+                ~disabled?,
+                ~expanded?, ())
+        );       
+};
+
+module StepButton {
+    open MaterialUI.StepButton;
+
+    let component = ReasonReact.statelessComponent("StepButton");
+
+    let make = (
+        ~children=?,
+        ~classes=?,
+        ~icon=?,
+        ~optional=?) => 
+        ReasonReactCompat.wrapReactForReasonReact(
+            make,
+            makeProps(
+                ~children?,
+                ~classes?,
+                ~icon?,
+                ~optional?, ())
+        );       
+};
+
+module StepConnector {
+    open MaterialUI.StepConnector;
+
+    let component = ReasonReact.statelessComponent("StepConnector");
+
+    let make = (
+        ~classes=?) => 
+        ReasonReactCompat.wrapReactForReasonReact(
+            make,
+            makeProps(
+                ~classes?, ())
+        );       
+};
+
+module StepContent {
+    open MaterialUI.StepContent;
+
+    let component = ReasonReact.statelessComponent("StepContent");
+
+    let make = (
+        ~classes=?) => 
+        ReasonReactCompat.wrapReactForReasonReact(
+            make,
+            makeProps(
+                ~classes?, ())
+        );       
+};
+
+module StepIcon {
+    open MaterialUI.StepIcon;
+
+    let component = ReasonReact.statelessComponent("StepIcon");
+
+    let make = (
+        ~active=?,
+        ~classes=?,
+        ~completed=?,
+        ~error=?,
+        ~icon) => 
+        ReasonReactCompat.wrapReactForReasonReact(
+            make,
+            makeProps(
+            ~active?,
+            ~classes?,
+            ~completed?,
+            ~error?,
+            ~icon, ())
+        );       
+};
+
+module StepLabel {
+    open MaterialUI.StepLabel;
+
+    let component = ReasonReact.statelessComponent("StepLabel");
+
+    let make = (
+        ~children=?,
+        ~classes=?,
+        ~disabled=?,
+        ~error=?,
+        ~icon=?,
+        ~optional=?,
+        ~stepIconComponent=?,
+        ~stepIconProps=?) => 
+        ReasonReactCompat.wrapReactForReasonReact(
+            make,
+            makeProps(
+            ~children?,
+            ~classes?,
+            ~disabled?,
+            ~error?,
+            ~icon?,
+            ~optional?,
+            ~stepIconComponent?,
+            ~stepIconProps?, ())
+        );       
+};
+
+module Stepper {
+    open MaterialUI.Stepper;
+
+    let component = ReasonReact.statelessComponent("Stepper");
+
+    let make = (
+        ~activeStep=?,
+        ~alternativeLabel=?,
+        ~children,
+        ~classes=?,
+        ~connector=?,
+        ~nonLinear=?,
+        ~orientation=?) => 
+        ReasonReactCompat.wrapReactForReasonReact(
+            make,
+            makeProps(
+            ~activeStep?,
+            ~alternativeLabel?,
+            ~children,
+            ~classes?,
+            ~connector?,
+            ~nonLinear?,
+            ~orientation?, ())
+        );       
+};
+
+module SvgIcon {
+    open MaterialUI.SvgIcon;
+
+    let component = ReasonReact.statelessComponent("SvgIcon");
+
+    let make = (
+        ~children=?,
+        ~classes=?,
+        ~color=?,
+        ~component=?,
+        ~fontSize=?,
+        ~htmlColor=?,
+        ~shapeRendering=?,
+        ~titleAccess=?,
+        ~viewBox=?) => 
+        ReasonReactCompat.wrapReactForReasonReact(
+            make,
+            makeProps(
+            ~children?,
+            ~classes?,
+            ~color?,
+            ~component?,
+            ~fontSize?,
+            ~htmlColor?,
+            ~shapeRendering?,
+            ~titleAccess?,
+            ~viewBox?, ())
+        );       
+};
+
+module SwipeableDrawer {
+    open MaterialUI.SwipeableDrawer;
+
+    let component = ReasonReact.statelessComponent("SwipeableDrawer");
+
+    let make = (
+        ~children=?,
+        ~disableBackdropTransition=?,
+        ~disableDiscovery=?,
+        ~disableSwipeToOpen=?,
+        ~hysteresis=?,
+        ~minFlingVelocity=?,
+        ~onClose,
+        ~onOpen,
+        ~_open,
+        ~swipeAreaProps=?,
+        ~swipeAreaWidth=?,
+        ~transitionDuration=?) => 
+        ReasonReactCompat.wrapReactForReasonReact(
+            make,
+            makeProps(
+            ~children?,
+            ~disableBackdropTransition?,
+            ~disableDiscovery?,
+            ~disableSwipeToOpen?,
+            ~hysteresis?,
+            ~minFlingVelocity?,
+            ~onClose,
+            ~onOpen,
+            ~_open,
+            ~swipeAreaProps?,
+            ~swipeAreaWidth?,
+            ~transitionDuration?, ())
+        );
+};
+
+module Switch {
+    open MaterialUI.Switch;
+
+    let component = ReasonReact.statelessComponent("Switch");
+
+    let make = (
+        ~checked=?,
+        ~checkedIcon=?,
+        ~classes=?,
+        ~color=?,
+        ~disabled=?,
+        ~disableRipple=?,
+        ~edge=?,
+        ~icon=?,
+        ~id=?,
+        ~inputProps=?,
+        ~inputRef=?,
+        ~onChange=?,
+        ~required=?,
+        ~size=?,
+        ~_type=?,
+        ~value=?) => 
+        ReasonReactCompat.wrapReactForReasonReact(
+            make,
+            makeProps(
+            ~checked?,
+            ~checkedIcon?,
+            ~classes?,
+            ~color?,
+            ~disabled?,
+            ~disableRipple?,
+            ~edge?,
+            ~icon?,
+            ~id?,
+            ~inputProps?,
+            ~inputRef?,
+            ~onChange?,
+            ~required?,
+            ~size?,
+            ~_type?,
+            ~value?, ())
+        );
+};
+
+module Tab {
+    open MaterialUI.Tab;
+
+    let component = ReasonReact.statelessComponent("Tab");
+
+    let make = (
+        ~children=?,
+        ~classes=?,
+        ~disabled=?,
+        ~disableFocusRipple=?,
+        ~disableRipple=?,
+        ~icon=?,
+        ~label=?,
+        ~value=?,
+        ~wrapped=?) => 
+        ReasonReactCompat.wrapReactForReasonReact(
+            make,
+            makeProps(
+            ~children?,
+            ~classes?,
+            ~disabled?,
+            ~disableFocusRipple?,
+            ~disableRipple?,
+            ~icon?,
+            ~label?,
+            ~value?,
+            ~wrapped?, ())
+        );
+};
+
+module Table {
+    open MaterialUI.Table;
+
+    let component = ReasonReact.statelessComponent("Table");
+
+    let make = (
+        ~className=?,
+        ~style=?,
+        ~children=?) => 
+        ReasonReactCompat.wrapReactForReasonReact(
+            make,
+            makeProps(
+            ~className?,
+            ~style?,
+            ~children?, ())
+        );
+};
+
+module TableBody {
+    open MaterialUI.TableBody;
+
+    let component = ReasonReact.statelessComponent("TableBody");
+
+    let make = (
+        ~className=?,
+        ~style=?,
+        ~children=?) => 
+        ReasonReactCompat.wrapReactForReasonReact(
+            make,
+            makeProps(
+            ~className?,
+            ~style?,
+            ~children?, ())
+        );
+};
+
+module TableCell {
+    open MaterialUI.TableCell;
+
+    let component = ReasonReact.statelessComponent("TableCell");
+
+    let make = (
+        ~align=?,
+        ~component=?,
+        ~padding=?,
+        ~scope=?,
+        ~size=?,
+        ~sortDirection=?,
+        ~variant=?,
+        ~className=?,
+        ~style=?,
+        ~children=?) => 
+        ReasonReactCompat.wrapReactForReasonReact(
+            make,
+            makeProps(
+            ~align?,
+            ~component?,
+            ~padding?,
+            ~scope?,
+            ~size?,
+            ~sortDirection?,
+            ~variant?,
+            ~className?,
+            ~style?,
+            ~children?, ())
+        );
+};
+
+module TableContainer {
+    open MaterialUI.TableContainer;
+
+    let component = ReasonReact.statelessComponent("TableContainer");
+
+    let make = (
+        ~component=?,
+        ~classes=?,
+        ~children=?) => 
+        ReasonReactCompat.wrapReactForReasonReact(
+            make,
+            makeProps(
+            ~component?,
+            ~classes?,
+            ~children?, ())
+        );
+};
+
+module TableFooter {
+    open MaterialUI.TableFooter;
+
+    let component = ReasonReact.statelessComponent("TableFooter");
+
+    let make = (
+        ~children=?,
+        ~classes=?,
+        ~component=?) => 
+        ReasonReactCompat.wrapReactForReasonReact(
+            make,
+            makeProps(
+            ~children?,
+            ~classes?,
+            ~component?, ())
+        );
+};
+
+module TableHead {
+    open MaterialUI.TableHead;
+
+    let component = ReasonReact.statelessComponent("TableHead");
+
+    let make = (
+        ~children=?,
+        ~className=?,
+        ~style=?) => 
+        ReasonReactCompat.wrapReactForReasonReact(
+            make,
+            makeProps(
+            ~children?,
+            ~className?,
+            ~style?, ())
+        );
+};
+
+module TablePagination {
+    open MaterialUI.TablePagination;
+
+    let component = ReasonReact.statelessComponent("TablePagination");
+
+    let make = (
+        ~component=?,
+        ~count=?,
+        ~page=?,
+        ~rowsPerPage=?,
+        ~rowsPerPageOptions=?,
+        ~onChangePage=?,
+        ~onChangeRowsPerPage=?,
+        ~className=?,
+        ~style=?,
+        ~children=?) => 
+        ReasonReactCompat.wrapReactForReasonReact(
+            make,
+            makeProps(
+            ~component?,
+            ~count?,
+            ~page?,
+            ~rowsPerPage?,
+            ~rowsPerPageOptions?,
+            ~onChangePage?,
+            ~onChangeRowsPerPage?,
+            ~className?,
+            ~style?,
+            ~children?, ())
+        );
+};
+
+module TableRow {
+    open MaterialUI.TableRow;
+
+    let component = ReasonReact.statelessComponent("TableRow");
+
+    let make = (
+        ~hover=?,
+        ~selected=?,
+        ~padding=?,
+        ~className=?,
+        ~style=?,
+        ~children=?) => 
+        ReasonReactCompat.wrapReactForReasonReact(
+            make,
+            makeProps(
+            ~hover?,
+            ~selected?,
+            ~padding?,
+            ~className?,
+            ~style?,
+            ~children?, ())
+        );
+};
+
+module TableSortLabel {
+    open MaterialUI.TableSortLabel;
+
+    let component = ReasonReact.statelessComponent("TableSortLabel");
+
+    let make = (
+        ~active=?,
+        ~children=?,
+        ~classes=?,
+        ~direction=?,
+        ~hideSortIcon=?,
+        ~iconComponent=?) => 
+        ReasonReactCompat.wrapReactForReasonReact(
+            make,
+            makeProps(
+            ~active?,
+            ~children?,
+            ~classes?,
+            ~direction?,
+            ~hideSortIcon?,
+            ~iconComponent?, ())
+        );
+};
+
+module Tabs {
+    open MaterialUI.Tabs;
+
+    let component = ReasonReact.statelessComponent("Tabs");
+
+    let make = (
+        ~action=?,
+        ~centered=?,
+        ~children=?,
+        ~classes=?,
+        ~component=?,
+        ~indicatorColor=?,
+        ~onChange=?,
+        ~orientation=?,
+        ~scrollButtonComponent=?,
+        ~scrollButtons=?,
+        ~tabIndicatorProps=?,
+        ~textColor=?,
+        ~value=?,
+        ~variant=?) => 
+        ReasonReactCompat.wrapReactForReasonReact(
+            make,
+            makeProps(
+            ~action?,
+            ~centered?,
+            ~children?,
+            ~classes?,
+            ~component?,
+            ~indicatorColor?,
+            ~onChange?,
+            ~orientation?,
+            ~scrollButtonComponent?,
+            ~scrollButtons?,
+            ~tabIndicatorProps?,
+            ~textColor?,
+            ~value?,
+            ~variant?, ())
+        );
+};
+
+module TextareaAutosize {
+    open MaterialUI.TextareaAutosize;
+
+    let component = ReasonReact.statelessComponent("TextareaAutosize");
+
+    let make = (
+        ~rows=?,
+        ~rowsMax=?,
+        ~rowsMin=?) => 
+        ReasonReactCompat.wrapReactForReasonReact(
+            make,
+            makeProps(
+                ~rows?,
+                ~rowsMax?,
+                ~rowsMin?, ())
+        );
+};
+
+module ToggleButton {
+    open MaterialUI.ToggleButton;
+
+    let component = ReasonReact.statelessComponent("ToggleButton");
+
+    let make = (
+        ~children,
+        ~classes=?,
+        ~disabled=?,
+        ~disableFocusRipple=?,
+        ~disableRipple=?,
+        ~selected=?,
+        ~value) => 
+        ReasonReactCompat.wrapReactForReasonReact(
+            make,
+            makeProps(
+                ~children,
+                ~classes?,
+                ~disabled?,
+                ~disableFocusRipple?,
+                ~disableRipple?,
+                ~selected?,
+                ~value, ())
+        );
+};
+
+module ToggleButtonGroup {
+    open MaterialUI.ToggleButtonGroup;
+
+    let component = ReasonReact.statelessComponent("ToggleButtonGroup");
+
+    let make = (
+        ~children=?,
+        ~classes=?,
+        ~exclusive=?,
+        ~onChange=?,
+        ~size=?,
+        ~value=?) => 
+        ReasonReactCompat.wrapReactForReasonReact(
+            make,
+            makeProps(
+                ~children?,
+                ~classes?,
+                ~exclusive?,
+                ~onChange?,
+                ~size?,
+                ~value?, ())
+            );
+};
+
+module Toolbar {
+    open MaterialUI.Toolbar;
+
+    let component = ReasonReact.statelessComponent("Toolbar");
+
+    let make = (
+        ~children,
+        ~className=?) => 
+        ReasonReactCompat.wrapReactForReasonReact(
+            make,
+            makeProps(
+                ~children,
+                ~className?, ())
+            );
+};
+
+module Tooltip {
+    open MaterialUI.Tooltip;
+
+    let component = ReasonReact.statelessComponent("Tooltip");
+
+    let make = (
+        ~children,
+        ~arrow=?,
+        ~classes=?,
+        ~disableFocusListener=?,
+        ~disableHoverListener=?,
+        ~disableTouchListener=?,
+        ~enterDelay=?,
+        ~enterNextDelay=?,
+        ~enterTouchDelay=?,
+        ~id=?,
+        ~interactive=?,
+        ~leaveDelay=?,
+        ~leaveTouchDelay=?,
+        ~onClose=?,
+        ~onOpen=?,
+        ~_open=?,
+        ~placement=?,
+        ~popperProps=?,
+        ~title,
+        ~transitionComponent=?,
+        ~transitionProps=?) => 
+        ReasonReactCompat.wrapReactForReasonReact(
+            make,
+            makeProps(
+                ~children,
+                ~arrow?,
+                ~classes?,
+                ~disableFocusListener?,
+                ~disableHoverListener?,
+                ~disableTouchListener?,
+                ~enterDelay?,
+                ~enterNextDelay?,
+                ~enterTouchDelay?,
+                ~id?,
+                ~interactive?,
+                ~leaveDelay?,
+                ~leaveTouchDelay?,
+                ~onClose?,
+                ~onOpen?,
+                ~_open?,
+                ~placement?,
+                ~popperProps?,
+                ~title,
+                ~transitionComponent?,
+                ~transitionProps?, ())
+            );
+};
+
+module TreeItem {
+    open MaterialUI.TreeItem;
+
+    let component = ReasonReact.statelessComponent("TreeItem");
+
+    let make = (
+        ~children=?,
+        ~classes=?,
+        ~collapseIcon=?,
+        ~endIcon=?,
+        ~expandIcon=?,
+        ~icon=?,
+        ~label=?,
+        ~nodeId,
+        ~transitionComponent=?,
+        ~transitionProps=?) => 
+        ReasonReactCompat.wrapReactForReasonReact(
+            make,
+            makeProps(
+                ~children?,
+                ~classes?,
+                ~collapseIcon?,
+                ~endIcon?,
+                ~expandIcon?,
+                ~icon?,
+                ~label?,
+                ~nodeId,
+                ~transitionComponent?,
+                ~transitionProps?, ())
+            );
+};
+
+module TreeView {
+    open MaterialUI.TreeView;
+
+    let component = ReasonReact.statelessComponent("TreeView");
+
+    let make = (
+            ~children=?,
+            ~classes=?,
+            ~defaultCollapseIcon=?,
+            ~defaultEndIcon=?,
+            ~defaultExpanded=?,
+            ~defaultExpandIcon=?,
+            ~defaultParentIcon=?,
+            ~defaultSelected=?,
+            ~disableSelection=?,
+            ~expanded=?,
+            ~multiSelect=?,
+            ~onNodeSelect=?,
+            ~onNodeToggle=?,
+            ~selected=?) => 
+        ReasonReactCompat.wrapReactForReasonReact(
+            make,
+            makeProps(
+                ~children?,
+                ~classes?,
+                ~defaultCollapseIcon?,
+                ~defaultEndIcon?,
+                ~defaultExpanded?,
+                ~defaultExpandIcon?,
+                ~defaultParentIcon?,
+                ~defaultSelected?,
+                ~disableSelection?,
+                ~expanded?,
+                ~multiSelect?,
+                ~onNodeSelect?,
+                ~onNodeToggle?,
+                ~selected?, ())
+            );
+};
+
+module Typography {
+    open MaterialUI.Typography;
+
+    let component = ReasonReact.statelessComponent("Typography");
+
+    let make = (
+            ~id=?,
+            ~component=?,
+            ~variant=?,
+            ~color=?,
+            ~align=?,
+            ~className=?,
+            ~noWrap=?,
+            ~children=?,
+            ~display=?,
+            ~gutterBottom=?,
+            ~paragraph=?,
+            ~variantMapping=?) => 
+        ReasonReactCompat.wrapReactForReasonReact(
+            make,
+            makeProps(
+                ~id?,
+                ~component?,
+                ~variant?,
+                ~color?,
+                ~align?,
+                ~className?,
+                ~noWrap?,
+                ~children?,
+                ~display?,
+                ~gutterBottom?,
+                ~paragraph?,
+                ~variantMapping?, ())
+            );
+};
+
+module Zoom {
+    open MaterialUI.Zoom;
+
+    let component = ReasonReact.statelessComponent("Zoom");
+
+    let make = (
+            ~children=?,
+            ~_in=?,
+            ~timeout=?) => 
+        ReasonReactCompat.wrapReactForReasonReact(
+            make,
+            makeProps(
+                    ~children?,
+                    ~_in?,
+                    ~timeout?, ())
+            );
 };
