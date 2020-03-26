@@ -80,176 +80,18 @@ module Input = MaterialUI_Input;
 module InputAdornment = MaterialUI_Input.InputAdornment;
 module InputBase = MaterialUI_Input.InputBase;
 module InputLabel = MaterialUI_Input.InputLabel;
-
-module LinearProgress = {
-  [@react.component] [@bs.module "@material-ui/core/LinearProgress"]
-  external make:
-    (
-      ~classes: string=?,
-      ~color: string=?,
-      ~value: int=?,
-      ~valueBuffer: int=?,
-      ~variant: Variant.t=?
-    ) =>
-    React.element =
-    "default";
-};
-
-module ListItem = {
-  [@react.component] [@bs.module "@material-ui/core/ListItem"]
-  external make:
-    (
-      ~href: string=?,
-      ~button: bool=?,
-      ~selected: bool=?,
-      ~dense: bool=?,
-      ~disableGutters: bool=?,
-      ~divider: bool=?,
-      ~onClick: unit => unit=?,
-      ~component: 'b=?,
-      ~className: string=?,
-      ~children: React.element=?
-    ) =>
-    React.element =
-    "default";
-};
-
-module UIList = {
-  [@react.component] [@bs.module "@material-ui/core/List"]
-  external make:
-    (
-      ~children: React.element=?,
-      ~classes: string=?,
-      ~component: string=?,
-      ~dense: bool=?,
-      ~disablePadding: bool=?,
-      ~subheader: React.element=?
-    ) =>
-    React.element =
-    "default";
-};
-
-module ListItemAvatar = {
-  [@react.component] [@bs.module "@material-ui/core/ListItemAvatar"]
-  external make:
-    (
-      ~children: React.element,
-      ~classes: string=?
-    ) =>
-    React.element =
-    "default";
-};
-
-module ListItemIcon = {
-  [@react.component] [@bs.module "@material-ui/core/ListItemIcon"]
-  external make: (~children: React.element=?) => React.element = "default";
-};
-
-module ListItemSecondaryAction = {
-  [@react.component] [@bs.module "@material-ui/core/ListItemSecondaryAction"]
-  external make:
-    (
-      ~children: React.element,
-      ~classes: string=?
-    ) =>
-    React.element =
-    "default";
-};
-
-module ListItemText = {
-  [@react.component] [@bs.module "@material-ui/core/ListItemText"]
-  external make:
-    (
-      ~primary: string=?, 
-      ~secondary: string=?,
-      ~inset: bool=?,
-      ~disableTypography: bool=?,
-      ~primaryTypographyProps: Js.t('a)=?,
-      ~secondaryTypographyProps: Js.t('a)=?,
-      ~children: React.element=?
-    ) => React.element =
-    "default";
-};
-
-module ListSubheader = {
-  [@react.component] [@bs.module "@material-ui/core/ListSubheader"]
-  external make: 
-    (
-      ~className: string=?,
-      ~disableGutters: bool=?,
-      ~disableSticky: bool=?,
-      ~inset: bool=?, 
-      ~children: React.element=?
-    ) => React.element = "default";
-};
-
-module Menu = {
-  [@react.component] [@bs.module "@material-ui/core/Menu"]
-  external make:
-    (
-      ~anchorEl: Js.Nullable.t(Js.t('a)),
-      ~autoFocus: bool=?,
-      ~children: React.element=?,
-      ~classes: string=?,
-      ~disableAutoFocusItem: bool=?,
-      ~menuListProps: Js.t('a)=?,
-      ~onClose: unit=>unit=?,
-      ~onEnter: unit=>unit=?,
-      ~onEntered: unit=>unit=?,
-      ~onEntering: unit=>unit=?,
-      ~onExit: unit=>unit=?,
-      ~onExited: unit=>unit=?,
-      ~onExiting: unit=>unit=?,
-      ~_open: bool,
-      ~popoverClasses: string=?,
-      ~transitionDuration: string=?,
-      ~variant: Variant.t=?
-    ) =>
-    React.element = "default";
-};
-
-module MenuItem = {
-  [@react.component] [@bs.module "@material-ui/core/MenuItem"]
-  external make:
-    (
-      ~value: 'a=?,
-      ~dense: bool=?,
-      ~disableGutters: bool=?,
-      ~className: string=?,
-      ~style: ReactDOMRe.Style.t=?,
-      ~children: React.element=?
-    ) =>
-    React.element = "default";
-};
-
-module MenuList = {
-  [@react.component] [@bs.module "@material-ui/core/MenuList"]
-  external make:
-    (
-      ~autoFocus: bool=?,
-      ~autoFocusItem: bool=?,
-      ~children: React.element=?,
-      ~disableListWrap: bool=?,
-      ~variant: Variant.t=?
-    ) =>
-    React.element = "default";
-};
-
-module MobileStepper = {
-  [@react.component] [@bs.module "@material-ui/core/MobileStepper"]
-  external make:
-    (
-      ~activeStep: int=?,
-      ~backButton: React.element=?,
-      ~classes: string=?,
-      ~linearProgressProps: Js.t('a)=?,
-      ~nextButton: React.element=?,
-      ~position: string=?,
-      ~steps: int,
-      ~variant: string=?
-    ) =>
-    React.element = "default";
-};
+module LinearProgress = MaterialUI_LinearProgress;
+module ListItem = MaterialUI_ListItem;
+module UIList = MaterialUI_ListItem.UIList;
+module ListItemAvatar = MaterialUI_ListItem.ListItemAvatar;
+module ListItemIcon = MaterialUI_ListItem.ListItemIcon;
+module ListItemSecondaryAction = MaterialUI_ListItem.ListItemSecondaryAction;
+module ListItemText = MaterialUI_ListItem.ListItemText;
+module ListSubheader = MaterialUI_ListItem.ListSubheader;
+module Menu = MaterialUI_Menu;
+module MenuItem = MaterialUI_Menu.MenuItem;
+module MenuList = MaterialUI_Menu.MenuList;
+module MobileStepper = MaterialUI_MobileStepper;
 
 module Modal = {
   [@react.component] [@bs.module "@material-ui/core/Modal"]
