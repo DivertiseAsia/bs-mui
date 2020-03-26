@@ -38,7 +38,7 @@ let make = () => {
     </h4>
     <div style=styleWrapperComponent>
       <Button 
-        variant=Button.Variant.contained 
+        variant=Variant.Button.contained 
         color="primary"
         onClick=(_ => dispatch(ToggleModal(true)))
       >

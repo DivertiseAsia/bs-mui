@@ -7,7 +7,7 @@ open MaterialUIDataType;
       ~color: string=?,
       ~value: int=?,
       ~valueBuffer: int=?,
-      ~variant: Variant.t=?
+      ~variant: Variant.Field.t=?
     ) =>
     React.element =
     "default";

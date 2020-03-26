@@ -1,5 +1,6 @@
 open ReasonReact;
 open MaterialUI;
+open MaterialUIDataType;
 
 module False_or_choice {
   [@unboxed]
@@ -54,7 +55,7 @@ let make = () => {
   let (_menuOpen, _setMenuOpen) = React.useState(() => false);
 
   let menuButton = <ClickAwayListener onClickAway={_=>setMenuRef(_=>Js.Nullable.null)}>
-        <Button variant=Button.Variant.contained color="default" onClick={evt=>{
+        <Button variant=Variant.Button.contained color="default" onClick={evt=>{
           setMenuRef(_=>Js.Nullable.return(ReactEvent.Synthetic.target(evt)))
         }}>
           {string("Open menu dropdown")}

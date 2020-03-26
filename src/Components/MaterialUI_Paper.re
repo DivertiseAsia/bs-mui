@@ -8,7 +8,7 @@ open MaterialUIDataType;
       ~children: React.element=?,
       ~elevation: int=?,
       ~square: bool=?,
-      ~variant: Variant.t=?
+      ~variant: Variant.Field.t=?
     ) =>
     React.element =
     "default";

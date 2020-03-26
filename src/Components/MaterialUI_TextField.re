@@ -7,7 +7,7 @@ open MaterialUIDataType;
       ~label: string=?,
       ~name: string=?,
       ~helperText: string=?,
-      ~variant: Variant.t=?,
+      ~variant: Variant.Field.t=?,
       ~margin: string=?,
       ~required: bool=?,
       ~fullWidth: bool=?,

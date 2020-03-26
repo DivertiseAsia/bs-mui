@@ -12,7 +12,7 @@ open MaterialUIDataType;
       ~disableRipple: bool=?,
       ~href: string=?,
       ~size: string=?,
-      ~variant: Variant.t=?
+      ~variant: Variant.Field.t=?
     ) =>
     React.element =
     "default";

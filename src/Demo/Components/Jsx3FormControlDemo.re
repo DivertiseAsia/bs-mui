@@ -16,7 +16,7 @@ let make = () => {
   <> 
     <h2>{string("Form Control")}</h2>
     <div style=styleWrapperComponent>
-      <FormControl variant=Variant.outlined>
+      <FormControl variant=Variant.Field.outlined>
         <InputLabel id="demo-simple-select-outlined-label">
           (string("Age"))
         </InputLabel>

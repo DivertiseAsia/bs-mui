@@ -9,7 +9,7 @@ open MaterialUIDataType;
       ~flexItem: bool=?,
       ~light: bool=?,
       ~orientation: string=?,
-      ~variant: Variant.t=?
+      ~variant: Variant.Field.t=?
     ) =>
     React.element =
     "default";

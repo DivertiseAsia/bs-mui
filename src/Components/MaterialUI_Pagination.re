@@ -21,7 +21,7 @@ open MaterialUIDataType;
       ~showLastButton: bool=?,
       ~siblingCount: int=?,
       ~size: string=?,
-      ~variant: Variant.t=?
+      ~variant: Variant.Field.t=?
     ) =>
     React.element = "default";
 
@@ -37,7 +37,7 @@ module PaginationItem = {
         ~shape: string=?,
         ~size: string=?,
         ~_type: string=?,
-        ~variant: Variant.t=?
+        ~variant: Variant.Field.t=?
         ) =>
         React.element = "default";
     };

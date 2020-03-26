@@ -13,7 +13,7 @@ external make:
     ~onClose: unit => unit=?,
     ~role: string=?,
     ~severity: string=?,
-    ~variant: Variant.t=?
+    ~variant: Variant.Field.t=?
     ) =>
     React.element = "default";
 

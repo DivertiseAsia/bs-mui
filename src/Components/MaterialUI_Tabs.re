@@ -16,7 +16,7 @@ open MaterialUIDataType;
       ~tabIndicatorProps: Js.t('a)=?,
       ~textColor: string=?,
       ~value: 'a=?,
-      ~variant: Variant.t=?
+      ~variant: Variant.Field.t=?
     ) =>
     React.element =
     "default";

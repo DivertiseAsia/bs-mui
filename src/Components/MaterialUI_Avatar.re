@@ -1,16 +1,7 @@
-module Variant :{
-    type t;
-    let circle:t;
-    let rounded:t;
-    let square:t;
-  } = {
-    type t = string;
-    [@bs.inline] let circle:t = "circle";
-    [@bs.inline] let rounded:t = "rounded";
-    [@bs.inline] let square:t = "square";
-  };
 
-  [@react.component] [@bs.module "@material-ui/core/Avatar"]
+open MaterialUIDataType;
+
+[@react.component] [@bs.module "@material-ui/core/Avatar"]
   external make:
     (
       ~alt: string=?,
@@ -22,7 +13,7 @@ module Variant :{
       ~sizes: string=?,
       ~src: string=?,
       ~srcSet: string=?,
-      ~variant: Variant.t=?
+      ~variant: Variant.Shape.t=?
     ) =>
     React.element =
     "default";

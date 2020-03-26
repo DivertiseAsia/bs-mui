@@ -5,7 +5,7 @@ open MaterialUIDataType;
     (
       ~id: string=?,
       ~component: string=?,
-      ~variant: VariantElement.t=?,
+      ~variant: Variant.Element.t=?,
       ~color: string=?,
       ~align: string=?,
       ~className: string=?,

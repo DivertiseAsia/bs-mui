@@ -39,7 +39,7 @@ let make = () => {
     <div style=styleWrapperComponent>
       <p>{string("Snackbar")}</p>
       <Button 
-        variant=Button.Variant.contained 
+        variant=Variant.Button.contained 
         color="primary"
         onClick=(_ => dispatch(ToggleSnackbar(!state.openSnackbar)))
       >

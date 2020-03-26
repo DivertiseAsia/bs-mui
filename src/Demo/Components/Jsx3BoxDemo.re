@@ -18,7 +18,7 @@ let make = () => {
     <h4>{string("The Box component serves as a wrapper component for most of the CSS utility needs.")}</h4>
     <div style=styleWrapperComponent>
       <Box component="span" m={1}>
-        <Button variant=Button.Variant.contained color="primary">{string("Wrapper a button by Box")}</Button>
+        <Button variant=Variant.Button.contained color="primary">{string("Wrapper a button by Box")}</Button>
       </Box>
     </div>
   </>;

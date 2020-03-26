@@ -13,7 +13,7 @@ open MaterialUIDataType;
       ~inputProps: Js.t('b)=?,
       ~className: string=?,
       ~style: ReactDOMRe.Style.t=?,
-      ~variant: Variant.t=?,
+      ~variant: Variant.Field.t=?,
       ~children: React.element=?
     ) =>
     React.element =

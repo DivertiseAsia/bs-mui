@@ -4,7 +4,7 @@ open MaterialUIDataType;
   external make:
     (
       ~id: string=?,
-      ~variant: Variant.t=?,
+      ~variant: Variant.Field.t=?,
       ~className: string=?,
       ~children: React.element=?
     ) =>
@@ -59,7 +59,7 @@ external make:
     ~focused: bool=?,
     ~margin: string=?,
     ~required: bool=?,
-    ~variant: Variant.t=?
+    ~variant: Variant.Field.t=?
 ) => 
 React.element =
     "default";

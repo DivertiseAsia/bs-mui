@@ -5,7 +5,7 @@ open MaterialUIDataType;
         (
         ~color: string=?,
         ~href: string=?,
-        ~variant: VariantElement.t=?,
+        ~variant: Variant.Element.t=?,
         ~children: React.element=?
         ) =>
         React.element =

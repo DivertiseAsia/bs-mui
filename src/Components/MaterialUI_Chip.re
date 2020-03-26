@@ -1,14 +1,5 @@
 open MaterialUIDataType;
 
-module Variant : {
-    type t;
-    let default:t;
-    let outlined:t;
-  } = {
-    type t = string;
-    [@bs.inline] let default = "default";
-    [@bs.inline] let outlined = "outlined";
-  };
   [@react.component] [@bs.module "@material-ui/core/Chip"]
   external make:
     (
@@ -24,7 +15,7 @@ module Variant : {
       ~label: string=?,
       ~onDelete: unit => unit=?,
       ~size: NoLargeSize.t=?,
-      ~variant: Variant.t=?
+      ~variant: Variant.Chip.t=?
     ) =>
     React.element =
     "default";

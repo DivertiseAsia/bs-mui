@@ -10,6 +10,6 @@ open MaterialUIDataType;
       ~inputProps: Js.t('a)=?,
       ~onChange: unit=>unit=?,
       ~value: 'a=?,
-      ~variant: Variant.t=?
+      ~variant: Variant.Field.t=?
     ) =>
     React.element = "default";

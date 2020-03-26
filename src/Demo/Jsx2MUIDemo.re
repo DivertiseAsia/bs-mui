@@ -13,11 +13,11 @@ let make = () => {
           label="Helper text"
           defaultValue="Default Value"
           helperText="Some important text"
-          variant=Variant.outlined
+          variant=Variant.Field.outlined
         />
     <Button>(string("Jsx2Button"))</Button>
 
-    <FormControl variant=Variant.outlined>
+    <FormControl variant=Variant.Field.outlined>
       <InputLabel id="demo-simple-select-outlined-label">
         (string("Age"))
       </InputLabel>

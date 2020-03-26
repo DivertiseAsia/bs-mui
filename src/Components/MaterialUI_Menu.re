@@ -19,7 +19,7 @@ open MaterialUIDataType;
       ~_open: bool,
       ~popoverClasses: string=?,
       ~transitionDuration: string=?,
-      ~variant: Variant.t=?
+      ~variant: Variant.Field.t=?
     ) =>
     React.element = "default";
 
@@ -45,7 +45,7 @@ external make:
     ~autoFocusItem: bool=?,
     ~children: React.element=?,
     ~disableListWrap: bool=?,
-    ~variant: Variant.t=?
+    ~variant: Variant.Field.t=?
     ) =>
     React.element = "default";
 };
