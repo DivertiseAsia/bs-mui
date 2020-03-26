@@ -122,90 +122,11 @@ module StepConnector = MaterialUI_Step.StepConnector;
 module StepContent = MaterialUI_Step.StepContent;
 module StepIcon = MaterialUI_Step.StepIcon;
 module StepLabel = MaterialUI_Step.StepLabel;
-
 module Stepper = MaterialUI_Stepper;
-
-module SvgIcon = {
-  [@react.component] [@bs.module "@material-ui/core/SvgIcon"]
-  external make:
-    (
-      ~children: React.element=?,
-      ~classes: string=?,
-      ~color: string=?,
-      ~component: string=?,
-      ~fontSize: string=?,
-      ~htmlColor: string=?,
-      ~shapeRendering: string=?,
-      ~titleAccess: string=?,
-      ~viewBox: string=?
-    ) =>
-    React.element =
-    "default";
-};
-
-module SwipeableDrawer = {
-  [@react.component] [@bs.module "@material-ui/core/SwipeableDrawer"]
-  external make:
-    (
-      ~children: React.element=?,
-      ~disableBackdropTransition: bool=?,
-      ~disableDiscovery: bool=?,
-      ~disableSwipeToOpen: bool=?,
-      ~hysteresis: int=?,
-      ~minFlingVelocity: int=?,
-      ~onClose: unit=>unit,
-      ~onOpen: unit=>unit,
-      ~_open: bool,
-      ~swipeAreaProps: Js.t('a)=?,
-      ~swipeAreaWidth: int=?,
-      ~transitionDuration: Js.t('a)=?
-    ) =>
-    React.element =
-    "default";
-};
-
-module Switch = {
-  [@react.component] [@bs.module "@material-ui/core/Switch"]
-  external make:
-    (
-      ~checked: bool=?,
-      ~checkedIcon: React.element=?,
-      ~classes: string=?,
-      ~color: string=?,
-      ~disabled: bool=?,
-      ~disableRipple: bool=?,
-      ~edge: string=?,
-      ~icon: React.element=?,
-      ~id: string=?,
-      ~inputProps: Js.t('a)=?,
-      ~inputRef: 'a=?,
-      ~onChange: unit=>unit=?,
-      ~required: bool=?,
-      ~size: string=?,
-      ~_type: string=?,
-      ~value: 'b=?
-    ) =>
-    React.element =
-    "default";
-};
-
-module Tab = {
-  [@react.component] [@bs.module "@material-ui/core/Tab"]
-  external make:
-    (
-      ~children: React.element=?,
-      ~classes: string=?,
-      ~disabled: bool=?,
-      ~disableFocusRipple: bool=?,
-      ~disableRipple: bool=?,
-      ~icon: React.element=?,
-      ~label: string=?,
-      ~value: 'b=?,
-      ~wrapped: bool=?
-    ) =>
-    React.element =
-    "default";
-};
+module SvgIcon = MaterialUI_SvgIcon;
+module SwipeableDrawer = MaterialUI_SwipeableDrawer;
+module Switch = MaterialUI_Switch;
+module Tab = MaterialUI_Tab;
 
 module Table = {
   [@react.component] [@bs.module "@material-ui/core/Table"]
