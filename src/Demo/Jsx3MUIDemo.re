@@ -151,12 +151,10 @@ let make = () => {
     <Jsx3BackdropDemo />
     <Jsx3BoxDemo />
     <Jsx3GridDemo />
-    <Jsx3CheckboxDemo />
     <Jsx3CardDemo />
     <Jsx3BadgeDemo />
     <Jsx3BottomNavigationDemo />
     <Jsx3BreadcrumbsDemo />
-    <Jsx3ButtonGroupDemo />
     <Jsx3ChipDemo />
 
     <h2>{string("Css Base line")}</h2>
@@ -175,10 +173,8 @@ let make = () => {
     <Jsx3PopoverDemo />
     <Jsx3PopperDemo />
     <Jsx3PortalDemo />
-    <Jsx3RadioDemo />
     <Jsx3RatingDemo />
     <Jsx3SkeletonDemo />
-    <Jsx3SliderDemo />
     <Jsx3SnackbarDemo />
     <Jsx3SpeedDialDemo />
     <Jsx3StepperDemo />
@@ -187,14 +183,6 @@ let make = () => {
   <Container>
     <Jsx3FormControlDemo />
   </Container>
-
-  <Input placeholder="Input text" />
-
-  <InputBase
-        className="input"
-        placeholder="Search Google Maps"
-        inputProps={ "aria-label": "search google maps" }
-      />
 
   <LinearProgress color="secondary" />
 
