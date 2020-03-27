@@ -1,6 +1,4 @@
-open ReasonReact;
 open MaterialUI;
-open MaterialUIDataType;
 
 type state = {
   checkboxOneChecked: bool,
@@ -12,15 +10,6 @@ type action =
   | CheckboxOneChecked(bool)
   | CheckboxTwoChecked(bool)
   | CheckboxThreeChecked(bool);
-
-let styleWrapperComponent = ReactDOMRe.Style.make(
-  ~background="lightgray", 
-  ~border="0px", 
-  ~borderRadius="3px",
-  ~padding="15px",
-  ~textAlign="center",
-  ()
-  );
 
 [@react.component]
 let make = () => {
@@ -37,10 +26,9 @@ let make = () => {
       checkboxThreeChecked: true,
     }
   );
-  <> 
-    <h2>{string("Checkbox")}</h2>
-    <h4>{string("Checkboxes allow the user to select one or more items from a set.")}</h4>
-    <div style=styleWrapperComponent>
+  let mainInfo = "Checkboxes allow the user to select one or more items from a set.";
+  <Jsx3LayoutComponent title="Checkbox" mainInfo> 
+    <> 
       <Checkbox
         checked=state.checkboxOneChecked
         value="primary"
@@ -65,6 +53,6 @@ let make = () => {
         value="primary"
         disabled=true
       />
-    </div>
-  </>;
+    </>
+  </Jsx3LayoutComponent>;
 };

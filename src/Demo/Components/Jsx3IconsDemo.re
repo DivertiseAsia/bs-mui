@@ -2,24 +2,39 @@ open ReasonReact;
 open MaterialUI;
 open MaterialUIDataType;
 
-let styleWrapperComponent = ReactDOMRe.Style.make(
-  ~background="lightgray", 
-  ~border="0px", 
-  ~borderRadius="3px",
-  ~padding="15px",
-  ~textAlign="center",
-  ()
-  );
-
 [@react.component]
 let make = () => {
-  <> 
-    <h2>{string("Icons")}</h2>
-    <h4>
-      {string("Guidance and suggestions for using icons with Material-UI.")}
-    </h4>
-    <div style=styleWrapperComponent>
-      <Icon className="fa fa-plus-circle" color="primary">{string("add_circle")}</Icon>
-    </div>
-  </>;
+  let mainInfo = "Guidance and suggestions for using icons with Material-UI.";
+  <Jsx3LayoutComponent title="Icons" mainInfo>  
+    <Grid container=true spacing={3}>
+      <Grid item=true xs=GridSize.size(6)>
+        <Paper >
+          {string("SvgIcon")}
+        </Paper>
+      </Grid>
+      <Grid item=true xs=GridSize.size(6)>
+        <Paper >
+          <Icon.Assignment />
+          <Icon.BarChart />
+          <Icon.ChevronLeft />
+          <Icon.Dashboard />
+          <Icon.LocalHospital />
+        </Paper>
+      </Grid>
+      <Grid item=true xs=GridSize.size(6)>
+        <Paper >
+          {string("Color")}
+        </Paper>
+      </Grid>
+      <Grid item=true xs=GridSize.size(6)>
+        <Paper >
+          <Icon.Layers />
+          <Icon color="primary" ><Icon.Layers /></Icon>
+          <Icon color="secondary" ><Icon.Layers /></Icon>
+          <Icon color="action" ><Icon.Layers /></Icon>
+          <Icon color="disabled" ><Icon.Layers /></Icon>
+        </Paper>
+      </Grid>
+    </Grid>
+  </Jsx3LayoutComponent>;
 };
