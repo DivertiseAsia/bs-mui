@@ -138,6 +138,7 @@ module Backdrop = {
       ~className: string=?,
       ~invisible: bool=?,
       ~_open: bool=?,
+      ~onClick: unit => unit=?,
       ~transitionDuration: int=?
     ) => /* transitionDuration can be shape */
     React.element =

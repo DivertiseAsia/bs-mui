@@ -76,8 +76,8 @@ let make = () => {
     <br />
     <br />{string("Anchor Origin Vertical")}<br />
     {
-      verticalPositions |> List.map((verticalPosition) => {
-        <>
+      verticalPositions |> List.mapi((index, verticalPosition) => {
+        <React.Fragment key=("Anchor-Origin-Vertical" ++ (index |> string_of_int))>
           {string(verticalPosition)}
           <Radio
             value=verticalPosition
@@ -87,13 +87,13 @@ let make = () => {
             )
             checked=(state.anchorOrigin.vertical === verticalPosition)
           />
-        </>
+        </React.Fragment>
       }) |> Array.of_list |> array
     }
     <br />{string("Anchor Origin Horizontal")}<br />
     {
-      horizontalPositions |> List.map((horizontalPosition) => {
-        <>
+      horizontalPositions |> List.mapi((index, horizontalPosition) => {
+        <React.Fragment key=("Anchor-Origin-Horizontal" ++ (index |> string_of_int))>
           {string(horizontalPosition)}
           <Radio
             value=horizontalPosition
@@ -103,13 +103,13 @@ let make = () => {
             )
             checked=(state.anchorOrigin.horizontal === horizontalPosition)
           />
-        </>
+        </React.Fragment>
       }) |> Array.of_list |> array
     }
     <br />{string("Transform Origin Vertical")}<br />
     {
-      verticalPositions |> List.map((verticalPosition) => {
-        <>
+      verticalPositions |> List.mapi((index, verticalPosition) => {
+        <React.Fragment key=("Transform-Origin-Vertical" ++ (index |> string_of_int))>
           {string(verticalPosition)}
           <Radio
             value=verticalPosition
@@ -119,13 +119,13 @@ let make = () => {
             )
             checked=(state.transformOrigin.vertical === verticalPosition)
           />
-        </>
+        </React.Fragment>
       }) |> Array.of_list |> array
     }
     <br />{string("Transform Origin Horizontal")}<br />
     {
-      horizontalPositions |> List.map((horizontalPosition) => {
-        <>
+      horizontalPositions |> List.mapi((index, horizontalPosition) => {
+        <React.Fragment key=("Transform-Origin-Horizontal" ++ (index |> string_of_int))>
           {string(horizontalPosition)}
           <Radio
             value=horizontalPosition
@@ -135,7 +135,7 @@ let make = () => {
             )
             checked=(state.transformOrigin.horizontal === horizontalPosition)
           />
-        </>
+        </React.Fragment>
       }) |> Array.of_list |> array
     }
   </Jsx3LayoutComponent>;
