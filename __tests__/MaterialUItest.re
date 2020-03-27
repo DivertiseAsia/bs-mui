@@ -851,8 +851,8 @@ test("Test Table component",()=>
         <TableRow>
           <TablePagination
             count={10}
-            rowsPerPage={2}
-            page={2}
+            rowsPerPage={10}
+            page={0} 
             onChangePage={ (_,_) =>Js.log("on change page") }
           />
         </TableRow>
