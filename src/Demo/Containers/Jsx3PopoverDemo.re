@@ -78,7 +78,7 @@ let make = () => {
     <br />{string("Anchor Origin Vertical")}<br />
     {
       verticalPositions |> List.map((verticalPosition) => {
-        <>
+        <React.Fragment key=verticalPosition>
           {string(verticalPosition)}
           <Radio
             value=verticalPosition
@@ -88,13 +88,13 @@ let make = () => {
             )
             checked=(state.anchorOrigin.vertical === verticalPosition)
           />
-        </>
+        </React.Fragment>
       }) |> Array.of_list |> array
     }
     <br />{string("Anchor Origin Horizontal")}<br />
     {
       horizontalPositions |> List.map((horizontalPosition) => {
-        <>
+        <React.Fragment key=horizontalPosition>
           {string(horizontalPosition)}
           <Radio
             value=horizontalPosition
@@ -104,13 +104,13 @@ let make = () => {
             )
             checked=(state.anchorOrigin.horizontal === horizontalPosition)
           />
-        </>
+        </React.Fragment>
       }) |> Array.of_list |> array
     }
     <br />{string("Transform Origin Vertical")}<br />
     {
       verticalPositions |> List.map((verticalPosition) => {
-        <>
+        <React.Fragment key=verticalPosition>
           {string(verticalPosition)}
           <Radio
             value=verticalPosition
@@ -120,13 +120,13 @@ let make = () => {
             )
             checked=(state.transformOrigin.vertical === verticalPosition)
           />
-        </>
+        </React.Fragment>
       }) |> Array.of_list |> array
     }
     <br />{string("Transform Origin Horizontal")}<br />
     {
       horizontalPositions |> List.map((horizontalPosition) => {
-        <>
+        <React.Fragment key=horizontalPosition>
           {string(horizontalPosition)}
           <Radio
             value=horizontalPosition
@@ -136,7 +136,7 @@ let make = () => {
             )
             checked=(state.transformOrigin.horizontal === horizontalPosition)
           />
-        </>
+        </React.Fragment>
       }) |> Array.of_list |> array
     }
   </Jsx3LayoutComponent>;

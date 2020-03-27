@@ -440,8 +440,7 @@ test("Test Menu component",()=>{
     
     <Menu
       _open=true
-      anchorEl={Js.Nullable.return(<Button></Button>)}
-      getContentAnchorEl = Js.Nullable.null
+      anchorEl= Js.Nullable.null
     >
       <MenuItem>{string("Profile")}</MenuItem>
       <MenuItem>{string("My account")}</MenuItem>
