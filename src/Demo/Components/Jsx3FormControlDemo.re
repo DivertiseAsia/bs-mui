@@ -5,7 +5,7 @@ open MaterialUIDataType;
 [@react.component]
 let make = () => {
   <Jsx3LayoutComponent title="Form Control"> 
-    <FormControl variant=Variant.outlined>
+    <FormControl variant=Variant.Field.outlined>
       <InputLabel id="demo-simple-select-outlined-label">
         (string("Age"))
       </InputLabel>
