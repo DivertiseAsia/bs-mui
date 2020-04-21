@@ -1,4 +1,4 @@
-open MaterialUIDataType;
+module Variant = MaterialUIDataType.Variant;
 
 [@react.component] [@bs.module "@material-ui/core/Input"]
 external make:
@@ -21,7 +21,7 @@ module InputAdornment = {
         ~disablePointerEvents: bool=?,
         ~disableTypography: bool=?,
         ~position: string=?,
-        ~variant: Variant.Field.t=?
+        ~variant: Variant.t=?
         ) =>
         React.element =
         "default";
