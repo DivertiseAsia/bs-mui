@@ -18,7 +18,7 @@ open MaterialUIDataType;
       ~startIcon: React.element=?,
       ~variant: Variant.Button.t=?,
       ~onClick: ReactEvent.Synthetic.t => unit=?,
-      ~type_: string=?,
+      ~_type: string=?,
       ~ref: 'a=?
     ) =>
     React.element =
@@ -40,7 +40,7 @@ module ButtonBase = {
         ~focusVisibleClassName: string=?,
         ~onFocusVisible: ReactEvent.Keyboard.t => unit=?,
         ~touchRippleProps: React.element=?, // TouchRippleProps (T uppercase)
-        ~type_: ButtonBaseType.t=?
+        ~_type: ButtonBaseType.t=?
         ) =>
         React.element =
         "default";

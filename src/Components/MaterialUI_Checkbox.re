@@ -19,7 +19,7 @@ open MaterialUIDataType;
       ~onChange: ReactEvent.Synthetic.t => unit=?,
       ~required: bool=?,
       ~size: NoLargeSize.t=?,
-      ~type_: string=?,
+      ~_type: string=?,
       ~value: 'b=?
     ) =>
     React.element =

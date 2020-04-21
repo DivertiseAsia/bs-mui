@@ -16,7 +16,7 @@
       ~onChange: ReactEvent.Synthetic.t => unit=?,
       ~required: bool=?,
       ~size: string=?,
-      ~type_: string=?,
+      ~_type: string=?,
       ~value: int=?
     ) =>
     React.element =

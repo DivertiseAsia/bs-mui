@@ -360,7 +360,7 @@ module TextField {
         ~defaultValue=?,
         ~value=?,
         ~onChange=?,
-        ~type_=?,
+        ~_type=?,
         ~disabled=?,
         ~classes=?,
         ~color=?,
@@ -391,7 +391,7 @@ module TextField {
             ~defaultValue?,
             ~value?,
             ~onChange?,
-            ~type_?,
+            ~_type?,
             ~disabled?,
             ~classes?,
             ~color?,
@@ -497,7 +497,7 @@ module Button {
     let component = ReasonReact.statelessComponent("Button");
 
     let make = (
-        ~type_=?,
+        ~_type=?,
         ~href=?,
         ~disabled=?,
         ~fullWidth=?,
@@ -509,7 +509,7 @@ module Button {
         children) => 
         ReasonReactCompat.wrapReactForReasonReact(
             make,
-            makeProps(~type_?, 
+            makeProps(~_type?, 
                 ~href?,
                 ~disabled?,
                 ~fullWidth?,
@@ -540,7 +540,7 @@ module ButtonBase {
         ~focusVisibleClassName=?,
         ~onFocusVisible=?,
         ~touchRippleProps=?,
-        ~type_=?,
+        ~_type=?,
         children) => 
         ReasonReactCompat.wrapReactForReasonReact(
             make,
@@ -555,7 +555,7 @@ module ButtonBase {
                 ~focusVisibleClassName?,
                 ~onFocusVisible?,
                 ~touchRippleProps?,
-                ~type_?,
+                ~_type?,
                 ~children=children |> React.array, ()),
             children,
         );       
@@ -750,7 +750,7 @@ module Checkbox {
         ~onChange=?,
         ~required=?,
         ~size=?,
-        ~type_=?,
+        ~_type=?,
         ~value=?) => 
         ReasonReactCompat.wrapReactForReasonReact(
             make,
@@ -770,7 +770,7 @@ module Checkbox {
                 ~onChange?,
                 ~required?,
                 ~size?,
-                ~type_?,
+                ~_type?,
                 ~value?,
                 ()),
         );       
@@ -2630,7 +2630,7 @@ module Radio {
         ~onChange=?,
         ~required=?,
         ~size=?,
-        ~type_=?,
+        ~_type=?,
         ~value=?,) => 
     ReasonReactCompat.wrapReactForReasonReact(
         make,
@@ -2650,7 +2650,7 @@ module Radio {
             ~onChange?,
             ~required?,
             ~size?,
-            ~type_?,
+            ~_type?,
             ~value?,
             ()),
     );   
@@ -2698,7 +2698,7 @@ module Rating {
         ~onChange=?,
         ~required=?,
         ~size=?,
-        ~type_=?,
+        ~_type=?,
         ~value=?) => 
     ReasonReactCompat.wrapReactForReasonReact(
         make,
@@ -2718,7 +2718,7 @@ module Rating {
             ~onChange?,
             ~required?,
             ~size?,
-            ~type_?,
+            ~_type?,
             ~value?,
             ()),
     );   

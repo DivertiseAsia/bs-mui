@@ -16,7 +16,7 @@ open MaterialUIDataType;
       ~defaultValue: string=?,
       ~value: string=?,
       ~onChange: ReactEvent.Form.t => unit=?,
-      ~type_: string=?,
+      ~_type: string=?,
       ~disabled: bool=?,
       ~classes: string=?,
       ~color: string=?,

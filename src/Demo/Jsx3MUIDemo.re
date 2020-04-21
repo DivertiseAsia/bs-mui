@@ -65,6 +65,11 @@ let make = () => {
   <StylesProvider injectFirst=true>
   <div>(string("Jsx3"))</div>
   /* <Container id="container-id" className={classes->Js.Dict.unsafeGet("root")}> */
+
+  <Container id="text-field">
+        <TextField _type="password"/>
+  </Container>
+
   <Container id="container-id" >
     /* <Container id="container-button">
       <FormLabel> {string("Button")} </FormLabel>
