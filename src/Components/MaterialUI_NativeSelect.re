@@ -1,4 +1,4 @@
-open MaterialUIDataType;
+module Variant = MaterialUIDataType.Variant;
 
 [@react.component] [@bs.module "@material-ui/core/NativeSelect"]
   external make:
@@ -10,6 +10,6 @@ open MaterialUIDataType;
       ~inputProps: Js.t('a)=?,
       ~onChange: unit=>unit=?,
       ~value: 'a=?,
-      ~variant: Variant.Field.t=?
+      ~variant: Variant.t=?
     ) =>
     React.element = "default";

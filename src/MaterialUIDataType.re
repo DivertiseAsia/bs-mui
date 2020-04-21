@@ -174,53 +174,15 @@ module TypographyStyle : {
 
 module Variantx = {
   
-  module Button : {
-    type t;
-    let text:t;
-    let outlined:t;
-    let contained:t;
-    } = {
-    type t = string;
-    [@bs.inline] let text = "text";
-    [@bs.inline] let outlined = "outlined";
-    [@bs.inline] let contained = "contained";
-  };
   
-  module Chip : {
-    type t;
-    let default:t;
-    let outlined:t;
-  } = {
-    type t = string;
-    [@bs.inline] let default = "default";
-    [@bs.inline] let outlined = "outlined";
-  };
+  
+  
   
   
 
-  module Circular : {
-    type t;
-    let determinate:t;
-    let indeterminate:t;
-    let static:t;
-  } = {
-    type t = string;
-    [@bs.inline] let determinate = "determinate";
-    [@bs.inline] let indeterminate = "indeterminate";
-    [@bs.inline] let static = "static";
-  };
+  
 
-  module Skeleton : { 
-    type t;
-    let text:t;
-    let rect:t;
-    let circle:t;
-  }= {
-    type t = string;
-    [@bs.inline] let text:t = "text";
-    [@bs.inline] let rect:t = "rect";
-    [@bs.inline] let circle:t = "circle";
-  };
+ 
 
 };
 

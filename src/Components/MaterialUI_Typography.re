@@ -1,11 +1,11 @@
-open MaterialUIDataType;
+module Variant = MaterialUIDataType.TypographyStyle;
 
 [@react.component] [@bs.module "@material-ui/core/Typography"]
   external make:
     (
       ~id: string=?,
       ~component: string=?,
-      ~variant: Variant.Element.t=?,
+      ~variant: Variant.t=?,
       ~color: string=?,
       ~align: string=?,
       ~className: string=?,

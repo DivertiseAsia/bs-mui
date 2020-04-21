@@ -1,10 +1,11 @@
 open MaterialUIDataType;
+module Variant = MaterialUIDataType.Variant;
 
 [@react.component] [@bs.module "@material-ui/core/FormControl"]
   external make:
     (
       ~id: string=?,
-      ~variant: Variant.Field.t=?,
+      ~variant: Variant.t=?,
       ~className: string=?,
       ~children: React.element=?
     ) =>
@@ -59,7 +60,7 @@ external make:
     ~focused: bool=?,
     ~margin: string=?,
     ~required: bool=?,
-    ~variant: Variant.Field.t=?
+    ~variant: Variant.t=?
 ) => 
 React.element =
     "default";

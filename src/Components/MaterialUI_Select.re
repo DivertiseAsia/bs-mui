@@ -1,4 +1,4 @@
-open MaterialUIDataType;
+module Variant = MaterialUIDataType.Variant;
 
 [@react.component] [@bs.module "@material-ui/core/Select"]
   external make:
@@ -13,7 +13,7 @@ open MaterialUIDataType;
       ~inputProps: Js.t('b)=?,
       ~className: string=?,
       ~style: ReactDOMRe.Style.t=?,
-      ~variant: Variant.Field.t=?,
+      ~variant: Variant.t=?,
       ~children: React.element=?
     ) =>
     React.element =
