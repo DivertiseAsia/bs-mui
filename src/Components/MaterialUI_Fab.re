@@ -1,4 +1,12 @@
-open MaterialUIDataType;
+module Variant:{
+  type t;
+  let round:t;
+  let extended:t;
+} = {
+  type t = string;
+  [@bs.inline] let round:t = "round";
+  [@bs.inline] let extended:t = "extended";
+}
 
 [@react.component] [@bs.module "@material-ui/core/Fab"]
   external make:
@@ -12,7 +20,7 @@ open MaterialUIDataType;
       ~disableRipple: bool=?,
       ~href: string=?,
       ~size: string=?,
-      ~variant: Variant.Field.t=?
+      ~variant: Variant.t=?
     ) =>
     React.element =
     "default";
