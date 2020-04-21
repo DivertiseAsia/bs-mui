@@ -1,16 +1,6 @@
 open MaterialUIDataType;
 
-module Variant:{
-  type t;
-  let standard:t;
-  let outlined:t;
-  let filled:t;
-} = {
-  type t = string;
-  [@bs.inline] let standard:t = "standard";
-  [@bs.inline] let outlined:t = "outlined";
-  [@bs.inline] let filled:t = "filled";
-}
+module Variant = MaterialUIDataType.Variant;
 
 [@react.component] [@bs.module "@material-ui/core/TextField"]
   external make:

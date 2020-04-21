@@ -1,5 +1,7 @@
 open MaterialUIDataType;
 
+module Variant = MaterialUIDataType.Variant;
+
 [@react.component] [@bs.module "@material-ui/lab/Alert"]
 external make:
     (
@@ -13,7 +15,7 @@ external make:
     ~onClose: unit => unit=?,
     ~role: string=?,
     ~severity: string=?,
-    ~variant: Variant.Field.t=?
+    ~variant: Variant.t=?
     ) =>
     React.element = "default";
 

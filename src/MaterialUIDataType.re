@@ -112,7 +112,21 @@ module ButtonBaseType = {
   [@bs.inline] let button = "button";
 };
 
-module Variant = {
+module Variant:{
+  type t;
+  let standard:t;
+  let outlined:t;
+  let filled:t;
+} = {
+  type t = string;
+  [@bs.inline] let standard:t = "standard";
+  [@bs.inline] let outlined:t = "outlined";
+  [@bs.inline] let filled:t = "filled";
+}
+
+module Variantx = {
+
+  
 
   module Shape :{
     type t;
