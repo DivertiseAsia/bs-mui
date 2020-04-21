@@ -1,4 +1,15 @@
 open MaterialUIDataType;
+module Variant : {
+  type t;
+  let text:t;
+  let outlined:t;
+  let contained:t;
+  } = {
+  type t = string;
+  [@bs.inline] let text = "text";
+  [@bs.inline] let outlined = "outlined";
+  [@bs.inline] let contained = "contained";
+};
 
 [@react.component] [@bs.module "@material-ui/core/Button"]
   external make:
@@ -16,7 +27,7 @@ open MaterialUIDataType;
       ~href: string=?,
       ~size: Size.t=?,
       ~startIcon: React.element=?,
-      ~variant: Variant.Button.t=?,
+      ~variant: Variant.t=?,
       ~onClick: ReactEvent.Synthetic.t => unit=?,
       ~_type: string=?,
       ~ref: 'a=?
@@ -60,7 +71,7 @@ module ButtonGroup = {
         ~fullWidth: bool=?,
         ~orientation: Orientation.t=?,
         ~size: Size.t=?,
-        ~variant: Variant.Button.t=?
+        ~variant: Variant.t=?
         ) =>
         React.element =
         "default";
