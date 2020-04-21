@@ -1,5 +1,15 @@
 open MaterialUIDataType;
 
+module Variant : { 
+  type t;
+  let dot:t;
+  let standard:t;
+} = {
+  type t = string;
+  [@bs.inline] let dot = "dot";
+  [@bs.inline] let standard = "standard";
+};
+
 [@react.component] [@bs.module "@material-ui/core/Badge"]
   external make:
     (
@@ -13,7 +23,7 @@ open MaterialUIDataType;
       ~max: int=?,
       ~overlap: Overlap.t=?,
       ~showZero: bool=?,
-      ~variant: Variant.Border.t=?
+      ~variant: Variant.t=?
     ) =>
     React.element =
     "default";
