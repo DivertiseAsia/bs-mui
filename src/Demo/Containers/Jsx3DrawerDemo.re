@@ -2,22 +2,15 @@ open ReasonReact;
 open MaterialUI;
 open MaterialUIDataType;
 
+let anchors = ["left", "right", "top", "bottom"];
+
 type state = {
   loading: bool,
-  openDrawer: bool,
+  openDrawer: string,
 };
 
 type action =
-  | ToggleDrawer(bool);
-
-let styleWrapperComponent = ReactDOMRe.Style.make(
-  ~background="lightgray", 
-  ~border="0px", 
-  ~borderRadius="3px",
-  ~padding="15px",
-  ~textAlign="center",
-  ()
-  );
+  | ToggleDrawer(string);
 
 [@react.component]
 let make = () => {
@@ -28,28 +21,31 @@ let make = () => {
     },
     {
       loading: false,
-      openDrawer: false,
+      openDrawer: "",
     }
   );
-  <> 
-    <h2>{string("Drawer")}</h2>
-      <h4>
-        {string("Navigation drawers provide access to destinations in your app. 
-        Side sheets are surfaces containing supplementary content that are anchored to the left or right edge of the screen.")}
-      </h4>
-      <div style=styleWrapperComponent>
+  let mainInfo = "Navigation drawers provide access to destinations in your app. 
+  Side sheets are surfaces containing supplementary content that are anchored to the left or right edge of the screen.";
+  <Jsx3LayoutComponent title="Drawer" mainInfo>  
+    {
+      anchors |> List.map(anchor => {
+        <React.Fragment key=("key-drawer" ++ anchor)>
         <Button 
           variant=Variant.Button.contained 
           color="primary"
-          onClick=(_ => dispatch(ToggleDrawer(true)))
+          onClick=(_ => dispatch(ToggleDrawer(anchor)))
         >
-          {string("Open Drawer")}
+          {string(anchor)}
         </Button>
-        <Drawer _open=state.openDrawer onClose=(_ => dispatch(ToggleDrawer(false)))>
+        <Drawer anchor _open={state.openDrawer === anchor} onClose=(_ => dispatch(ToggleDrawer("")))>
           <Typography>
-            {string("Test Drawer")}
+            <Container>
+            {string("Drawer " ++ anchor)}
+            </Container>
           </Typography>
         </Drawer>
-      </div>
-  </>;
+      </React.Fragment>
+      }) |> Array.of_list |> array
+    }
+  </Jsx3LayoutComponent>;
 };
