@@ -1,4 +1,12 @@
-open MaterialUIDataType;
+module Variant : { 
+  type t;
+  let outlined:t;
+  let text:t;
+} = {
+  type t = string;
+  [@bs.inline] let outlined = "outlined";
+  [@bs.inline] let text = "text";
+};
 
 [@react.component] [@bs.module "@material-ui/lab/Pagination"]
   external make:
@@ -21,7 +29,7 @@ open MaterialUIDataType;
       ~showLastButton: bool=?,
       ~siblingCount: int=?,
       ~size: string=?,
-      ~variant: Variant.Field.t=?
+      ~variant: Variant.t=?
     ) =>
     React.element = "default";
 
@@ -37,7 +45,7 @@ module PaginationItem = {
         ~shape: string=?,
         ~size: string=?,
         ~_type: string=?,
-        ~variant: Variant.Field.t=?
+        ~variant: Variant.t=?
         ) =>
         React.element = "default";
     };
