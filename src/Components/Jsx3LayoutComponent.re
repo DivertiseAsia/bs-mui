@@ -1,7 +1,7 @@
 open ReasonReact;
 
-let styleWrapperComponent = ReactDOMRe.Style.make(
-  ~background="lightgray", 
+let styleWrapperComponent = (backgroundColor) => ReactDOMRe.Style.make(
+  ~background=backgroundColor, 
   ~border="0px", 
   ~borderRadius="3px",
   ~padding="15px",
@@ -10,7 +10,7 @@ let styleWrapperComponent = ReactDOMRe.Style.make(
   );
 
 [@react.component]
-let make = (~title, ~mainInfo=?, ~subInfo=?, ~children) => {
+let make = (~title, ~mainInfo=?, ~subInfo=?, ~backgroundColor="lightgray", ~children) => {
   <> 
     <h2>{string(title)}</h2>
     {switch mainInfo {
@@ -23,7 +23,7 @@ let make = (~title, ~mainInfo=?, ~subInfo=?, ~children) => {
       | None => null
       }
     }
-    <div style=styleWrapperComponent>
+    <div style=styleWrapperComponent(backgroundColor)>
       {children}
     </div>
   </>;

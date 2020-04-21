@@ -77,8 +77,8 @@ let make = () => {
     <br />
     <br />{string("Anchor Origin Vertical")}<br />
     {
-      verticalPositions |> List.map((verticalPosition) => {
-        <React.Fragment key=verticalPosition>
+      verticalPositions |> List.mapi((index, verticalPosition) => {
+        <React.Fragment key=("Anchor-Origin-Vertical" ++ (index |> string_of_int))>
           {string(verticalPosition)}
           <Radio
             value=verticalPosition
@@ -93,8 +93,8 @@ let make = () => {
     }
     <br />{string("Anchor Origin Horizontal")}<br />
     {
-      horizontalPositions |> List.map((horizontalPosition) => {
-        <React.Fragment key=horizontalPosition>
+      horizontalPositions |> List.mapi((index, horizontalPosition) => {
+        <React.Fragment key=("Anchor-Origin-Horizontal" ++ (index |> string_of_int))>
           {string(horizontalPosition)}
           <Radio
             value=horizontalPosition
@@ -109,8 +109,8 @@ let make = () => {
     }
     <br />{string("Transform Origin Vertical")}<br />
     {
-      verticalPositions |> List.map((verticalPosition) => {
-        <React.Fragment key=verticalPosition>
+      verticalPositions |> List.mapi((index, verticalPosition) => {
+        <React.Fragment key=("Transform-Origin-Vertical" ++ (index |> string_of_int))>
           {string(verticalPosition)}
           <Radio
             value=verticalPosition
@@ -125,8 +125,8 @@ let make = () => {
     }
     <br />{string("Transform Origin Horizontal")}<br />
     {
-      horizontalPositions |> List.map((horizontalPosition) => {
-        <React.Fragment key=horizontalPosition>
+      horizontalPositions |> List.mapi((index, horizontalPosition) => {
+        <React.Fragment key=("Transform-Origin-Horizontal" ++ (index |> string_of_int))>
           {string(horizontalPosition)}
           <Radio
             value=horizontalPosition
