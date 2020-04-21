@@ -1,0 +1,13 @@
+[@react.component] [@bs.module "@material-ui/core/MobileStepper"]
+  external make:
+    (
+      ~activeStep: int=?,
+      ~backButton: React.element=?,
+      ~classes: string=?,
+      ~linearProgressProps: Js.t('a)=?,
+      ~nextButton: React.element=?,
+      ~position: string=?,
+      ~steps: int,
+      ~variant: string=?
+    ) =>
+    React.element = "default";

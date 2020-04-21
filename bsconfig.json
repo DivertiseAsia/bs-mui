@@ -6,14 +6,14 @@
   "sources": [
     {
     "dir" : "src",
-    "subdirs" : ["Components"]
+    "subdirs" : ["Components", "Demo", "Demo/Components", "Demo/Containers"]
     },
     {
       "dir": "__tests__",
       "type": "dev"
     }
   ],
-  "bsc-flags": ["-bs-super-errors", "-bs-no-version-header"],
+  "bsc-flags": ["-bs-super-errors", "-bs-no-version-header", "-w -48"],
   "package-specs": [{
     "module": "commonjs",
     "in-source": false

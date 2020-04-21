@@ -112,17 +112,137 @@ module ButtonBaseType = {
   [@bs.inline] let button = "button";
 };
 
-module Variant:{
-  type t;
-  let standard:t;
-  let outlined:t;
-  let filled:t;
-} = {
-  type t = string;
-  [@bs.inline] let standard:t = "standard";
-  [@bs.inline] let outlined:t = "outlined";
-  [@bs.inline] let filled:t = "filled";
-}
+module Variant = {
+
+  module Field:{
+    type t;
+    let standard:t;
+    let outlined:t;
+    let filled:t;
+  } = {
+    type t = string;
+    [@bs.inline] let standard:t = "standard";
+    [@bs.inline] let outlined:t = "outlined";
+    [@bs.inline] let filled:t = "filled";
+  }
+
+  module Shape :{
+    type t;
+    let circle:t;
+    let rounded:t;
+    let square:t;
+  } = {
+    type t = string;
+    [@bs.inline] let circle:t = "circle";
+    [@bs.inline] let rounded:t = "rounded";
+    [@bs.inline] let square:t = "square";
+  };
+  
+  module Border : { 
+    type t;
+    let dot:t;
+    let standard:t;
+  } = {
+    type t = string;
+    [@bs.inline] let dot = "dot";
+    [@bs.inline] let standard = "standard";
+  };
+  
+  module Button : {
+    type t;
+    let text:t;
+    let outlined:t;
+    let contained:t;
+    } = {
+    type t = string;
+    [@bs.inline] let text = "text";
+    [@bs.inline] let outlined = "outlined";
+    [@bs.inline] let contained = "contained";
+  };
+  
+  module Chip : {
+    type t;
+    let default:t;
+    let outlined:t;
+  } = {
+    type t = string;
+    [@bs.inline] let default = "default";
+    [@bs.inline] let outlined = "outlined";
+  };
+  
+  module Element : {
+    type t;
+    let h1:t;
+    let h2:t;
+    let h3:t;
+    let h4:t;
+    let h5:t;
+    let h6:t;
+    let subtitle1:t;
+    let subtitle2:t;
+    let body1:t;
+    let body2:t;
+    let caption:t;
+    let button:t;
+    let overline:t;
+    let srOnly:t;
+    let inherit_:t;
+  } = {
+    type t = string;
+    let h1:t = "h1";
+    let h2:t = "h2";
+    let h3:t = "h3";
+    let h4:t = "h4";
+    let h5:t = "h5";
+    let h6:t = "h6";
+    let subtitle1:t = "subtitle1";
+    let subtitle2:t = "subtitle2";
+    let body1:t = "body1";
+    let body2:t = "body2";
+    let caption:t = "caption";
+    let button:t = "button";
+    let overline:t = "overline";
+    let srOnly:t = "srOnly";
+    let inherit_:t = "inherit";
+  };
+
+  module Circular : {
+    type t;
+    let determinate:t;
+    let indeterminate:t;
+    let static:t;
+  } = {
+    type t = string;
+    [@bs.inline] let determinate = "determinate";
+    [@bs.inline] let indeterminate = "indeterminate";
+    [@bs.inline] let static = "static";
+  };
+
+  module Drawer :{
+    type t;
+    let permanent:t;
+    let persistent:t;
+    let temporary:t;
+  } = {
+    type t = string;
+    [@bs.inline] let permanent:t = "permanent";
+    [@bs.inline] let persistent:t = "persistent";
+    [@bs.inline] let temporary:t = "temporary";
+  };
+
+  module Skeleton : { 
+    type t;
+    let text:t;
+    let rect:t;
+    let circle:t;
+  }= {
+    type t = string;
+    [@bs.inline] let text:t = "text";
+    [@bs.inline] let rect:t = "rect";
+    [@bs.inline] let circle:t = "circle";
+  };
+
+};
 
 module AlignContent : { 
   type t;
@@ -195,4 +315,9 @@ module GridSize : {
   } else {
     false_
   };
+};
+
+type anchorOriginType = {
+  vertical: HorizontalAnchor.t,
+  horizontal: VerticalAnchor.t,
 };

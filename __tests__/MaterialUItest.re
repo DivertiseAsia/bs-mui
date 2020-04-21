@@ -18,6 +18,16 @@ test("Button Component with different sizes renders", () =>
   |> toMatchSnapshot
 );
 
+test("Test ButtonBase component",()=>
+  <Container>
+    <ButtonBase>{string("Base Button")}</ButtonBase>
+  </Container>
+  |> render
+  |> container
+  |> expect
+  |> toMatchSnapshot
+)
+
 test("Test container with child elements", () =>
   <Container id="container-button">
     <FormLabel> {string("Button")} </FormLabel>
@@ -81,6 +91,7 @@ test("Test dialog component",()=>
 test("Test alert component",()=>
     <Container id="container-alert">
       <Alert severity="error">
+        <AlertTitle>{string("Warning")}</AlertTitle>
         {string("This is an error alert")}
       </Alert>
     </Container>
@@ -94,7 +105,7 @@ test("Test appbar component",()=>
   <AppBar position="static">
     <Toolbar>
       <IconButton edge="start" color="inherit" />
-      <Typography variant=Typography.Variant.h6>
+      <Typography variant=Variant.Element.h6>
         {string("News")}
       </Typography>
     </Toolbar>
@@ -112,7 +123,7 @@ test("Test autoComplete component", () =>
       { "title": "The Shawshank Redemption", "year": 1994 },
       { "title": "The Godfathe", "year": 1972 },
       { "title": "The Dark Knight", "year": 2008 }]
-    renderInput = { _params => <TextField label="Combo box" variant=Variant.outlined />}
+    renderInput = { _params => <TextField label="Combo box" variant=Variant.Field.outlined />}
     ></Autocomplete>
     |> render
     |> container
@@ -152,8 +163,8 @@ test("Test Badge component",()=>
 
 test("Test BottomNavigation component",()=>
   <BottomNavigation showLabels={true} component="div">
-    <BottomNavigationAction label="Recents" icon={<RestoreIcon />} />
-    <BottomNavigationAction label="Favorites" icon={<FavoriteIcon />}  />
+    <BottomNavigationAction label="Recents" icon={<Icon.RestoreIcon />} />
+    <BottomNavigationAction label="Favorites" icon={<Icon.FavoriteIcon />}  />
   </BottomNavigation>
   |> render
   |> container
@@ -162,7 +173,7 @@ test("Test BottomNavigation component",()=>
 )
 
 test("Test BottomGroup component",()=>
-  <ButtonGroup variant=Button.Variant.contained color="primary">
+  <ButtonGroup variant=Variant.Button.contained color="primary">
     <Button>{string("One")}</Button>
     <Button>{string("Two")}</Button>
     <Button>{string("Three")}</Button>
@@ -253,7 +264,42 @@ test("Test ExpantionPanel component",()=>
           sit amet blandit leo lobortis eget.")}
         </Typography>
       </ExpansionPanelDetails>
+      <ExpansionPanelActions>
+          <Button size="small">{string("Cancel")}</Button>
+          <Button size="small" color="primary">
+            {string("Save")}
+          </Button>
+        </ExpansionPanelActions>
     </ExpansionPanel>
+    |> render
+    |> container
+    |> expect
+    |> toMatchSnapshot
+)
+
+test("Test Fab component",()=>
+  <Fab>
+    <Icon.Notifications className="extendedIcon" />
+    {string("Notification")}
+  </Fab>
+  |> render
+  |> container
+  |> expect
+  |> toMatchSnapshot
+)
+
+test("Test FilledInput component",()=>
+  <FormControl variant=Variant.Field.filled>
+      <FilledInput
+        id="filled-adornment-weight"
+        value="weight"
+        endAdornment={<InputAdornment position="end">{string("Kg")}</InputAdornment>}
+        inputProps={
+          "aria-label": "weight"
+        }
+      />
+      <FormHelperText>{string("Weight")}</FormHelperText>
+    </FormControl>
     |> render
     |> container
     |> expect
@@ -280,6 +326,41 @@ test("Test Grid and Paper component",()=>
   |> toMatchSnapshot
 )
 
+test("Test GridList component",()=>
+  <GridList cellHeight={"auto"} spacing={1} >
+      <GridListTitle cols={1} rows={1}>
+        <GridListTitleBar
+          title="Grid List title"
+          titlePosition="top"
+          actionIcon={
+            <IconButton>
+              <Icon.ShoppingCart />
+            </IconButton>
+          }
+          actionPosition="left"
+        />
+      </GridListTitle>
+  </GridList>
+  |> render
+  |> container
+  |> expect
+  |> toMatchSnapshot
+)
+
+test("Test Grow component",()=>
+  <Grow _in=true>
+    <Paper elevation={4} className="paper">
+      <svg className="svg">
+        <polygon points="0,100 50,00, 100,100" className="polygon" />
+      </svg>
+    </Paper>
+  </Grow>
+  |> render
+  |> container
+  |> expect
+  |> toMatchSnapshot
+)
+
 test("Test Hidden component",()=>
   <Hidden xsUp=false>
     <Paper>{string("xsUp")}</Paper>
@@ -298,12 +379,68 @@ test("Test Icon component",()=>
   |> toMatchSnapshot
 )
 
+test("Test Input component",()=>
+  <Input placeholder="Input text" />
+  |> render
+  |> container
+  |> expect
+  |> toMatchSnapshot
+)
+
+test("Test InputBase",()=>
+  <InputBase
+      className="input"
+      placeholder="Search Google Maps"
+      inputProps={ "aria-label": "search google maps" }
+    />
+  |> render
+  |> container
+  |> expect
+  |> toMatchSnapshot
+)
+
+test("Test LinearProgress component",()=>
+  <LinearProgress color="secondary" />
+  |> render
+  |> container
+  |> expect
+  |> toMatchSnapshot
+)
+
+test("Test List component",()=>
+  <UIList subheader={<ListSubheader>{string("Settings")}</ListSubheader>} component="nav">
+    <ListItem button=true>
+      <ListItemAvatar>
+          <Avatar
+            src="https://www.w3schools.com/howto/img_avatar2.png"
+          />
+      </ListItemAvatar>
+      <ListItemIcon>
+        <Icon.Menu />
+      </ListItemIcon>
+      <ListItemText primary="Chelsea Otakan" />
+      <ListItemSecondaryAction>
+        <Checkbox
+          inputProps={ "aria-labelledby": "labelId" }
+        />
+      </ListItemSecondaryAction>
+    </ListItem>
+    <ListItem button=true>
+      <ListItemText inset=true primary="Eric Hoffman" />
+    </ListItem>
+  </UIList>
+  |> render
+  |> container
+  |> expect
+  |> toMatchSnapshot
+)
+
 test("Test Menu component",()=>{
     <>
     
     <Menu
       _open=true
-      anchorEl=Js.Nullable.null
+      anchorEl= Js.Nullable.null
     >
       <MenuItem>{string("Profile")}</MenuItem>
       <MenuItem>{string("My account")}</MenuItem>
@@ -311,6 +448,60 @@ test("Test Menu component",()=>{
     </Menu>
     </>
   }
+  |> render
+  |> container
+  |> expect
+  |> toMatchSnapshot
+)
+
+test("Test MenuList component",()=>
+<Paper className="root">
+      <MenuList>
+        <MenuItem>
+          <ListItemIcon>
+            <Icon.Notifications />
+          </ListItemIcon>
+          <Typography>{string("A short message")}</Typography>
+        </MenuItem>
+        <MenuItem>
+          <ListItemIcon>
+            <Icon.Search />
+          </ListItemIcon>
+          <Typography>{string("A very long text that overflows")}</Typography>
+        </MenuItem>
+        <MenuItem>
+          <ListItemIcon>
+            <Icon.RestoreIcon />
+          </ListItemIcon>
+          <Typography noWrap=true>
+            {string("A very long text that overflows")}
+          </Typography>
+        </MenuItem>
+      </MenuList>
+    </Paper>
+    |> render
+    |> container
+    |> expect
+    |> toMatchSnapshot
+)
+
+test("Test Mobile Stepper",()=>
+  <MobileStepper
+    variant="progress"
+    steps={6}
+    position="static"
+    activeStep={0}
+    nextButton={
+      <Button size="small" disabled=false>
+        {string("Next")}
+      </Button>
+    }
+    backButton={
+      <Button size="small" disabled=true>
+        {string("Back")}
+      </Button>
+    }
+  />
   |> render
   |> container
   |> expect
@@ -329,6 +520,29 @@ test("Test Modal component",()=>
   |> toMatchSnapshot
 )
 
+test("Test NativeSelect component",()=>
+  <FormControl>
+    <InputLabel htmlFor="age-native-helper">{string("Age")}</InputLabel>
+    <NativeSelect
+      onChange={_=>Js.log("Native Select")}
+      inputProps={{
+        "name": "age",
+        "id": "age-native-helper",
+      }}
+    >
+      <option value="" />
+      <option value={"10"}>{string("Ten")}</option>
+      <option value={"20"}>{string("Twenty")}</option>
+      <option value={"30"}>{string("Thirty")}</option>
+    </NativeSelect>
+    <FormHelperText>{string("Some important helper text")}</FormHelperText>
+  </FormControl>
+  |> render
+  |> container
+  |> expect
+  |> toMatchSnapshot
+)
+
 test("Test NoSsr component",()=>
   <NoSsr>
     <Box p={2} bgcolor="secondary.main" color="primary.contrastText">
@@ -341,8 +555,27 @@ test("Test NoSsr component",()=>
   |> toMatchSnapshot
 )
 
+test("Test OutlinedInput component",()=>
+  <FormControl variant=Variant.Field.outlined>
+    <InputLabel htmlFor="component-outlined">{string("Name")}</InputLabel>
+    <OutlinedInput id="component-outlined" onChange={_=>Js.log("outlined input")} label="Name" />
+  </FormControl>
+  |> render
+  |> container
+  |> expect
+  |> toMatchSnapshot
+)
+
 test("Test Pagination component",() =>
-  <Pagination count={10} />
+  <Pagination 
+    count={10} 
+    renderItem={item => (
+      <PaginationItem
+        _type="first"
+        selected=true
+      />
+    )}
+  />
   |> render
   |> container
   |> expect
@@ -425,18 +658,18 @@ test("Test Rating component ",()=>
   |> toMatchSnapshot
 )
 
-// test("Test RootRef component",()=>
-//     <RootRef rootRef={React.createRef(<div></div>)}>
-//       <div >{string("Test rootref")}</div>
-//     </RootRef>
-//     |> render
-//     |> container
-//     |> expect
-//     |> toMatchSnapshot
-// )
+ /* test("Test RootRef component",()=>
+    <RootRef rootRef={React.useRef(Js.Nullable.null)}>
+      <div >{string("Test rootref")}</div>
+    </RootRef>
+     |> render
+     |> container
+     |> expect
+     |> toMatchSnapshot
+ ) */
 
 test("Test Skeleton component",()=> {
-    open Skeleton.Variant;
+    open Variant.Skeleton;
     <Container>
       
       <Skeleton variant=text />
@@ -464,7 +697,7 @@ test("Test slide component",()=>
 test("Test slider component",()=>
     <Slider
         defaultValue={30}
-        aria_labelledby="discrete-slider"
+        ariaLabelledby="discrete-slider"
         valueLabelDisplay="auto"
         step={10}
         min={10}
@@ -504,7 +737,7 @@ test("Test SpeedDial component",()=>
     <SpeedDial
         ariaLabel="SpeedDial openIcon example"
         hidden=false
-        icon={<SpeedDialIcon openIcon={<FavoriteIcon />} />}
+        icon={<SpeedDialIcon openIcon={<Icon.FavoriteIcon />} />}
         _open=true
       >
       </SpeedDial>
@@ -516,7 +749,7 @@ test("Test SpeedDial component",()=>
 
 test("Test SpeedDialAction component",()=>
     <SpeedDialAction
-      icon={<SpeedDialIcon openIcon={<FavoriteIcon />} />}
+      icon={<SpeedDialIcon openIcon={<Icon.FavoriteIcon />} />}
       tooltipTitle={<div>{string("Test Speed Action")}</div>}
       tooltipOpen=true
     />
@@ -530,6 +763,20 @@ test("Test Stepper component",()=>
   <Stepper activeStep={10} alternativeLabel=true>
       <Step>
         <StepLabel>{string("Test Step Label")}</StepLabel>
+      </Step>
+  </Stepper>
+  |> render
+  |> container
+  |> expect
+  |> toMatchSnapshot
+)
+
+test("Test StepperButton component",()=>
+  <Stepper nonLinear=true activeStep={3}>
+      <Step>
+        <StepButton>
+          {string("step button")}
+        </StepButton>
       </Step>
   </Stepper>
   |> render
@@ -586,6 +833,7 @@ test("Test tab component",()=>
 )
 
 test("Test Table component",()=>
+  <TableContainer>
     <Table>
       <TableBody>          
           <TableRow>
@@ -603,17 +851,18 @@ test("Test Table component",()=>
         <TableRow>
           <TablePagination
             count={10}
-            rowsPerPage={2}
-            page={2}
+            rowsPerPage={10}
+            page={0} 
             onChangePage={ (_,_) =>Js.log("on change page") }
           />
         </TableRow>
       </TableFooter>
     </Table>
-    |> render
-    |> container
-    |> expect
-    |> toMatchSnapshot
+  </TableContainer>
+  |> render
+  |> container
+  |> expect
+  |> toMatchSnapshot
 )
 
 test("Test textAreaAutoSize component",()=>
@@ -629,16 +878,16 @@ test("Test ToggleButton component",()=>
         onChange={_=>Js.log("toggle button")}
       >
       <ToggleButton value="left" >
-        <FavoriteIcon />
+        <Icon.FavoriteIcon />
       </ToggleButton>
       <ToggleButton value="center" >
-        <FavoriteIcon />
+        <Icon.FavoriteIcon />
       </ToggleButton>
       <ToggleButton value="right" >
-        <FavoriteIcon />
+        <Icon.FavoriteIcon />
       </ToggleButton>
       <ToggleButton value="justify">
-        <FavoriteIcon />
+        <Icon.FavoriteIcon />
       </ToggleButton>
     </ToggleButtonGroup>
     |> render
@@ -650,7 +899,7 @@ test("Test ToggleButton component",()=>
 test("Test Tooltip component",()=>
  <Tooltip title="Delete">
     <IconButton edge="start" color="inherit">
-      <RestoreIcon />
+      <Icon.RestoreIcon />
     </IconButton>
   </Tooltip>
   |> render
@@ -710,20 +959,31 @@ test("Test checkbox component",()=>
 
 test("Test card component",()=>
   <Card>
+    <CardHeader 
+          avatar={<Avatar alt="Remy Sharp" src="https://www.w3schools.com/howto/img_avatar2.png" />}
+          action=
+          {<IconButton>
+            <Icon.RestoreIcon />
+          </IconButton>}
+          title="Shrimp and Chorizo Paella"
+          subheader="September 14, 2016"
+          />
     <CardActionArea>
       <CardMedia
         component="img"
         image="https://animals.sandiegozoo.org/sites/default/files/2016-11/animals_hero_lizards.jpg"
-      />
-      <CardContent>
-        <Typography variant=Typography.Variant.h5 component="h2">
-          {string("Lizard")}
-        </Typography>
-        <Typography variant=Typography.Variant.body2 color="textSecondary" component="p">
-          {string("Lizards are a widespread group of squamate reptiles, with over 6,000 species, ranging
-          across all continents except Antarctica")}
-        </Typography>
-      </CardContent>
+      />      
+      <Collapse _in=true timeout="auto">  
+        <CardContent>
+          <Typography variant=Variant.Element.h5 component="h2">
+            {string("Lizard")}
+          </Typography>
+          <Typography variant=Variant.Element.body2 color="textSecondary" component="p">
+            {string("Lizards are a widespread group of squamate reptiles, with over 6,000 species, ranging
+            across all continents except Antarctica")}
+          </Typography>
+        </CardContent>
+      </Collapse>
     </CardActionArea>
     <CardActions>
       <Button size="small" color="primary">
