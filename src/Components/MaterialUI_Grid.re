@@ -21,6 +21,56 @@ external make:
   ) =>
   React.element = "default";
 
+module Container = {
+  [@react.component] [@bs.module "@material-ui/core/Grid"]
+  external make:
+  (
+    ~selectProps: 'a=?,
+    ~container: bool,
+    ~direction: FlexDirection.t=?, 
+    ~spacing: int=?,
+    ~wrap: string=?,
+    ~item: bool=?,
+    ~justify: Justify.t=?,
+    ~alignContent: AlignContent.t=?,
+    ~alignItems: AlignItems.t=?,
+    ~zeroMinWidth: bool=?,
+    ~xs: GridSize.t=?,
+    ~xl: GridSize.t=?,
+    ~sm: GridSize.t=?,
+    ~md: GridSize.t=?,
+    ~children: React.element=?
+  ) =>
+  React.element = "default";
+
+  let makeProps = makeProps(~container=true, ~item=false); /* This is to embed param */
+}
+
+module Item = {
+  [@react.component] [@bs.module "@material-ui/core/Grid"]
+  external make:
+  (
+    ~selectProps: 'a=?,
+    ~container: bool,
+    ~direction: FlexDirection.t=?, 
+    ~spacing: int=?,
+    ~wrap: string=?,
+    ~item: bool=?,
+    ~justify: Justify.t=?,
+    ~alignContent: AlignContent.t=?,
+    ~alignItems: AlignItems.t=?,
+    ~zeroMinWidth: bool=?,
+    ~xs: GridSize.t=?,
+    ~xl: GridSize.t=?,
+    ~sm: GridSize.t=?,
+    ~md: GridSize.t=?,
+    ~children: React.element=?
+  ) =>
+  React.element = "default";
+
+  let makeProps = makeProps(~item=true, ~container=false); /* This is to embed param */
+}
+
 module GridList = {
 [@react.component] [@bs.module "@material-ui/core/GridList"]
 external make:
