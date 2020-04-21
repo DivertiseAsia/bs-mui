@@ -222,18 +222,6 @@ module Variantx = {
     [@bs.inline] let static = "static";
   };
 
-  module Drawer :{
-    type t;
-    let permanent:t;
-    let persistent:t;
-    let temporary:t;
-  } = {
-    type t = string;
-    [@bs.inline] let permanent:t = "permanent";
-    [@bs.inline] let persistent:t = "persistent";
-    [@bs.inline] let temporary:t = "temporary";
-  };
-
   module Skeleton : { 
     type t;
     let text:t;
