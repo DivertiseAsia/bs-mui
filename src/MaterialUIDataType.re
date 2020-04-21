@@ -136,21 +136,43 @@ module Shape :{
   [@bs.inline] let square:t = "square";
 };
 
+module TypographyStyle : {
+  type t;
+  let h1:t;
+  let h2:t;
+  let h3:t;
+  let h4:t;
+  let h5:t;
+  let h6:t;
+  let subtitle1:t;
+  let subtitle2:t;
+  let body1:t;
+  let body2:t;
+  let caption:t;
+  let button:t;
+  let overline:t;
+  let srOnly:t;
+  let inherit_:t;
+} = {
+  type t = string;
+  let h1:t = "h1";
+  let h2:t = "h2";
+  let h3:t = "h3";
+  let h4:t = "h4";
+  let h5:t = "h5";
+  let h6:t = "h6";
+  let subtitle1:t = "subtitle1";
+  let subtitle2:t = "subtitle2";
+  let body1:t = "body1";
+  let body2:t = "body2";
+  let caption:t = "caption";
+  let button:t = "button";
+  let overline:t = "overline";
+  let srOnly:t = "srOnly";
+  let inherit_:t = "inherit";
+};
+
 module Variantx = {
-
-  
-
-  
-  
-  module Border : { 
-    type t;
-    let dot:t;
-    let standard:t;
-  } = {
-    type t = string;
-    [@bs.inline] let dot = "dot";
-    [@bs.inline] let standard = "standard";
-  };
   
   module Button : {
     type t;
@@ -174,41 +196,7 @@ module Variantx = {
     [@bs.inline] let outlined = "outlined";
   };
   
-  module Element : {
-    type t;
-    let h1:t;
-    let h2:t;
-    let h3:t;
-    let h4:t;
-    let h5:t;
-    let h6:t;
-    let subtitle1:t;
-    let subtitle2:t;
-    let body1:t;
-    let body2:t;
-    let caption:t;
-    let button:t;
-    let overline:t;
-    let srOnly:t;
-    let inherit_:t;
-  } = {
-    type t = string;
-    let h1:t = "h1";
-    let h2:t = "h2";
-    let h3:t = "h3";
-    let h4:t = "h4";
-    let h5:t = "h5";
-    let h6:t = "h6";
-    let subtitle1:t = "subtitle1";
-    let subtitle2:t = "subtitle2";
-    let body1:t = "body1";
-    let body2:t = "body2";
-    let caption:t = "caption";
-    let button:t = "button";
-    let overline:t = "overline";
-    let srOnly:t = "srOnly";
-    let inherit_:t = "inherit";
-  };
+  
 
   module Circular : {
     type t;
