@@ -172,20 +172,6 @@ module TypographyStyle : {
   let inherit_:t = "inherit";
 };
 
-module Variantx = {
-  
-  
-  
-  
-  
-  
-
-  
-
- 
-
-};
-
 module AlignContent : { 
   type t;
   let stretch:t;
