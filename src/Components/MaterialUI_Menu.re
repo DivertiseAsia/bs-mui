@@ -1,4 +1,12 @@
-open MaterialUIDataType;
+module Variant : { 
+  type t;
+  let menu:t;
+  let selectedMenu:t;
+} = {
+  type t = string;
+  [@bs.inline] let menu = "menu";
+  [@bs.inline] let selectedMenu = "selectedMenu";
+};
 
 [@react.component] [@bs.module "@material-ui/core/Menu"]
   external make:
@@ -19,7 +27,7 @@ open MaterialUIDataType;
       ~_open: bool,
       ~popoverClasses: string=?,
       ~transitionDuration: string=?,
-      ~variant: Variant.Field.t=?
+      ~variant: Variant.t=?
     ) =>
     React.element = "default";
 
@@ -45,7 +53,7 @@ external make:
     ~autoFocusItem: bool=?,
     ~children: React.element=?,
     ~disableListWrap: bool=?,
-    ~variant: Variant.Field.t=?
+    ~variant: Variant.t=?
     ) =>
     React.element = "default";
 };
