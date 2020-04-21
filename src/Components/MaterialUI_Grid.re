@@ -5,6 +5,7 @@ external make:
   (
     ~selectProps: 'a=?,
     ~container: bool=?,
+    ~direction: FlexDirection.t=?, 
     ~spacing: int=?,
     ~wrap: string=?,
     ~item: bool=?,

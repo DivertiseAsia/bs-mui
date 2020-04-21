@@ -321,3 +321,17 @@ type anchorOriginType = {
   vertical: HorizontalAnchor.t,
   horizontal: VerticalAnchor.t,
 };
+
+module FlexDirection : {
+  type t;
+  let row:t;
+  let column:t;
+  let reversedRow:t;
+  let reversedColumn:t;
+} = {
+  type t = string;
+  [@bs.inline] let row:t = "row";
+  [@bs.inline] let reversedRow:t = "row-reverse";
+  [@bs.inline] let column:t = "column";
+  [@bs.inline] let reversedColumn:t = "column-reverse";
+};
