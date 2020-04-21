@@ -114,18 +114,6 @@ module ButtonBaseType = {
 
 module Variant = {
 
-  module Field:{
-    type t;
-    let standard:t;
-    let outlined:t;
-    let filled:t;
-  } = {
-    type t = string;
-    [@bs.inline] let standard:t = "standard";
-    [@bs.inline] let outlined:t = "outlined";
-    [@bs.inline] let filled:t = "filled";
-  }
-
   module Shape :{
     type t;
     let circle:t;

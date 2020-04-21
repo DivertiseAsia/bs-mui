@@ -1,5 +1,17 @@
 open MaterialUIDataType;
 
+module Variant:{
+  type t;
+  let standard:t;
+  let outlined:t;
+  let filled:t;
+} = {
+  type t = string;
+  [@bs.inline] let standard:t = "standard";
+  [@bs.inline] let outlined:t = "outlined";
+  [@bs.inline] let filled:t = "filled";
+}
+
 [@react.component] [@bs.module "@material-ui/core/TextField"]
   external make:
     (
@@ -7,7 +19,7 @@ open MaterialUIDataType;
       ~label: string=?,
       ~name: string=?,
       ~helperText: string=?,
-      ~variant: Variant.Field.t=?,
+      ~variant: Variant.t=?,
       ~margin: string=?,
       ~required: bool=?,
       ~fullWidth: bool=?,

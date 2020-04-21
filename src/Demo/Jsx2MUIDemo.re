@@ -13,7 +13,7 @@ let make = () => {
           label="Helper text"
           defaultValue="Default Value"
           helperText="Some important text"
-          variant=Variant.Field.outlined
+          variant=TextField.Variant.outlined
         />
     <Button>(string("Jsx2Button"))</Button>
 

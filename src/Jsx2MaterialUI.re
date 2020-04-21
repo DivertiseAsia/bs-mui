@@ -344,6 +344,7 @@ module BottomNavigation {
 
 module TextField {
     open MaterialUI.TextField;
+    module Variant = Variant;
     let component = ReasonReact.statelessComponent("TextField");
 
     let make = (
