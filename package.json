@@ -8,7 +8,8 @@
     "server": "moduleserve ./ --port 8000",
     "setup-test": "npm install bs-platform bs-react-testing-library @glennsl/bs-jest bs-webapi bs-jest-dom",
     "test": "jest --testMatch='**/__tests__/*test.bs.js'",
-    "ci-test": "npm test -- --coverage --updateSnapshot"
+    "ci-test": "npm test -- --coverage --updateSnapshot",
+    "build-doc": "bsdoc build . && bsdoc support-files"
   },
   "keywords": [
     "BuckleScript",
@@ -40,6 +41,7 @@
     "bs-platform": "^7.3.1",
     "bs-react-testing-library": "^0.6.0",
     "bs-webapi": "^0.15.8",
+    "bsdoc": "^6.0.2-alpha",
     "moduleserve": "github:marijnh/moduleserve#7db414e"
   }
 }
