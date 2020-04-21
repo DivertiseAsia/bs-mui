@@ -35,7 +35,7 @@ let make = () => {
     </Stepper>
     <br />
     <Button 
-        variant=Variant.Button.contained 
+        variant=Button.Variant.contained 
         color="default"
         onClick=(_ => dispatch(ChangeStep(state.step - 1)))
         disabled=(state.step === 1)
@@ -43,7 +43,7 @@ let make = () => {
         {string("Back")}
     </Button>
     <Button 
-        variant=Variant.Button.contained 
+        variant=Button.Variant.contained 
         color="primary"
         onClick=(_ => dispatch(ChangeStep(state.step + 1)))
         disabled=(state.step >= 4)

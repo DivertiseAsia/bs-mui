@@ -27,7 +27,7 @@ let make = () => {
     <>
       <p>{string("Snackbar")}</p>
       <Button 
-        variant=Variant.Button.contained 
+        variant=Button.Variant.contained 
         color="primary"
         onClick=(_ => dispatch(ToggleSnackbar(!state.openSnackbar)))
       >

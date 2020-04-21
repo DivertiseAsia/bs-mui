@@ -26,7 +26,7 @@ let make = () => {
   <Jsx3LayoutComponent title="Modal" mainInfo> 
     <>
       <Button 
-        variant=Variant.Button.contained 
+        variant=Button.Variant.contained 
         color="primary"
         onClick=(_ => dispatch(ToggleModal(true)))
       >

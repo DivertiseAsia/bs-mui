@@ -7,7 +7,7 @@ let make = () => {
   let (menuRef, setMenuRef) = React.useState(()=>Js.Nullable.null);
   let menuButton = 
     <ClickAwayListener onClickAway={_=>setMenuRef(_=>Js.Nullable.null)}>
-        <Button variant=Variant.Button.contained color="default" onClick={evt=>{
+        <Button variant=Button.Variant.contained color="default" onClick={evt=>{
           setMenuRef(_=>Js.Nullable.return(ReactEvent.Synthetic.target(evt)))
         }}>
           {string("Open menu dropdown")}

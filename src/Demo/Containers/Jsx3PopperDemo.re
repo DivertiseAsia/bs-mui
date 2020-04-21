@@ -11,7 +11,7 @@ let make = () => {
     <> 
       <ClickAwayListener onClickAway={_=>setAnchorEl(_=>Js.Nullable.null)}>
         <Button 
-          variant=Variant.Button.contained 
+          variant=Button.Variant.contained 
           color="default" 
           onClick=(evt=>{
             setAnchorEl(_=>Js.Nullable.return(ReactEvent.Synthetic.target(evt)))

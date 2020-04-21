@@ -105,7 +105,7 @@ test("Test appbar component",()=>
   <AppBar position="static">
     <Toolbar>
       <IconButton edge="start" color="inherit" />
-      <Typography variant=Variant.Element.h6>
+      <Typography variant=Typography.Variant.h6>
         {string("News")}
       </Typography>
     </Toolbar>
@@ -173,7 +173,7 @@ test("Test BottomNavigation component",()=>
 )
 
 test("Test BottomGroup component",()=>
-  <ButtonGroup variant=Variant.Button.contained color="primary">
+  <ButtonGroup variant=Button.Variant.contained color="primary">
     <Button>{string("One")}</Button>
     <Button>{string("Two")}</Button>
     <Button>{string("Three")}</Button>
@@ -289,7 +289,7 @@ test("Test Fab component",()=>
 )
 
 test("Test FilledInput component",()=>
-  <FormControl variant=Variant.Field.filled>
+  <FormControl variant=Variant.filled>
       <FilledInput
         id="filled-adornment-weight"
         value="weight"
@@ -556,7 +556,7 @@ test("Test NoSsr component",()=>
 )
 
 test("Test OutlinedInput component",()=>
-  <FormControl variant=Variant.Field.outlined>
+  <FormControl variant=Variant.outlined>
     <InputLabel htmlFor="component-outlined">{string("Name")}</InputLabel>
     <OutlinedInput id="component-outlined" onChange={_=>Js.log("outlined input")} label="Name" />
   </FormControl>
@@ -669,7 +669,7 @@ test("Test Rating component ",()=>
  ) */
 
 test("Test Skeleton component",()=> {
-    open Variant.Skeleton;
+    open Skeleton.Variant;
     <Container>
       
       <Skeleton variant=text />
@@ -975,10 +975,10 @@ test("Test card component",()=>
       />      
       <Collapse _in=true timeout="auto">  
         <CardContent>
-          <Typography variant=Variant.Element.h5 component="h2">
+          <Typography variant=Typography.Variant.h5 component="h2">
             {string("Lizard")}
           </Typography>
-          <Typography variant=Variant.Element.body2 color="textSecondary" component="p">
+          <Typography variant=Typography.Variant.body2 color="textSecondary" component="p">
             {string("Lizards are a widespread group of squamate reptiles, with over 6,000 species, ranging
             across all continents except Antarctica")}
           </Typography>

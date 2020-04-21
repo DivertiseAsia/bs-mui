@@ -22,7 +22,7 @@ let make = () => {
   <Jsx3LayoutComponent title="Portal" mainInfo> 
     <>
       <Button 
-        variant=Variant.Button.contained 
+        variant=Button.Variant.contained 
         color="default" 
         onClick=(_ => handleClick())
       >

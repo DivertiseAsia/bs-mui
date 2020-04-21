@@ -17,7 +17,7 @@ let make = () => {
         />
     <Button>(string("Jsx2Button"))</Button>
 
-    <FormControl variant=Variant.Field.outlined>
+    <FormControl variant=Variant.outlined>
       <InputLabel id="demo-simple-select-outlined-label">
         (string("Age"))
       </InputLabel>

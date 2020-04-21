@@ -13,10 +13,10 @@ let make = () => {
           image="https://animals.sandiegozoo.org/sites/default/files/2016-11/animals_hero_lizards.jpg"
         />
         <CardContent>
-          <Typography variant=Variant.Element.h5 component="h2">
+          <Typography variant=Typography.Variant.h5 component="h2">
             {string("Lizard")}
           </Typography>
-          <Typography variant=Variant.Element.body2 color="textSecondary" component="p">
+          <Typography variant=Typography.Variant.body2 color="textSecondary" component="p">
             {string("Lizards are a widespread group of squamate reptiles, with over 6,000 species, ranging
             across all continents except Antarctica")}
           </Typography>

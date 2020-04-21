@@ -51,7 +51,7 @@ let make = () => {
   <Jsx3LayoutComponent title="Popover" mainInfo>  
     <ClickAwayListener onClickAway={_=>setAnchorEl(_=>Js.Nullable.null)}>
         <Button 
-          variant=Variant.Button.contained 
+          variant=Button.Variant.contained 
           color="default" 
           onClick=(evt=>{
             setAnchorEl(_=>Js.Nullable.return(ReactEvent.Synthetic.target(evt)))

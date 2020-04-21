@@ -31,7 +31,7 @@ let make = () => {
       anchors |> List.map(anchor => {
         <React.Fragment key=("key-drawer" ++ anchor)>
         <Button 
-          variant=Variant.Button.contained 
+          variant=Button.Variant.contained 
           color="primary"
           onClick=(_ => dispatch(ToggleDrawer(anchor)))
         >

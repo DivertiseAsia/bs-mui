@@ -45,7 +45,7 @@ let make = () => {
   <Jsx3LayoutComponent title="Backdrop" mainInfo subInfo> 
     <> 
       <Button 
-        variant=Variant.Button.contained 
+        variant=Button.Variant.contained 
         color="primary"
         onClick=(_ => dispatch(ControlBackdrop(!state.openBackdrop)))
       >
