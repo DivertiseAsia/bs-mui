@@ -124,21 +124,23 @@ module Variant:{
   [@bs.inline] let filled:t = "filled";
 }
 
+module Shape :{
+  type t;
+  let circle:t;
+  let rounded:t;
+  let square:t;
+} = {
+  type t = string;
+  [@bs.inline] let circle:t = "circle";
+  [@bs.inline] let rounded:t = "rounded";
+  [@bs.inline] let square:t = "square";
+};
+
 module Variantx = {
 
   
 
-  module Shape :{
-    type t;
-    let circle:t;
-    let rounded:t;
-    let square:t;
-  } = {
-    type t = string;
-    [@bs.inline] let circle:t = "circle";
-    [@bs.inline] let rounded:t = "rounded";
-    [@bs.inline] let square:t = "square";
-  };
+  
   
   module Border : { 
     type t;

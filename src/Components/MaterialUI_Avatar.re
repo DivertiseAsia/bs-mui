@@ -1,5 +1,5 @@
 
-open MaterialUIDataType;
+module Variant = MaterialUIDataType.Shape;
 
 [@react.component] [@bs.module "@material-ui/core/Avatar"]
   external make:
@@ -13,7 +13,7 @@ open MaterialUIDataType;
       ~sizes: string=?,
       ~src: string=?,
       ~srcSet: string=?,
-      ~variant: Variant.Shape.t=?
+      ~variant: Variant.t=?
     ) =>
     React.element =
     "default";
