@@ -1,4 +1,12 @@
-open MaterialUIDataType;
+module Variant:{
+  type t;
+  let elevation:t;
+  let outlined:t;
+} = {
+  type t = string;
+  [@bs.inline] let elevation:t = "elevation";
+  [@bs.inline] let outlined:t = "outlined";
+}
 
 [@react.component] [@bs.module "@material-ui/core/Paper"]
   external make:
@@ -8,7 +16,7 @@ open MaterialUIDataType;
       ~children: React.element=?,
       ~elevation: int=?,
       ~square: bool=?,
-      ~variant: Variant.Field.t=?
+      ~variant: Variant.t=?
     ) =>
     React.element =
     "default";
