@@ -35,11 +35,11 @@
     "reason-react": ">=0.7.0"
   },
   "devDependencies": {
+    "@divertiseasia/moduleserve": "^0.9.2-alpha.1",
     "@glennsl/bs-jest": "^0.5.0",
     "bs-jest-dom": "^2.0.1",
     "bs-platform": "^7.3.1",
     "bs-react-testing-library": "^0.6.0",
-    "bs-webapi": "^0.15.8",
-    "moduleserve": "github:marijnh/moduleserve#7db414e"
+    "bs-webapi": "^0.15.8"
   }
 }
