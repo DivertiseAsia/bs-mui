@@ -119,10 +119,10 @@ test("Test appbar component",()=>
 test("Test autoComplete component", () =>
   <Autocomplete
     id="autocomplete"
-    options= [
+    options= [|
       { "title": "The Shawshank Redemption", "year": 1994 },
       { "title": "The Godfathe", "year": 1972 },
-      { "title": "The Dark Knight", "year": 2008 }]
+      { "title": "The Dark Knight", "year": 2008 }|]
     renderInput = { _params => <TextField label="Combo box" variant=TextField.Variant.outlined />}
     ></Autocomplete>
     |> render

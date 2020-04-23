@@ -6,7 +6,7 @@ open MaterialUIDataType;
 let make = () => {
   let mainInfo = "The Material Design responsive layout grid adapts to screen size and orientation, ensuring consistency across layouts.";
   <Jsx3LayoutComponent title="Grid" mainInfo> 
-    <Grid container=true spacing={3}>
+    <Grid.Container spacing={3}>
       <Divider orientation="vertical" flexItem=true />
       <Grid item=true xs=GridSize.size(12)>
         <Paper >{string("xs=12")}</Paper>
@@ -24,6 +24,6 @@ let make = () => {
       <Grid item=true xs=GridSize.true_>
         <Paper >{string("xs=true_")}</Paper>
       </Grid>
-    </Grid>
+    </Grid.Container>
   </Jsx3LayoutComponent>;
 };
