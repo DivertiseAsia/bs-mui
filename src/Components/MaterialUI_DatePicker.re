@@ -8,9 +8,9 @@ module DateView = {
 };  
 
 [@bs.deriving abstract]
-type props('parsableDate, 'dateType, 'errorType, 'componentType, 'toolbarTitleType, 'props) = {
-    value: 'parsableDate,
-    onChange: ('dateType, option(string)) => unit,
+type props('errorType, 'componentType, 'toolbarTitleType, 'props) = {
+    value: Js.Date.t,
+    onChange: Js.Date.t => unit,
     [@bs.optional] allowKeyboardControl: bool,
     [@bs.optional] animateYearScrolling: bool,
     [@bs.optional] autoOk: bool,
@@ -20,38 +20,38 @@ type props('parsableDate, 'dateType, 'errorType, 'componentType, 'toolbarTitleTy
     [@bs.optional] disabledToolbar: bool,
     [@bs.optional] emptyLabel: string,
     [@bs.optional] format: string,
-    [@bs.optional] initialFocusedDate: 'parsableDate,
+    [@bs.optional] initialFocusedDate: Js.Date.t,
     [@bs.optional] inputVariant: Variant.t,
     [@bs.optional] invalidDateMessage: React.element,
     [@bs.optional] invalidLabel: string,
-    [@bs.optional] labelFunc: ('dateType, string) => string,
+    [@bs.optional] labelFunc: (Js.Date.t, string) => string,
     [@bs.optional] leftArrowIcon: React.element,
     /* [@bs.optional] leftArrowButtonPropsPartial: IconButton.props */
     [@bs.optional] loadingIndicator: React.element,
     [@bs.optional] readOnly: bool,
-    [@bs.optional] renderDay: ('dateType, 'dateType, bool, React.element) => React.element,
+    [@bs.optional] renderDay: (Js.Date.t, Js.Date.t, bool, React.element) => React.element,
     [@bs.optional] rightArrowIcon: React.element,
     /* [@bs.optional] rightArrowButtonPropsPartial: IconButton.props */
 
-    [@bs.optional] onAccept: 'dateType => unit,
+    [@bs.optional] onAccept: Js.Date.t => unit,
     [@bs.optional] onError: 'errorType => unit,
     [@bs.optional] onOpen: unit => unit,
     [@bs.optional] onClose: unit => unit,
-    [@bs.optional] onMonthChange: 'dateType => unit,
-    [@bs.optional] onYearChange: 'dateType => unit,
+    [@bs.optional] onMonthChange: Js.Date.t => unit,
+    [@bs.optional] onYearChange: Js.Date.t => unit,
     
     [@bs.optional] _open: bool,
     [@bs.optional] openTo: DateView.t,
     [@bs.optional] showToolbar: bool,
     [@bs.optional] orientation: Orientation.t,
-    [@bs.optional] _ToolbarComponent: 'componentType,
-    [@bs.optional] _TextFieldComponent: 'componentType,
+    [@bs.optional] bsnameToolbarComponent: 'componentType,
+    [@bs.optional] bsnameTextFieldComponent: 'componentType,
     [@bs.optional] toolbarTitle: 'toolbarTitleType,
     [@bs.optional] views: array(DateView.t),
-    [@bs.optional] _PopoverProps: Js.t('props),
+    [@bs.optional] bsnamePopoverProps: Js.t('props),
 
-    [@bs.optional] minDate: 'dateType,
-    [@bs.optional] maxDate: 'dateType,
+    [@bs.optional] minDate: Js.Date.t,
+    [@bs.optional] maxDate: Js.Date.t,
     [@bs.optional] minDateMessage: string,
     [@bs.optional] maxDateMessage: string,
 
@@ -66,11 +66,9 @@ type props('parsableDate, 'dateType, 'errorType, 'componentType, 'toolbarTitleTy
 
 let makeProps = props;
 
-[@bs.module "@material-ui/pickers/DatePicker"]
+[@bs.module "@material-ui/pickers"]
 external make:(props(
-    'parsableDate, 
-    'dateType, 
     'errorType, 
     'toolbarComponentType, 
     'toolbarTitleType,
-    'props)) => React.element = "default";
+    'props)) => React.element = "DatePicker";

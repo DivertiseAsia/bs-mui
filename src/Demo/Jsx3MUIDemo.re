@@ -37,6 +37,7 @@ let make = () => {
   /* <Container id="container-id" className={classes->Js.Dict.unsafeGet("root")}> */
   <Container id="container-id" >
     <Jsx3TextFieldDemo />
+    <Jsx3DatePickerDemo />
     /* <Container id="container-button">
       <FormLabel> {string("Button")} </FormLabel>
       <Button> {string("Button")} </Button>
