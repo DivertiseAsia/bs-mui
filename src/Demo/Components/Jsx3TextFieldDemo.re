@@ -14,8 +14,8 @@ let make = () => {
         label="Search input" 
         margin="normal" 
         variant=Variant.outlined
-        oInputProps=(params->get("InputProps"))
-        oInputLabelProps=(params->get("InputLabelProps"))
+        bsnameInputProps=(params->get("InputProps"))
+        bsnameInputLabelProps=(params->get("InputLabelProps"))
         inputProps=params##inputProps
         disabled=params##disabled
         fullWidth=params##fullWidth
