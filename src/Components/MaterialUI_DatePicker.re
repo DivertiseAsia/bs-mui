@@ -44,11 +44,11 @@ type props('errorType, 'componentType, 'toolbarTitleType, 'props) = {
     [@bs.optional] openTo: DateView.t,
     [@bs.optional] showToolbar: bool,
     [@bs.optional] orientation: Orientation.t,
-    [@bs.optional] bsnameToolbarComponent: 'componentType,
-    [@bs.optional] bsnameTextFieldComponent: 'componentType,
+    [@bs.optional][@bs.as "ToolbarComponent"] bsnameToolbarComponent: 'componentType,
+    [@bs.optional][@bs.as "TextFieldComponent"] bsnameTextFieldComponent: 'componentType,
     [@bs.optional] toolbarTitle: 'toolbarTitleType,
     [@bs.optional] views: array(DateView.t),
-    [@bs.optional] bsnamePopoverProps: Js.t('props),
+    [@bs.optional][@bs.as "PopoverProps"] bsnamePopoverProps: Js.t('props),
 
     [@bs.optional] minDate: Js.Date.t,
     [@bs.optional] maxDate: Js.Date.t,
@@ -61,7 +61,7 @@ type props('errorType, 'componentType, 'toolbarTitleType, 'props) = {
     [@bs.optional] todayLabel: React.element,
     [@bs.optional] clearable: bool,
     [@bs.optional] showTodayButton: bool,
-    [@bs.optional] _DiaglogProp: Js.t('props)
+    [@bs.optional][@bs.as "DiaglogProp"] bsnameDiaglogProp: Js.t('props)
 };
 
 let makeProps = props;
