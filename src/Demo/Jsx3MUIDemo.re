@@ -36,6 +36,7 @@ let make = () => {
   <div>(string("Jsx3"))</div>
   /* <Container id="container-id" className={classes->Js.Dict.unsafeGet("root")}> */
   <Container id="container-id" >
+    <Jsx3TabsDemo />
     <Jsx3TextFieldDemo />
     <Jsx3DatePickerDemo />
     /* <Container id="container-button">
