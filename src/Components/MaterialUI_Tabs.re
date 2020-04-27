@@ -19,13 +19,13 @@ module Variant:{
       ~classes: string=?,
       ~component: string=?,
       ~indicatorColor: string=?,
-      ~onChange: unit=>unit=?,
+      ~onChange: (Js.t('event), 'value) => unit=?,
       ~orientation: string=?,
       ~scrollButtonComponent: string=?,
       ~scrollButtons: string=?,
-      ~tabIndicatorProps: Js.t('a)=?,
+      ~tabIndicatorProps: Js.t('c)=?,
       ~textColor: string=?,
-      ~value: 'a=?,
+      ~value: 'value=?,
       ~variant: Variant.t=?
     ) =>
     React.element =

@@ -9,7 +9,8 @@
       ~icon: React.element=?,
       ~label: string=?,
       ~value: 'b=?,
-      ~wrapped: bool=?
+      ~wrapped: bool=?,
+      ~id: string=?
     ) =>
     React.element =
     "default";
