@@ -72,3 +72,15 @@ external make:(props(
     'toolbarComponentType, 
     'toolbarTitleType,
     'props)) => React.element = "DatePicker";
+
+
+module Typeable = {
+    /** TODO: ตรงนี้ยังไม่เสร็จ ต้องกำหนด type ของ DatePicker.Typable (KeyboardDatePicker) */
+
+    [@bs.module "@material-ui/pickers"]
+    external make:(props(
+        'errorType, 
+        'toolbarComponentType, 
+        'toolbarTitleType,
+        'props)) => React.element = "KeyboardDatePicker";
+}
