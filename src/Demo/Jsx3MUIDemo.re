@@ -39,6 +39,7 @@ let make = () => {
     <Jsx3TabsDemo />
     <Jsx3TextFieldDemo />
     <Jsx3DatePickerDemo />
+    <Jsx3KeyboardDatePickerDemo />
     /* <Container id="container-button">
       <FormLabel> {string("Button")} </FormLabel>
       <Button> {string("Button")} </Button>
