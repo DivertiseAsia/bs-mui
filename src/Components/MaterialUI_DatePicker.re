@@ -64,8 +64,16 @@ type props('errorType, 'componentType, 'toolbarTitleType, 'props) = {
     [@bs.optional][@bs.as "DiaglogProp"] bsnameDiaglogProp: Js.t('props)
 };
 
-[@bs.deriving abstract]
-type propsKeyboard('errorType, 'componentType, 'toolbarTitleType, 'props) = {
+[@bs.module "@material-ui/pickers"]
+external make:(props(
+    'errorType, 
+    'toolbarComponentType, 
+    'toolbarTitleType,
+    'props)) => React.element = "DatePicker";
+
+module Typeable = { 
+    [@bs.deriving abstract]
+    type propsKeyboard('errorType, 'componentType, 'toolbarTitleType, 'props) = {
     value: Js.Date.t,
     onChange: Js.Date.t => unit,
     [@bs.optional] allowKeyboardControl: bool,
@@ -132,26 +140,13 @@ type propsKeyboard('errorType, 'componentType, 'toolbarTitleType, 'props) = {
     [@bs.optional] clearable: bool,
     [@bs.optional] showTodayButton: bool,
     [@bs.optional][@bs.as "DiaglogProp"] bsnameDiaglogProp: Js.t('props)
-};
-
-module Typeable = {
-    module DatePicker = {    
-        let makeProps = props;
-        [@bs.module "@material-ui/pickers"]
-        external make:(props(
-            'errorType, 
-            'toolbarComponentType, 
-            'toolbarTitleType,
-            'props)) => React.element = "DatePicker";
-    }
-
-    module KeyboardDatePicker = {
-        let makeProps = propsKeyboard;
-        [@bs.module "@material-ui/pickers"]
-        external make:(propsKeyboard(
-            'errorType, 
-            'toolbarComponentType, 
-            'toolbarTitleType,
-            'props)) => React.element = "KeyboardDatePicker";
-    }
+    };
+  
+    let makeProps = propsKeyboard;
+    [@bs.module "@material-ui/pickers"]
+    external make:(propsKeyboard(
+        'errorType, 
+        'toolbarComponentType, 
+        'toolbarTitleType,
+        'props)) => React.element = "KeyboardDatePicker";
 }

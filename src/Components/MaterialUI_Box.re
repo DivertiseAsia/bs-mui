@@ -7,6 +7,8 @@
       ~p: int=?,
       ~m: int=?,
       ~mt: int=?,
+      ~className: string=?,
+      ~id: string=?,
       ~children: React.element
     ) =>
     React.element =
