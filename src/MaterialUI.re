@@ -141,6 +141,7 @@ module TableSortLabel = MaterialUI_Table.TableSortLabel;
 module Tabs = MaterialUI_Tabs;
 module TextareaAutosize = MaterialUI_TextareaAutosize;
 module TextField = MaterialUI_TextField;
+module TimePicker = MaterialUI_TimePicker;
 module ToggleButton = MaterialUI_ToggleButton;
 module ToggleButtonGroup = MaterialUI_ToggleButton.ToggleButtonGroup;
 module Toolbar = MaterialUI_Toolbar;
