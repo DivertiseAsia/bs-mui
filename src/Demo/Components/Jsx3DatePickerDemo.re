@@ -18,8 +18,7 @@ let make = () => {
                 value=selectedDate
                 format="DD-MM-YYYY"
                 showTodayButton=true
-                views=[|DatePicker.DateView.date|]
-                bsnameToolbarComponent={<TextField/>}
+                views=[|MaterialUI_DatePicker.DateView.date|]
                 />
             </Picker.UtilsProvider>
         </Grid.Item>
