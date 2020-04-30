@@ -38,7 +38,7 @@ open MaterialUIDataType;
       ~loadingText: React.element=?,
       ~multiple: bool=?,
       ~noOptionsText: React.element=?,
-      ~onChange: ('evt, 'option, string)=>unit=?,
+      ~onChange: ('evt, option('option), string)=>unit=?,
       ~onClose: ('evt, string)=>unit=?,
       ~onInputChange: ('evt, 'option, string)=>unit=?,
       ~onOpen: 'evt=>unit=?,

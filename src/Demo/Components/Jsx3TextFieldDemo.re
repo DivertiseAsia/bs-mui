@@ -34,7 +34,16 @@ let make = () => {
             </Grid.Item>
             <Grid.Container>
                 <Grid.Item xs=GridSize.size(12)>
-                    <Autocomplete freeSolo=true options=(listOfData |> Array.of_list) renderInput/>
+                    <Autocomplete 
+                    freeSolo=true 
+                    options=(listOfData |> Array.of_list) 
+                    onChange={(evt, maybeData, reason) => 
+                        switch(maybeData){
+                        | Some(data) => Js.log2("Select Something", data)
+                        | None => Js.log2("Select Nothing")
+                        }
+                    }
+                    renderInput/>
                 </Grid.Item>
             </Grid.Container>
         </Grid.Container>
