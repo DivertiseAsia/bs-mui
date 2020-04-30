@@ -64,6 +64,8 @@ type props('errorType, 'componentType, 'toolbarTitleType, 'props) = {
     [@bs.optional][@bs.as "DiaglogProp"] bsnameDiaglogProp: Js.t('props)
 };
 
+let makeProps = props;
+
 [@bs.module "@material-ui/pickers"]
 external make:(props(
     'errorType, 
@@ -75,7 +77,7 @@ module Typeable = {
     [@bs.deriving abstract]
     type propsKeyboard('errorType, 'componentType, 'toolbarTitleType, 'props) = {
     value: Js.Date.t,
-    onChange: Js.Date.t => unit,
+    onChange: (Js.Date.t, string) => unit,
     [@bs.optional] allowKeyboardControl: bool,
     [@bs.optional] animateYearScrolling: bool,
     [@bs.optional] autoOk: bool,
@@ -100,6 +102,7 @@ module Typeable = {
     [@bs.optional] loadingIndicator: React.element,
     [@bs.optional] mask: string,
     [@bs.optional] maskChar: string,
+    [@bs.optional] placeHolder: string,
     [@bs.optional] readOnly: bool,
     [@bs.optional] refuse: string,
     [@bs.optional] renderDay: (Js.Date.t, Js.Date.t, bool, React.element) => React.element,

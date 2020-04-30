@@ -13,13 +13,20 @@ let make = () => {
     <Container id="keyboarddatepicker-field">
         <Grid.Item xs=GridSize.size(12)>
             <Picker.UtilsProvider utils=Picker.moment>
-                <KeyboardDatePicker
-                  onChange={newDate=>handleDateChange(_oldDate => newDate)} 
+                <DatePicker.Typeable
+                  onChange={(newDate, value)=>handleDateChange(oldDate => {
+                    if (Obj.magic(newDate)##isValid()){
+                      newDate
+                    } else {
+                      Js.log3("invalid>", newDate, oldDate)
+                      oldDate
+                    }
+                  })} 
                   value=selectedDate
                   format="DD-MM-YYYY"
                   showTodayButton=true
                   views=[|MaterialUI_DatePicker.DateView.date|]
-                  bsnameToolbarComponent={<TextField/>}
+                  bsnameToolbarComponent={TextField.make}
                 />
             </Picker.UtilsProvider>
         </Grid.Item>
