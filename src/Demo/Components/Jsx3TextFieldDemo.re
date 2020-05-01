@@ -3,9 +3,14 @@ open MaterialUI.DataType;
 
 [@bs.get_index] external get: ('a, string) => 'b = "";
 
+type sampleObj = {
+  id: string,
+  label: string,
+};
+
 [@react.component]
 let make = () => {
-  let listOfData = ["hello","yes", "abkjsdfhsdkjfhsdjkfss", "goodbye"];
+  let listOfData = [{id:"1", label:"hello"},{id:"2", label:"yes"},{id:"3", label:"abkjsdfhsdkjfhsdjkfss"},{id:"4", label:"goodbye"}];
   let mainInfo = "TextField Demo";
   let renderInput = (params) => {
       Js.log2("render", params);
@@ -37,6 +42,7 @@ let make = () => {
                     <Autocomplete 
                     freeSolo=true 
                     options=(listOfData |> Array.of_list) 
+                    getOptionLabel=((s:sampleObj) => s.label)
                     onChange={(evt, maybeData, reason) => 
                         switch(maybeData){
                         | Some(data) => Js.log2("Select Something", data)
