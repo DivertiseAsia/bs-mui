@@ -40,7 +40,7 @@ let make = () => {
                     onChange={(evt, maybeData, reason) => 
                         switch(maybeData){
                         | Some(data) => Js.log2("Select Something", data)
-                        | None => Js.log2("Select Nothing")
+                        | None => Js.log("Select Nothing")
                         }
                     }
                     renderInput/>
