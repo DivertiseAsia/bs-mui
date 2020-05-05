@@ -37,7 +37,7 @@ let make = () => {
         >
           {string(anchor)}
         </Button>
-        <Drawer anchor _open={state.openDrawer === anchor} onClose=(_ => dispatch(ToggleDrawer("")))>
+        <Drawer anchor=Drawer.Anchor.left _open={state.openDrawer === anchor} onClose=(_ => dispatch(ToggleDrawer("")))>
           <Typography>
             <Container>
             {string("Drawer " ++ anchor)}
