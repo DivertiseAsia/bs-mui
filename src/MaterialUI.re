@@ -49,6 +49,7 @@ module ClickAwayListener = MaterialUI_ClickAwayListener;
 module Collapse = MaterialUI_Collapse;
 module Container = MaterialUI_Container;
 module CssBaseline = MaterialUI_CssBaseline;
+module DateTimePicker = MaterialUI_DateTimePicker;
 module DatePicker = MaterialUI_DatePicker;
 module Dialog = MaterialUI_Dialog;
 module DialogActions = MaterialUI_Dialog.DialogActions;
