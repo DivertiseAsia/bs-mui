@@ -263,3 +263,19 @@ module FlexDirection : {
   [@bs.inline] let column:t = "column";
   [@bs.inline] let reversedColumn:t = "column-reverse";
 };
+
+module ScreenSize : {
+  type t;
+  let xs:t;
+  let sm:t;
+  let md:t;
+  let lg:t;
+  let xl:t;
+} = {
+  type t = string;
+  [@bs.inline] let xs:t = "xs";
+  [@bs.inline] let sm:t = "sm";
+  [@bs.inline] let md:t = "md";
+  [@bs.inline] let lg:t = "lg";
+  [@bs.inline] let xl:t = "xl";
+};
