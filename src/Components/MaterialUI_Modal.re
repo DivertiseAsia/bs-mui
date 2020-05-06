@@ -6,6 +6,8 @@
       ~children : React.element,
       ~closeAfterTransition: bool=?,
       ~container: 'a=?,
+      ~className: string=?,
+      ~id: string=?,
       ~disableAutoFocus: bool=?,
       ~disableBackdropClick: bool=?,
       ~disableEnforceFocus: bool=?,
