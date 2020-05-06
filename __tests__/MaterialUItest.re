@@ -999,3 +999,32 @@ test("Test card component",()=>
   |> expect
   |> toMatchSnapshot
 )
+
+test("test date picker",()=>{
+  let mainInfo = "DatePicker Demo";
+  let (selectedDate, handleDateChange) = React.useState(() => Js.Date.make());
+
+  <Jsx3LayoutComponent title="DatePicker" mainInfo> 
+    <> 
+    <Container id="datepicker-field">
+        <Grid.Item xs=GridSize.size(12)>
+            <Picker.UtilsProvider utils=Picker.moment>
+                <DatePicker 
+                onChange={newDate=>handleDateChange(_oldDate => newDate)} 
+                value=selectedDate
+                format="DD-MM-YYYY"
+                showTodayButton=true
+                views=[|MaterialUI_DatePicker.DateView.date|]
+                bsnameToolbarComponent={<TextField/>}
+                />
+            </Picker.UtilsProvider>
+        </Grid.Item>
+    </Container>    
+    </>
+  </Jsx3LayoutComponent>;
+  }
+  |> render
+  |> container
+  |> expect
+  |> toMatchSnapshot
+)
