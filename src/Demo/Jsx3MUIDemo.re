@@ -76,7 +76,10 @@ let make = () => {
     | ["container","modal"] => <Jsx3ModalDemo />
     | ["container","popover"] => <Jsx3PopoverDemo />
     | ["container","popper"] => <Jsx3PopperDemo />
-    | [] => <Jsx3BackdropDemo />
+    | ["container","radio"] => <Jsx3RadioDemo />
+    | ["container","snackbar"] => <Jsx3SnackbarDemo />
+    | ["container","stepper"] => <Jsx3StepperDemo />
+    | ["container","tabs"] => <Jsx3TabsDemo />
     | _ => <Jsx3BackdropDemo />
   };
     
