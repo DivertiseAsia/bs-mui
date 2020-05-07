@@ -71,6 +71,11 @@ let make = () => {
     | ["component","text-field"] => <Jsx3TextFieldDemo />
     | ["component","time-picker"] => <Jsx3TimePickerDemo />
     | ["container","backdrop"] => <Jsx3BackdropDemo />
+    | ["container","checkbox"] => <Jsx3CheckboxDemo />
+    | ["container","drawer"] => <Jsx3DrawerDemo />
+    | ["container","modal"] => <Jsx3ModalDemo />
+    | ["container","popover"] => <Jsx3PopoverDemo />
+    | ["container","popper"] => <Jsx3PopperDemo />
     | [] => <Jsx3BackdropDemo />
     | _ => <Jsx3BackdropDemo />
   };
