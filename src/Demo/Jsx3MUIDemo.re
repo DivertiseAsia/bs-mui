@@ -43,7 +43,6 @@ type action =
 [@react.component]
 let make = () => {
   let url = ReasonReactRouter.useUrl();
-  Js.log(url.path);
   switch(url.path){
     | ["component","badge"] => <Jsx3BadgeDemo />
     | ["component","bottom-navigation"] => <Jsx3BottomNavigationDemo />
@@ -61,6 +60,11 @@ let make = () => {
     | ["component","keyboard-date-picker"] => <Jsx3KeyboardDatePickerDemo />
     | ["component","keyboard-date-time-picker"] => <Jsx3KeyboardDateTimePickerDemo />
     | ["component","keyboard-time-picker"] => <Jsx3KeyboardTimePickerDemo />
+    | ["component","menu"] => <Jsx3MenuDemo />
+    | ["component","no-ssr"] => <Jsx3NoSsrDemo />
+    | ["component","pagination"] => <Jsx3PaginationDemo />
+    | ["component","portal"] => <Jsx3PortalDemo />
+    | ["component","rating"] => <Jsx3RatingDemo />
     | ["container","backdrop"] => <Jsx3BackdropDemo />
     | [] => <Jsx3BackdropDemo />
     | _ => <Jsx3BackdropDemo />

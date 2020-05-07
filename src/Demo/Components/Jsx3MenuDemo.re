@@ -15,6 +15,7 @@ let make = () => {
     </ClickAwayListener>;
     
   let mainInfo = "Menus display a list of choices on temporary surfaces.";
+  let demoCode =
   <Jsx3LayoutComponent title="Menu" mainInfo> 
     menuButton
     <Menu
@@ -26,4 +27,28 @@ let make = () => {
       <MenuItem>{string("Logout")}</MenuItem>
     </Menu>
   </Jsx3LayoutComponent>;
+
+  let demoCodeString =
+  "<Jsx3LayoutComponent title='Menu' mainInfo> 
+    menuButton
+    <Menu
+      anchorEl=menuRef
+      _open=(!Js.Nullable.isNullable(menuRef))
+    >
+      <MenuItem>{string('Profile')}</MenuItem>
+      <MenuItem>{string('My account')}</MenuItem>
+      <MenuItem>{string('Logout')}</MenuItem>
+    </Menu>
+  </Jsx3LayoutComponent>";
+  
+  <>
+  demoCode
+  <blockquote>
+    <pre>
+      <code>
+      {ReasonReact.string(demoCodeString)}
+      </code>
+    </pre>
+  </blockquote>
+  </>;
 };
