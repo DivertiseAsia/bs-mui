@@ -30,16 +30,6 @@ let styleWrapperComponent = ReactDOMRe.Style.make(
   ()
   );
 
-type state = {
-  route: React.element,
-  url: ReasonReact.Router.url,
-};
-
-type action =
-  | Clear
-  | RouteTo(React.element)
-  | GetUrl(ReasonReact.Router.url);
-
 [@react.component]
 let make = () => {
   let url = ReasonReactRouter.useUrl();
@@ -82,9 +72,6 @@ let make = () => {
     | ["container","tabs"] => <Jsx3TabsDemo />
     | _ => <Jsx3BackdropDemo />
   };
-    
-    /* </Container>
-  </StylesProvider>; */
 };
 
 /* let component = ReasonReact.statelessComponent("Jsx3MUIDemo");
@@ -97,14 +84,7 @@ let make = (_children) => {
     <div>(string("Jsx3"))</div>
     /* <Container id="container-id" className={classes->Js.Dict.unsafeGet("root")}> */
     <Container id="container-id" >
-      <Jsx3TabsDemo />
-      <Jsx3TextFieldDemo />
-      <Jsx3DatePickerDemo />
-      <Jsx3KeyboardDatePickerDemo />
-      <Jsx3TimePickerDemo />
-      <Jsx3KeyboardTimePickerDemo />
-      <Jsx3DateTimePickerDemo />
-      <Jsx3KeyboardDateTimePickerDemo />
+      
       /* <Container id="container-button">
         <FormLabel> {string("Button")} </FormLabel>
         <Button> {string("Button")} </Button>
@@ -115,10 +95,7 @@ let make = (_children) => {
       <Container>
         <ButtonBase>{string("Base Button")}</ButtonBase>
       </Container>
-      <Container id="container-radio">
-        <FormLabel> {string("Radio")} </FormLabel>
-        <Radio />
-      </Container>
+      
       <Container id="container-radio-group">
         <FormLabel> {string("Radio Group")} </FormLabel>
         <RadioGroup name="radio-group">
@@ -196,18 +173,6 @@ let make = (_children) => {
         {string("Notification")}
       </Fab>
 
-      <FormControl variant=Variant.filled>
-        <FilledInput
-          id="filled-adornment-weight"
-          value="weight"
-          endAdornment={<InputAdornment position="end">{string("Kg")}</InputAdornment>}
-          inputProps={
-            "aria-label": "weight"
-          }
-        />
-        <FormHelperText>{string("Weight")}</FormHelperText>
-      </FormControl>
-
       <AppBar position="static">
         <Toolbar>
           <IconButton edge="start" color="inherit" >
@@ -217,14 +182,6 @@ let make = (_children) => {
           </Typography>
         </Toolbar>
       </AppBar> */
-      <Jsx3BackdropDemo />
-      <Jsx3BoxDemo />
-      <Jsx3GridDemo />
-      <Jsx3CardDemo />
-      <Jsx3BadgeDemo />
-      <Jsx3BottomNavigationDemo />
-      <Jsx3BreadcrumbsDemo />
-      <Jsx3ChipDemo />
 
       <h2>{string("Css Base line")}</h2>
       <div style=styleWrapperComponent>
@@ -232,21 +189,7 @@ let make = (_children) => {
           <CssBaseline />
         </React.Fragment>
       </div>
-      <Jsx3MenuDemo />
-      <Jsx3DrawerDemo />
-      <Jsx3HiddenDemo />
-      <Jsx3IconsDemo />
-      <Jsx3ModalDemo />
-      <Jsx3NoSsrDemo />
-      <Jsx3PaginationDemo />
-      <Jsx3PopoverDemo />
-      <Jsx3PopperDemo />
-      <Jsx3PortalDemo />
-      <Jsx3RatingDemo />
-      <Jsx3SkeletonDemo />
-      <Jsx3SnackbarDemo />
-      <Jsx3SpeedDialDemo />
-      <Jsx3StepperDemo />
+
     </Container>
 
     <Container>
