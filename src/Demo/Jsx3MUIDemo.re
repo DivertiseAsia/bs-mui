@@ -43,11 +43,20 @@ type action =
 [@react.component]
 let make = () => {
   let url = ReasonReactRouter.useUrl();
+  Js.log(url.path);
   switch(url.path){
-    | ["badge"] => <Jsx3BadgeDemo />
-    | ["bottom-navigation"] => <Jsx3BottomNavigationDemo />
-    | ["backdrop"] => <Jsx3BackdropDemo />
-    | ["box"] => <Jsx3BoxDemo />
+    | ["component","badge"] => <Jsx3BadgeDemo />
+    | ["component","bottom-navigation"] => <Jsx3BottomNavigationDemo />
+    | ["component","box"] => <Jsx3BoxDemo />
+    | ["component","breadcrumbs"] => <Jsx3BreadcrumbsDemo />
+    | ["component","button-group"] => <Jsx3ButtonGroupDemo />
+    | ["component","card"] => <Jsx3CardDemo />
+    | ["component","chip"] => <Jsx3ChipDemo />
+    | ["component","date-picker"] => <Jsx3DatePickerDemo />
+    | ["component","date-time-picker"] => <Jsx3DateTimePickerDemo />
+    | ["component","form-control"] => <Jsx3FormControlDemo />
+    | ["component","grid"] => <Jsx3GridDemo />
+    | ["container","backdrop"] => <Jsx3BackdropDemo />
     | [] => <Jsx3BackdropDemo />
     | _ => <Jsx3BackdropDemo />
   };
