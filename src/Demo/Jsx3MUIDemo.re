@@ -65,6 +65,11 @@ let make = () => {
     | ["component","pagination"] => <Jsx3PaginationDemo />
     | ["component","portal"] => <Jsx3PortalDemo />
     | ["component","rating"] => <Jsx3RatingDemo />
+    | ["component","skeleton"] => <Jsx3SkeletonDemo />
+    | ["component","slider"] => <Jsx3SliderDemo />
+    | ["component","speed-dial"] => <Jsx3SpeedDialDemo />
+    | ["component","text-field"] => <Jsx3TextFieldDemo />
+    | ["component","time-picker"] => <Jsx3TimePickerDemo />
     | ["container","backdrop"] => <Jsx3BackdropDemo />
     | [] => <Jsx3BackdropDemo />
     | _ => <Jsx3BackdropDemo />

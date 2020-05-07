@@ -22,6 +22,7 @@ let make = () => {
         size=params##size
         />
   };
+  let demoCode =
   <Jsx3LayoutComponent title="TextField" mainInfo> 
     <> 
     <Container id="text-field">
@@ -50,4 +51,45 @@ let make = () => {
     </Container>    
     </>
   </Jsx3LayoutComponent>;
+
+  let demoCodeString =
+  "<Jsx3LayoutComponent title='TextField' mainInfo> 
+    <> 
+    <Container id='text-field'>
+        <Grid.Container>
+            <Grid.Item>
+                <TextField/>
+            </Grid.Item>
+            <Grid.Item>
+                <TextField _type='password'/>
+            </Grid.Item>
+            <Grid.Container>
+                <Grid.Item xs=GridSize.size(12)>
+                    <Autocomplete 
+                    freeSolo=true 
+                    options=(listOfData |> Array.of_list) 
+                    onChange={(evt, maybeData, reason) => 
+                        switch(maybeData |> Js.toOption){
+                        | Some(data) => Js.log2('Select Something', data)
+                        | None => Js.log('Select Nothing')
+                        }
+                    }
+                    renderInput/>
+                </Grid.Item>
+            </Grid.Container>
+        </Grid.Container>
+    </Container>    
+    </>
+  </Jsx3LayoutComponent>";
+  
+  <>
+  demoCode
+  <blockquote>
+    <pre>
+      <code>
+      {ReasonReact.string(demoCodeString)}
+      </code>
+    </pre>
+  </blockquote>
+  </>;
 };
