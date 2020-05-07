@@ -56,6 +56,11 @@ let make = () => {
     | ["component","date-time-picker"] => <Jsx3DateTimePickerDemo />
     | ["component","form-control"] => <Jsx3FormControlDemo />
     | ["component","grid"] => <Jsx3GridDemo />
+    | ["component","hidden"] => <Jsx3HiddenDemo />
+    | ["component","icons"] => <Jsx3IconsDemo />
+    | ["component","keyboard-date-picker"] => <Jsx3KeyboardDatePickerDemo />
+    | ["component","keyboard-date-time-picker"] => <Jsx3KeyboardDateTimePickerDemo />
+    | ["component","keyboard-time-picker"] => <Jsx3KeyboardTimePickerDemo />
     | ["container","backdrop"] => <Jsx3BackdropDemo />
     | [] => <Jsx3BackdropDemo />
     | _ => <Jsx3BackdropDemo />
