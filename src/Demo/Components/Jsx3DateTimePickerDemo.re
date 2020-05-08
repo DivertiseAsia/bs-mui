@@ -14,14 +14,7 @@ let make = () => {
         <Grid.Item xs=GridSize.size(12)>
             <Picker.UtilsProvider utils=Picker.dateFns>
                 <DateTimePicker 
-                onChange={(newDate, value)=>handleDateChange(oldDate => {
-                  if (Obj.magic(newDate)##getTime() |> Js.Float.isNaN){
-                    Js.log3("invalid>", newDate, oldDate)
-                    oldDate
-                  } else {
-                    newDate
-                  }
-                })} 
+                onChange={newDateTime=>handleDateTimeChange(_oldDateTime => newDateTime)} 
                 value=selectedDateTime
                 format="dd-MM-yyyy HH:mm"
                 showTodayButton=true
