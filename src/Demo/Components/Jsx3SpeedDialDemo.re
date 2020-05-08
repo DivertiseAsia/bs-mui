@@ -7,12 +7,12 @@ let make = () => {
     <SpeedDial
       ariaLabel="SpeedDial openIcon example"
       hidden=false
-      icon={<SpeedDialIcon openIcon={<Icon.FavoriteIcon />} />}
+      icon={<SpeedDialIcon openIcon={<Icon.Favorite />} />}
       _open=true
     >
     </SpeedDial>
     /* <SpeedDialAction
-      icon={<SpeedDialIcon openIcon={<FavoriteIcon />} />}
+      icon={<SpeedDialIcon openIcon={<Favorite />} />}
       tooltipTitle={<div>{string("Test Speed Action")}</div>}
       tooltipOpen=true
     /> */
