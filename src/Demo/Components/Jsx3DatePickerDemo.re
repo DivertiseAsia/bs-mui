@@ -12,11 +12,11 @@ let make = () => {
     <> 
     <Container id="datepicker-field">
         <Grid.Item xs=GridSize.size(12)>
-            <Picker.UtilsProvider utils=Picker.moment>
+            <Picker.UtilsProvider utils=Picker.dateFns>
                 <DatePicker 
                 onChange={newDate=>handleDateChange(_oldDate => newDate)} 
                 value=selectedDate
-                format="DD-MM-YYYY"
+                format="dd-MM-yyyy"
                 showTodayButton=true
                 views=[|MaterialUI_DatePicker.DateView.date|]
                 />
