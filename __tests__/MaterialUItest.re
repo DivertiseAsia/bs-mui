@@ -1002,7 +1002,9 @@ test("Test card component",()=>
 
 test("test date picker",()=>{
   let mainInfo = "DatePicker Demo";
-  let (selectedDate, handleDateChange) = React.useState(() => Js.Date.make());
+  /* let (selectedDate, handleDateChange) = React.useState(() => Js.Date.make()); */
+  let selectedDate = Js.Date.make();
+  let handleDateChange = (f) => {f(selectedDate);()};
 
   <Jsx3LayoutComponent title="DatePicker" mainInfo> 
     <> 
