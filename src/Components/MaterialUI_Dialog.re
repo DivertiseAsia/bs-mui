@@ -2,6 +2,8 @@
 external make:
 (
     ~children: React.element=?,
+    ~className: string=?,
+    ~id: string=?,
     ~classes: string=?,
     ~disableBackdropClick: bool=?,
     ~disableEscapeKeyDown: bool=?,

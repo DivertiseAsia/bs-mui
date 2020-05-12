@@ -1771,24 +1771,24 @@ module Icon = {
             );
         };
 
-    module RestoreIcon = {
-        let component = ReasonReact.statelessComponent("RestoreIcon");
+    module Restore = {
+        let component = ReasonReact.statelessComponent("Restore");
         
         let make = (~className=?) =>
             ReasonReactCompat.wrapReactForReasonReact(
-                MaterialUI.Icon.RestoreIcon.make,
-                MaterialUI.Icon.RestoreIcon.makeProps(~className?,())
+                MaterialUI.Icon.Restore.make,
+                MaterialUI.Icon.Restore.makeProps(~className?,())
             );
         };
 
-    module FavoriteIcon = {
+    module Favorite = {
         
-        let component = ReasonReact.statelessComponent("FavoriteIcon");
+        let component = ReasonReact.statelessComponent("Favorite");
         
         let make = (~className=?) =>
             ReasonReactCompat.wrapReactForReasonReact(
-            MaterialUI.Icon.FavoriteIcon.make,
-            MaterialUI.Icon.FavoriteIcon.makeProps(~className?,())
+            MaterialUI.Icon.Favorite.make,
+            MaterialUI.Icon.Favorite.makeProps(~className?,())
             );
         };
   };

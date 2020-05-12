@@ -163,8 +163,8 @@ test("Test Badge component",()=>
 
 test("Test BottomNavigation component",()=>
   <BottomNavigation showLabels={true} component="div">
-    <BottomNavigationAction label="Recents" icon={<Icon.RestoreIcon />} />
-    <BottomNavigationAction label="Favorites" icon={<Icon.FavoriteIcon />}  />
+    <BottomNavigationAction label="Recents" icon={<Icon.Restore />} />
+    <BottomNavigationAction label="Favorites" icon={<Icon.Favorite />}  />
   </BottomNavigation>
   |> render
   |> container
@@ -471,7 +471,7 @@ test("Test MenuList component",()=>
         </MenuItem>
         <MenuItem>
           <ListItemIcon>
-            <Icon.RestoreIcon />
+            <Icon.Restore />
           </ListItemIcon>
           <Typography noWrap=true>
             {string("A very long text that overflows")}
@@ -737,7 +737,7 @@ test("Test SpeedDial component",()=>
     <SpeedDial
         ariaLabel="SpeedDial openIcon example"
         hidden=false
-        icon={<SpeedDialIcon openIcon={<Icon.FavoriteIcon />} />}
+        icon={<SpeedDialIcon openIcon={<Icon.Favorite />} />}
         _open=true
       >
       </SpeedDial>
@@ -749,7 +749,7 @@ test("Test SpeedDial component",()=>
 
 test("Test SpeedDialAction component",()=>
     <SpeedDialAction
-      icon={<SpeedDialIcon openIcon={<Icon.FavoriteIcon />} />}
+      icon={<SpeedDialIcon openIcon={<Icon.Favorite />} />}
       tooltipTitle={<div>{string("Test Speed Action")}</div>}
       tooltipOpen=true
     />
@@ -878,16 +878,16 @@ test("Test ToggleButton component",()=>
         onChange={_=>Js.log("toggle button")}
       >
       <ToggleButton value="left" >
-        <Icon.FavoriteIcon />
+        <Icon.Favorite />
       </ToggleButton>
       <ToggleButton value="center" >
-        <Icon.FavoriteIcon />
+        <Icon.Favorite />
       </ToggleButton>
       <ToggleButton value="right" >
-        <Icon.FavoriteIcon />
+        <Icon.Favorite />
       </ToggleButton>
       <ToggleButton value="justify">
-        <Icon.FavoriteIcon />
+        <Icon.Favorite />
       </ToggleButton>
     </ToggleButtonGroup>
     |> render
@@ -899,7 +899,7 @@ test("Test ToggleButton component",()=>
 test("Test Tooltip component",()=>
  <Tooltip title="Delete">
     <IconButton edge="start" color="inherit">
-      <Icon.RestoreIcon />
+      <Icon.Restore />
     </IconButton>
   </Tooltip>
   |> render
@@ -963,7 +963,7 @@ test("Test card component",()=>
           avatar={<Avatar alt="Remy Sharp" src="https://www.w3schools.com/howto/img_avatar2.png" />}
           action=
           {<IconButton>
-            <Icon.RestoreIcon />
+            <Icon.Restore />
           </IconButton>}
           title="Shrimp and Chorizo Paella"
           subheader="September 14, 2016"
