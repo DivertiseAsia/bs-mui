@@ -27,6 +27,7 @@ let make = () => {
     }
   );
   let mainInfo = "Checkboxes allow the user to select one or more items from a set.";
+  let demoCode = 
   <Jsx3LayoutComponent title="Checkbox" mainInfo> 
     <> 
       <Checkbox
@@ -55,4 +56,45 @@ let make = () => {
       />
     </>
   </Jsx3LayoutComponent>;
+
+  let demoCodeString = 
+  "<Jsx3LayoutComponent title='Checkbox' mainInfo> 
+    <> 
+      <Checkbox
+        checked=state.checkboxOneChecked
+        value='primary'
+        inputProps={ 'aria-label': 'primary checkbox' }
+        onChange=(_ => dispatch(CheckboxOneChecked(!state.checkboxOneChecked)))
+      />
+      <Checkbox
+        checked=state.checkboxTwoChecked
+        value='primary'
+        inputProps={ 'aria-label': 'primary checkbox' }
+        onChange=(_ => dispatch(CheckboxTwoChecked(!state.checkboxTwoChecked)))
+      />
+      <Checkbox
+        checked=state.checkboxThreeChecked
+        value='primary'
+        color='primary'
+        inputProps={ 'aria-label': 'primary checkbox' }
+        onChange=(_ => dispatch(CheckboxThreeChecked(!state.checkboxThreeChecked)))
+      />
+      <Checkbox
+        checked=false
+        value='primary'
+        disabled=true
+      />
+    </>
+  </Jsx3LayoutComponent>";
+  
+  <>
+  demoCode
+  <blockquote>
+    <pre>
+      <code>
+      {ReasonReact.string(demoCodeString)}
+      </code>
+    </pre>
+  </blockquote>
+  </>;
 };
