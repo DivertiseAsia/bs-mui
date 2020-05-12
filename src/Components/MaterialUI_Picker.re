@@ -8,7 +8,13 @@ let moment = switch(es6Moment) {
 | None => commonjsMoment
 };
 
-[@bs.module] external dateFns : dateTimeParser = "@date-io/date-fns";
+[@bs.module "@date-io/date-fns"] external es6DateFns : option(dateTimeParser) = "default";
+[@bs.module] external commonjsDateFns : dateTimeParser = "@date-io/date-fns";
+let dateFns = switch(es6DateFns) {
+    | Some(dateFns) => dateFns
+    | None => commonjsDateFns
+    };
+
 
 module UtilsProvider = {
     [@react.component][@bs.module "@material-ui/pickers"]
