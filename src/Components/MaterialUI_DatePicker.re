@@ -64,7 +64,7 @@ type props('errorType, 'componentType, 'toolbarTitleType, 'props) = {
     [@bs.optional][@bs.as "DiaglogProp"] bsnameDiaglogProp: Js.t('props),
 
     [@bs.optional] label: string,
-    [@bs.optional] classname: string
+    [@bs.optional] className: string
 };
 
 let makeProps = props;
@@ -148,7 +148,7 @@ module Typeable = {
     [@bs.optional][@bs.as "DiaglogProp"] bsnameDiaglogProp: Js.t('props),
 
     [@bs.optional] label: string,
-    [@bs.optional] classname: string
+    [@bs.optional] className: string
     };
   
     let makeProps = propsKeyboard;
