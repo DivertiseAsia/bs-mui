@@ -1399,7 +1399,8 @@ module FormLabel = {
             ~error=?,
             ~filled=?,
             ~focused=?,
-            ~required=?) =>
+            ~required=?,
+            ()) =>
         ReasonReactCompat.wrapReactForReasonReact(
         make,
         makeProps(
