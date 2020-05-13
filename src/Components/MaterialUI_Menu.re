@@ -11,6 +11,8 @@ module Variant : {
 [@react.component] [@bs.module "@material-ui/core/Menu"]
   external make:
     (
+      ~id: string=?,
+      ~className: string=?,
       ~anchorEl: Js.Nullable.t(Js.t('a)),
       ~autoFocus: bool=?,
       ~children: React.element=?,
@@ -35,12 +37,13 @@ module MenuItem = {
 [@react.component] [@bs.module "@material-ui/core/MenuItem"]
 external make:
     (
-    ~value: 'a=?,
-    ~dense: bool=?,
-    ~disableGutters: bool=?,
-    ~className: string=?,
-    ~style: ReactDOMRe.Style.t=?,
-    ~children: React.element=?
+      ~id: string=?,
+      ~value: 'a=?,
+      ~dense: bool=?,
+      ~disableGutters: bool=?,
+      ~className: string=?,
+      ~style: ReactDOMRe.Style.t=?,
+      ~children: React.element=?
     ) =>
     React.element = "default";
 };
@@ -49,11 +52,13 @@ module MenuList = {
 [@react.component] [@bs.module "@material-ui/core/MenuList"]
 external make:
     (
-    ~autoFocus: bool=?,
-    ~autoFocusItem: bool=?,
-    ~children: React.element=?,
-    ~disableListWrap: bool=?,
-    ~variant: Variant.t=?
+      ~id: string=?,
+      ~className: string=?,
+      ~autoFocus: bool=?,
+      ~autoFocusItem: bool=?,
+      ~children: React.element=?,
+      ~disableListWrap: bool=?,
+      ~variant: Variant.t=?
     ) =>
     React.element = "default";
 };

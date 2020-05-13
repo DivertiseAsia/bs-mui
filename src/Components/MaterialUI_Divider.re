@@ -13,6 +13,8 @@ module Variant : {
 [@react.component] [@bs.module "@material-ui/core/Divider"]
   external make:
     (
+      ~id: string=?,
+      ~className: string=?,
       ~absolute: bool=?,
       ~classes: string=?,
       ~component: string=?,

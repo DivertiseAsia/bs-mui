@@ -1,7 +1,7 @@
 
 [@react.component] [@bs.module "@material-ui/core/Card"]
 external make:
-    (~children: React.element=?, ~className: string=?, ~raised: bool=?) =>
+    (~id: string=?,~children: React.element=?, ~className: string=?, ~raised: bool=?) =>
     React.element =
     "default";
 
@@ -9,7 +9,7 @@ external make:
 module CardActionArea = {
 [@react.component] [@bs.module "@material-ui/core/CardActionArea"]
 external make:
-    (~children: React.element=?, ~className: string=?) => React.element =
+    (~id: string=?, ~children: React.element=?, ~className: string=?) => React.element =
     "default";
 };
 
@@ -17,6 +17,7 @@ module CardActions = {
 [@react.component] [@bs.module "@material-ui/core/CardActions"]
 external make:
     (
+    ~id: string=?,
     ~children: React.element=?,
     ~className: string=?,
     ~disableSpacing: bool=?
@@ -29,6 +30,7 @@ module CardContent = {
 [@react.component] [@bs.module "@material-ui/core/CardContent"]
 external make:
     (
+    ~id: string=?,
     ~children: React.element=?,
     ~className: string=?,
     ~component: string=?,
@@ -43,6 +45,7 @@ module CardHeader = {
 [@react.component] [@bs.module "@material-ui/core/CardHeader"]
 external make:
     (
+    ~id: string=?,
     ~action: React.element=?,
     ~avatar: React.element=?,
     ~children: React.element=?,
@@ -62,6 +65,7 @@ module CardMedia = {
 [@react.component] [@bs.module "@material-ui/core/CardMedia"]
 external make:
     (
+    ~id: string=?,
     ~children: React.element=?,
     ~className: string=?,
     ~component: string=?,

@@ -13,6 +13,8 @@ module Variant : {
 [@react.component] [@bs.module "@material-ui/lab/Skeleton"]
 external make:
   (
+    ~id: string=?,
+    ~className: string=?,
     ~animation: string=?,
     ~classes: string=?,
     ~component: string=?,

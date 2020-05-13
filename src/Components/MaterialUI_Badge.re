@@ -13,6 +13,7 @@ module Variant : {
 [@react.component] [@bs.module "@material-ui/core/Badge"]
   external make:
     (
+      ~id: string=?,
       ~anchorOrigin: anchorOriginType=?,
       ~badgeContent: int=?,
       ~children: React.element=?,

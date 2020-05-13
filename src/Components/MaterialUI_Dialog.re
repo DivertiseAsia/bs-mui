@@ -34,6 +34,7 @@ module DialogActions = {
 [@react.component] [@bs.module "@material-ui/core/DialogActions"]
 external make:
     (
+    ~id: string=?,
     ~children: React.element=?,
     ~className: string=?,
     ~disableSpacing: bool=?
@@ -46,6 +47,7 @@ module DialogContent = {
 [@react.component] [@bs.module "@material-ui/core/DialogContent"]
 external make:
     (
+    ~id: string=?,
     ~children: React.element=?,
     ~className: string=?,
     ~dividers: bool=?

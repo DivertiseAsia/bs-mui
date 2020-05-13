@@ -1,6 +1,8 @@
 [@react.component] [@bs.module "@material-ui/core/Popper"]
   external make:
     (
+      ~id: string=?,
+      ~className: string=?,
       ~anchorEl: 'a=?,
       ~children: 'b,
       ~container: 'c=?,

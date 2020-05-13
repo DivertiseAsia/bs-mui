@@ -5,6 +5,7 @@ module Variant = MaterialUIDataType.Variant;
 [@bs.deriving abstract]
 type props('a, 'b, 'c, 'd, 'e) = {
   [@bs.optional] id: string,
+  [@bs.optional] className: string,
   [@bs.optional] label: string,
   [@bs.optional] name: string,
   [@bs.optional] helperText: string,

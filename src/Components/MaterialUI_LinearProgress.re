@@ -15,6 +15,8 @@ module Variant : {
 [@react.component] [@bs.module "@material-ui/core/LinearProgress"]
   external make:
     (
+      ~id: string=?,
+      ~className: string=?,
       ~classes: string=?,
       ~color: string=?,
       ~value: int=?,

@@ -1,6 +1,7 @@
 [@react.component] [@bs.module "@material-ui/core/Tab"]
   external make:
     (
+      ~className: string=?,
       ~children: React.element=?,
       ~classes: string=?,
       ~disabled: bool=?,

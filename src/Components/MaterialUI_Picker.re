@@ -12,5 +12,5 @@ let moment = switch(es6Moment) {
 
 module UtilsProvider = {
     [@react.component][@bs.module "@material-ui/pickers"]
-    external make:(~utils:dateTimeParser, ~children:React.element) => React.element = "MuiPickersUtilsProvider";
+    external make:(~id: string=?, ~className: string=?, ~utils:dateTimeParser, ~children:React.element) => React.element = "MuiPickersUtilsProvider";
 }

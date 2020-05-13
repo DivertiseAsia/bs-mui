@@ -14,6 +14,7 @@ module Variant : {
 [@react.component] [@bs.module "@material-ui/core/Button"]
   external make:
     (
+      ~id: string=?,
       ~children: React.element=?,
       ~className: string=?,
       ~color: NoTransparentColor.t=?,
@@ -39,6 +40,7 @@ module ButtonBase = {
     [@react.component] [@bs.module "@material-ui/core/ButtonBase"]
     external make:
         (
+        ~id: string=?,
         ~action: unit => unit=?,
         ~centerRipple: bool=?,
         ~children: React.element=?,
@@ -61,6 +63,7 @@ module ButtonGroup = {
     [@react.component] [@bs.module "@material-ui/core/ButtonGroup"]
     external make:
         (
+        ~id: string=?,
         ~children: React.element=?,
         ~className: string=?,
         ~color: NoTransparentColor.t=?,

@@ -1,6 +1,8 @@
 [@react.component] [@bs.module "@material-ui/core/Snackbar"]
   external make:
     (
+      ~id: string=?,
+      ~className: string=?,
       ~action: React.element=?,
       ~anchorOrigin: Js.t('a)=?,
       ~autoHideDuration: int=?,
@@ -27,10 +29,12 @@ module SnackbarContent = {
     [@react.component] [@bs.module "@material-ui/core/SnackbarContent"]
     external make:
         (
-        ~action: React.element=?,
-        ~classes: string=?,
-        ~message: string=?,
-        ~role: string=?
+          ~id: string=?,
+          ~className: string=?,
+          ~action: React.element=?,
+          ~classes: string=?,
+          ~message: string=?,
+          ~role: string=?
         ) =>
         React.element =
         "default";

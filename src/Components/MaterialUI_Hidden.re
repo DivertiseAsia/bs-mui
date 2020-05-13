@@ -15,6 +15,8 @@ module Implementation : {
 [@react.component] [@bs.module "@material-ui/core/Hidden"]
   external make:
     (
+      ~id: string=?,
+      ~className: string=?,
       ~children: React.element=?,
       ~implementation: Implementation.t=?,
       ~initialWidth: ScreenSize.t=?,

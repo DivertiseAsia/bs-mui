@@ -1,6 +1,8 @@
 [@react.component] [@bs.module "@material-ui/lab/ToggleButton"]
   external make:
     (
+      ~id: string=?,
+      ~className: string=?,
       ~children : React.element,
       ~classes: string=?,
       ~disabled: bool=?,
@@ -16,12 +18,14 @@ module ToggleButtonGroup = {
     [@react.component] [@bs.module "@material-ui/lab/ToggleButtonGroup"]
     external make:
         (
-        ~children : React.element=?,
-        ~classes: string=?,
-        ~exclusive: bool=?,
-        ~onChange: unit=>unit=?,
-        ~size: string=?,
-        ~value: 'a=?
+          ~id: string=?,
+          ~className: string=?,
+          ~children : React.element=?,
+          ~classes: string=?,
+          ~exclusive: bool=?,
+          ~onChange: unit=>unit=?,
+          ~size: string=?,
+          ~value: 'a=?
         ) =>
         React.element =
         "default";

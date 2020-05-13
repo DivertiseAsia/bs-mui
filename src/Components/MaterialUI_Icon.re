@@ -1,11 +1,12 @@
 [@react.component] [@bs.module "@material-ui/core/Icon"]
   external make:
     (
-      ~fontSize: string=?,
-      ~color: string=?,
-      ~component: string=?,
-      ~className: string=?,
-      ~children: React.element=?
+        ~id: string=?,
+        ~fontSize: string=?,
+        ~color: string=?,
+        ~component: string=?,
+        ~className: string=?,
+        ~children: React.element=?
     ) =>
     React.element =
     "default";
@@ -15,11 +16,12 @@ module IconButton = {
   [@react.component] [@bs.module "@material-ui/core/IconButton"]
   external make:
     (
-      ~edge: string=?,
-      ~color: string=?,
-      ~className: string=?,
-      ~onClick: unit => unit=?,
-      ~children: React.element=?
+        ~id: string=?,
+        ~edge: string=?,
+        ~color: string=?,
+        ~className: string=?,
+        ~onClick: unit => unit=?,
+        ~children: React.element=?
     ) =>
     React.element =
     "default";

@@ -1,6 +1,8 @@
 [@react.component] [@bs.module "@material-ui/core/Tooltip"]
   external make:
     (
+      ~id: string=?,
+      ~className: string=?,
       ~children : React.element,
       ~arrow: bool=?,
       ~classes: string=?,

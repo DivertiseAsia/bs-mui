@@ -4,6 +4,7 @@ module Variant = MaterialUIDataType.Shape;
 [@react.component] [@bs.module "@material-ui/core/Avatar"]
   external make:
     (
+      ~id: string=?,
       ~alt: string=?,
       ~children: React.element=?,
       ~classes: string=?,

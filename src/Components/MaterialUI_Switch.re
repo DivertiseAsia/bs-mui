@@ -1,6 +1,8 @@
 [@react.component] [@bs.module "@material-ui/core/Switch"]
   external make:
     (
+      ~id: string=?,
+      ~className: string=?,
       ~checked: bool=?,
       ~checkedIcon: React.element=?,
       ~classes: string=?,

@@ -3,6 +3,7 @@ open MaterialUIDataType;
 [@react.component] [@bs.module "@material-ui/core/AppBar"]
 external make:
     (
+    ~id: string=?,
     ~children: React.element=?,
     ~className: string=?,
     ~classes: string=?,
