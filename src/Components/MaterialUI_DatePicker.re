@@ -63,7 +63,10 @@ type props('errorType, 'componentType, 'toolbarTitleType, 'props) = {
     [@bs.optional] todayLabel: React.element,
     [@bs.optional] clearable: bool,
     [@bs.optional] showTodayButton: bool,
-    [@bs.optional][@bs.as "DiaglogProp"] bsnameDiaglogProp: Js.t('props)
+    [@bs.optional][@bs.as "DiaglogProp"] bsnameDiaglogProp: Js.t('props),
+
+    [@bs.optional] label: string,
+    [@bs.optional] className: string
 };
 
 let makeProps = props;
@@ -146,7 +149,10 @@ module Typeable = {
     [@bs.optional] todayLabel: React.element,
     [@bs.optional] clearable: bool,
     [@bs.optional] showTodayButton: bool,
-    [@bs.optional][@bs.as "DiaglogProp"] bsnameDiaglogProp: Js.t('props)
+    [@bs.optional][@bs.as "DiaglogProp"] bsnameDiaglogProp: Js.t('props),
+
+    [@bs.optional] label: string,
+    [@bs.optional] className: string
     };
   
     let makeProps = propsKeyboard;
