@@ -1642,90 +1642,82 @@ module Icon = {
       );
     
     module Assignment = {
-        open MaterialUI.Icon.Assignment;
         let component = ReasonReact.statelessComponent("Assignment");
         
         let make = (~className=?) =>
             ReasonReactCompat.wrapReactForReasonReact(
-            make,
-            makeProps(~className?,())
+            MaterialUI.Icon.Assignment.make,
+            MaterialUI.Icon.Assignment.makeProps(~className?,())
             );
         };
 
     module BarChart = {
-        open MaterialUI.Icon.BarChart;
         let component = ReasonReact.statelessComponent("BarChart");
         
         let make = (~className=?) =>
             ReasonReactCompat.wrapReactForReasonReact(
-            make,
-            makeProps(~className?,())
+            MaterialUI.Icon.BarChart.make,
+            MaterialUI.Icon.BarChart.makeProps(~className?,())
             );
         };
     
     module ChevronLeft = {
-        open MaterialUI.Icon.ChevronLeft;
         let component = ReasonReact.statelessComponent("ChevronLeft");
         
         let make = (~className=?) =>
             ReasonReactCompat.wrapReactForReasonReact(
-            make,
-            makeProps(~className?,())
+            MaterialUI.Icon.ChevronLeft.make,
+            MaterialUI.Icon.ChevronLeft.makeProps(~className?,())
             );
         };
     
     module Dashboard = {
-        open MaterialUI.Icon.Dashboard;
         let component = ReasonReact.statelessComponent("Dashboard");
         
         let make = (~className=?) =>
             ReasonReactCompat.wrapReactForReasonReact(
-            make,
-            makeProps(~className?,())
+            MaterialUI.Icon.Dashboard.make,
+            MaterialUI.Icon.Dashboard.makeProps(~className?,())
             );
         };
 
     module Layers = {
-        open MaterialUI.Icon.Layers;
         let component = ReasonReact.statelessComponent("Layers");
         
         let make = (~className=?) =>
             ReasonReactCompat.wrapReactForReasonReact(
-            make,
-            makeProps(~className?,())
+            MaterialUI.Icon.LocalHospital.make,
+            MaterialUI.Icon.LocalHospital.makeProps(~className?,())
             );
         };
 
     module LocalHospital = {
-        open MaterialUI.Icon.LocalHospital;
         let component = ReasonReact.statelessComponent("LocalHospital");
         
         let make = (~className=?) =>
             ReasonReactCompat.wrapReactForReasonReact(
-            make,
-            makeProps(~className?,())
+            MaterialUI.Icon.LocalHospital.make,
+            MaterialUI.Icon.LocalHospital.makeProps(~className?,())
             );
         };
 
     module LockOutlined = {
-        open MaterialUI.Icon.LockOutlined;
         let component = ReasonReact.statelessComponent("LockOutlined");
         
         let make = (~className=?) =>
             ReasonReactCompat.wrapReactForReasonReact(
-            make,
-            makeProps(~className?,())
+            MaterialUI.Icon.LockOutlined.make,
+            MaterialUI.Icon.LockOutlined.makeProps(~className?,())
             );
         };
     
     module Menu = {
-        open MaterialUI.Icon.Menu;
         let component = ReasonReact.statelessComponent("Menu");
         
         let make = (~className=?) =>
             ReasonReactCompat.wrapReactForReasonReact(
-            make,
-            makeProps(~className?,())
+            MaterialUI.Icon.Menu.make,
+            MaterialUI.Icon.Menu.makeProps(~className?,())
             );
         };
 
