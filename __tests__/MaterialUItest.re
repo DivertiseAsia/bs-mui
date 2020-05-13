@@ -569,7 +569,7 @@ test("Test OutlinedInput component",()=>
 test("Test Pagination component",() =>
   <Pagination 
     count={10} 
-    renderItem={item => (
+    renderItem={_item => (
       <PaginationItem
         _type="first"
         selected=true

@@ -38,7 +38,7 @@ let make = () => {
                     <Autocomplete 
                     freeSolo=true 
                     options=(listOfData |> Array.of_list) 
-                    onChange={(evt, maybeData, reason) => 
+                    onChange={(_evt, maybeData, _reason) => 
                         switch(maybeData |> Js.toOption){
                         | Some(data) => Js.log2("Select Something", data)
                         | None => Js.log("Select Nothing")
