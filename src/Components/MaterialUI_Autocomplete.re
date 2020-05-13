@@ -1,5 +1,3 @@
-open MaterialUIDataType;
-
 [@react.component] [@bs.module "@material-ui/lab/Autocomplete"]
   external make:
     (

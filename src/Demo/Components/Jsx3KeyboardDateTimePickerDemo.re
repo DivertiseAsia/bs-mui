@@ -15,7 +15,7 @@ let make = () => {
         <Grid.Item xs=GridSize.size(12)>
             <Picker.UtilsProvider utils=Picker.moment>
                 <DateTimePicker.Typeable
-                onChange={(newDate, value)=>handleKeyboardDateTimeChange(oldDate => {
+                onChange={(newDate, _value)=>handleKeyboardDateTimeChange(oldDate => {
                   if (Obj.magic(newDate)##isValid()){
                     newDate
                   } else {

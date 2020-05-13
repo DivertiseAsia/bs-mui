@@ -1,6 +1,5 @@
 open ReasonReact;
 open MaterialUI;
-open MaterialUIDataType;
 
 let style = ReactDOMRe.Style.make(
   ~border="1px solid", 

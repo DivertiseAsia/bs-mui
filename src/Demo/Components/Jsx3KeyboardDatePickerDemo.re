@@ -15,7 +15,7 @@ let make = () => {
         <Grid.Item xs=GridSize.size(12)>
             <Picker.UtilsProvider utils=Picker.dateFns>
                 <DatePicker.Typeable
-                  onChange={(newDate, value)=>handleDateChange(oldDate => {
+                  onChange={(newDate, _value)=>handleDateChange(oldDate => {
                     if (Obj.magic(newDate)##getTime() |> Js.Float.isNaN){
                       Js.log3("invalid>", newDate, oldDate)
                       oldDate

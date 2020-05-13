@@ -1,6 +1,3 @@
-open ReasonReact;
-open MaterialUI;
-
 module False_or_choice {
   [@unboxed]
   type t = | Any('a): t;

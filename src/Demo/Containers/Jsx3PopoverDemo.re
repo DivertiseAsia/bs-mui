@@ -1,6 +1,5 @@
 open ReasonReact;
 open MaterialUI;
-open MaterialUIDataType;
 
 let verticalPositions = ["top", "center", "bottom"];
 let horizontalPositions = ["left", "center", "right"];

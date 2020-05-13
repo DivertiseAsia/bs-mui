@@ -1,5 +1,3 @@
-open MaterialUIDataType;
-
 module DataType = MaterialUIDataType;
 
 [@bs.module "@material-ui/core/styles"]
