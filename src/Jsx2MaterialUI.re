@@ -1730,7 +1730,6 @@ module Icon = {
         };
 
     module Notifications = {
-        open MaterialUI.Icon.Notifications;
         let component = ReasonReact.statelessComponent("Notifications");
         
         let make = (~className=?) =>
@@ -1741,7 +1740,6 @@ module Icon = {
         };
 
     module People = {
-        open MaterialUI.Icon.People;
         let component = ReasonReact.statelessComponent("People");
         
         let make = (~className=?) =>

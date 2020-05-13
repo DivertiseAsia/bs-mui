@@ -1,6 +1,5 @@
 open ReasonReact;
 open MaterialUI;
-open MaterialUIDataType;
 
 let anchors = ["left", "right", "top", "bottom"];
 

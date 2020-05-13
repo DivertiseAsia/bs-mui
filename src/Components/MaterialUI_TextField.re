@@ -1,5 +1,3 @@
-open MaterialUIDataType;
-
 module Variant = MaterialUIDataType.Variant;
 
 [@bs.deriving abstract]

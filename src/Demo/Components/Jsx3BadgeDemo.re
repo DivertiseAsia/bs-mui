@@ -1,5 +1,4 @@
 open MaterialUI;
-open ReasonReact;
 
 [@react.component]
 let make = () => {
