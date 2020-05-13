@@ -1,6 +1,7 @@
 [@react.component] [@bs.module "@material-ui/lab/Rating"]
   external make:
     (
+      ~id: string=?,
       ~checked: bool=?,
       ~checkedIcon: React.element=?,
       ~className: string=?,

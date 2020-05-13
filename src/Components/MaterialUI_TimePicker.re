@@ -11,6 +11,8 @@ module TimeView = {
 type props('errorType, 'componentType, 'toolbarTitleType, 'props) = {
     value: Js.Date.t,
     onChange: Js.Date.t => unit,
+    [@bs.optional] id: string,
+    [@bs.optional] className: string,
     [@bs.optional] ampm: bool,
     [@bs.optional] autoOk: bool,
     [@bs.optional] disabled: bool,
@@ -64,6 +66,8 @@ module Typeable = {
     type propsKeyboard('errorType, 'componentType, 'toolbarTitleType, 'props) = {
     value: Js.Date.t,
     onChange: (Js.Date.t, string) => unit,
+    [@bs.optional] id: string,
+    [@bs.optional] className: string,
     [@bs.optional] ampm: bool,
     [@bs.optional] autoOk: bool,
     [@bs.optional] disabled: bool,

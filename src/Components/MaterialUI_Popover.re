@@ -1,6 +1,8 @@
 [@react.component] [@bs.module "@material-ui/core/Popover"]
   external make:
     (
+      ~id: string=?,
+      ~className: string=?,
       ~action: 'a=?,
       ~anchorEl: 'b=?,
       ~anchorOrigin: Js.t('a)=?,

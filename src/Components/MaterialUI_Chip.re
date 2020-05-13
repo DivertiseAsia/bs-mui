@@ -12,6 +12,7 @@ module Variant : {
 [@react.component] [@bs.module "@material-ui/core/Chip"]
 external make:
   (
+    ~id: string=?,
     ~avatar: React.element=?,
     ~children: React.element=?,
     ~className: string=?,

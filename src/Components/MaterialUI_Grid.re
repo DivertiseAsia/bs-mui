@@ -3,6 +3,7 @@ open MaterialUIDataType;
 [@react.component] [@bs.module "@material-ui/core/Grid"]
 external make:
   (
+    ~id: string=?,
     ~selectProps: 'a=?,
     ~container: bool=?,
     ~direction: FlexDirection.t=?, 
@@ -26,6 +27,7 @@ module Container = {
   [@react.component] [@bs.module "@material-ui/core/Grid"]
   external make:
   (
+    ~id: string=?,
     ~selectProps: 'a=?,
     ~container: bool,
     ~direction: FlexDirection.t=?, 
@@ -52,6 +54,7 @@ module Item = {
   [@react.component] [@bs.module "@material-ui/core/Grid"]
   external make:
   (
+    ~id: string=?,
     ~selectProps: 'a=?,
     ~container: bool,
     ~direction: FlexDirection.t=?, 
@@ -77,6 +80,8 @@ module GridList = {
 [@react.component] [@bs.module "@material-ui/core/GridList"]
 external make:
     (
+    ~id: string=?,
+    ~className: string=?,
     ~cellHeight: string=?,
     ~children: React.element,
     ~classes: string=?,
@@ -92,6 +97,8 @@ module GridListTitle = {
 [@react.component] [@bs.module "@material-ui/core/GridListTile"]
 external make:
     (
+    ~id: string=?,
+    ~className: string=?,
     ~children: React.element=?,
     ~classes: string=?,
     ~cols: int=?,
@@ -106,6 +113,8 @@ module GridListTitleBar = {
 [@react.component] [@bs.module "@material-ui/core/GridListTileBar"]
 external make:
     (
+    ~id: string=?,
+    ~className: string=?,
     ~actionIcon: React.element=?,
     ~actionPosition: string=?,
     ~classes: string=?,

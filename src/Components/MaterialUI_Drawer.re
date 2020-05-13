@@ -27,6 +27,7 @@ module Anchor : {
 [@bs.deriving abstract]
 type props('modalProps, 'paperProps, 'slideProps, 'duration) = {
   [@bs.optional] anchor: Anchor.t,
+  [@bs.optional] id: string,
   [@bs.optional] className: string,
   [@bs.optional] classes: string,
   [@bs.optional] elevation: int,

@@ -1,6 +1,7 @@
 [@react.component] [@bs.module "@material-ui/core/BottomNavigation"]
   external make:
     (
+      ~id: string=?,
       ~children: React.element=?,
       ~className: string=?,
       ~component: string=?,
@@ -15,6 +16,7 @@ module BottomNavigationAction = {
     [@react.component] [@bs.module "@material-ui/core/BottomNavigationAction"]
     external make:
         (
+        ~id: string=?,
         ~children: React.element=?,
         ~className: string=?,
         ~icon: React.element=?,

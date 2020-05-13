@@ -13,6 +13,8 @@ module Variant:{
 [@react.component] [@bs.module "@material-ui/core/Tabs"]
   external make:
     (
+      ~id: string=?,
+      ~className: string=?,
       ~action: 'a=?,
       ~centered: bool=?,
       ~children: React.element=?,

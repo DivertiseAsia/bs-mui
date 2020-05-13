@@ -1,5 +1,7 @@
 [@bs.deriving abstract]
   type props('a,'b,'c, 'd) = {
+    [@bs.optional] id: string,
+    [@bs.optional] className: string,
     [@bs.optional][@bs.as "aria-label"] ariaLabel: string,
     [@bs.optional][@bs.as "aria-labelledby"] ariaLabelledby: string,
     [@bs.optional][@bs.as "aria-valuetext"] ariaValuetext: string,

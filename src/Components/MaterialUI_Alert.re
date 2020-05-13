@@ -5,6 +5,8 @@ module Variant = MaterialUIDataType.Variant;
 [@react.component] [@bs.module "@material-ui/lab/Alert"]
 external make:
     (
+    ~id: string=?,
+    ~className: string=?,
     ~action: React.element=?,
     ~children: React.element=?,
     ~classes: string=?,
@@ -23,6 +25,8 @@ module Title = {
     [@react.component] [@bs.module "@material-ui/lab/AlertTitle"]
     external make:
         (
+        ~id: string=?,
+        ~className: string=?,
         ~children: React.element=?,
         ~classes: string=?
         ) =>

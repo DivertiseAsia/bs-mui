@@ -1,6 +1,8 @@
 [@react.component] [@bs.module "@material-ui/core/SvgIcon"]
   external make:
     (
+      ~id: string=?,
+      ~className: string=?,
       ~children: React.element=?,
       ~classes: string=?,
       ~color: string=?,

@@ -1,6 +1,8 @@
 [@react.component] [@bs.module "@material-ui/lab/TreeItem"]
   external make:
     (
+      ~id: string=?,
+      ~className: string=?,
       ~children : React.element=?,
       ~classes: string=?,
       ~collapseIcon: React.element=?,

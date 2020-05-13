@@ -31,7 +31,7 @@ module Variant = MaterialUIDataType.Variant;
 
 module FormControlLabel = {
 [@react.component] [@bs.module "@material-ui/core/FormControlLabel"]
-external make: (~control: React.element, ~label: string) => React.element =
+external make: (~id: string=?, ~className: string=?, ~control: React.element, ~label: string) => React.element =
     "default";
 };
 
@@ -39,6 +39,8 @@ module FormGroup = {
 [@react.component] [@bs.module "@material-ui/core/FormGroup"]
 external make: 
 (
+    ~id: string=?,
+    ~className: string=?,
     ~children: React.element=?, 
     ~classes: string=?,
     ~row: bool=?
@@ -51,6 +53,8 @@ module FormHelperText = {
 [@react.component] [@bs.module "@material-ui/core/FormHelperText"]
 external make: 
 (
+    ~id: string=?,
+    ~className: string=?,
     ~children: React.element=?, 
     ~classes: string=?,
     ~component: string=?,
@@ -70,6 +74,7 @@ module FormLabel = {
 [@react.component] [@bs.module "@material-ui/core/FormLabel"]
 external make:
     (
+    ~id: string=?,
     ~children: React.element=?,
     ~className: string=?,
     ~color: MainColor.t=?,

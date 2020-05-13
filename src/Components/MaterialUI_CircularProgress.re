@@ -15,6 +15,7 @@ module Variant : {
 [@react.component] [@bs.module "@material-ui/core/CircularProgress"]
 external make:
   (
+    ~id: string=?,
     ~className: string=?,
     ~clickable: bool=?,
     ~color: MainWithInheritColor.t=?,

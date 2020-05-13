@@ -1,6 +1,8 @@
 [@react.component] [@bs.module "@material-ui/core/MobileStepper"]
   external make:
     (
+      ~id: string=?,
+      ~className: string=?,
       ~activeStep: int=?,
       ~backButton: React.element=?,
       ~classes: string=?,

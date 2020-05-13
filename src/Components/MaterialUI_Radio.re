@@ -3,6 +3,7 @@ open MaterialUIDataType;
 [@react.component] [@bs.module "@material-ui/core/Radio"]
   external make:
     (
+      ~id: string=?,
       ~checked: bool=?,
       ~checkedIcon: React.element=?,
       ~className: string=?,
@@ -28,11 +29,13 @@ module RadioGroup = {
     [@react.component] [@bs.module "@material-ui/core/RadioGroup"]
     external make:
         (
-        ~children: React.element=?,
-        ~defaultValue: 'a=?,
-        ~name: string=?,
-        ~onChange: ReactEvent.Synthetic.t => unit=?,
-        ~value: 'b=?
+          ~id: string=?,
+          ~className: string=?,
+          ~children: React.element=?,
+          ~defaultValue: 'a=?,
+          ~name: string=?,
+          ~onChange: ReactEvent.Synthetic.t => unit=?,
+          ~value: 'b=?
         ) =>
         React.element =
         "default";

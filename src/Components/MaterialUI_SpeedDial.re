@@ -1,6 +1,8 @@
 [@react.component] [@bs.module "@material-ui/lab/SpeedDial"]
   external make:
     (
+      ~id: string=?,
+      ~className: string=?,
       ~ariaLabel: string,
       ~children: React.element=?,
       ~classes: string=?,
@@ -23,14 +25,16 @@ module SpeedDialAction = {
 [@react.component] [@bs.module "@material-ui/lab/SpeedDialAction"]
 external make:
     (
-    ~classes: string=?,
-    ~delay: int=?,
-    ~fabProps: Js.t('a)=?,
-    ~icon: React.element=?,
-    ~tooltipClasses: string=?,
-    ~tooltipOpen: bool=?,
-    ~tooltipPlacement: string=?,
-    ~tooltipTitle: React.element=?
+      ~id: string=?,
+      ~className: string=?,
+      ~classes: string=?,
+      ~delay: int=?,
+      ~fabProps: Js.t('a)=?,
+      ~icon: React.element=?,
+      ~tooltipClasses: string=?,
+      ~tooltipOpen: bool=?,
+      ~tooltipPlacement: string=?,
+      ~tooltipTitle: React.element=?
     ) =>
     React.element =
     "default";
@@ -40,9 +44,11 @@ module SpeedDialIcon = {
 [@react.component] [@bs.module "@material-ui/lab/SpeedDialIcon"]
 external make:
     (
-    ~classes: string=?,
-    ~icon: React.element=?,
-    ~openIcon: React.element=?
+      ~id: string=?,
+      ~className: string=?,
+      ~classes: string=?,
+      ~icon: React.element=?,
+      ~openIcon: React.element=?
     ) =>
     React.element =
     "default";

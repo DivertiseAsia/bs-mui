@@ -11,6 +11,8 @@ module Variant : {
 [@react.component] [@bs.module "@material-ui/lab/Pagination"]
   external make:
     (
+      ~id: string=?,
+      ~className: string=?,
       ~boundaryCount : int=?,
       ~children: React.element=?,
       ~classes: string=?,
@@ -37,15 +39,17 @@ module PaginationItem = {
     [@react.component] [@bs.module "@material-ui/lab/PaginationItem"]
     external make:
         (
-        ~color: string=?,
-        ~component: string=?,
-        ~disabled: bool=?,
-        ~page: int=?,
-        ~selected: bool=?,
-        ~shape: string=?,
-        ~size: string=?,
-        ~_type: string=?,
-        ~variant: Variant.t=?
+          ~id: string=?,
+          ~className: string=?,
+          ~color: string=?,
+          ~component: string=?,
+          ~disabled: bool=?,
+          ~page: int=?,
+          ~selected: bool=?,
+          ~shape: string=?,
+          ~size: string=?,
+          ~_type: string=?,
+          ~variant: Variant.t=?
         ) =>
         React.element = "default";
     };

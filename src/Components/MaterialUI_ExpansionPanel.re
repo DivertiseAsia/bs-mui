@@ -1,6 +1,8 @@
 [@react.component] [@bs.module "@material-ui/core/ExpansionPanel"]
   external make:
     (
+      ~id: string=?,
+      ~className: string=?,
       ~children: React.element=?,
       ~classes: string=?,
       ~defaultExpanded: bool=?,
@@ -17,6 +19,8 @@ module ExpansionPanelActions = {
 [@react.component] [@bs.module "@material-ui/core/ExpansionPanelActions"]
 external make:
     (
+    ~id: string=?,
+    ~className: string=?,
     ~children: React.element=?,
     ~classes: string=?,
     ~disableSpacing: bool=?
@@ -29,6 +33,8 @@ module ExpansionPanelDetails = {
 [@react.component] [@bs.module "@material-ui/core/ExpansionPanelDetails"]
 external make:
     (
+    ~id: string=?,
+    ~className: string=?,
     ~children: React.element=?,
     ~classes: string=?
     ) =>
@@ -40,6 +46,8 @@ module ExpansionPanelSummary = {
 [@react.component] [@bs.module "@material-ui/core/ExpansionPanelSummary"]
 external make:
     (
+    ~id: string=?,
+    ~className: string=?,
     ~children: React.element=?,
     ~classes: string=?,
     ~expandIcon: React.element=?,

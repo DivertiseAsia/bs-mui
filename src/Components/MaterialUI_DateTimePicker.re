@@ -13,6 +13,8 @@ module DateView = {
 type props('errorType, 'componentType, 'toolbarTitleType, 'props) = {
     value: Js.Date.t,
     onChange: Js.Date.t => unit,
+    [@bs.optional] id: string,
+    [@bs.optional] className: string,
     [@bs.optional] allowKeyboardControl: bool,
     [@bs.optional] ampm: bool,
     [@bs.optional] animateYearScrolling: bool,
@@ -71,8 +73,7 @@ type props('errorType, 'componentType, 'toolbarTitleType, 'props) = {
     [@bs.optional] showTodayButton: bool,
     [@bs.optional][@bs.as "DiaglogProp"] bsnameDiaglogProp: Js.t('props),
 
-    [@bs.optional] label: string,
-    [@bs.optional] className: string
+    [@bs.optional] label: string
 };
 
 let makeProps = props;
@@ -89,6 +90,8 @@ module Typeable = {
     type propsKeyboard('errorType, 'componentType, 'toolbarTitleType, 'props) = {
     value: Js.Date.t,
     onChange: (Js.Date.t, string) => unit,
+    [@bs.optional] id: string,
+    [@bs.optional] className: string,
     [@bs.optional] allowKeyboardControl: bool,
     [@bs.optional] ampm: bool,
     [@bs.optional] animateYearScrolling: bool,
@@ -156,8 +159,7 @@ module Typeable = {
     [@bs.optional] showTodayButton: bool,
     [@bs.optional][@bs.as "DiaglogProp"] bsnameDiaglogProp: Js.t('props),
 
-    [@bs.optional] label: string,
-    [@bs.optional] className: string
+    [@bs.optional] label: string
     };
   
     let makeProps = propsKeyboard;

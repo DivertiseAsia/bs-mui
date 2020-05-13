@@ -1,6 +1,7 @@
 [@react.component] [@bs.module "@material-ui/core/Collapse"]
   external make:
     (
+      ~id: string=?,
       ~children: React.element=?,
       ~className: string=?,
       ~collapsedHeight: int=?, // Can be string

@@ -1,6 +1,7 @@
 [@react.component] [@bs.module "@material-ui/core/OutlinedInput"]
   external make:
     (
+      ~id: string=?,
       ~autoComplete : string=?,
       ~autoFocus: bool=?,
       ~classes: string=?,

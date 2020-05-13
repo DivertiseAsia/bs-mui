@@ -3,6 +3,7 @@ open MaterialUIDataType;
 [@react.component] [@bs.module "@material-ui/lab/Autocomplete"]
   external make:
     (
+      ~className: string=?,
       ~autoComplete: bool=?,
       ~autoHighlight: bool=?,
       ~autoSelect: bool=?,

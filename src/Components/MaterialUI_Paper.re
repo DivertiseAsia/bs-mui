@@ -11,6 +11,7 @@ module Variant:{
 [@react.component] [@bs.module "@material-ui/core/Paper"]
   external make:
     (
+      ~id: string=?,
       ~className: string=?,
       ~style: ReactDOMRe.Style.t=?,
       ~children: React.element=?,
