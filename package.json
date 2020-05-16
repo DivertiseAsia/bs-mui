@@ -37,10 +37,10 @@
     "nan": "^2.14.1",
     "popper.js": "^1.16.1",
     "react": "^16.13.1",
-    "react-dom": "^16.13.1",
-    "reason-react": "^0.7.1"
+    "react-dom": "^16.13.1"
   },
   "devDependencies": {
+    "reason-react": "^0.8.0",
     "@glennsl/bs-jest": "^0.5.1",
     "bs-jest-dom": "^2.0.2",
     "bs-platform": "^7.3.1",
