@@ -7,7 +7,7 @@ let style = ReactDOMRe.Style.make(
   ()
   );
 
-[@bs.get] external get_current: React.Ref.t(Js.Nullable.t('a)) => React.element = "current";
+[@bs.get] external get_current: React.ref(Js.Nullable.t('a)) => React.element = "current";
 
 [@react.component]
 let make = () => {

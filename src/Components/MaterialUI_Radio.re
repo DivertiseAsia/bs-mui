@@ -29,6 +29,7 @@ module RadioGroup = {
     [@react.component] [@bs.module "@material-ui/core/RadioGroup"]
     external make:
         (
+          ~row: bool=?,
           ~id: string=?,
           ~className: string=?,
           ~children: React.element=?,
