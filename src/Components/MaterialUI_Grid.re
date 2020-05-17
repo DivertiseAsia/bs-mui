@@ -1,5 +1,6 @@
 open MaterialUIDataType;
 
+[@deprecated "Please use Grid.Container/Grid.Item"]
 [@react.component] [@bs.module "@material-ui/core/Grid"]
 external make:
   (
@@ -61,6 +62,7 @@ module Item = {
     ~spacing: int=?,
     ~wrap: string=?,
     ~item: bool=?,
+    ~justify: Justify.t=?,
     ~alignContent: AlignContent.t=?,
     ~alignItems: AlignItems.t=?,
     ~zeroMinWidth: bool=?,
