@@ -1,29 +1,5 @@
 open MaterialUIDataType;
 
-[@deprecated "Please use Grid.Container/Grid.Item"]
-[@react.component] [@bs.module "@material-ui/core/Grid"]
-external make:
-  (
-    ~id: string=?,
-    ~selectProps: 'a=?,
-    ~container: bool=?,
-    ~direction: FlexDirection.t=?, 
-    ~spacing: int=?,
-    ~wrap: string=?,
-    ~item: bool=?,
-    ~justify: Justify.t=?,
-    ~alignContent: AlignContent.t=?,
-    ~alignItems: AlignItems.t=?,
-    ~zeroMinWidth: bool=?,
-    ~xs: GridSize.t=?,
-    ~xl: GridSize.t=?,
-    ~sm: GridSize.t=?,
-    ~md: GridSize.t=?,
-    ~className: string=?,
-    ~children: React.element=?
-  ) =>
-  React.element = "default";
-
 module Container = {
   [@react.component] [@bs.module "@material-ui/core/Grid"]
   external make:
@@ -62,9 +38,6 @@ module Item = {
     ~spacing: int=?,
     ~wrap: string=?,
     ~item: bool=?,
-    ~justify: Justify.t=?,
-    ~alignContent: AlignContent.t=?,
-    ~alignItems: AlignItems.t=?,
     ~zeroMinWidth: bool=?,
     ~xs: GridSize.t=?,
     ~xl: GridSize.t=?,

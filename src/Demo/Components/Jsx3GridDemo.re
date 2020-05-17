@@ -9,22 +9,22 @@ let make = () => {
   <Jsx3LayoutComponent title="Grid" mainInfo> 
     <Grid.Container spacing={3}>
       <Divider orientation="vertical" flexItem=true />
-      <Grid item=true xs=GridSize.size(12)>
+      <Grid.Item xs=GridSize.size(12)>
         <Paper >{string("xs=12")}</Paper>
-      </Grid>
+      </Grid.Item>
       /* <Divider orientation="vertical" flexItem=true /> */
-      <Grid item=true xs=GridSize.size(6)>
+      <Grid.Item xs=GridSize.size(6)>
         <Paper >{string("xs=6")}</Paper>
-      </Grid>
-      <Grid item=true xs=GridSize.size(6)>
+      </Grid.Item>
+      <Grid.Item xs=GridSize.size(6)>
         <Paper >{string("xs=6")}</Paper>
-      </Grid>
-      <Grid item=true xs=GridSize.size(3)>
+      </Grid.Item>
+      <Grid.Item xs=GridSize.size(3)>
         <Paper >{string("xs=3")}</Paper>
-      </Grid>
-      <Grid item=true xs=GridSize.true_>
+      </Grid.Item>
+      <Grid.Item xs=GridSize.true_>
         <Paper >{string("xs=true_")}</Paper>
-      </Grid>
+      </Grid.Item>
     </Grid.Container>
   </Jsx3LayoutComponent>;
 
@@ -32,21 +32,21 @@ let make = () => {
   "<Jsx3LayoutComponent title='Grid' mainInfo> 
     <Grid.Container spacing={3}>
       <Divider orientation='vertical' flexItem=true />
-      <Grid item=true xs=GridSize.size(12)>
+      <Grid.Item xs=GridSize.size(12)>
         <Paper >{string('xs=12')}</Paper>
-      </Grid>
-      <Grid item=true xs=GridSize.size(6)>
+      </Grid.Item>
+      <Grid.Item xs=GridSize.size(6)>
         <Paper >{string('xs=6')}</Paper>
-      </Grid>
-      <Grid item=true xs=GridSize.size(6)>
+      </Grid.Item>
+      <Grid.Item xs=GridSize.size(6)>
         <Paper >{string('xs=6')}</Paper>
-      </Grid>
-      <Grid item=true xs=GridSize.size(3)>
+      </Grid.Item>
+      <Grid.Item xs=GridSize.size(3)>
         <Paper >{string('xs=3')}</Paper>
-      </Grid>
-      <Grid item=true xs=GridSize.true_>
+      </Grid.Item>
+      <Grid.Item xs=GridSize.true_>
         <Paper >{string('xs=true_')}</Paper>
-      </Grid>
+      </Grid.Item>
     </Grid.Container>
   </Jsx3LayoutComponent>";
   

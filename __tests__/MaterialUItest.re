@@ -307,19 +307,19 @@ test("Test FilledInput component",()=>
 )
 
 test("Test Grid and Paper component",()=>
-  <Grid container=true spacing={3}>
+  <Grid.Container spacing={3}>
     <Divider orientation="vertical" flexItem=true />
-    <Grid item=true xs=GridSize.size(12)>
+    <Grid.Item xs=GridSize.size(12)>
       <Paper >{string("xs=12")}</Paper>
-    </Grid>
+    </Grid.Item>
     <Divider orientation="vertical" flexItem=true />
-    <Grid item=true xs=GridSize.size(6)>
+    <Grid.Item xs=GridSize.size(6)>
       <Paper >{string("xs=6")}</Paper>
-    </Grid>
-    <Grid item=true xs=GridSize.size(6)>
+    </Grid.Item>
+    <Grid.Item xs=GridSize.size(6)>
       <Paper >{string("xs=6")}</Paper>
-    </Grid>
-  </Grid>
+    </Grid.Item>
+  </Grid.Container>
   |> render
   |> container
   |> expect

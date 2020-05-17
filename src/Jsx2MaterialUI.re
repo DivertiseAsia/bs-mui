@@ -1420,8 +1420,6 @@ module FormLabel = {
     };
 
 module Grid {
-    open MaterialUI.Grid;
-
     module Container {
         let component = ReasonReact.statelessComponent("GridContainer");
 
@@ -1435,11 +1433,10 @@ module Grid {
             ~zeroMinWidth=?,
             ~children=?) => 
             ReasonReactCompat.wrapReactForReasonReact(
-                make,
-                makeProps(
+                MaterialUI.Grid.Container.make,
+                MaterialUI.Grid.Container.makeProps(
                     ~selectProps?,
                     ~spacing?,
-                    ~container=true,
                     ~wrap?,
                     ~justify?,
                     ~alignContent?,
@@ -1457,9 +1454,6 @@ module Grid {
             ~selectProps=?,
             ~spacing=?,
             ~wrap=?,
-            ~justify=?,
-            ~alignContent=?,
-            ~alignItems=?,
             ~zeroMinWidth=?,
             ~xs=?,
             ~xl=?,
@@ -1467,15 +1461,11 @@ module Grid {
             ~md=?,
             ~children=?) => 
             ReasonReactCompat.wrapReactForReasonReact(
-                make,
-                makeProps(
+                MaterialUI.Grid.Item.make,
+                MaterialUI.Grid.Item.makeProps(
                     ~selectProps?,
                     ~spacing?,
                     ~wrap?,
-                    ~item=true,
-                    ~justify?,
-                    ~alignContent?,
-                    ~alignItems?,
                     ~zeroMinWidth?,
                     ~xs?,
                     ~xl?,
