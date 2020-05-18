@@ -54,7 +54,7 @@
       ~selectOnFocus: bool=?,
       ~size: string=?,
       ~style: Js.t('a)=?,
-      ~value: 'o=?
+      ~value: option('o)=?
     ) =>
     React.element =
     "default";
