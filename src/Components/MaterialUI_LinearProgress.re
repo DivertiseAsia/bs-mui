@@ -1,3 +1,13 @@
+module Color : {
+  type t;
+  let primary:t;
+  let secondary:t;
+} = {
+  type t = string;
+  [@bs.inline] let primary = "primary";
+  [@bs.inline] let secondary = "secondary";
+};
+
 module Variant : {
   type t;
   let determinate:t;
@@ -18,7 +28,7 @@ module Variant : {
       ~id: string=?,
       ~className: string=?,
       ~classes: string=?,
-      ~color: string=?,
+      ~color: Color.t=?,
       ~value: int=?,
       ~valueBuffer: int=?,
       ~variant: Variant.t=?
