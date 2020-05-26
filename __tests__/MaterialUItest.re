@@ -104,7 +104,7 @@ test("Test alert component",()=>
 test("Test appbar component",()=>{
   <AppBar position="static">
     <Toolbar>
-      <IconButton edge="start" color=MaterialUI.IconButton.Color.inherit_ />
+      <IconButton edge=IconButton.Edge.start color=MaterialUI.IconButton.Color.inherit_ />
       <Typography variant=Typography.Variant.h6>
         {string("News")}
       </Typography>
@@ -898,7 +898,7 @@ test("Test ToggleButton component",()=>
 
 test("Test Tooltip component",()=>{
   <Tooltip title="Delete">
-    <IconButton edge="start" color=MaterialUI.IconButton.Color.inherit_ >
+    <IconButton edge=IconButton.Edge.start color=MaterialUI.IconButton.Color.inherit_ >
       <Icon.Restore />
     </IconButton>
   </Tooltip>

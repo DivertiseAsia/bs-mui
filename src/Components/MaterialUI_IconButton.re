@@ -41,7 +41,7 @@ module Size : {
 external make:
 (
 ~id: string=?,
-~edge: string=?,
+~edge: Edge.t=?,
 ~color: Color.t=?,
 ~size: Size.t=?,
 ~className: string=?,
