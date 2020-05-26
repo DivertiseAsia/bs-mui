@@ -102,10 +102,9 @@ test("Test alert component",()=>
 )
 
 test("Test appbar component",()=>{
-  open MaterialUI.Icon.IconButton;
   <AppBar position="static">
     <Toolbar>
-      <IconButton edge=Edge.start color=Color.inherit_ />
+      <IconButton edge=MaterialUI.Icon.IconButton.Edge.start color=MaterialUI.Icon.IconButton.Color.inherit_ />
       <Typography variant=Typography.Variant.h6>
         {string("News")}
       </Typography>
@@ -401,7 +400,7 @@ test("Test InputBase",()=>
 )
 
 test("Test LinearProgress component",()=>
-  <LinearProgress color="secondary" />
+  <LinearProgress color=MaterialUI.LinearProgress.Color.secondary />
   |> render
   |> container
   |> expect
@@ -898,9 +897,8 @@ test("Test ToggleButton component",()=>
 )
 
 test("Test Tooltip component",()=>{
-  open MaterialUI.Icon.IconButton;
   <Tooltip title="Delete">
-    <IconButton edge=Edge.start color=Color.inherit_ >
+    <IconButton edge=MaterialUI.Icon.IconButton.Edge.start color=MaterialUI.Icon.IconButton.Color.inherit_ >
       <Icon.Restore />
     </IconButton>
   </Tooltip>
