@@ -104,7 +104,7 @@ test("Test alert component",()=>
 test("Test appbar component",()=>{
   <AppBar position="static">
     <Toolbar>
-      <IconButton edge=MaterialUI.Icon.IconButton.Edge.start color=MaterialUI.Icon.IconButton.Color.inherit_ />
+      <IconButton edge="start" color=MaterialUI.IconButton.Color.inherit_ />
       <Typography variant=Typography.Variant.h6>
         {string("News")}
       </Typography>
@@ -372,7 +372,7 @@ test("Test Hidden component",()=>
 )
 
 test("Test Icon component",()=>
-  <Icon className="fa fa-plus-circle" color=MaterialUI.Icon.Color.primary>{string("add_circle")}</Icon>
+  <Icon className="fa fa-plus-circle" color="primary">{string("add_circle")}</Icon>
   |> render
   |> container
   |> expect
@@ -898,7 +898,7 @@ test("Test ToggleButton component",()=>
 
 test("Test Tooltip component",()=>{
   <Tooltip title="Delete">
-    <IconButton edge=MaterialUI.Icon.IconButton.Edge.start color=MaterialUI.Icon.IconButton.Color.inherit_ >
+    <IconButton edge="start" color=MaterialUI.IconButton.Color.inherit_ >
       <Icon.Restore />
     </IconButton>
   </Tooltip>
