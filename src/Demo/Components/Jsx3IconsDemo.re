@@ -30,10 +30,10 @@ let make = () => {
       <Grid.Item xs=GridSize.size(6)>
         <Paper >
           <Icon.Layers />
-          <Icon color="primary" ><Icon.Layers /></Icon>
-          <Icon color="secondary" ><Icon.Layers /></Icon>
-          <Icon color="action" ><Icon.Layers /></Icon>
-          <Icon color="disabled" ><Icon.Layers /></Icon>
+          <Icon color=MaterialUI.Icon.Color.primary ><Icon.Layers /></Icon>
+          <Icon color=MaterialUI.Icon.Color.secondary ><Icon.Layers /></Icon>
+          <Icon color=MaterialUI.Icon.Color.action ><Icon.Layers /></Icon>
+          <Icon color=MaterialUI.Icon.Color.disabled ><Icon.Layers /></Icon>
         </Paper>
       </Grid.Item>
     </Grid.Container>

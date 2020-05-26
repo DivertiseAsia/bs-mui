@@ -101,10 +101,11 @@ test("Test alert component",()=>
     |> toMatchSnapshot
 )
 
-test("Test appbar component",()=>
+test("Test appbar component",()=>{
+  open MaterialUI.Icon.IconButton;
   <AppBar position="static">
     <Toolbar>
-      <IconButton edge="start" color="inherit" />
+      <IconButton edge=Edge.start color=Color.inherit_ />
       <Typography variant=Typography.Variant.h6>
         {string("News")}
       </Typography>
@@ -114,7 +115,7 @@ test("Test appbar component",()=>
   |> container
   |> expect
   |> toMatchSnapshot
-)
+})
 
 test("Test autoComplete component", () =>
   <Autocomplete
@@ -372,7 +373,7 @@ test("Test Hidden component",()=>
 )
 
 test("Test Icon component",()=>
-  <Icon className="fa fa-plus-circle" color="primary">{string("add_circle")}</Icon>
+  <Icon className="fa fa-plus-circle" color=MaterialUI.Icon.Color.primary>{string("add_circle")}</Icon>
   |> render
   |> container
   |> expect
@@ -896,9 +897,10 @@ test("Test ToggleButton component",()=>
     |> toMatchSnapshot
 )
 
-test("Test Tooltip component",()=>
- <Tooltip title="Delete">
-    <IconButton edge="start" color="inherit">
+test("Test Tooltip component",()=>{
+  open MaterialUI.Icon.IconButton;
+  <Tooltip title="Delete">
+    <IconButton edge=Edge.start color=Color.inherit_ >
       <Icon.Restore />
     </IconButton>
   </Tooltip>
@@ -906,7 +908,7 @@ test("Test Tooltip component",()=>
   |> container
   |> expect
   |> toMatchSnapshot
-)
+})
 
 test("Test TreeView component",()=>
   <TreeView>
