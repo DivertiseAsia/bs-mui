@@ -34,7 +34,7 @@ module FontSize : {
 external make:
 (
 ~id: string=?,
-~fontSize: string=?,
+~fontSize: FontSize.t=?,
 ~color: string=?,
 ~component: string=?,
 ~className: string=?,
