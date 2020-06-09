@@ -112,7 +112,7 @@ external make:
         ~selected: bool=?,
         ~padding: string=?,
         ~className: string=?,
-        ~onClick: unit => unit=?,
+        ~onClick: 'event => unit=?,
         ~role: string=?,
         ~style: ReactDOMRe.Style.t=?,
         ~children: React.element=?
