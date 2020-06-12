@@ -19,6 +19,7 @@ module Container = {
     ~xl: GridSize.t=?,
     ~sm: GridSize.t=?,
     ~md: GridSize.t=?,
+    ~lg: GridSize.t=?,
     ~className: string=?,
     ~children: React.element=?
   ) =>
