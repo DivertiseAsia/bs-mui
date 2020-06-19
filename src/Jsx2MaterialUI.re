@@ -3568,14 +3568,18 @@ module TextareaAutosize {
 
     let component = ReasonReact.statelessComponent("TextareaAutosize");
 
-    let make = (
-        ~rows=?,
+    let make=(
+        ~value=?,
+        ~defaultValue=?,
+        ~placeholder=?,
         ~rowsMax=?,
         ~rowsMin=?) => 
         ReasonReactCompat.wrapReactForReasonReact(
             make,
             makeProps(
-                ~rows?,
+                ~value?,
+                ~defaultValue?,
+                ~placeholder?,
                 ~rowsMax?,
                 ~rowsMin?, ())
         );

@@ -3,7 +3,9 @@
     (
       ~id: string=?,
       ~className: string=?,
-      ~rows: string=?,
+      ~value: string=?,
+      ~defaultValue: string=?,
+      ~placeholder: string=?,
       ~rowsMax: string=?,
       ~rowsMin: string=?
     ) =>
