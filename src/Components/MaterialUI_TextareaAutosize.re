@@ -2,6 +2,7 @@
   external make:
     (
       ~id: string=?,
+      ~name: string=?,
       ~onChange: (ReactEvent.Form.t => unit)=?,
       ~className: string=?,
       ~value: string=?,
