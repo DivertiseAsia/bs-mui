@@ -13,6 +13,7 @@ module Variant:{
     (
       ~id: string=?,
       ~className: string=?,
+      ~component: string=?,
       ~style: ReactDOMRe.Style.t=?,
       ~children: React.element=?,
       ~elevation: int=?,
