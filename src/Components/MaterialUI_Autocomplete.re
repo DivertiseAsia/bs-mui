@@ -26,7 +26,7 @@
       ~freeSolo: bool=?,
       ~getOptionDisabled: 'option=>unit=?,
       ~getOptionLabel: 'option=>string=?,
-      ~getOptionSelected: 'option=>unit=?,
+      ~getOptionSelected: ('option, 'option)=>bool=?,
       ~groupBy: unit=>unit=?,
       ~id: string=?,
       ~includeInputInList: bool=?,
