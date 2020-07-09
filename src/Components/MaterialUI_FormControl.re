@@ -5,12 +5,11 @@ module Variant = MaterialUIDataType.Variant;
   external make:
     (
       ~id: string=?,
+      ~color: Color.t=?,
       ~variant: Variant.t=?,
       ~className: string=?,
       ~children: React.element=?
-    ) =>
-    React.element =
-    "default";
+    ) => React.element = "default";
 
   module Jsx2 = {
     let component = ReasonReact.statelessComponent("FormControl");

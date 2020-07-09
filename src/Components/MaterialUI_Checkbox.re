@@ -17,6 +17,7 @@ open MaterialUIDataType;
       ~indeterminateIcon: React.element=?,
       ~inputProps: Js.t('a)=?,
       ~inputRef: 'a=?,
+      ~name: string=?,
       ~onChange: ReactEvent.Synthetic.t => unit=?,
       ~required: bool=?,
       ~size: NoLargeSize.t=?,
