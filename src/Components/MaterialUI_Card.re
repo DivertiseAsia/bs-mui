@@ -52,9 +52,9 @@ external make:
     ~className: string=?,
     ~component: string=?,
     ~disableTypography: bool=?,
-    ~subheader: string=?,
+    ~subheader: React.element=?,
     ~subheaderTypographyProps: React.element=?,
-    ~title: string=?,
+    ~title: React.element=?,
     ~titleTypographyProps: React.element=?
     ) =>
     React.element =
