@@ -965,8 +965,8 @@ test("Test card component",()=>
           {<IconButton>
             <Icon.Restore />
           </IconButton>}
-          title="Shrimp and Chorizo Paella"
-          subheader="September 14, 2016"
+          title=(string("Shrimp and Chorizo Paella"))
+          subheader=(string("September 14, 2016"))
           />
     <CardActionArea>
       <CardMedia
