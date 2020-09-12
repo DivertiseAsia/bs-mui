@@ -947,7 +947,7 @@ module Dialog = {
         ~scroll=?,
         ~transitionComponent=?,
         ~transitionDuration=?,
-        ~transitionProps,
+        ~transitionProps=?,
         children) =>
       ReasonReactCompat.wrapReactForReasonReact(
         make,
@@ -973,7 +973,7 @@ module Dialog = {
             ~scroll?,
             ~transitionComponent?,
             ~transitionDuration?,
-            ~transitionProps,
+            ~transitionProps?,
           ~children=children |> React.array,
           (),
         ),
