@@ -875,7 +875,7 @@ test("Test textAreaAutoSize component",()=>
 
 test("Test ToggleButton component",()=>
   <ToggleButtonGroup
-        onChange={_=>Js.log("toggle button")}
+        onChange={(evt, value)=>Js.log2("toggle button", value)}
       >
       <ToggleButton value="left" >
         <Icon.Favorite />

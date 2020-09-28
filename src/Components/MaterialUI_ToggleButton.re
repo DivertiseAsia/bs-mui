@@ -23,7 +23,7 @@ module ToggleButtonGroup = {
           ~children : React.element=?,
           ~classes: string=?,
           ~exclusive: bool=?,
-          ~onChange: unit=>unit=?,
+          ~onChange: (ReactEvent.Form.t, 'a)=>unit=?,
           ~size: string=?,
           ~value: 'a=?
         ) =>
