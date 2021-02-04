@@ -5,9 +5,9 @@ module Variant:{
   let fullWidth:t;
 } = {
   type t = string;
-  [@bs.inline] let standard:t = "standard";
-  [@bs.inline] let scrollable:t = "scrollable";
-  [@bs.inline] let fullWidth:t = "fullWidth";
+  let standard:t = "standard";
+  let scrollable:t = "scrollable";
+  let fullWidth:t = "fullWidth";
 }
 
 [@react.component] [@bs.module "@material-ui/core/Tabs"]

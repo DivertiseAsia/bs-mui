@@ -1,115 +1,115 @@
 module HorizontalAnchor = {
   type t = string;
-  [@bs.inline] let bottom = "bottom";
-  [@bs.inline] let top = "top";
+  let bottom = "bottom";
+  let top = "top";
 };
 
 module VerticalAnchor = {
   type t = string;
-  [@bs.inline] let left = "left";
-  [@bs.inline] let right = "right";
+  let left = "left";
+  let right = "right";
 };
 
 module Color = {
   type t = string;
-  [@bs.inline] let default = "default";
-  [@bs.inline] let inherit_ = "inherit";
-  [@bs.inline] let primary = "primary";
-  [@bs.inline] let secondary = "secondary";
-  [@bs.inline] let transparent = "transparent";
+  let default = "default";
+  let inherit_ = "inherit";
+  let primary = "primary";
+  let secondary = "secondary";
+  let transparent = "transparent";
 };
 
 module MainColor = {
   type t = string;
-  [@bs.inline] let primary = "primary";
-  [@bs.inline] let secondary = "secondary";
+  let primary = "primary";
+  let secondary = "secondary";
 };
 
 module MainWithDefaultColor = {
   type t = string;
-  [@bs.inline] let default = "default";
-  [@bs.inline] let primary = "primary";
-  [@bs.inline] let secondary = "secondary";
+  let default = "default";
+  let primary = "primary";
+  let secondary = "secondary";
 };
 
 module MainWithDefaultErrorColor = {
   type t = string;
-  [@bs.inline] let default = "default";
-  [@bs.inline] let error = "error";
-  [@bs.inline] let primary = "primary";
-  [@bs.inline] let secondary = "secondary";
+  let default = "default";
+  let error = "error";
+  let primary = "primary";
+  let secondary = "secondary";
 };
 
 module MainWithInheritColor = {
   type t = string;
-  [@bs.inline] let inherit_ = "inherit";
-  [@bs.inline] let primary = "primary";
-  [@bs.inline] let secondary = "secondary";
+  let inherit_ = "inherit";
+  let primary = "primary";
+  let secondary = "secondary";
 };
 
 module NoTransparentColor = {
   type t = string;
-  [@bs.inline] let default = "default";
-  [@bs.inline] let inherit_ = "inherit";
-  [@bs.inline] let primary = "primary";
-  [@bs.inline] let secondary = "secondary";
+  let default = "default";
+  let inherit_ = "inherit";
+  let primary = "primary";
+  let secondary = "secondary";
 };
 
 module MouseEvent = {
   type t = string;
-  [@bs.inline] let onClick = "onClick";
-  [@bs.inline] let onMouseDown = "onMouseDown";
-  [@bs.inline] let onMouseUp = "onMouseUp";
-  [@bs.inline] let disable = false; // Is it workable?
+  let onClick = "onClick";
+  let onMouseDown = "onMouseDown";
+  let onMouseUp = "onMouseUp";
+  let disable = false; // Is it workable?
 };
 
 module TouchEvent = {
   type t = string;
-  [@bs.inline] let onTouchStart = "onTouchStart";
-  [@bs.inline] let onTouchEnd = "onTouchEnd";
-  [@bs.inline] let disable = false; // Is it workable?
+  let onTouchStart = "onTouchStart";
+  let onTouchEnd = "onTouchEnd";
+  let disable = false; // Is it workable?
 };
 
 module Orientation = {
   type t = string;
-  [@bs.inline] let horizontal = "horizontal";
+  let horizontal = "horizontal";
 
-  [@bs.inline] let vertical = "vertical";
+  let vertical = "vertical";
 };
 
 module Overlap = {
   type t = string;
-  [@bs.inline] let circle = "circle";
-  [@bs.inline] let rectangle = "rectangle";
+  let circle = "circle";
+  let rectangle = "rectangle";
 };
 
 module Position = {
   type t = string;
-  [@bs.inline] let absolute = "absolute";
-  [@bs.inline] let fixed = "fixed";
-  [@bs.inline] let relative = "relative";
-  [@bs.inline] let static = "static";
-  [@bs.inline] let sticky = "sticky";
+  let absolute = "absolute";
+  let fixed = "fixed";
+  let relative = "relative";
+  let static = "static";
+  let sticky = "sticky";
 };
 
 module Size = {
   type t = string;
-  [@bs.inline] let small = "small";
-  [@bs.inline] let medium = "medium";
-  [@bs.inline] let large = "large";
+  let small = "small";
+  let medium = "medium";
+  let large = "large";
 };
 
 module NoLargeSize = {
   type t = string;
-  [@bs.inline] let small = "small";
-  [@bs.inline] let medium = "medium";
+  let small = "small";
+  let medium = "medium";
 };
 
 module ButtonBaseType = {
   type t = string;
-  [@bs.inline] let submit = "submit";
-  [@bs.inline] let reset = "reset";
-  [@bs.inline] let button = "button";
+  let submit = "submit";
+  let reset = "reset";
+  let button = "button";
 };
 
 module Variant:{
@@ -119,9 +119,9 @@ module Variant:{
   let filled:t;
 } = {
   type t = string;
-  [@bs.inline] let standard:t = "standard";
-  [@bs.inline] let outlined:t = "outlined";
-  [@bs.inline] let filled:t = "filled";
+  let standard:t = "standard";
+  let outlined:t = "outlined";
+  let filled:t = "filled";
 }
 
 module Shape :{
@@ -131,9 +131,9 @@ module Shape :{
   let square:t;
 } = {
   type t = string;
-  [@bs.inline] let circle:t = "circle";
-  [@bs.inline] let rounded:t = "rounded";
-  [@bs.inline] let square:t = "square";
+  let circle:t = "circle";
+  let rounded:t = "rounded";
+  let square:t = "square";
 };
 
 module TypographyStyle : {
@@ -182,12 +182,12 @@ module AlignContent : {
   let spaceAround:t;
 } = {
   type t = string;
-  [@bs.inline] let stretch:t = "stretch";
-  [@bs.inline] let center:t = "center";
-  [@bs.inline] let flexStart:t = "flex-start";
-  [@bs.inline] let flexEnd:t = "flex-end";
-  [@bs.inline] let spaceBetween:t = "space-between";
-  [@bs.inline] let spaceAround:t = "space-around";
+  let stretch:t = "stretch";
+  let center:t = "center";
+  let flexStart:t = "flex-start";
+  let flexEnd:t = "flex-end";
+  let spaceBetween:t = "space-between";
+  let spaceAround:t = "space-around";
 };
 
 module AlignItems : {
@@ -199,11 +199,11 @@ module AlignItems : {
   let baseline:t;
 } = {
   type t = string;
-  [@bs.inline] let flexStart:t = "flex-start";
-  [@bs.inline] let center:t = "center";
-  [@bs.inline] let flexEnd:t = "flex-end";
-  [@bs.inline] let stretch:t = "stretch";
-  [@bs.inline] let baseline:t = "baseline";
+  let flexStart:t = "flex-start";
+  let center:t = "center";
+  let flexEnd:t = "flex-end";
+  let stretch:t = "stretch";
+  let baseline:t = "baseline";
 };
 
 module Justify : {
@@ -216,12 +216,12 @@ module Justify : {
   let spaceEvenly:t;
 } = {
   type t = string;
-  [@bs.inline] let flexStart:t = "flex-start";
-  [@bs.inline] let center:t = "center";
-  [@bs.inline] let flexEnd:t = "flex-end";
-  [@bs.inline] let spaceBetween:t = "space-between";
-  [@bs.inline] let spaceAround:t = "space-around";
-  [@bs.inline] let spaceEvenly:t = "space-evenly";
+  let flexStart:t = "flex-start";
+  let center:t = "center";
+  let flexEnd:t = "flex-end";
+  let spaceBetween:t = "space-between";
+  let spaceAround:t = "space-around";
+  let spaceEvenly:t = "space-evenly";
 };
 
 module GridSize : {
@@ -258,10 +258,10 @@ module FlexDirection : {
   let reversedColumn:t;
 } = {
   type t = string;
-  [@bs.inline] let row:t = "row";
-  [@bs.inline] let reversedRow:t = "row-reverse";
-  [@bs.inline] let column:t = "column";
-  [@bs.inline] let reversedColumn:t = "column-reverse";
+  let row:t = "row";
+  let reversedRow:t = "row-reverse";
+  let column:t = "column";
+  let reversedColumn:t = "column-reverse";
 };
 
 module ScreenSize : {
@@ -273,9 +273,9 @@ module ScreenSize : {
   let xl:t;
 } = {
   type t = string;
-  [@bs.inline] let xs:t = "xs";
-  [@bs.inline] let sm:t = "sm";
-  [@bs.inline] let md:t = "md";
-  [@bs.inline] let lg:t = "lg";
-  [@bs.inline] let xl:t = "xl";
+  let xs:t = "xs";
+  let sm:t = "sm";
+  let md:t = "md";
+  let lg:t = "lg";
+  let xl:t = "xl";
 };

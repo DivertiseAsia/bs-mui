@@ -2,20 +2,20 @@ module Variant = MaterialUIDataType.TypographyStyle;
 module Color = {
   type t = string;
 
-  [@bs.inline] let inherit_ = "inherit";
-  [@bs.inline] let primary = "primary";
-  [@bs.inline] let secondary = "secondary";
-  [@bs.inline] let textPrimary = "textPrimary";
-  [@bs.inline] let textSecondary = "textSecondary";
-  [@bs.inline] let error = "error";
+  let inherit_ = "inherit";
+  let primary = "primary";
+  let secondary = "secondary";
+  let textPrimary = "textPrimary";
+  let textSecondary = "textSecondary";
+  let error = "error";
 };
 
 module Display = {
   type t = string;
 
-  [@bs.inline] let initial = "initial";
-  [@bs.inline] let inline = "inline";
-  [@bs.inline] let block = "block";
+  let initial = "initial";
+  let inline = "inline";
+  let block = "block";
 };
 
 [@react.component] [@bs.module "@material-ui/core/Typography"]

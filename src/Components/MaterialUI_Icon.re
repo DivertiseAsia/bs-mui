@@ -8,12 +8,12 @@ module Color : {
   let disabled:t;
 } = {
   type t = string;
-  [@bs.inline] let inherit_ = "inherit";
-  [@bs.inline] let primary = "primary";
-  [@bs.inline] let secondary = "secondary";
-  [@bs.inline] let action = "action";
-  [@bs.inline] let error = "error";
-  [@bs.inline] let disabled = "disabled";
+  let inherit_ = "inherit";
+  let primary = "primary";
+  let secondary = "secondary";
+  let action = "action";
+  let error = "error";
+  let disabled = "disabled";
 };
 
 module FontSize : {
@@ -24,10 +24,10 @@ module FontSize : {
   let large:t;
 } = {
   type t = string;
-  [@bs.inline] let inherit_ = "inherit";
-  [@bs.inline] let default = "default";
-  [@bs.inline] let small = "small";
-  [@bs.inline] let large = "large";
+  let inherit_ = "inherit";
+  let default = "default";
+  let small = "small";
+  let large = "large";
 };
 
 [@react.component] [@bs.module "@material-ui/core/Icon"]

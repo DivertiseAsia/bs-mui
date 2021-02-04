@@ -7,9 +7,9 @@ module Variant : {
   let static:t;
 } = {
   type t = string;
-  [@bs.inline] let determinate = "determinate";
-  [@bs.inline] let indeterminate = "indeterminate";
-  [@bs.inline] let static = "static";
+  let determinate = "determinate";
+  let indeterminate = "indeterminate";
+  let static = "static";
 };
 
 [@react.component] [@bs.module "@material-ui/core/CircularProgress"]

@@ -6,8 +6,8 @@ module Variant : {
   let standard:t;
 } = {
   type t = string;
-  [@bs.inline] let dot = "dot";
-  [@bs.inline] let standard = "standard";
+  let dot = "dot";
+  let standard = "standard";
 };
 
 [@react.component] [@bs.module "@material-ui/core/Badge"]
