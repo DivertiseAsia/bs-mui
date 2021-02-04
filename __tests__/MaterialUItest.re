@@ -253,24 +253,24 @@ test("Test Drawer component",()=>
 )
 
 test("Test ExpantionPanel component",()=>
-  <ExpansionPanel>
-      <ExpansionPanelSummary
+  <Accordion>
+      <AccordionSummary
       >
         <Typography>{string("Expansion Panel 1")}</Typography>
-      </ExpansionPanelSummary>
-      <ExpansionPanelDetails>
+      </AccordionSummary>
+      <AccordionDetails>
         <Typography>
           {string("Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse malesuada lacus ex,
           sit amet blandit leo lobortis eget.")}
         </Typography>
-      </ExpansionPanelDetails>
-      <ExpansionPanelActions>
+      </AccordionDetails>
+      <AccordionActions>
           <Button size="small">{string("Cancel")}</Button>
           <Button size="small" color="primary">
             {string("Save")}
           </Button>
-        </ExpansionPanelActions>
-    </ExpansionPanel>
+        </AccordionActions>
+    </Accordion>
     |> render
     |> container
     |> expect
