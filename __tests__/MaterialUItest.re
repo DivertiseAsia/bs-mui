@@ -253,24 +253,24 @@ test("Test Drawer component",()=>
 )
 
 test("Test ExpantionPanel component",()=>
-  <ExpansionPanel>
-      <ExpansionPanelSummary
+  <Accordion>
+      <AccordionSummary
       >
         <Typography>{string("Expansion Panel 1")}</Typography>
-      </ExpansionPanelSummary>
-      <ExpansionPanelDetails>
+      </AccordionSummary>
+      <AccordionDetails>
         <Typography>
           {string("Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse malesuada lacus ex,
           sit amet blandit leo lobortis eget.")}
         </Typography>
-      </ExpansionPanelDetails>
-      <ExpansionPanelActions>
+      </AccordionDetails>
+      <AccordionActions>
           <Button size="small">{string("Cancel")}</Button>
           <Button size="small" color="primary">
             {string("Save")}
           </Button>
-        </ExpansionPanelActions>
-    </ExpansionPanel>
+        </AccordionActions>
+    </Accordion>
     |> render
     |> container
     |> expect
@@ -582,26 +582,29 @@ test("Test Pagination component",() =>
   |> toMatchSnapshot
 )
 
-test("Test Popover component",()=>
-  <Popover
-      _open=false
-      anchorOrigin={{
-        "vertical": "bottom",
-        "horizontal": "center",
-      }}
-      transformOrigin={{
-        "vertical": "top",
-        "horizontal": "center",
-      }}
-      anchorEl={Js.Nullable.return(<Button></Button>)}
-  >
-    <Typography>{string("The content of the Popover.")}</Typography>
-  </Popover>
-  |> render
-  |> container
-  |> expect
-  |> toMatchSnapshot
-)
+// test("Test Popover component",()=>{
+//   let popAnchor = React.useRef(Js.Nullable.null);
+//   <Button ref={ReactDOM.Ref.domRef(popAnchor)}/>
+//   <Popover
+//       _open=false
+//       anchorOrigin={{
+//         "vertical": "bottom",
+//         "horizontal": "center",
+//       }}
+//       transformOrigin={{
+//         "vertical": "top",
+//         "horizontal": "center",
+//       }}
+//       anchorEl={popAnchor^}
+//   >
+//     <Typography>{string("The content of the Popover.")}</Typography>
+//   </Popover>
+// }
+//   |> render
+//   |> container
+//   |> expect
+//   |> toMatchSnapshot
+// )
 
 test("Test Portal component",()=>
   <Portal>
