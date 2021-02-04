@@ -1004,7 +1004,7 @@ test("test date picker",()=>{
   let mainInfo = "DatePicker Demo";
   /* let (selectedDate, handleDateChange) = React.useState(() => Js.Date.make()); */
   let selectedDate = Js.Date.make();
-  let handleDateChange = (f) => {f(selectedDate);()};
+  let handleDateChange = (f) => {f(selectedDate)};
 
   <Jsx3LayoutComponent title="DatePicker" mainInfo> 
     <> 
@@ -1012,7 +1012,7 @@ test("test date picker",()=>{
         <Grid.Item xs=GridSize.size(12)>
             <Picker.UtilsProvider utils=Picker.moment>
                 <DatePicker 
-                onChange={newDate=>handleDateChange(_oldDate => newDate)} 
+                onChange={newDate=>handleDateChange(_oldDate => ())} 
                 value=selectedDate
                 format="DD-MM-YYYY"
                 showTodayButton=true

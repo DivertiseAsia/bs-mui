@@ -4,8 +4,8 @@ module Variant : {
   let selectedMenu:t;
 } = {
   type t = string;
-  [@bs.inline] let menu = "menu";
-  [@bs.inline] let selectedMenu = "selectedMenu";
+  let menu = "menu";
+  let selectedMenu = "selectedMenu";
 };
 
 [@react.component] [@bs.module "@material-ui/core/Menu"]

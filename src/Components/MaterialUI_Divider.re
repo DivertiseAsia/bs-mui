@@ -5,9 +5,9 @@ module Variant : {
   let middle:t;
 } = {
   type t = string;
-  [@bs.inline] let fullWidth = "fullWidth";
-  [@bs.inline] let inset = "inset";
-  [@bs.inline] let middle = "middle";
+  let fullWidth = "fullWidth";
+  let inset = "inset";
+  let middle = "middle";
 };
 
 [@react.component] [@bs.module "@material-ui/core/Divider"]

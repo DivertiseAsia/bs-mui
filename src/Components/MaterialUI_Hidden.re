@@ -7,8 +7,8 @@ module Implementation : {
 }={
   type t = string;
   
-  [@bs.inline] let js:t = "js";
-  [@bs.inline] let css:t = "css";
+  let js:t = "js";
+  let css:t = "css";
 };
 
 

@@ -4,8 +4,8 @@ module Color : {
   let secondary:t;
 } = {
   type t = string;
-  [@bs.inline] let primary = "primary";
-  [@bs.inline] let secondary = "secondary";
+  let primary = "primary";
+  let secondary = "secondary";
 };
 
 module Variant : {
@@ -16,10 +16,10 @@ module Variant : {
   let query:t;
 } = {
   type t = string;
-  [@bs.inline] let determinate = "determinate";
-  [@bs.inline] let indeterminate = "indeterminate";
-  [@bs.inline] let buffer = "buffer";
-  [@bs.inline] let query = "query";
+  let determinate = "determinate";
+  let indeterminate = "indeterminate";
+  let buffer = "buffer";
+  let query = "query";
 };
 
 [@react.component] [@bs.module "@material-ui/core/LinearProgress"]

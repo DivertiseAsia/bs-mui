@@ -5,8 +5,8 @@ module Variant : {
   let outlined:t;
 } = {
   type t = string;
-  [@bs.inline] let default = "default";
-  [@bs.inline] let outlined = "outlined";
+  let default = "default";
+  let outlined = "outlined";
 };
 
 [@react.component] [@bs.module "@material-ui/core/Chip"]

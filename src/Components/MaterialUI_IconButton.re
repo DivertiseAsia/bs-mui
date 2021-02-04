@@ -6,10 +6,10 @@ module Color : {
   let secondary:t;
 } = {
   type t = string;
-  [@bs.inline] let default = "default";
-  [@bs.inline] let inherit_ = "inherit";
-  [@bs.inline] let primary = "primary";
-  [@bs.inline] let secondary = "secondary";
+  let default = "default";
+  let inherit_ = "inherit";
+  let primary = "primary";
+  let secondary = "secondary";
 };
 
 module Edge : {

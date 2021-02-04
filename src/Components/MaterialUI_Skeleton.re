@@ -5,9 +5,9 @@ module Variant : {
   let circle:t;
 }= {
   type t = string;
-  [@bs.inline] let text:t = "text";
-  [@bs.inline] let rect:t = "rect";
-  [@bs.inline] let circle:t = "circle";
+  let text:t = "text";
+  let rect:t = "rect";
+  let circle:t = "circle";
 };
 
 [@react.component] [@bs.module "@material-ui/lab/Skeleton"]

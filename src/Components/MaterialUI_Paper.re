@@ -4,8 +4,8 @@ module Variant:{
   let outlined:t;
 } = {
   type t = string;
-  [@bs.inline] let elevation:t = "elevation";
-  [@bs.inline] let outlined:t = "outlined";
+  let elevation:t = "elevation";
+  let outlined:t = "outlined";
 }
 
 [@react.component] [@bs.module "@material-ui/core/Paper"]
