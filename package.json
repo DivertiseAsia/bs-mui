@@ -45,7 +45,6 @@
     "bs-platform": "^8.4.2",
     "bs-react-testing-library": "^0.8.0",
     "bs-webapi": "^0.19.1",
-    "bsdoc": "^6.0.4-alpha",
     "moduleserve": "github:marijnh/moduleserve#7db414e",
     "reason-react": "^0.9.1"
   }
