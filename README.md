@@ -11,6 +11,10 @@ You may view a demo of the current release at https://divertiseasia.github.io/bs
 `npm install`
 
 # Run
-
-`npm start`
-`npm run server`
+```
+npm start
+```
+On another terminal
+```
+npm run server
+```
