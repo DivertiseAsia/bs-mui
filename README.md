@@ -8,7 +8,7 @@ You may view a demo of the current release at https://divertiseasia.github.io/bs
 
 # Installation
 
-`npm install`
+`npm install @divertise-asia/bs-mui`
 
 # Run
 ```
