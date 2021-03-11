@@ -45,7 +45,7 @@ external make:
 ~color: Color.t=?,
 ~size: Size.t=?,
 ~className: string=?,
-~onClick: unit => unit=?,
+~onClick: ReactEvent.Mouse.t => unit=?,
 ~disabled: bool=?,
 ~disableFocusRipple: bool=?,
 ~disableRipple: bool=?,
