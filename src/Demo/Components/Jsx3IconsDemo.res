@@ -1,4 +1,4 @@
-open ReasonReact
+open React
 open MaterialUI
 open MaterialUIDataType
 
@@ -65,7 +65,6 @@ let make = () => {
   </Jsx3LayoutComponent>"
 
   <>
-    demoCode
-    <blockquote> <pre> <code> {ReasonReact.string(demoCodeString)} </code> </pre> </blockquote>
+    demoCode <blockquote> <pre> <code> {React.string(demoCodeString)} </code> </pre> </blockquote>
   </>
 }

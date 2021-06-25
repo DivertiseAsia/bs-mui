@@ -9,14 +9,16 @@ type action = ChangeTargetValue(string)
 
 @react.component
 let make = () => {
-  let (state, dispatch) = React.useReducer((state, action) =>
-    switch action {
-    | ChangeTargetValue(targetValue) => {...state, targetValue: targetValue}
-    }
-  , {
-    loading: false,
-    targetValue: "",
-  })
+  let (state, dispatch) = React.useReducer(
+    (state, action) =>
+      switch action {
+      | ChangeTargetValue(targetValue) => {...state, targetValue: targetValue}
+      },
+    {
+      loading: false,
+      targetValue: "",
+    },
+  )
   let mainInfo = "Radio buttons allow the user to select one option from a set."
   let demoCode =
     <Jsx3LayoutComponent title="Radio" mainInfo>
@@ -59,7 +61,6 @@ let make = () => {
   </Jsx3LayoutComponent>"
 
   <>
-    demoCode
-    <blockquote> <pre> <code> {ReasonReact.string(demoCodeString)} </code> </pre> </blockquote>
+    demoCode <blockquote> <pre> <code> {React.string(demoCodeString)} </code> </pre> </blockquote>
   </>
 }

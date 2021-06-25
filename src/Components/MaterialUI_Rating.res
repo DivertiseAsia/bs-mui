@@ -1,10 +1,10 @@
-@react.component @bs.module("@material-ui/lab/Rating")
+@react.component @module("@material-ui/lab/Rating")
 external make: (
   ~id: string=?,
   ~checked: bool=?,
   ~checkedIcon: React.element=?,
   ~className: string=?,
-  ~style: ReactDOMRe.Style.t=?,
+  ~style: ReactDOM.Style.t=?,
   ~color: string=?,
   ~disabled: bool=?,
   ~disableRipple: bool=?,

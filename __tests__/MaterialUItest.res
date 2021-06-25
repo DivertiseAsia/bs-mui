@@ -3,7 +3,7 @@ open Expect
 open ReactTestingLibrary
 open MaterialUI
 open MaterialUIDataType
-open ReasonReact
+open React
 
 test("Button Component with different sizes renders", () =>
   <>

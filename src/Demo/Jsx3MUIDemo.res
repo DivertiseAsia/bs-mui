@@ -2,7 +2,7 @@ module False_or_choice = {
   @unboxed
   type rec t = Any('a): t
 
-  @bs.deriving(jsConverter)
+  @deriving(jsConverter)
   type choices = [#active | #inactive]
 
   let bool = (v: bool) => Any(v)
@@ -15,7 +15,7 @@ root->Js.Dict.set("key1", False_or_choice.false_)
 root->Js.Dict.set("key2", False_or_choice.choices(#active))
 Js.log(root)
 
-let styleWrapperComponent = ReactDOMRe.Style.make(
+let styleWrapperComponent = ReactDOM.Style.make(
   ~background="lightgray",
   ~border="0px",
   ~borderRadius="3px",
@@ -26,7 +26,7 @@ let styleWrapperComponent = ReactDOMRe.Style.make(
 
 @react.component
 let make = () => {
-  let url = ReasonReactRouter.useUrl()
+  let url = RescriptReactRouter.useUrl()
   switch url.path {
   | list{"component", "badge"} => <Jsx3BadgeDemo />
   | list{"component", "bottom-navigation"} => <Jsx3BottomNavigationDemo />
@@ -68,7 +68,7 @@ let make = () => {
   }
 }
 
-/* let component = ReasonReact.statelessComponent("Jsx3MUIDemo");
+/* let component = React.statelessComponent("Jsx3MUIDemo");
 
 /* [@react.component] */
 let make = (_children) => {

@@ -1,7 +1,7 @@
 open MaterialUI
 open MaterialUI.DataType
 
-@bs.get_index external get: ('a, string) => 'b = ""
+@get_index external get: ('a, string) => 'b = ""
 
 @react.component
 let make = () => {
@@ -65,7 +65,6 @@ let make = () => {
   </Jsx3LayoutComponent>"
 
   <>
-    demoCode
-    <blockquote> <pre> <code> {ReasonReact.string(demoCodeString)} </code> </pre> </blockquote>
+    demoCode <blockquote> <pre> <code> {React.string(demoCodeString)} </code> </pre> </blockquote>
   </>
 }

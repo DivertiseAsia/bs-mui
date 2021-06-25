@@ -13,20 +13,22 @@ type action =
 
 @react.component
 let make = () => {
-  let (state, dispatch) = React.useReducer((state, action) =>
-    switch action {
-    | CheckboxOneChecked(checkboxOneChecked) => {...state, checkboxOneChecked: checkboxOneChecked}
-    | CheckboxTwoChecked(checkboxTwoChecked) => {...state, checkboxTwoChecked: checkboxTwoChecked}
-    | CheckboxThreeChecked(checkboxThreeChecked) => {
-        ...state,
-        checkboxThreeChecked: checkboxThreeChecked,
-      }
-    }
-  , {
-    checkboxOneChecked: true,
-    checkboxTwoChecked: false,
-    checkboxThreeChecked: true,
-  })
+  let (state, dispatch) = React.useReducer(
+    (state, action) =>
+      switch action {
+      | CheckboxOneChecked(checkboxOneChecked) => {...state, checkboxOneChecked: checkboxOneChecked}
+      | CheckboxTwoChecked(checkboxTwoChecked) => {...state, checkboxTwoChecked: checkboxTwoChecked}
+      | CheckboxThreeChecked(checkboxThreeChecked) => {
+          ...state,
+          checkboxThreeChecked: checkboxThreeChecked,
+        }
+      },
+    {
+      checkboxOneChecked: true,
+      checkboxTwoChecked: false,
+      checkboxThreeChecked: true,
+    },
+  )
   let mainInfo = "Checkboxes allow the user to select one or more items from a set."
   let demoCode =
     <Jsx3LayoutComponent title="Checkbox" mainInfo>
@@ -84,7 +86,6 @@ let make = () => {
   </Jsx3LayoutComponent>"
 
   <>
-    demoCode
-    <blockquote> <pre> <code> {ReasonReact.string(demoCodeString)} </code> </pre> </blockquote>
+    demoCode <blockquote> <pre> <code> {React.string(demoCodeString)} </code> </pre> </blockquote>
   </>
 }

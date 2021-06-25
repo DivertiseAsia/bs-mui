@@ -24,25 +24,25 @@ module Anchor: {
   let top: t = "top"
 }
 
-@bs.deriving(abstract)
+@deriving(abstract)
 type props<'modalProps, 'paperProps, 'slideProps, 'duration> = {
-  @bs.optional anchor: Anchor.t,
-  @bs.optional id: string,
-  @bs.optional className: string,
-  @bs.optional classes: string,
-  @bs.optional elevation: int,
-  @bs.optional @bs.as("ModalProps") bsnameModalProps: 'modalProps,
-  @bs.optional onClose: unit => unit,
-  @bs.optional _open: bool,
-  @bs.optional @bs.as("PaperProps") bsnamePaperProps: 'paperProps,
-  @bs.optional @bs.as("SlideProps") bsnameSlideProps: 'slideProps,
-  @bs.optional transitionDuration: 'duration,
-  @bs.optional variant: Variant.t,
-  @bs.optional style: ReactDOMRe.Style.t,
-  @bs.optional children: React.element,
+  @optional anchor: Anchor.t,
+  @optional id: string,
+  @optional className: string,
+  @optional classes: string,
+  @optional elevation: int,
+  @optional @as("ModalProps") bsnameModalProps: 'modalProps,
+  @optional onClose: unit => unit,
+  @optional _open: bool,
+  @optional @as("PaperProps") bsnamePaperProps: 'paperProps,
+  @optional @as("SlideProps") bsnameSlideProps: 'slideProps,
+  @optional transitionDuration: 'duration,
+  @optional variant: Variant.t,
+  @optional style: ReactDOM.Style.t,
+  @optional children: React.element,
 }
 
 let makeProps = props
 
-@bs.module("@material-ui/core/Drawer")
+@module("@material-ui/core/Drawer")
 external make: React.component<props<'modalProps, 'paperProps, 'slideProps, 'duration>> = "default"

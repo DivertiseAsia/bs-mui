@@ -1,12 +1,12 @@
 open MaterialUIDataType
 
-@react.component @bs.module("@material-ui/core/Radio")
+@react.component @module("@material-ui/core/Radio")
 external make: (
   ~id: string=?,
   ~checked: bool=?,
   ~checkedIcon: React.element=?,
   ~className: string=?,
-  ~style: ReactDOMRe.Style.t=?,
+  ~style: ReactDOM.Style.t=?,
   ~color: string=?,
   ~disabled: bool=?,
   ~disableRipple: bool=?,
@@ -23,7 +23,7 @@ external make: (
 ) => React.element = "default"
 
 module RadioGroup = {
-  @react.component @bs.module("@material-ui/core/RadioGroup")
+  @react.component @module("@material-ui/core/RadioGroup")
   external make: (
     ~row: bool=?,
     ~id: string=?,

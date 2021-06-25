@@ -1,4 +1,4 @@
-open ReasonReact
+open React
 open MaterialUI
 
 type state = {
@@ -10,14 +10,16 @@ type action = ChangeStep(int)
 
 @react.component
 let make = () => {
-  let (state, dispatch) = React.useReducer((state, action) =>
-    switch action {
-    | ChangeStep(step) => {...state, step: step}
-    }
-  , {
-    loading: false,
-    step: 1,
-  })
+  let (state, dispatch) = React.useReducer(
+    (state, action) =>
+      switch action {
+      | ChangeStep(step) => {...state, step: step}
+      },
+    {
+      loading: false,
+      step: 1,
+    },
+  )
   let mainInfo = "When pressed, a floating action button can display three to six related actions in the form of a speed dial."
   let demoCode =
     <Jsx3LayoutComponent title="Stepper" mainInfo>
@@ -78,7 +80,6 @@ let make = () => {
   </Jsx3LayoutComponent>"
 
   <>
-    demoCode
-    <blockquote> <pre> <code> {ReasonReact.string(demoCodeString)} </code> </pre> </blockquote>
+    demoCode <blockquote> <pre> <code> {React.string(demoCodeString)} </code> </pre> </blockquote>
   </>
 }

@@ -8,7 +8,7 @@ module Variant: {
   let selectedMenu = "selectedMenu"
 }
 
-@react.component @bs.module("@material-ui/core/Menu")
+@react.component @module("@material-ui/core/Menu")
 external make: (
   ~id: string=?,
   ~className: string=?,
@@ -32,20 +32,20 @@ external make: (
 ) => React.element = "default"
 
 module MenuItem = {
-  @react.component @bs.module("@material-ui/core/MenuItem")
+  @react.component @module("@material-ui/core/MenuItem")
   external make: (
     ~id: string=?,
     ~value: 'a=?,
     ~dense: bool=?,
     ~disableGutters: bool=?,
     ~className: string=?,
-    ~style: ReactDOMRe.Style.t=?,
+    ~style: ReactDOM.Style.t=?,
     ~children: React.element=?,
   ) => React.element = "default"
 }
 
 module MenuList = {
-  @react.component @bs.module("@material-ui/core/MenuList")
+  @react.component @module("@material-ui/core/MenuList")
   external make: (
     ~id: string=?,
     ~className: string=?,

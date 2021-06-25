@@ -1,23 +1,23 @@
-@react.component @bs.module("@material-ui/core/Table")
+@react.component @module("@material-ui/core/Table")
 external make: (
   ~id: string=?,
   ~className: string=?,
-  ~style: ReactDOMRe.Style.t=?,
+  ~style: ReactDOM.Style.t=?,
   ~children: React.element=?,
 ) => React.element = "default"
 
 module TableBody = {
-  @react.component @bs.module("@material-ui/core/TableBody")
+  @react.component @module("@material-ui/core/TableBody")
   external make: (
     ~id: string=?,
     ~className: string=?,
-    ~style: ReactDOMRe.Style.t=?,
+    ~style: ReactDOM.Style.t=?,
     ~children: React.element=?,
   ) => React.element = "default"
 }
 
 module TableCell = {
-  @react.component @bs.module("@material-ui/core/TableCell")
+  @react.component @module("@material-ui/core/TableCell")
   external make: (
     ~id: string=?,
     ~align: string=?,
@@ -28,13 +28,13 @@ module TableCell = {
     ~sortDirection: string=?,
     ~variant: string=?,
     ~className: string=?,
-    ~style: ReactDOMRe.Style.t=?,
+    ~style: ReactDOM.Style.t=?,
     ~children: React.element=?,
   ) => React.element = "default"
 }
 
 module TableContainer = {
-  @react.component @bs.module("@material-ui/core/TableContainer")
+  @react.component @module("@material-ui/core/TableContainer")
   external make: (
     ~id: string=?,
     ~className: string=?,
@@ -45,7 +45,7 @@ module TableContainer = {
 }
 
 module TableFooter = {
-  @react.component @bs.module("@material-ui/core/TableFooter")
+  @react.component @module("@material-ui/core/TableFooter")
   external make: (
     ~id: string=?,
     ~className: string=?,
@@ -56,17 +56,17 @@ module TableFooter = {
 }
 
 module TableHead = {
-  @react.component @bs.module("@material-ui/core/TableHead")
+  @react.component @module("@material-ui/core/TableHead")
   external make: (
     ~id: string=?,
     ~className: string=?,
-    ~style: ReactDOMRe.Style.t=?,
+    ~style: ReactDOM.Style.t=?,
     ~children: React.element=?,
   ) => React.element = "default"
 }
 
 module TablePagination = {
-  @react.component @bs.module("@material-ui/core/TablePagination")
+  @react.component @module("@material-ui/core/TablePagination")
   external make: (
     ~id: string=?,
     ~component: 'a=?,
@@ -77,13 +77,13 @@ module TablePagination = {
     ~onChangePage: (ReactEvent.Synthetic.t, int) => unit=?,
     ~onChangeRowsPerPage: ReactEvent.Synthetic.t => unit=?,
     ~className: string=?,
-    ~style: ReactDOMRe.Style.t=?,
+    ~style: ReactDOM.Style.t=?,
     ~children: React.element=?,
   ) => React.element = "default"
 }
 
 module TableRow = {
-  @react.component @bs.module("@material-ui/core/TableRow")
+  @react.component @module("@material-ui/core/TableRow")
   external make: (
     ~id: string=?,
     ~hover: bool=?,
@@ -92,13 +92,13 @@ module TableRow = {
     ~className: string=?,
     ~onClick: 'event => unit=?,
     ~role: string=?,
-    ~style: ReactDOMRe.Style.t=?,
+    ~style: ReactDOM.Style.t=?,
     ~children: React.element=?,
   ) => React.element = "default"
 }
 
 module TableSortLabel = {
-  @react.component @bs.module("@material-ui/core/TableSortLabel")
+  @react.component @module("@material-ui/core/TableSortLabel")
   external make: (
     ~id: string=?,
     ~className: string=?,

@@ -1,7 +1,7 @@
-open ReasonReact
+open React
 
 let styleWrapperComponent = backgroundColor =>
-  ReactDOMRe.Style.make(
+  ReactDOM.Style.make(
     ~background=backgroundColor,
     ~border="0px",
     ~borderRadius="3px",

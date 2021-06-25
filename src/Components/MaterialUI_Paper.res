@@ -8,12 +8,12 @@ module Variant: {
   let outlined: t = "outlined"
 }
 
-@react.component @bs.module("@material-ui/core/Paper")
+@react.component @module("@material-ui/core/Paper")
 external make: (
   ~id: string=?,
   ~className: string=?,
   ~component: string=?,
-  ~style: ReactDOMRe.Style.t=?,
+  ~style: ReactDOM.Style.t=?,
   ~children: React.element=?,
   ~elevation: int=?,
   ~square: bool=?,

@@ -1,6 +1,6 @@
 module Variant = MaterialUIDataType.Variant
 
-@react.component @bs.module("@material-ui/core/Select")
+@react.component @module("@material-ui/core/Select")
 external make: (
   ~id: string=?,
   ~label: string=?,
@@ -11,7 +11,7 @@ external make: (
   ~onChange: ReactEvent.Form.t => unit=?,
   ~inputProps: Js.t<'b>=?,
   ~className: string=?,
-  ~style: ReactDOMRe.Style.t=?,
+  ~style: ReactDOM.Style.t=?,
   ~variant: Variant.t=?,
   ~children: React.element=?,
 ) => React.element = "default"

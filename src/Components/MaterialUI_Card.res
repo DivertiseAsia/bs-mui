@@ -1,4 +1,4 @@
-@react.component @bs.module("@material-ui/core/Card")
+@react.component @module("@material-ui/core/Card")
 external make: (
   ~id: string=?,
   ~children: React.element=?,
@@ -7,7 +7,7 @@ external make: (
 ) => React.element = "default"
 
 module CardActionArea = {
-  @react.component @bs.module("@material-ui/core/CardActionArea")
+  @react.component @module("@material-ui/core/CardActionArea")
   external make: (
     ~id: string=?,
     ~children: React.element=?,
@@ -16,7 +16,7 @@ module CardActionArea = {
 }
 
 module CardActions = {
-  @react.component @bs.module("@material-ui/core/CardActions")
+  @react.component @module("@material-ui/core/CardActions")
   external make: (
     ~id: string=?,
     ~children: React.element=?,
@@ -26,19 +26,19 @@ module CardActions = {
 }
 
 module CardContent = {
-  @react.component @bs.module("@material-ui/core/CardContent")
+  @react.component @module("@material-ui/core/CardContent")
   external make: (
     ~id: string=?,
     ~children: React.element=?,
     ~className: string=?,
     ~component: string=?,
     ~padding: int=?,
-    ~style: ReactDOMRe.Style.t=?,
+    ~style: ReactDOM.Style.t=?,
   ) => React.element = "default"
 }
 
 module CardHeader = {
-  @react.component @bs.module("@material-ui/core/CardHeader")
+  @react.component @module("@material-ui/core/CardHeader")
   external make: (
     ~id: string=?,
     ~action: React.element=?,
@@ -55,7 +55,7 @@ module CardHeader = {
 }
 
 module CardMedia = {
-  @react.component @bs.module("@material-ui/core/CardMedia")
+  @react.component @module("@material-ui/core/CardMedia")
   external make: (
     ~id: string=?,
     ~children: React.element=?,

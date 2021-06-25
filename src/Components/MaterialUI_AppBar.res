@@ -1,6 +1,6 @@
 open MaterialUIDataType
 
-@react.component @bs.module("@material-ui/core/AppBar")
+@react.component @module("@material-ui/core/AppBar")
 external make: (
   ~id: string=?,
   ~children: React.element=?,
@@ -8,5 +8,5 @@ external make: (
   ~classes: string=?,
   ~color: Color.t=?,
   ~position: Position.t=?,
-  ~style: ReactDOMRe.Style.t=?,
+  ~style: ReactDOM.Style.t=?,
 ) => React.element = "default"

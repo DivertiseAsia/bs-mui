@@ -1,4 +1,4 @@
-open ReasonReact
+open React
 open MaterialUI
 
 type state = {
@@ -10,14 +10,16 @@ type action = ToggleSnackbar(bool)
 
 @react.component
 let make = () => {
-  let (state, dispatch) = React.useReducer((state, action) =>
-    switch action {
-    | ToggleSnackbar(openSnackbar) => {...state, openSnackbar: openSnackbar}
-    }
-  , {
-    loading: false,
-    openSnackbar: false,
-  })
+  let (state, dispatch) = React.useReducer(
+    (state, action) =>
+      switch action {
+      | ToggleSnackbar(openSnackbar) => {...state, openSnackbar: openSnackbar}
+      },
+    {
+      loading: false,
+      openSnackbar: false,
+    },
+  )
   let mainInfo = "Snackbars provide brief messages about app processes. The component is also known as a toast."
   let demoCode =
     <Jsx3LayoutComponent title="Snackbar" mainInfo>
@@ -68,7 +70,6 @@ let make = () => {
   </Jsx3LayoutComponent>"
 
   <>
-    demoCode
-    <blockquote> <pre> <code> {ReasonReact.string(demoCodeString)} </code> </pre> </blockquote>
+    demoCode <blockquote> <pre> <code> {React.string(demoCodeString)} </code> </pre> </blockquote>
   </>
 }

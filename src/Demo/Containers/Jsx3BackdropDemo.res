@@ -1,4 +1,4 @@
-open ReasonReact
+open React
 open MaterialUI
 
 type state = {
@@ -8,21 +8,23 @@ type state = {
 
 type action = ControlBackdrop(bool)
 
-let style = ReactDOMRe.Style.make(~zIndex="1000", ())
+let style = ReactDOM.Style.make(~zIndex="1000", ())
 
 let styleObj = Js.Dict.empty()
 Js.Dict.set(styleObj, "root", style)
 
 @react.component
 let make = () => {
-  let (state, dispatch) = React.useReducer((state, action) =>
-    switch action {
-    | ControlBackdrop(openBackdrop) => {...state, openBackdrop: openBackdrop}
-    }
-  , {
-    loading: false,
-    openBackdrop: false,
-  })
+  let (state, dispatch) = React.useReducer(
+    (state, action) =>
+      switch action {
+      | ControlBackdrop(openBackdrop) => {...state, openBackdrop: openBackdrop}
+      },
+    {
+      loading: false,
+      openBackdrop: false,
+    },
+  )
   let madeStyle = makeStyles(styleObj)
   let classes = madeStyle(. 0)
   let className = switch Js.Dict.get(classes, "root") {
@@ -73,7 +75,6 @@ let make = () => {
   </Jsx3LayoutComponent>"
 
   <>
-    demoCode
-    <blockquote> <pre> <code> {ReasonReact.string(demoCodeString)} </code> </pre> </blockquote>
+    demoCode <blockquote> <pre> <code> {React.string(demoCodeString)} </code> </pre> </blockquote>
   </>
 }

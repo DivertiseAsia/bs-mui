@@ -1,9 +1,9 @@
-open ReasonReact
+open React
 open MaterialUI
 
-let style = ReactDOMRe.Style.make(~border="1px solid", ~padding="5px", ())
+let style = ReactDOM.Style.make(~border="1px solid", ~padding="5px", ())
 
-@bs.get external get_current: React.ref<Js.Nullable.t<'a>> => React.element = "current"
+@get external get_current: React.ref<Js.Nullable.t<'a>> => React.element = "current"
 
 @react.component
 let make = () => {
@@ -23,7 +23,7 @@ let make = () => {
               <span> {string("The content of the Popper.")} </span>
             </Portal>
           : null}
-        <div style ref={ReactDOMRe.Ref.domRef(container)} />
+        <div style ref={ReactDOM.Ref.domRef(container)} />
       </>}
     </Jsx3LayoutComponent>
 
@@ -45,12 +45,11 @@ let make = () => {
         | false => null
         }
       }
-      <div style ref={ReactDOMRe.Ref.domRef(container)} />
+      <div style ref={ReactDOM.Ref.domRef(container)} />
     </>
   </Jsx3LayoutComponent>"
 
   <>
-    demoCode
-    <blockquote> <pre> <code> {ReasonReact.string(demoCodeString)} </code> </pre> </blockquote>
+    demoCode <blockquote> <pre> <code> {React.string(demoCodeString)} </code> </pre> </blockquote>
   </>
 }

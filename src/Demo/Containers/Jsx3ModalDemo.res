@@ -1,4 +1,4 @@
-open ReasonReact
+open React
 open MaterialUI
 
 type state = {
@@ -10,14 +10,16 @@ type action = ToggleModal(bool)
 
 @react.component
 let make = () => {
-  let (state, dispatch) = React.useReducer((state, action) =>
-    switch action {
-    | ToggleModal(openModal) => {...state, openModal: openModal}
-    }
-  , {
-    loading: false,
-    openModal: false,
-  })
+  let (state, dispatch) = React.useReducer(
+    (state, action) =>
+      switch action {
+      | ToggleModal(openModal) => {...state, openModal: openModal}
+      },
+    {
+      loading: false,
+      openModal: false,
+    },
+  )
   let mainInfo = "The modal component provides a solid foundation for creating dialogs, popovers, lightboxes, or whatever else."
   let demoCode =
     <Jsx3LayoutComponent title="Modal" mainInfo>
@@ -53,7 +55,6 @@ let make = () => {
   </Jsx3LayoutComponent>"
 
   <>
-    demoCode
-    <blockquote> <pre> <code> {ReasonReact.string(demoCodeString)} </code> </pre> </blockquote>
+    demoCode <blockquote> <pre> <code> {React.string(demoCodeString)} </code> </pre> </blockquote>
   </>
 }

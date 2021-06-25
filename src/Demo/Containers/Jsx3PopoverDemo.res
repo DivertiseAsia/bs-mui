@@ -1,4 +1,4 @@
-open ReasonReact
+open React
 open MaterialUI
 
 let verticalPositions = list{"top", "center", "bottom"}
@@ -25,21 +25,23 @@ let updateAnchorPlayground = (vertical, horizontal) => {
 
 @react.component
 let make = () => {
-  let (state, dispatch) = React.useReducer((state, action) =>
-    switch action {
-    | ChangeAnchorOrigin(anchorOrigin) => {...state, anchorOrigin: anchorOrigin}
-    | ChangeTransformOrigin(transformOrigin) => {...state, transformOrigin: transformOrigin}
-    }
-  , {
-    anchorOrigin: {
-      vertical: "bottom",
-      horizontal: "center",
+  let (state, dispatch) = React.useReducer(
+    (state, action) =>
+      switch action {
+      | ChangeAnchorOrigin(anchorOrigin) => {...state, anchorOrigin: anchorOrigin}
+      | ChangeTransformOrigin(transformOrigin) => {...state, transformOrigin: transformOrigin}
+      },
+    {
+      anchorOrigin: {
+        vertical: "bottom",
+        horizontal: "center",
+      },
+      transformOrigin: {
+        vertical: "top",
+        horizontal: "center",
+      },
     },
-    transformOrigin: {
-      vertical: "top",
-      horizontal: "center",
-    },
-  })
+  )
 
   let (anchorEl, setAnchorEl) = React.useState(() => Js.Nullable.null)
   let mainInfo = "A Popover can be used to display some content on top of another."
@@ -251,7 +253,6 @@ let make = () => {
   </Jsx3LayoutComponent>"
 
   <>
-    demoCode
-    <blockquote> <pre> <code> {ReasonReact.string(demoCodeString)} </code> </pre> </blockquote>
+    demoCode <blockquote> <pre> <code> {React.string(demoCodeString)} </code> </pre> </blockquote>
   </>
 }

@@ -1,7 +1,7 @@
 open MaterialUIDataType
 module Variant = MaterialUIDataType.Variant
 
-@react.component @bs.module("@material-ui/core/FormControl")
+@react.component @module("@material-ui/core/FormControl")
 external make: (
   ~id: string=?,
   ~color: Color.t=?,
@@ -10,19 +10,19 @@ external make: (
   ~children: React.element=?,
 ) => React.element = "default"
 
-module Jsx2 = {
-  let component = ReasonReact.statelessComponent("FormControl")
+// module Jsx2 = {
+//   let component = React.statelessComponent("FormControl")
 
-  let make = (~id=?, ~variant=?, ~className=?, children) =>
-    ReasonReactCompat.wrapReactForReasonReact(
-      make,
-      makeProps(~id?, ~variant?, ~className?, ~children=children |> React.array, ()),
-      children,
-    )
-}
+//   let make = (~id=?, ~variant=?, ~className=?, children) =>
+//     ReactCompat.wrapReactForReact(
+//       make,
+//       makeProps(~id?, ~variant?, ~className?, ~children=children |> React.array, ()),
+//       children,
+//     )
+// }
 
 module FormControlLabel = {
-  @react.component @bs.module("@material-ui/core/FormControlLabel")
+  @react.component @module("@material-ui/core/FormControlLabel")
   external make: (
     ~id: string=?,
     ~className: string=?,
@@ -32,7 +32,7 @@ module FormControlLabel = {
 }
 
 module FormGroup = {
-  @react.component @bs.module("@material-ui/core/FormGroup")
+  @react.component @module("@material-ui/core/FormGroup")
   external make: (
     ~id: string=?,
     ~className: string=?,
@@ -43,7 +43,7 @@ module FormGroup = {
 }
 
 module FormHelperText = {
-  @react.component @bs.module("@material-ui/core/FormHelperText")
+  @react.component @module("@material-ui/core/FormHelperText")
   external make: (
     ~id: string=?,
     ~className: string=?,
@@ -61,7 +61,7 @@ module FormHelperText = {
 }
 
 module FormLabel = {
-  @react.component @bs.module("@material-ui/core/FormLabel")
+  @react.component @module("@material-ui/core/FormLabel")
   external make: (
     ~id: string=?,
     ~children: React.element=?,

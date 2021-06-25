@@ -1,4 +1,4 @@
-open ReasonReact
+open React
 open MaterialUI
 
 let anchors = list{"left", "right", "top", "bottom"}
@@ -12,14 +12,16 @@ type action = ToggleDrawer(string)
 
 @react.component
 let make = () => {
-  let (state, dispatch) = React.useReducer((state, action) =>
-    switch action {
-    | ToggleDrawer(openDrawer) => {...state, openDrawer: openDrawer}
-    }
-  , {
-    loading: false,
-    openDrawer: "",
-  })
+  let (state, dispatch) = React.useReducer(
+    (state, action) =>
+      switch action {
+      | ToggleDrawer(openDrawer) => {...state, openDrawer: openDrawer}
+      },
+    {
+      loading: false,
+      openDrawer: "",
+    },
+  )
   let mainInfo = "Navigation drawers provide access to destinations in your app. 
   Side sheets are surfaces containing supplementary content that are anchored to the left or right edge of the screen."
   let demoCode =
@@ -69,7 +71,6 @@ let make = () => {
   </Jsx3LayoutComponent>"
 
   <>
-    demoCode
-    <blockquote> <pre> <code> {ReasonReact.string(demoCodeString)} </code> </pre> </blockquote>
+    demoCode <blockquote> <pre> <code> {React.string(demoCodeString)} </code> </pre> </blockquote>
   </>
 }

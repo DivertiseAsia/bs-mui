@@ -13,7 +13,7 @@ let make = () => {
       />
       <SpeedDialAction
         icon={<SpeedDialIcon openIcon={<Icon.Favorite />} />}
-        tooltipTitle={<div> {ReasonReact.string("Test Speed Action")} </div>}
+        tooltipTitle={<div> {React.string("Test Speed Action")} </div>}
         tooltipOpen=true
       />
     </Jsx3LayoutComponent>
@@ -28,13 +28,12 @@ let make = () => {
     </SpeedDial>
     <SpeedDialAction
       icon={<SpeedDialIcon openIcon={<Icon.FavoriteIcon />} />}
-      tooltipTitle={<div>{ReasonReact.string('Test Speed Action')}</div>}
+      tooltipTitle={<div>{React.string('Test Speed Action')}</div>}
       tooltipOpen=true
     />
   </Jsx3LayoutComponent>"
 
   <>
-    demoCode
-    <blockquote> <pre> <code> {ReasonReact.string(demoCodeString)} </code> </pre> </blockquote>
+    demoCode <blockquote> <pre> <code> {React.string(demoCodeString)} </code> </pre> </blockquote>
   </>
 }
