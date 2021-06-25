@@ -2,9 +2,9 @@
   "name": "@divertise-asia/bs-mui",
   "version": "1.12.1",
   "scripts": {
-    "build": "bsb -make-world",
-    "start": "bsb -make-world -w -ws _",
-    "clean": "bsb -clean-world",
+    "build": "rescript",
+    "start": "rescript -w",
+    "clean": "rescript clean",
     "server": "moduleserve ./ --port 8000",
     "setup-test": "npm install bs-platform bs-react-testing-library @glennsl/bs-jest bs-webapi bs-jest-dom --legacy-peer-deps",
     "test": "jest --testMatch='**/__tests__/*test.bs.js'",
@@ -46,6 +46,7 @@
     "bs-react-testing-library": "^0.8.0",
     "bs-webapi": "^0.19.1",
     "moduleserve": "github:marijnh/moduleserve#7db414e",
-    "reason-react": "^0.9.1"
+    "reason-react": "^0.9.1",
+    "rescript": "^9.1.4"
   }
 }
