@@ -3,31 +3,24 @@
   "reason": {
     "react-jsx": 3
   },
-  "sources": [
-    {
-    "dir" : "src",
-    "subdirs" : ["Components", "Demo", "Demo/Components", "Demo/Containers"]
+  "sources": [{
+      "dir": "src",
+      "subdirs": ["Components", "Demo", "Demo/Components", "Demo/Containers"]
     },
     {
       "dir": "__tests__",
       "type": "dev"
     }
   ],
-  "bsc-flags": ["-bs-super-errors", "-bs-no-version-header", "-w -48"],
   "package-specs": [{
     "module": "commonjs",
     "in-source": false
   }],
   "suffix": ".bs.js",
   "namespace": false,
-  "bs-dependencies": [
-    "reason-react"
-  ],
+  "bs-dependencies": ["@rescript/react"],
   "bs-dev-dependencies": [
     "@glennsl/bs-jest",
-    "bs-jest-dom",
-    "bs-webapi",
-    "bs-react-testing-library"
-  ],
-  "refmt": 3
+    "@rescriptbr/react-testing-library"
+  ]
 }
