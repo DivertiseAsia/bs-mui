@@ -19,5 +19,8 @@
   "suffix": ".bs.js",
   "namespace": false,
   "bs-dependencies": ["@rescript/react"],
-  "bs-dev-dependencies": []
+  "bs-dev-dependencies": [
+    "@glennsl/bs-jest",
+    "@rescriptbr/react-testing-library"
+  ]
 }
