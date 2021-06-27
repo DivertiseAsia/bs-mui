@@ -44,7 +44,7 @@ external make: (
   ~color: Color.t=?,
   ~size: Size.t=?,
   ~className: string=?,
-  ~onClick: unit => unit=?,
+  ~onClick: ReactEvent.Synthetic.t => unit=?,
   ~disabled: bool=?,
   ~disableFocusRipple: bool=?,
   ~disableRipple: bool=?,
