@@ -4,8 +4,8 @@ module Variant : {
   let text:t;
 } = {
   type t = string;
-  [@bs.inline] let outlined = "outlined";
-  [@bs.inline] let text = "text";
+  let outlined = "outlined";
+  let text = "text";
 };
 
 [@react.component] [@bs.module "@material-ui/lab/Pagination"]

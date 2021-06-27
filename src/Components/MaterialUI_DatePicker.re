@@ -2,9 +2,9 @@ open MaterialUIDataType;
 
 module DateView = {
     type t = string;
-    [@bs.inline] let date = "date";
-    [@bs.inline] let month = "month";
-    [@bs.inline] let year = "year";
+    let date = "date";
+    let month = "month";
+    let year = "year";
 };  
 
 [@bs.deriving abstract]

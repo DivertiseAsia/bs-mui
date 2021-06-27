@@ -2,9 +2,9 @@ open MaterialUIDataType;
 
 module TimeView = {
     type t = string;
-    [@bs.inline] let hours = "hours";
-    [@bs.inline] let minutes = "minutes";
-    [@bs.inline] let seconds = "seconds";
+    let hours = "hours";
+    let minutes = "minutes";
+    let seconds = "seconds";
 };  
 
 [@bs.deriving abstract]

@@ -146,24 +146,24 @@ let make = (_children) => {
         <Avatar alt="Cindy Baker" src="https://www.w3schools.com/howto/img_avatar2.png" />
       </AvatarGroup>
 
-      <ExpansionPanel>
-        <ExpansionPanelSummary
+      <Accordion>
+        <AccordionSummary
         >
           <Typography>{string("Expansion Panel 1")}</Typography>
-        </ExpansionPanelSummary>
-        <ExpansionPanelDetails>
+        </AccordionSummary>
+        <AccordionDetails>
           <Typography>
             {string("Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse malesuada lacus ex,
             sit amet blandit leo lobortis eget.")}
           </Typography>
-        </ExpansionPanelDetails>
-        <ExpansionPanelActions>
+        </AccordionDetails>
+        <AccordionActions>
             <Button size="small">{string("Cancel")}</Button>
             <Button size="small" color="primary">
               {string("Save")}
             </Button>
-          </ExpansionPanelActions>
-      </ExpansionPanel>
+          </AccordionActions>
+      </Accordion>
 
       <Fab>
         <Icon.Notifications className="extendedIcon" />

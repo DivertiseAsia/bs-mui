@@ -5,9 +5,9 @@ module Variant :{
   let temporary:t;
 } = {
   type t = string;
-  [@bs.inline] let permanent:t = "permanent";
-  [@bs.inline] let persistent:t = "persistent";
-  [@bs.inline] let temporary:t = "temporary";
+  let permanent:t = "permanent";
+  let persistent:t = "persistent";
+  let temporary:t = "temporary";
 };
 
 module Anchor : {
@@ -18,10 +18,10 @@ module Anchor : {
   let top:t;
 } = {
   type t = string;
-  [@bs.inline] let bottom:t = "bottom";
-  [@bs.inline] let left:t = "left";
-  [@bs.inline] let right:t = "right";
-  [@bs.inline] let top:t = "top";
+  let bottom:t = "bottom";
+  let left:t = "left";
+  let right:t = "right";
+  let top:t = "top";
 };
 
 [@bs.deriving abstract]

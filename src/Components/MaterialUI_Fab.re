@@ -4,8 +4,8 @@ module Variant:{
   let extended:t;
 } = {
   type t = string;
-  [@bs.inline] let round:t = "round";
-  [@bs.inline] let extended:t = "extended";
+  let round:t = "round";
+  let extended:t = "extended";
 }
 
 [@react.component] [@bs.module "@material-ui/core/Fab"]

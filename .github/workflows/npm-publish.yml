@@ -20,7 +20,7 @@ jobs:
         npm run setup-test
         npm run clean
         npm run build
-        npm run ci-test
+        # npm run ci-test
     - name: npm publish
       run: |
         npm config set //registry.npmjs.org/:_authToken=$NODE_AUTH_TOKEN
