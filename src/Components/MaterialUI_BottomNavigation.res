@@ -1,16 +1,16 @@
-@react.component @bs.module("@material-ui/core/BottomNavigation")
+@react.component @module("@material-ui/core/BottomNavigation")
 external make: (
   ~id: string=?,
   ~children: React.element=?,
   ~className: string=?,
   ~component: string=?,
-  ~onChange: ReactEvent.Synthetic.t => unit=?,
+  ~onChange: (ReactEvent.Synthetic.t, 'value) => unit=?,
   ~showLabels: bool=?,
-  ~value: 'a=?,
+  ~value: 'value=?,
 ) => React.element = "default"
 
 module BottomNavigationAction = {
-  @react.component @bs.module("@material-ui/core/BottomNavigationAction")
+  @react.component @module("@material-ui/core/BottomNavigationAction")
   external make: (
     ~id: string=?,
     ~children: React.element=?,
@@ -18,7 +18,7 @@ module BottomNavigationAction = {
     ~icon: React.element=?,
     ~label: string=?,
     ~showLabel: bool=?,
-    ~value: 'a=?,
+    ~value: 'value=?,
   ) => /* children type is unsupportedProp */
   React.element = "default"
 }
