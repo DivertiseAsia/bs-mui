@@ -1,10 +1,10 @@
 {
   "name": "@divertise-asia/bs-mui",
-  "version": "1.12.1",
+  "version": "2.0.0",
   "scripts": {
-    "build": "bsb -make-world",
-    "start": "bsb -make-world -w -ws _",
-    "clean": "bsb -clean-world",
+    "build": "rescript",
+    "start": "rescript build -w",
+    "clean": "rescript clean",
     "server": "moduleserve ./ --port 8000",
     "setup-test": "npm install bs-platform bs-react-testing-library @glennsl/bs-jest bs-webapi bs-jest-dom --legacy-peer-deps",
     "test": "jest --testMatch='**/__tests__/*test.bs.js'",
@@ -13,7 +13,7 @@
   },
   "keywords": [
     "BuckleScript",
-    "ReasonReact",
+    "ReScriptReact",
     "reason-react"
   ],
   "author": "Divertise Asia",
@@ -32,6 +32,7 @@
     "@material-ui/icons": "^4.11.2",
     "@material-ui/lab": "^4.0.0-alpha.57",
     "@material-ui/pickers": "^3.2.10",
+    "@rescript/react": "^0.10.3",
     "date-fns": "^2.16.1",
     "moment": "^2.29.1",
     "nan": "^2.14.2",
@@ -41,11 +42,9 @@
   },
   "devDependencies": {
     "@glennsl/bs-jest": "^0.6.0",
+    "@rescriptbr/react-testing-library": "^1.0.1",
     "bs-jest-dom": "^4.1.1",
-    "bs-platform": "^8.4.2",
-    "bs-react-testing-library": "^0.8.0",
-    "bs-webapi": "^0.19.1",
     "moduleserve": "github:marijnh/moduleserve#7db414e",
-    "reason-react": "^0.9.1"
+    "rescript": "^9.1.4"
   }
 }
