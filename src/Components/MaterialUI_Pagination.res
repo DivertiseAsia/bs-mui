@@ -8,7 +8,7 @@ module Variant: {
   let text = "text"
 }
 
-@react.component @bs.module("@material-ui/lab/Pagination")
+@react.component @module("@material-ui/lab/Pagination")
 external make: (
   ~id: string=?,
   ~className: string=?,
@@ -34,7 +34,7 @@ external make: (
 ) => React.element = "default"
 
 module PaginationItem = {
-  @react.component @bs.module("@material-ui/lab/PaginationItem")
+  @react.component @module("@material-ui/lab/PaginationItem")
   external make: (
     ~id: string=?,
     ~className: string=?,

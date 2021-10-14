@@ -1,4 +1,4 @@
-@react.component @bs.module("@material-ui/core/ListItem")
+@react.component @module("@material-ui/core/ListItem")
 external make: (
   ~id: string=?,
   ~href: string=?,
@@ -14,7 +14,7 @@ external make: (
 ) => React.element = "default"
 
 module UIList = {
-  @react.component @bs.module("@material-ui/core/List")
+  @react.component @module("@material-ui/core/List")
   external make: (
     ~id: string=?,
     ~className: string=?,
@@ -28,7 +28,7 @@ module UIList = {
 }
 
 module ListItemAvatar = {
-  @react.component @bs.module("@material-ui/core/ListItemAvatar")
+  @react.component @module("@material-ui/core/ListItemAvatar")
   external make: (
     ~id: string=?,
     ~className: string=?,
@@ -38,7 +38,7 @@ module ListItemAvatar = {
 }
 
 module ListItemIcon = {
-  @react.component @bs.module("@material-ui/core/ListItemIcon")
+  @react.component @module("@material-ui/core/ListItemIcon")
   external make: (
     ~id: string=?,
     ~className: string=?,
@@ -47,7 +47,7 @@ module ListItemIcon = {
 }
 
 module ListItemSecondaryAction = {
-  @react.component @bs.module("@material-ui/core/ListItemSecondaryAction")
+  @react.component @module("@material-ui/core/ListItemSecondaryAction")
   external make: (
     ~id: string=?,
     ~className: string=?,
@@ -57,7 +57,7 @@ module ListItemSecondaryAction = {
 }
 
 module ListItemText = {
-  @react.component @bs.module("@material-ui/core/ListItemText")
+  @react.component @module("@material-ui/core/ListItemText")
   external make: (
     ~id: string=?,
     ~className: string=?,
@@ -72,7 +72,7 @@ module ListItemText = {
 }
 
 module ListSubheader = {
-  @react.component @bs.module("@material-ui/core/ListSubheader")
+  @react.component @module("@material-ui/core/ListSubheader")
   external make: (
     ~id: string=?,
     ~className: string=?,

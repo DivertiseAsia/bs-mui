@@ -1,7 +1,7 @@
 open MaterialUIDataType
 
 module Container = {
-  @react.component @bs.module("@material-ui/core/Grid")
+  @react.component @module("@material-ui/core/Grid")
   external make: (
     ~id: string=?,
     ~selectProps: 'a=?,
@@ -29,7 +29,7 @@ module Container = {
 }
 
 module Item = {
-  @react.component @bs.module("@material-ui/core/Grid")
+  @react.component @module("@material-ui/core/Grid")
   external make: (
     ~id: string=?,
     ~selectProps: 'a=?,
@@ -53,7 +53,7 @@ module Item = {
 }
 
 module GridList = {
-  @react.component @bs.module("@material-ui/core/GridList")
+  @react.component @module("@material-ui/core/GridList")
   external make: (
     ~id: string=?,
     ~className: string=?,
@@ -67,7 +67,7 @@ module GridList = {
 }
 
 module GridListTitle = {
-  @react.component @bs.module("@material-ui/core/GridListTile")
+  @react.component @module("@material-ui/core/GridListTile")
   external make: (
     ~id: string=?,
     ~className: string=?,
@@ -80,7 +80,7 @@ module GridListTitle = {
 }
 
 module GridListTitleBar = {
-  @react.component @bs.module("@material-ui/core/GridListTileBar")
+  @react.component @module("@material-ui/core/GridListTileBar")
   external make: (
     ~id: string=?,
     ~className: string=?,

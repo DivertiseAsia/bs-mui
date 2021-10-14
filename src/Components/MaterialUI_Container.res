@@ -1,4 +1,4 @@
-@react.component @bs.module("@material-ui/core/Container")
+@react.component @module("@material-ui/core/Container")
 external make: (
   ~id: string=?,
   ~maxWidth: 'a=?,

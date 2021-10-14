@@ -1,4 +1,4 @@
-@react.component @bs.module("@material-ui/core/OutlinedInput")
+@react.component @module("@material-ui/core/OutlinedInput")
 external make: (
   ~id: string=?,
   ~autoComplete: string=?,

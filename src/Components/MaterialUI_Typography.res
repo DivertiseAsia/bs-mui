@@ -18,7 +18,7 @@ module Display = {
   let block = "block"
 }
 
-@react.component @bs.module("@material-ui/core/Typography")
+@react.component @module("@material-ui/core/Typography")
 external make: (
   ~id: string=?,
   ~component: string=?,

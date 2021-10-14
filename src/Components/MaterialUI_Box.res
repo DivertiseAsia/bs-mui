@@ -1,4 +1,4 @@
-@react.component @bs.module("@material-ui/core/Box")
+@react.component @module("@material-ui/core/Box")
 external make: (
   ~id: string=?,
   ~component: string=?,

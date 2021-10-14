@@ -1,4 +1,4 @@
-@react.component @bs.module("@material-ui/core/Grow")
+@react.component @module("@material-ui/core/Grow")
 external make: (
   ~id: string=?,
   ~className: string=?,

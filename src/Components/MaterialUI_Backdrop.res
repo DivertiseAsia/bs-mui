@@ -1,4 +1,4 @@
-@react.component @bs.module("@material-ui/core/Backdrop")
+@react.component @module("@material-ui/core/Backdrop")
 external make: (
   ~id: string=?,
   ~children: React.element=?,

@@ -22,7 +22,7 @@ module Variant: {
   let query = "query"
 }
 
-@react.component @bs.module("@material-ui/core/LinearProgress")
+@react.component @module("@material-ui/core/LinearProgress")
 external make: (
   ~id: string=?,
   ~className: string=?,

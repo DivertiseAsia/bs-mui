@@ -1,6 +1,6 @@
 module Variant = MaterialUIDataType.Shape
 
-@react.component @bs.module("@material-ui/core/Avatar")
+@react.component @module("@material-ui/core/Avatar")
 external make: (
   ~id: string=?,
   ~alt: string=?,
@@ -16,7 +16,7 @@ external make: (
 ) => React.element = "default"
 
 module AvatarGroup = {
-  @react.component @bs.module("@material-ui/lab/AvatarGroup")
+  @react.component @module("@material-ui/lab/AvatarGroup")
   external make: (
     ~children: React.element=?,
     ~className: string=?,

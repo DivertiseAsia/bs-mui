@@ -1,4 +1,4 @@
-@react.component @bs.module("@material-ui/core/Switch")
+@react.component @module("@material-ui/core/Switch")
 external make: (
   ~id: string=?,
   ~className: string=?,

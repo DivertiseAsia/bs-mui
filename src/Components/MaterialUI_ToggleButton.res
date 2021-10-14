@@ -1,4 +1,4 @@
-@react.component @bs.module("@material-ui/lab/ToggleButton")
+@react.component @module("@material-ui/lab/ToggleButton")
 external make: (
   ~id: string=?,
   ~className: string=?,
@@ -12,7 +12,7 @@ external make: (
 ) => React.element = "default"
 
 module ToggleButtonGroup = {
-  @react.component @bs.module("@material-ui/lab/ToggleButtonGroup")
+  @react.component @module("@material-ui/lab/ToggleButtonGroup")
   external make: (
     ~id: string=?,
     ~className: string=?,

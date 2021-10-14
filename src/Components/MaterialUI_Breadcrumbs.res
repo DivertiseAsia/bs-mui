@@ -1,4 +1,4 @@
-@react.component @bs.module("@material-ui/core/Breadcrumbs")
+@react.component @module("@material-ui/core/Breadcrumbs")
 external make: (
   ~id: string=?,
   ~children: React.element=?,

@@ -1,4 +1,4 @@
-@react.component @bs.module("@material-ui/lab/SpeedDial")
+@react.component @module("@material-ui/lab/SpeedDial")
 external make: (
   ~id: string=?,
   ~className: string=?,
@@ -19,7 +19,7 @@ external make: (
 ) => React.element = "default"
 
 module SpeedDialAction = {
-  @react.component @bs.module("@material-ui/lab/SpeedDialAction")
+  @react.component @module("@material-ui/lab/SpeedDialAction")
   external make: (
     ~id: string=?,
     ~className: string=?,
@@ -35,7 +35,7 @@ module SpeedDialAction = {
 }
 
 module SpeedDialIcon = {
-  @react.component @bs.module("@material-ui/lab/SpeedDialIcon")
+  @react.component @module("@material-ui/lab/SpeedDialIcon")
   external make: (
     ~id: string=?,
     ~className: string=?,

@@ -1,4 +1,4 @@
-@react.component @bs.module("@material-ui/core/TextareaAutosize")
+@react.component @module("@material-ui/core/TextareaAutosize")
 external make: (
   ~id: string=?,
   ~name: string=?,

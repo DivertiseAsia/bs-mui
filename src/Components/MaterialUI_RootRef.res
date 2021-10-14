@@ -1,4 +1,4 @@
-@react.component @bs.module("@material-ui/core/RootRef")
+@react.component @module("@material-ui/core/RootRef")
 external make: (
   ~id: string=?,
   ~className: string=?,

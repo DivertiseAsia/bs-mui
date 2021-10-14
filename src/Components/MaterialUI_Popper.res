@@ -1,4 +1,4 @@
-@react.component @bs.module("@material-ui/core/Popper")
+@react.component @module("@material-ui/core/Popper")
 external make: (
   ~id: string=?,
   ~className: string=?,

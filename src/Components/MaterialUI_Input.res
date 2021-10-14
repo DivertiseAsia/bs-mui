@@ -1,6 +1,6 @@
 module Variant = MaterialUIDataType.Variant
 
-@react.component @bs.module("@material-ui/core/Input")
+@react.component @module("@material-ui/core/Input")
 external make: (
   ~id: string=?,
   ~placeholder: string=?,
@@ -10,7 +10,7 @@ external make: (
 ) => React.element = "default"
 
 module InputAdornment = {
-  @react.component @bs.module("@material-ui/core/InputAdornment")
+  @react.component @module("@material-ui/core/InputAdornment")
   external make: (
     ~id: string=?,
     ~className: string=?,
@@ -25,7 +25,7 @@ module InputAdornment = {
 }
 
 module InputBase = {
-  @react.component @bs.module("@material-ui/core/InputBase")
+  @react.component @module("@material-ui/core/InputBase")
   external make: (
     ~id: string=?,
     ~autoComplete: string=?,
@@ -60,7 +60,7 @@ module InputBase = {
 }
 
 module InputLabel = {
-  @react.component @bs.module("@material-ui/core/InputLabel")
+  @react.component @module("@material-ui/core/InputLabel")
   external make: (
     ~id: string=?,
     ~htmlFor: string=?,

@@ -1,6 +1,6 @@
 module Variant = MaterialUIDataType.Variant
 
-@react.component @bs.module("@material-ui/core/NativeSelect")
+@react.component @module("@material-ui/core/NativeSelect")
 external make: (
   ~id: string=?,
   ~className: string=?,

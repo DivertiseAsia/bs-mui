@@ -3,7 +3,8 @@
   "reason": {
     "react-jsx": 3
   },
-  "sources": [{
+  "sources": [
+    {
       "dir": "src",
       "subdirs": ["Components", "Demo", "Demo/Components", "Demo/Containers"]
     },
@@ -12,10 +13,12 @@
       "type": "dev"
     }
   ],
-  "package-specs": [{
-    "module": "commonjs",
-    "in-source": false
-  }],
+  "package-specs": [
+    {
+      "module": "es6",
+      "in-source": false
+    }
+  ],
   "suffix": ".bs.js",
   "namespace": false,
   "bs-dependencies": ["@rescript/react"],

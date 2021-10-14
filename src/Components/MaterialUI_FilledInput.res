@@ -1,4 +1,4 @@
-@react.component @bs.module("@material-ui/core/FilledInput")
+@react.component @module("@material-ui/core/FilledInput")
 external make: (
   ~id: string=?,
   ~autoComplete: string=?,

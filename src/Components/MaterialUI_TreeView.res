@@ -1,4 +1,4 @@
-@react.component @bs.module("@material-ui/lab/TreeView")
+@react.component @module("@material-ui/lab/TreeView")
 external make: (
   ~id: string=?,
   ~className: string=?,

@@ -11,7 +11,7 @@ module Implementation: {
   let css: t = "css"
 }
 
-@react.component @bs.module("@material-ui/core/Hidden")
+@react.component @module("@material-ui/core/Hidden")
 external make: (
   ~id: string=?,
   ~className: string=?,

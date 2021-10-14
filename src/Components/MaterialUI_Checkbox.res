@@ -1,6 +1,6 @@
 open MaterialUIDataType
 
-@react.component @bs.module("@material-ui/core/Checkbox")
+@react.component @module("@material-ui/core/Checkbox")
 external make: (
   ~id: string=?,
   ~checked: bool=?,

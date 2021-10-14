@@ -1,6 +1,6 @@
 open MaterialUIDataType
 
-@react.component @bs.module("@material-ui/core/ClickAwayListener")
+@react.component @module("@material-ui/core/ClickAwayListener")
 external make: (
   ~id: string=?,
   ~className: string=?,

@@ -10,7 +10,7 @@ module Variant: {
   let standard = "standard"
 }
 
-@react.component @bs.module("@material-ui/core/Badge")
+@react.component @module("@material-ui/core/Badge")
 external make: (
   ~id: string=?,
   ~anchorOrigin: anchorOriginType=?,

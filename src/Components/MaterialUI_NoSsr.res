@@ -1,4 +1,4 @@
-@react.component @bs.module("@material-ui/core/NoSsr")
+@react.component @module("@material-ui/core/NoSsr")
 external make: (
   ~id: string=?,
   ~className: string=?,
