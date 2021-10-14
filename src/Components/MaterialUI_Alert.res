@@ -2,7 +2,7 @@ open MaterialUIDataType
 
 module Variant = MaterialUIDataType.Variant
 
-@react.component @bs.module("@material-ui/lab/Alert")
+@react.component @module("@material-ui/lab/Alert")
 external make: (
   ~id: string=?,
   ~className: string=?,
@@ -20,7 +20,7 @@ external make: (
 ) => React.element = "default"
 
 module Title = {
-  @react.component @bs.module("@material-ui/lab/AlertTitle")
+  @react.component @module("@material-ui/lab/AlertTitle")
   external make: (
     ~id: string=?,
     ~className: string=?,

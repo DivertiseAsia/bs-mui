@@ -1,4 +1,4 @@
-@react.component @bs.module("@material-ui/core/Step")
+@react.component @module("@material-ui/core/Step")
 external make: (
   ~id: string=?,
   ~className: string=?,
@@ -11,7 +11,7 @@ external make: (
 ) => React.element = "default"
 
 module StepButton = {
-  @react.component @bs.module("@material-ui/core/StepButton")
+  @react.component @module("@material-ui/core/StepButton")
   external make: (
     ~id: string=?,
     ~className: string=?,
@@ -23,13 +23,13 @@ module StepButton = {
 }
 
 module StepConnector = {
-  @react.component @bs.module("@material-ui/core/StepConnector")
+  @react.component @module("@material-ui/core/StepConnector")
   external make: (~id: string=?, ~className: string=?, ~classes: string=?) => React.element =
     "default"
 }
 
 module StepContent = {
-  @react.component @bs.module("@material-ui/core/StepContent")
+  @react.component @module("@material-ui/core/StepContent")
   external make: (
     ~id: string=?,
     ~className: string=?,
@@ -42,7 +42,7 @@ module StepContent = {
 }
 
 module StepIcon = {
-  @react.component @bs.module("@material-ui/core/StepIcon")
+  @react.component @module("@material-ui/core/StepIcon")
   external make: (
     ~id: string=?,
     ~className: string=?,
@@ -55,7 +55,7 @@ module StepIcon = {
 }
 
 module StepLabel = {
-  @react.component @bs.module("@material-ui/core/StepLabel")
+  @react.component @module("@material-ui/core/StepLabel")
   external make: (
     ~id: string=?,
     ~className: string=?,

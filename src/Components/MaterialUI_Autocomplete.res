@@ -1,4 +1,4 @@
-@react.component @bs.module("@material-ui/lab/Autocomplete")
+@react.component @module("@material-ui/lab/Autocomplete")
 external make: (
   ~className: string=?,
   ~autoComplete: bool=?,

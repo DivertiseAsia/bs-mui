@@ -1,4 +1,4 @@
-@react.component @bs.module("@material-ui/core/SwipeableDrawer")
+@react.component @module("@material-ui/core/SwipeableDrawer")
 external make: (
   ~id: string=?,
   ~className: string=?,

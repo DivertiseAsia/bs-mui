@@ -1,4 +1,4 @@
-@react.component @bs.module("@material-ui/core/Zoom")
+@react.component @module("@material-ui/core/Zoom")
 external make: (
   ~id: string=?,
   ~className: string=?,

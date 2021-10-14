@@ -11,7 +11,7 @@ module Variant: {
   let contained = "contained"
 }
 
-@react.component @bs.module("@material-ui/core/Button")
+@react.component @module("@material-ui/core/Button")
 external make: (
   ~id: string=?,
   ~children: React.element=?,
@@ -34,7 +34,7 @@ external make: (
 ) => React.element = "default"
 
 module ButtonBase = {
-  @react.component @bs.module("@material-ui/core/ButtonBase")
+  @react.component @module("@material-ui/core/ButtonBase")
   external make: (
     ~id: string=?,
     ~action: unit => unit=?,
@@ -55,7 +55,7 @@ module ButtonBase = {
 }
 
 module ButtonGroup = {
-  @react.component @bs.module("@material-ui/core/ButtonGroup")
+  @react.component @module("@material-ui/core/ButtonGroup")
   external make: (
     ~id: string=?,
     ~children: React.element=?,

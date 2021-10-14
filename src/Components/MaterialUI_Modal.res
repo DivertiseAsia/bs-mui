@@ -1,4 +1,4 @@
-@react.component @bs.module("@material-ui/core/Modal")
+@react.component @module("@material-ui/core/Modal")
 external make: (
   ~backdropComponent: string=?,
   ~backdropProps: Js.t<'a>=?,

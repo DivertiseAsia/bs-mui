@@ -1,4 +1,4 @@
-@react.component @bs.module("@material-ui/core/MobileStepper")
+@react.component @module("@material-ui/core/MobileStepper")
 external make: (
   ~id: string=?,
   ~className: string=?,

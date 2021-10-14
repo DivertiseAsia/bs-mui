@@ -1,4 +1,4 @@
-@react.component @bs.module("@material-ui/core/Collapse")
+@react.component @module("@material-ui/core/Collapse")
 external make: (
   ~id: string=?,
   ~children: React.element=?,

@@ -1,4 +1,4 @@
-@react.component @bs.module("@material-ui/core/Fade")
+@react.component @module("@material-ui/core/Fade")
 external make: (
   ~id: string=?,
   ~className: string=?,

@@ -1,13 +1,13 @@
 module DataType = MaterialUIDataType
 
-@bs.module("@material-ui/core/styles")
+@module("@material-ui/core/styles")
 external createStyles: Js.Dict.t<'a> => Js.Dict.t<string> = "createStyles"
 
-@bs.module("@material-ui/core/styles")
+@module("@material-ui/core/styles")
 external makeStyles: (Js.Dict.t<'a>, . 'props) => Js.Dict.t<string> = "makeStyles"
 
 module StylesProvider = {
-  @react.component @bs.module("@material-ui/core/styles")
+  @react.component @module("@material-ui/core/styles")
   external make: (~injectFirst: bool=?, ~children: React.element) => React.element =
     "StylesProvider"
 }

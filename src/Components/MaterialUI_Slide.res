@@ -1,4 +1,4 @@
-@react.component @bs.module("@material-ui/core/Slide")
+@react.component @module("@material-ui/core/Slide")
 external make: (
   ~id: string=?,
   ~className: string=?,

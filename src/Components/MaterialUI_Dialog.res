@@ -1,4 +1,4 @@
-@react.component @bs.module("@material-ui/core/Dialog")
+@react.component @module("@material-ui/core/Dialog")
 external make: (
   ~children: React.element=?,
   ~className: string=?,
@@ -28,7 +28,7 @@ external make: (
 ) => React.element = "default"
 
 module DialogActions = {
-  @react.component @bs.module("@material-ui/core/DialogActions")
+  @react.component @module("@material-ui/core/DialogActions")
   external make: (
     ~id: string=?,
     ~children: React.element=?,
@@ -38,7 +38,7 @@ module DialogActions = {
 }
 
 module DialogContent = {
-  @react.component @bs.module("@material-ui/core/DialogContent")
+  @react.component @module("@material-ui/core/DialogContent")
   external make: (
     ~id: string=?,
     ~children: React.element=?,
@@ -48,7 +48,7 @@ module DialogContent = {
 }
 
 module DialogContentText = {
-  @react.component @bs.module("@material-ui/core/DialogContentText")
+  @react.component @module("@material-ui/core/DialogContentText")
   external make: (
     ~id: string=?,
     ~children: React.element=?,
@@ -57,7 +57,7 @@ module DialogContentText = {
 }
 
 module DialogTitle = {
-  @react.component @bs.module("@material-ui/core/DialogTitle")
+  @react.component @module("@material-ui/core/DialogTitle")
   external make: (
     ~id: string=?,
     ~children: React.element=?,

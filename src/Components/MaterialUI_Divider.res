@@ -10,7 +10,7 @@ module Variant: {
   let middle = "middle"
 }
 
-@react.component @bs.module("@material-ui/core/Divider")
+@react.component @module("@material-ui/core/Divider")
 external make: (
   ~id: string=?,
   ~className: string=?,

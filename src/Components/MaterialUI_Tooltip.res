@@ -1,4 +1,4 @@
-@react.component @bs.module("@material-ui/core/Tooltip")
+@react.component @module("@material-ui/core/Tooltip")
 external make: (
   ~id: string=?,
   ~className: string=?,

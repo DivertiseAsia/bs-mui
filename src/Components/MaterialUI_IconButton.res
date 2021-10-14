@@ -37,7 +37,7 @@ module Size: {
   let medium = "medium"
 }
 
-@react.component @bs.module("@material-ui/core/IconButton")
+@react.component @module("@material-ui/core/IconButton")
 external make: (
   ~id: string=?,
   ~edge: Edge.t=?,

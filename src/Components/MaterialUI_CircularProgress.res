@@ -12,7 +12,7 @@ module Variant: {
   let static = "static"
 }
 
-@react.component @bs.module("@material-ui/core/CircularProgress")
+@react.component @module("@material-ui/core/CircularProgress")
 external make: (
   ~id: string=?,
   ~className: string=?,

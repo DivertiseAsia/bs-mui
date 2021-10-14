@@ -10,7 +10,7 @@ module Variant: {
   let circle: t = "circle"
 }
 
-@react.component @bs.module("@material-ui/lab/Skeleton")
+@react.component @module("@material-ui/lab/Skeleton")
 external make: (
   ~id: string=?,
   ~className: string=?,

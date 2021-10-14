@@ -10,7 +10,7 @@ module Variant: {
   let fullWidth: t = "fullWidth"
 }
 
-@react.component @bs.module("@material-ui/core/Tabs")
+@react.component @module("@material-ui/core/Tabs")
 external make: (
   ~id: string=?,
   ~className: string=?,

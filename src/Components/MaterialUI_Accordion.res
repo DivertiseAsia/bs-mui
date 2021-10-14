@@ -1,4 +1,4 @@
-@react.component @bs.module("@material-ui/core/Accordion")
+@react.component @module("@material-ui/core/Accordion")
 external make: (
   ~id: string=?,
   ~className: string=?,
@@ -13,7 +13,7 @@ external make: (
 ) => React.element = "default"
 
 module AccordionActions = {
-  @react.component @bs.module("@material-ui/core/AccordionActions")
+  @react.component @module("@material-ui/core/AccordionActions")
   external make: (
     ~id: string=?,
     ~className: string=?,
@@ -24,7 +24,7 @@ module AccordionActions = {
 }
 
 module AccordionDetails = {
-  @react.component @bs.module("@material-ui/core/AccordionDetails")
+  @react.component @module("@material-ui/core/AccordionDetails")
   external make: (
     ~id: string=?,
     ~className: string=?,
@@ -34,7 +34,7 @@ module AccordionDetails = {
 }
 
 module AccordionSummary = {
-  @react.component @bs.module("@material-ui/core/AccordionSummary")
+  @react.component @module("@material-ui/core/AccordionSummary")
   external make: (
     ~id: string=?,
     ~className: string=?,

@@ -1,4 +1,4 @@
-@react.component @bs.module("@material-ui/core/SvgIcon")
+@react.component @module("@material-ui/core/SvgIcon")
 external make: (
   ~id: string=?,
   ~className: string=?,

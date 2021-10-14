@@ -8,7 +8,7 @@ module Variant: {
   let extended: t = "extended"
 }
 
-@react.component @bs.module("@material-ui/core/Fab")
+@react.component @module("@material-ui/core/Fab")
 external make: (
   ~id: string=?,
   ~className: string=?,

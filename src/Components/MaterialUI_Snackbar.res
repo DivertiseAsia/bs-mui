@@ -1,4 +1,4 @@
-@react.component @bs.module("@material-ui/core/Snackbar")
+@react.component @module("@material-ui/core/Snackbar")
 external make: (
   ~id: string=?,
   ~className: string=?,
@@ -23,7 +23,7 @@ external make: (
 ) => React.element = "default"
 
 module SnackbarContent = {
-  @react.component @bs.module("@material-ui/core/SnackbarContent")
+  @react.component @module("@material-ui/core/SnackbarContent")
   external make: (
     ~id: string=?,
     ~className: string=?,

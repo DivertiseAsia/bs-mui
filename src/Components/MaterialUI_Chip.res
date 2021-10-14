@@ -9,7 +9,7 @@ module Variant: {
   let outlined = "outlined"
 }
 
-@react.component @bs.module("@material-ui/core/Chip")
+@react.component @module("@material-ui/core/Chip")
 external make: (
   ~id: string=?,
   ~avatar: React.element=?,
