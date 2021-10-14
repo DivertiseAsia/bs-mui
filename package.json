@@ -5,7 +5,7 @@
     "build": "rescript",
     "start": "rescript build -w",
     "clean": "rescript clean",
-    "server": "moduleserve ./ --port 8000",
+    "server": "vite",
     "setup-test": "npm install bs-platform bs-react-testing-library @glennsl/bs-jest bs-webapi bs-jest-dom --legacy-peer-deps",
     "test": "jest --testMatch='**/__tests__/*test.bs.js'",
     "ci-test": "npm test -- --coverage --updateSnapshot",
@@ -43,7 +43,7 @@
   "devDependencies": {
     "@glennsl/bs-jest": "^0.6.0",
     "@rescriptbr/react-testing-library": "^1.0.1",
-    "moduleserve": "github:marijnh/moduleserve#7db414e",
-    "rescript": "^9.1.4"
+    "rescript": "^9.1.4",
+    "vite": "^2.6.7"
   }
 }
