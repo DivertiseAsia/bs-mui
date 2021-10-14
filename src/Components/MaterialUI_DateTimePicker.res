@@ -5,8 +5,8 @@ module DateView = {
   let date = "date"
   let month = "month"
   let year = "year"
-  let month = "hours"
-  let year = "minutes"
+  let hours = "hours"
+  let minutes = "minutes"
 }
 
 @deriving(abstract)
