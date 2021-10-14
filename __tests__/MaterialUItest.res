@@ -11,18 +11,18 @@ test("Button Component with different sizes renders", () =>
     <Button size=Size.medium> {string("Medium Button")} </Button>
     <Button size=Size.large> {string("Large Button")} </Button>
   </>
-  |> render
-  |> container
-  |> expect
-  |> toMatchSnapshot
+  ->render
+  ->container
+  ->expect
+  ->toMatchSnapshot
 )
 
 test("Test ButtonBase component", () =>
   <Container> <ButtonBase> {string("Base Button")} </ButtonBase> </Container>
-  |> render
-  |> container
-  |> expect
-  |> toMatchSnapshot
+  ->render
+  ->container
+  ->expect
+  ->toMatchSnapshot
 )
 
 test("Test container with child elements", () =>
@@ -33,10 +33,10 @@ test("Test container with child elements", () =>
     <Button size=Size.medium> {string("Medium Button")} </Button>
     <Button size=Size.small> {string("Small Button")} </Button>
   </Container>
-  |> render
-  |> container
-  |> expect
-  |> toMatchSnapshot
+  ->render
+  ->container
+  ->expect
+  ->toMatchSnapshot
 )
 
 test("Test select component", () =>
@@ -52,10 +52,10 @@ test("Test select component", () =>
       <MenuItem value=30> {string("Thirty")} </MenuItem>
     </Select>
   </FormControl>
-  |> render
-  |> container
-  |> expect
-  |> toMatchSnapshot
+  ->render
+  ->container
+  ->expect
+  ->toMatchSnapshot
 )
 
 test("Test dialog component", () =>
@@ -72,10 +72,10 @@ test("Test dialog component", () =>
       <Button color="primary"> {string("Agree")} </Button>
     </DialogActions>
   </Dialog>
-  |> render
-  |> container
-  |> expect
-  |> toMatchSnapshot
+  ->render
+  ->container
+  ->expect
+  ->toMatchSnapshot
 )
 
 test("Test alert component", () =>
@@ -84,10 +84,10 @@ test("Test alert component", () =>
       <AlertTitle> {string("Warning")} </AlertTitle> {string("This is an error alert")}
     </Alert>
   </Container>
-  |> render
-  |> container
-  |> expect
-  |> toMatchSnapshot
+  ->render
+  ->container
+  ->expect
+  ->toMatchSnapshot
 )
 
 test("Test appbar component", () =>
@@ -97,10 +97,10 @@ test("Test appbar component", () =>
       <Typography variant=Typography.Variant.h6> {string("News")} </Typography>
     </Toolbar>
   </AppBar>
-  |> render
-  |> container
-  |> expect
-  |> toMatchSnapshot
+  ->render
+  ->container
+  ->expect
+  ->toMatchSnapshot
 )
 
 test("Test autoComplete component", () =>
@@ -113,10 +113,10 @@ test("Test autoComplete component", () =>
     ]
     renderInput={_params => <TextField label="Combo box" variant=TextField.Variant.outlined />}
   />
-  |> render
-  |> container
-  |> expect
-  |> toMatchSnapshot
+  ->render
+  ->container
+  ->expect
+  ->toMatchSnapshot
 )
 
 test("Test avatar component", () =>
@@ -125,22 +125,22 @@ test("Test avatar component", () =>
     <Avatar alt="Travis Howard" src="https://www.w3schools.com/howto/img_avatar2.png" />
     <Avatar alt="Cindy Baker" src="https://www.w3schools.com/howto/img_avatar2.png" />
   </AvatarGroup>
-  |> render
-  |> container
-  |> expect
-  |> toMatchSnapshot
+  ->render
+  ->container
+  ->expect
+  ->toMatchSnapshot
 )
 
 test("Test Backdrop component", () =>
   <Backdrop _open=false> <CircularProgress color="inherit" /> </Backdrop>
-  |> render
-  |> container
-  |> expect
-  |> toMatchSnapshot
+  ->render
+  ->container
+  ->expect
+  ->toMatchSnapshot
 )
 
 test("Test Badge component", () =>
-  <Badge badgeContent=4 color="error" /> |> render |> container |> expect |> toMatchSnapshot
+  <Badge badgeContent=4 color="error" />->render->container->expect->toMatchSnapshot
 )
 
 test("Test BottomNavigation component", () =>
@@ -148,10 +148,10 @@ test("Test BottomNavigation component", () =>
     <BottomNavigationAction label="Recents" icon={<Icon.Restore />} />
     <BottomNavigationAction label="Favorites" icon={<Icon.Favorite />} />
   </BottomNavigation>
-  |> render
-  |> container
-  |> expect
-  |> toMatchSnapshot
+  ->render
+  ->container
+  ->expect
+  ->toMatchSnapshot
 )
 
 test("Test BottomGroup component", () =>
@@ -160,18 +160,18 @@ test("Test BottomGroup component", () =>
     <Button> {string("Two")} </Button>
     <Button> {string("Three")} </Button>
   </ButtonGroup>
-  |> render
-  |> container
-  |> expect
-  |> toMatchSnapshot
+  ->render
+  ->container
+  ->expect
+  ->toMatchSnapshot
 )
 
 test("Test Box component", () =>
   <Box component="span" m=1> <Button> {string("Large Button")} </Button> </Box>
-  |> render
-  |> container
-  |> expect
-  |> toMatchSnapshot
+  ->render
+  ->container
+  ->expect
+  ->toMatchSnapshot
 )
 
 test("Test Breadcrumbs component", () =>
@@ -180,40 +180,36 @@ test("Test Breadcrumbs component", () =>
     <Link color="inherit" href="/getting-started/installation/"> {string("Core")} </Link>
     <Typography color="textPrimary"> {string("Breadcrumb")} </Typography>
   </Breadcrumbs>
-  |> render
-  |> container
-  |> expect
-  |> toMatchSnapshot
+  ->render
+  ->container
+  ->expect
+  ->toMatchSnapshot
 )
 
 test("Test Chip component", () =>
-  <Chip label="Basic" /> |> render |> container |> expect |> toMatchSnapshot
+  <Chip label="Basic" />->render->container->expect->toMatchSnapshot
 )
 
 test("Test ClickAwayListener component", () =>
   <ClickAwayListener onClickAway={_ => Js.log("Click Away Listener")}>
     <Button> {string("Open menu dropdown")} </Button>
   </ClickAwayListener>
-  |> render
-  |> container
-  |> expect
-  |> toMatchSnapshot
+  ->render
+  ->container
+  ->expect
+  ->toMatchSnapshot
 )
 
 test("Test CSS Baseline component", () =>
-  <React.Fragment> <CssBaseline /> </React.Fragment>
-  |> render
-  |> container
-  |> expect
-  |> toMatchSnapshot
+  <React.Fragment> <CssBaseline /> </React.Fragment>->render->container->expect->toMatchSnapshot
 )
 
 test("Test Drawer component", () =>
   <Drawer _open=true> <Typography> {string("Test Drawer")} </Typography> </Drawer>
-  |> render
-  |> container
-  |> expect
-  |> toMatchSnapshot
+  ->render
+  ->container
+  ->expect
+  ->toMatchSnapshot
 )
 
 test("Test ExpantionPanel component", () =>
@@ -230,18 +226,18 @@ test("Test ExpantionPanel component", () =>
       <Button size="small" color="primary"> {string("Save")} </Button>
     </AccordionActions>
   </Accordion>
-  |> render
-  |> container
-  |> expect
-  |> toMatchSnapshot
+  ->render
+  ->container
+  ->expect
+  ->toMatchSnapshot
 )
 
 test("Test Fab component", () =>
   <Fab> <Icon.Notifications className="extendedIcon" /> {string("Notification")} </Fab>
-  |> render
-  |> container
-  |> expect
-  |> toMatchSnapshot
+  ->render
+  ->container
+  ->expect
+  ->toMatchSnapshot
 )
 
 test("Test FilledInput component", () =>
@@ -256,10 +252,10 @@ test("Test FilledInput component", () =>
     />
     <FormHelperText> {string("Weight")} </FormHelperText>
   </FormControl>
-  |> render
-  |> container
-  |> expect
-  |> toMatchSnapshot
+  ->render
+  ->container
+  ->expect
+  ->toMatchSnapshot
 )
 
 test("Test Grid and Paper component", () =>
@@ -270,10 +266,10 @@ test("Test Grid and Paper component", () =>
     <Grid.Item xs={GridSize.size(6)}> <Paper> {string("xs=6")} </Paper> </Grid.Item>
     <Grid.Item xs={GridSize.size(6)}> <Paper> {string("xs=6")} </Paper> </Grid.Item>
   </Grid.Container>
-  |> render
-  |> container
-  |> expect
-  |> toMatchSnapshot
+  ->render
+  ->container
+  ->expect
+  ->toMatchSnapshot
 )
 
 test("Test GridList component", () =>
@@ -287,10 +283,10 @@ test("Test GridList component", () =>
       />
     </GridListTitle>
   </GridList>
-  |> render
-  |> container
-  |> expect
-  |> toMatchSnapshot
+  ->render
+  ->container
+  ->expect
+  ->toMatchSnapshot
 )
 
 test("Test Grow component", () =>
@@ -299,30 +295,30 @@ test("Test Grow component", () =>
       <svg className="svg"> <polygon points="0,100 50,00, 100,100" className="polygon" /> </svg>
     </Paper>
   </Grow>
-  |> render
-  |> container
-  |> expect
-  |> toMatchSnapshot
+  ->render
+  ->container
+  ->expect
+  ->toMatchSnapshot
 )
 
 test("Test Hidden component", () =>
   <Hidden xsUp=false> <Paper> {string("xsUp")} </Paper> </Hidden>
-  |> render
-  |> container
-  |> expect
-  |> toMatchSnapshot
+  ->render
+  ->container
+  ->expect
+  ->toMatchSnapshot
 )
 
 test("Test Icon component", () =>
   <Icon className="fa fa-plus-circle" color="primary"> {string("add_circle")} </Icon>
-  |> render
-  |> container
-  |> expect
-  |> toMatchSnapshot
+  ->render
+  ->container
+  ->expect
+  ->toMatchSnapshot
 )
 
 test("Test Input component", () =>
-  <Input placeholder="Input text" /> |> render |> container |> expect |> toMatchSnapshot
+  <Input placeholder="Input text" />->render->container->expect->toMatchSnapshot
 )
 
 test("Test InputBase", () =>
@@ -331,18 +327,18 @@ test("Test InputBase", () =>
     placeholder="Search Google Maps"
     inputProps={"aria-label": "search google maps"}
   />
-  |> render
-  |> container
-  |> expect
-  |> toMatchSnapshot
+  ->render
+  ->container
+  ->expect
+  ->toMatchSnapshot
 )
 
 test("Test LinearProgress component", () =>
   <LinearProgress color=MaterialUI.LinearProgress.Color.secondary />
-  |> render
-  |> container
-  |> expect
-  |> toMatchSnapshot
+  ->render
+  ->container
+  ->expect
+  ->toMatchSnapshot
 )
 
 test("Test List component", () =>
@@ -359,10 +355,10 @@ test("Test List component", () =>
     </ListItem>
     <ListItem button=true> <ListItemText inset=true primary="Eric Hoffman" /> </ListItem>
   </UIList>
-  |> render
-  |> container
-  |> expect
-  |> toMatchSnapshot
+  ->render
+  ->container
+  ->expect
+  ->toMatchSnapshot
 )
 
 test("Test Menu component", () =>
@@ -373,10 +369,10 @@ test("Test Menu component", () =>
       <MenuItem> {string("Logout")} </MenuItem>
     </Menu>
   </>
-  |> render
-  |> container
-  |> expect
-  |> toMatchSnapshot
+  ->render
+  ->container
+  ->expect
+  ->toMatchSnapshot
 )
 
 test("Test MenuList component", () =>
@@ -396,10 +392,10 @@ test("Test MenuList component", () =>
       </MenuItem>
     </MenuList>
   </Paper>
-  |> render
-  |> container
-  |> expect
-  |> toMatchSnapshot
+  ->render
+  ->container
+  ->expect
+  ->toMatchSnapshot
 )
 
 test("Test Mobile Stepper", () =>
@@ -411,18 +407,18 @@ test("Test Mobile Stepper", () =>
     nextButton={<Button size="small" disabled=false> {string("Next")} </Button>}
     backButton={<Button size="small" disabled=true> {string("Back")} </Button>}
   />
-  |> render
-  |> container
-  |> expect
-  |> toMatchSnapshot
+  ->render
+  ->container
+  ->expect
+  ->toMatchSnapshot
 )
 
 test("Test Modal component", () =>
   <Modal _open=false> <Typography> {string("Server-side modal")} </Typography> </Modal>
-  |> render
-  |> container
-  |> expect
-  |> toMatchSnapshot
+  ->render
+  ->container
+  ->expect
+  ->toMatchSnapshot
 )
 
 test("Test NativeSelect component", () =>
@@ -441,20 +437,20 @@ test("Test NativeSelect component", () =>
     </NativeSelect>
     <FormHelperText> {string("Some important helper text")} </FormHelperText>
   </FormControl>
-  |> render
-  |> container
-  |> expect
-  |> toMatchSnapshot
+  ->render
+  ->container
+  ->expect
+  ->toMatchSnapshot
 )
 
 test("Test NoSsr component", () =>
   <NoSsr>
     <Box p=2 bgcolor="secondary.main" color="primary.contrastText"> {string("Client only")} </Box>
   </NoSsr>
-  |> render
-  |> container
-  |> expect
-  |> toMatchSnapshot
+  ->render
+  ->container
+  ->expect
+  ->toMatchSnapshot
 )
 
 test("Test OutlinedInput component", () =>
@@ -462,18 +458,18 @@ test("Test OutlinedInput component", () =>
     <InputLabel htmlFor="component-outlined"> {string("Name")} </InputLabel>
     <OutlinedInput id="component-outlined" onChange={_ => Js.log("outlined input")} label="Name" />
   </FormControl>
-  |> render
-  |> container
-  |> expect
-  |> toMatchSnapshot
+  ->render
+  ->container
+  ->expect
+  ->toMatchSnapshot
 )
 
 test("Test Pagination component", () =>
   <Pagination count=10 renderItem={_item => <PaginationItem _type="first" selected=true />} />
-  |> render
-  |> container
-  |> expect
-  |> toMatchSnapshot
+  ->render
+  ->container
+  ->expect
+  ->toMatchSnapshot
 )
 
 // test("Test Popover component",()=>{
@@ -494,22 +490,22 @@ test("Test Pagination component", () =>
 //     <Typography>{string("The content of the Popover.")}</Typography>
 //   </Popover>
 // }
-//   |> render
-//   |> container
-//   |> expect
-//   |> toMatchSnapshot
+//   -> render
+//   -> container
+//   -> expect
+//   -> toMatchSnapshot
 // )
 
 test("Test Portal component", () =>
   <Portal> <Typography> {string("The content of the Popper.")} </Typography> </Portal>
-  |> render
-  |> container
-  |> expect
-  |> toMatchSnapshot
+  ->render
+  ->container
+  ->expect
+  ->toMatchSnapshot
 )
 
 test("Test Radio component", () =>
-  <Radio value="a" name="radio-button-demo" /> |> render |> container |> expect |> toMatchSnapshot
+  <Radio value="a" name="radio-button-demo" />->render->container->expect->toMatchSnapshot
 )
 
 test("Test RadioGroup component", () =>
@@ -522,10 +518,10 @@ test("Test RadioGroup component", () =>
       <FormControlLabel control={<Radio size=Size.small />} label="Small" />
     </RadioGroup>
   </Container>
-  |> render
-  |> container
-  |> expect
-  |> toMatchSnapshot
+  ->render
+  ->container
+  ->expect
+  ->toMatchSnapshot
 )
 
 test("Test Rating component ", () =>
@@ -533,20 +529,20 @@ test("Test Rating component ", () =>
     <Typography component="legend"> {string("Controlled")} </Typography>
     <Rating name="test rating" disabled=false value=12 />
   </Box>
-  |> render
-  |> container
-  |> expect
-  |> toMatchSnapshot
+  ->render
+  ->container
+  ->expect
+  ->toMatchSnapshot
 )
 
 /* test("Test RootRef component",()=>
     <RootRef rootRef={React.useRef(Js.Nullable.null)}>
       <div >{string("Test rootref")}</div>
     </RootRef>
-     |> render
-     |> container
-     |> expect
-     |> toMatchSnapshot
+     -> render
+     -> container
+     -> expect
+     -> toMatchSnapshot
  ) */
 
 test("Test Skeleton component", () => {
@@ -556,24 +552,24 @@ test("Test Skeleton component", () => {
     <Skeleton variant=circle width="40" height="40" />
     <Skeleton variant=rect width="210" height="118" />
   </Container>
-  |> render
-  |> container
-  |> expect
-  |> toMatchSnapshot
+  ->render
+  ->container
+  ->expect
+  ->toMatchSnapshot
 })
 
 test("Test slide component", () =>
-  <Slide direction="up"> <div /> </Slide> |> render |> container |> expect |> toMatchSnapshot
+  <Slide direction="up"> <div /> </Slide>->render->container->expect->toMatchSnapshot
 )
 
 test("Test slider component", () =>
   <Slider
     defaultValue=30 ariaLabelledby="discrete-slider" valueLabelDisplay="auto" step=10 min=10 max=110
   />
-  |> render
-  |> container
-  |> expect
-  |> toMatchSnapshot
+  ->render
+  ->container
+  ->expect
+  ->toMatchSnapshot
 )
 
 test("Test SnackBar component", () =>
@@ -586,14 +582,14 @@ test("Test SnackBar component", () =>
     autoHideDuration=6000
     message="Note archived"
   />
-  |> render
-  |> container
-  |> expect
-  |> toMatchSnapshot
+  ->render
+  ->container
+  ->expect
+  ->toMatchSnapshot
 )
 
 test("Test SnackbarContent component", () =>
-  <SnackbarContent message="I love snacks." /> |> render |> container |> expect |> toMatchSnapshot
+  <SnackbarContent message="I love snacks." />->render->container->expect->toMatchSnapshot
 )
 
 test("Test SpeedDial component", () =>
@@ -603,10 +599,10 @@ test("Test SpeedDial component", () =>
     icon={<SpeedDialIcon openIcon={<Icon.Favorite />} />}
     _open=true
   />
-  |> render
-  |> container
-  |> expect
-  |> toMatchSnapshot
+  ->render
+  ->container
+  ->expect
+  ->toMatchSnapshot
 )
 
 test("Test SpeedDialAction component", () =>
@@ -615,38 +611,38 @@ test("Test SpeedDialAction component", () =>
     tooltipTitle={<div> {string("Test Speed Action")} </div>}
     tooltipOpen=true
   />
-  |> render
-  |> container
-  |> expect
-  |> toMatchSnapshot
+  ->render
+  ->container
+  ->expect
+  ->toMatchSnapshot
 )
 
 test("Test Stepper component", () =>
   <Stepper activeStep=10 alternativeLabel=true>
     <Step> <StepLabel> {string("Test Step Label")} </StepLabel> </Step>
   </Stepper>
-  |> render
-  |> container
-  |> expect
-  |> toMatchSnapshot
+  ->render
+  ->container
+  ->expect
+  ->toMatchSnapshot
 )
 
 test("Test StepperButton component", () =>
   <Stepper nonLinear=true activeStep=3>
     <Step> <StepButton> {string("step button")} </StepButton> </Step>
   </Stepper>
-  |> render
-  |> container
-  |> expect
-  |> toMatchSnapshot
+  ->render
+  ->container
+  ->expect
+  ->toMatchSnapshot
 )
 
 test("Test SVGIcon component", () =>
   <SvgIcon> <path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z" /> </SvgIcon>
-  |> render
-  |> container
-  |> expect
-  |> toMatchSnapshot
+  ->render
+  ->container
+  ->expect
+  ->toMatchSnapshot
 )
 
 test("Test SwipeableDrawer component", () =>
@@ -657,28 +653,28 @@ test("Test SwipeableDrawer component", () =>
     disableBackdropTransition=true
     disableDiscovery=true
   />
-  |> render
-  |> container
-  |> expect
-  |> toMatchSnapshot
+  ->render
+  ->container
+  ->expect
+  ->toMatchSnapshot
 )
 
 test("Test Switch component", () =>
   <Switch checked=true value="checkedB" color="primary" />
-  |> render
-  |> container
-  |> expect
-  |> toMatchSnapshot
+  ->render
+  ->container
+  ->expect
+  ->toMatchSnapshot
 )
 
 test("Test tab component", () =>
   <Tabs value=false>
     <Tab label="Item One" /> <Tab label="Item Two" /> <Tab label="Item Three" />
   </Tabs>
-  |> render
-  |> container
-  |> expect
-  |> toMatchSnapshot
+  ->render
+  ->container
+  ->expect
+  ->toMatchSnapshot
 )
 
 test("Test Table component", () =>
@@ -701,14 +697,14 @@ test("Test Table component", () =>
       </TableFooter>
     </Table>
   </TableContainer>
-  |> render
-  |> container
-  |> expect
-  |> toMatchSnapshot
+  ->render
+  ->container
+  ->expect
+  ->toMatchSnapshot
 )
 
 test("Test textAreaAutoSize component", () =>
-  <TextareaAutosize rowsMax="3" /> |> render |> container |> expect |> toMatchSnapshot
+  <TextareaAutosize rowsMax="3" />->render->container->expect->toMatchSnapshot
 )
 
 test("Test ToggleButton component", () =>
@@ -718,10 +714,10 @@ test("Test ToggleButton component", () =>
     <ToggleButton value="right"> <Icon.Favorite /> </ToggleButton>
     <ToggleButton value="justify"> <Icon.Favorite /> </ToggleButton>
   </ToggleButtonGroup>
-  |> render
-  |> container
-  |> expect
-  |> toMatchSnapshot
+  ->render
+  ->container
+  ->expect
+  ->toMatchSnapshot
 )
 
 test("Test Tooltip component", () =>
@@ -730,10 +726,10 @@ test("Test Tooltip component", () =>
       <Icon.Restore />
     </IconButton>
   </Tooltip>
-  |> render
-  |> container
-  |> expect
-  |> toMatchSnapshot
+  ->render
+  ->container
+  ->expect
+  ->toMatchSnapshot
 )
 
 test("Test TreeView component", () =>
@@ -752,28 +748,28 @@ test("Test TreeView component", () =>
       </TreeItem>
     </TreeItem>
   </TreeView>
-  |> render
-  |> container
-  |> expect
-  |> toMatchSnapshot
+  ->render
+  ->container
+  ->expect
+  ->toMatchSnapshot
 )
 
 test("Test Zoom Component", () =>
   <Zoom _in=true>
     <Paper elevation=4> <svg> <polygon points="0,100 50,00, 100,100" /> </svg> </Paper>
   </Zoom>
-  |> render
-  |> container
-  |> expect
-  |> toMatchSnapshot
+  ->render
+  ->container
+  ->expect
+  ->toMatchSnapshot
 )
 
 test("Test checkbox component", () =>
   <Checkbox checked=true value="primary" inputProps={"aria-label": "primary checkbox"} />
-  |> render
-  |> container
-  |> expect
-  |> toMatchSnapshot
+  ->render
+  ->container
+  ->expect
+  ->toMatchSnapshot
 )
 
 test("Test card component", () =>
@@ -804,10 +800,10 @@ test("Test card component", () =>
       <Button size="small" color="primary"> {string("Learn More")} </Button>
     </CardActions>
   </Card>
-  |> render
-  |> container
-  |> expect
-  |> toMatchSnapshot
+  ->render
+  ->container
+  ->expect
+  ->toMatchSnapshot
 )
 
 test("test date picker", () =>
@@ -836,9 +832,8 @@ test("test date picker", () =>
       </>}
     </Jsx3LayoutComponent>
   }
-  |> render
-  |> container
-  |> expect
-  |> toMatchSnapshot
+  ->render
+  ->container
+  ->expect
+  ->toMatchSnapshot
 )
-
