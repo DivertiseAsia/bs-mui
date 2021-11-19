@@ -810,6 +810,34 @@ test("Test card component", () =>
   |> toMatchSnapshot
 )
 
+module LayoutComponent = {
+  open React
+
+  let styleWrapperComponent = backgroundColor =>
+    ReactDOM.Style.make(
+      ~background=backgroundColor,
+      ~border="0px",
+      ~borderRadius="3px",
+      ~padding="15px",
+      ~textAlign="center",
+      (),
+    )
+
+  @react.component
+  let make = (~title, ~mainInfo=?, ~subInfo=?, ~backgroundColor="lightgray", ~children) => <>
+    <h2> {string(title)} </h2>
+    {switch mainInfo {
+    | Some(info) => <h4> {string(info)} </h4>
+    | None => null
+    }}
+    {switch subInfo {
+    | Some(info) => <p> {string(info)} </p>
+    | None => null
+    }}
+    <div style={styleWrapperComponent(backgroundColor)}> children </div>
+  </>
+}
+
 test("test date picker", () =>
   {
     let mainInfo = "DatePicker Demo"
@@ -817,7 +845,7 @@ test("test date picker", () =>
     let selectedDate = Js.Date.make()
     let handleDateChange = f => f(selectedDate)
 
-    <Jsx3LayoutComponent title="DatePicker" mainInfo>
+    <LayoutComponent title="DatePicker" mainInfo>
       {<>
         <Container id="datepicker-field">
           <Grid.Item xs={GridSize.size(12)}>
@@ -834,11 +862,10 @@ test("test date picker", () =>
           </Grid.Item>
         </Container>
       </>}
-    </Jsx3LayoutComponent>
+    </LayoutComponent>
   }
   |> render
   |> container
   |> expect
   |> toMatchSnapshot
 )
-
