@@ -1,1 +1,1 @@
-ReactDOMRe.renderToElementWithId(<Jsx3MUIDemo/>, "main-jsx3");
+// ReactDOMRe.renderToElementWithId(<Jsx3MUIDemo/>, "main-jsx3");
