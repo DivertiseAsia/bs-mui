@@ -3,7 +3,7 @@ on:
   push:
     branches:
       - release
-      - release/v1
+      - release-v1
 jobs:
   npm-publish:
     name: npm-publish
