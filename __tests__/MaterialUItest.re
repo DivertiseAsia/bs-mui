@@ -371,8 +371,23 @@ test("Test Hidden component",()=>
   |> toMatchSnapshot
 )
 
-test("Test Icon component",()=>
-  <Icon className="fa fa-plus-circle" color="primary">{string("add_circle")}</Icon>
+test("Test Icon component without style",()=>
+  <Icon 
+    className="fa fa-plus-circle" 
+    color="primary" >
+    {string("add_circle")}</Icon>
+  |> render
+  |> container
+  |> expect
+  |> toMatchSnapshot
+)
+
+test("Test Icon component with style",()=>
+  <Icon 
+    className="fa fa-plus-circle" 
+    color="primary" 
+    style=ReactDOMRe.Style.make(~color="red",())>
+    {string("add_circle")}</Icon>
   |> render
   |> container
   |> expect
