@@ -8,7 +8,7 @@
     "server": "moduleserve ./ --port 8000",
     "setup-test": "npm install bs-platform bs-react-testing-library @glennsl/bs-jest bs-webapi bs-jest-dom --legacy-peer-deps",
     "test": "jest --testMatch='**/__tests__/*test.bs.js'",
-    "ci-test": "npm test -- --coverage --updateSnapshot",
+    "ci-test": "npm run clean && npm run build && npm test -- --coverage --updateSnapshot",
     "build-doc": "bsdoc build . && bsdoc support-files"
   },
   "keywords": [

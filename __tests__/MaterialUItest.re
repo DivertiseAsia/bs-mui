@@ -436,16 +436,22 @@ test("Test List component",()=>
 )
 
 test("Test Menu component",()=>{
+    let mockAnchorEl = React.createRef();
     <>
-    
-    <Menu
-      _open=true
-      anchorEl= Js.Nullable.null
-    >
-      <MenuItem>{string("Profile")}</MenuItem>
-      <MenuItem>{string("My account")}</MenuItem>
-      <MenuItem>{string("Logout")}</MenuItem>
-    </Menu>
+    <Button ref={mockAnchorEl}>{string("Open Menu")}</Button>
+    {switch(mockAnchorEl.current->Js.Nullable.toOption){
+    | None => React.null
+    | Some(anchorEl) =>
+      <Menu
+        _open=true
+        anchorEl
+      >
+        <MenuItem>{string("Profile")}</MenuItem>
+        <MenuItem>{string("My account")}</MenuItem>
+        <MenuItem>{string("Logout")}</MenuItem>
+      </Menu>
+    }
+    }
     </>
   }
   |> render
