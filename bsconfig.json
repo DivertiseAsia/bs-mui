@@ -10,7 +10,8 @@
     },
     {
       "dir": "__tests__",
-      "type": "dev"
+      "type": "dev",
+      "subdirs" : ["../src/Demo", "../src/Demo/Components", "../src/Demo/Containers"]
     }
   ],
   "bsc-flags": ["-bs-super-errors", "-bs-no-version-header", "-w -48"],
