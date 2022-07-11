@@ -365,18 +365,29 @@ test("Test List component", () =>
   |> toMatchSnapshot
 )
 
-test("Test Menu component", () =>
-  <>
-    <Menu _open=true anchorEl=Js.Nullable.null>
-      <MenuItem> {string("Profile")} </MenuItem>
-      <MenuItem> {string("My account")} </MenuItem>
-      <MenuItem> {string("Logout")} </MenuItem>
-    </Menu>
-  </>
-  |> render
-  |> container
-  |> expect
-  |> toMatchSnapshot
+test("Test Menu component",()=>{
+    let mockAnchorEl = React.createRef();
+    <>
+    <Button ref={mockAnchorEl}>{string("Open Menu")}</Button>
+    {switch(mockAnchorEl.current->Js.Nullable.toOption){
+    | None => React.null
+    | Some(anchorEl) =>
+      <Menu
+        _open=true
+        anchorEl
+      >
+        <MenuItem>{string("Profile")}</MenuItem>
+        <MenuItem>{string("My account")}</MenuItem>
+        <MenuItem>{string("Logout")}</MenuItem>
+      </Menu>
+    }
+    }
+    </>
+  }
+  -> render
+  -> container
+  -> expect
+  -> toMatchSnapshot
 )
 
 test("Test MenuList component", () =>
