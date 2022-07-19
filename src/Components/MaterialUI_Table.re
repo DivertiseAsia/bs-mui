@@ -93,8 +93,8 @@ external make:
         ~page: int=?,
         ~rowsPerPage: int=?,
         ~rowsPerPageOptions: array(int)=?,
-        ~onPageChange: (ReactEvent.Synthetic.t, int) => unit=?,
-        ~onRowsPerPageChange: ReactEvent.Synthetic.t => unit=?,
+        ~onChangePage: (ReactEvent.Synthetic.t, int) => unit=?,
+        ~onChangeRowsPerPage: ReactEvent.Synthetic.t => unit=?,
         ~className: string=?,
         ~style: ReactDOMRe.Style.t=?,
         ~children: React.element=?
