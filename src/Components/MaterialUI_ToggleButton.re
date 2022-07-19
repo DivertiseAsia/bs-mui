@@ -1,3 +1,5 @@
+open MaterialUIDataType;
+
 [@react.component] [@bs.module "@material-ui/lab/ToggleButton"]
   external make:
     (
@@ -19,6 +21,7 @@ module ToggleButtonGroup = {
     external make:
         (
           ~id: string=?,
+          ~color: Color.t=?,
           ~className: string=?,
           ~children : React.element=?,
           ~classes: string=?,
