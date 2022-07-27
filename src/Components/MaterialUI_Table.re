@@ -52,7 +52,8 @@ module TableCell = {
       ~variant: string=?,
       ~className: string=?,
       ~style: ReactDOMRe.Style.t=?,
-      ~children: React.element=?
+      ~children: React.element=?,
+      ~onClick: ReactEvent.Synthetic.t => unit=?,
     ) =>
     React.element =
     "default";
@@ -148,7 +149,8 @@ module TableSortLabel = {
       ~classes: string=?,
       ~direction: string=?,
       ~hideSortIcon: bool=?,
-      ~iconComponent: string=?
+      ~iconComponent: string=?,
+      ~onClick: ReactEvent.Synthetic.t => unit=?,
     ) =>
     React.element =
     "default";
