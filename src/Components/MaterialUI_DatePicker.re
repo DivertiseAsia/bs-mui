@@ -9,7 +9,7 @@ module DateView = {
 
 [@bs.deriving abstract]
 type props('errorType, 'componentType, 'toolbarTitleType, 'props) = {
-    value: Js.Date.t,
+    [@bs.optional] value: Js.Date.t,
     onChange: Js.Date.t => unit,
     [@bs.optional] id: string,
     [@bs.optional] className: string,
