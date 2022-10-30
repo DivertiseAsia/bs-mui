@@ -22,6 +22,7 @@ external make: (
   ~disabled: bool=?,
   ~icon: React.element=?,
   ~label: string=?,
+  ~onClick: ReactEvent.Mouse.t => unit=?,
   ~onDelete: unit => unit=?,
   ~size: NoLargeSize.t=?,
   ~variant: Variant.t=?,
