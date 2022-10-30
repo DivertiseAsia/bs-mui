@@ -1,8 +1,24 @@
+module Size = {
+  type t
+  let medium: t = Obj.magic("medium")
+  let small: t = Obj.magic("small")
+}
+
+module Padding = {
+  type t
+  let normal = Obj.magic("normal")
+  let checkbox = Obj.magic("checkbox")
+  let none = Obj.magic("none")
+}
+
 @react.component @module("@material-ui/core/Table")
 external make: (
   ~id: string=?,
   ~className: string=?,
   ~style: ReactDOM.Style.t=?,
+  ~component: string=?,
+  ~size: Size.t=?,
+  ~padding: Padding.t=?,
   ~children: React.element=?,
 ) => React.element = "default"
 
@@ -30,6 +46,7 @@ module TableCell = {
     ~className: string=?,
     ~style: ReactDOM.Style.t=?,
     ~children: React.element=?,
+    ~onClick: ReactEvent.Synthetic.t => unit=?,
   ) => React.element = "default"
 }
 
@@ -108,5 +125,6 @@ module TableSortLabel = {
     ~direction: string=?,
     ~hideSortIcon: bool=?,
     ~iconComponent: string=?,
+    ~onClick: ReactEvent.Synthetic.t => unit=?,
   ) => React.element = "default"
 }

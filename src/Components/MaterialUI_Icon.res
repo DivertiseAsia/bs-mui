@@ -37,6 +37,7 @@ external make: (
   ~color: string=?,
   ~component: string=?,
   ~className: string=?,
+  ~style: ReactDOM.Style.t=?,
   ~children: React.element=?,
 ) => React.element = "default"
 
