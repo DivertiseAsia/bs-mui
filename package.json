@@ -1,6 +1,6 @@
 {
   "name": "@divertise-asia/bs-mui",
-  "version": "2.2.2",
+  "version": "3.0.0",
   "scripts": {
     "build": "rescript",
     "start": "rescript build -w",
