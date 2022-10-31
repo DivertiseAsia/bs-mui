@@ -80,7 +80,7 @@ module Orientation = {
 module Overlap = {
   type t = string
   let circle = "circle"
-  let rectangle = "rectangle"
+  let rectangle = "rectangular"
 }
 
 module Position = {
