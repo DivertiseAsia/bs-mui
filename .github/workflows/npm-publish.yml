@@ -4,6 +4,7 @@ on:
     branches:
       - release-v1
       - release-v2
+      - release-v3
 jobs:
   npm-publish:
     name: npm-publish
