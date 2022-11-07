@@ -7,6 +7,9 @@ external make: (
   ~disableUnderline: bool=?,
   ~className: string=?,
   ~onChange: ReactEvent.Synthetic.t => unit=?,
+  ~onKeyPress: ReactEvent.Keyboard.t => unit=?,
+  ~onKeyUp: ReactEvent.Keyboard.t => unit=?,
+  ~onKeyDown: ReactEvent.Keyboard.t => unit=?,
 ) => React.element = "default"
 
 module InputAdornment = {
